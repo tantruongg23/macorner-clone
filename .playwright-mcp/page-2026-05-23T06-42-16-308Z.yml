@@ -1,0 +1,491 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - search [ref=e8]:
+          - searchbox "Search" [ref=e9]
+          - button "Search" [ref=e10]:
+            - img [ref=e11]
+        - navigation "User menu" [ref=e13]:
+          - link "Sign In" [ref=e14] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e15] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e16] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e17]:
+            - img "United States flag" [ref=e19]
+            - generic [ref=e21]: United States
+          - link "0" [ref=e22] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e23]
+            - generic [ref=e29]: "0"
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Graduation" [ref=e33] [cursor=pointer]:
+              - /url: /collections/graduation
+          - listitem [ref=e34]:
+            - link "Father's Day" [ref=e35] [cursor=pointer]:
+              - /url: /pages/gifts-for-dad
+          - listitem [ref=e36]:
+            - link "Gifts" [ref=e37] [cursor=pointer]:
+              - /url: "#"
+              - text: Gifts
+              - img [ref=e38]
+          - listitem [ref=e40]:
+            - link "Home & Living" [ref=e41] [cursor=pointer]:
+              - /url: /collections/home-and-living
+          - listitem [ref=e42]:
+            - link "Drink & Barware" [ref=e43] [cursor=pointer]:
+              - /url: /collections/drink-and-barware
+          - listitem [ref=e44]:
+            - link "Apparel" [ref=e45] [cursor=pointer]:
+              - /url: /collections/apparel
+          - listitem [ref=e46]:
+            - link "Accessories" [ref=e47] [cursor=pointer]:
+              - /url: /collections/accessories
+          - listitem [ref=e48]:
+            - link "Interests" [ref=e49] [cursor=pointer]:
+              - /url: "#"
+              - text: Interests
+              - img [ref=e50]
+          - listitem [ref=e52]:
+            - link "Happy Customers" [ref=e53] [cursor=pointer]:
+              - /url: /pages/happy-customers
+  - main [ref=e54]:
+    - generic [ref=e55]:
+      - generic [ref=e59]:
+        - link "Graduation Graduation" [ref=e60] [cursor=pointer]:
+          - /url: "#"
+          - img "Graduation" [ref=e62]
+          - generic [ref=e63]: Graduation
+        - link "Father's Day Father's Day" [ref=e64] [cursor=pointer]:
+          - /url: "#"
+          - img "Father's Day" [ref=e66]
+          - generic [ref=e67]: Father's Day
+        - link "USA 250th Anniversary USA 250th Anniversary" [ref=e68] [cursor=pointer]:
+          - /url: "#"
+          - img "USA 250th Anniversary" [ref=e70]
+          - generic [ref=e71]: USA 250th Anniversary
+        - link "For Him For Him" [ref=e72] [cursor=pointer]:
+          - /url: "#"
+          - img "For Him" [ref=e74]
+          - generic [ref=e75]: For Him
+        - link "For Her For Her" [ref=e76] [cursor=pointer]:
+          - /url: "#"
+          - img "For Her" [ref=e78]
+          - generic [ref=e79]: For Her
+        - link "Shirt Shirt" [ref=e80] [cursor=pointer]:
+          - /url: "#"
+          - img "Shirt" [ref=e82]
+          - generic [ref=e83]: Shirt
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - heading "Father's Day" [level=1] [ref=e88]
+          - paragraph [ref=e89]: Thoughtful pieces made for everyday moments with Dad.
+          - generic [ref=e90]:
+            - link "Shop Now" [ref=e91] [cursor=pointer]:
+              - /url: "#"
+            - generic [ref=e92]: "+1"
+        - img "Father's Day gifts" [ref=e94]
+      - generic [ref=e96]:
+        - heading "Trending Now" [level=2] [ref=e97]
+        - generic [ref=e98]:
+          - link "Best Dad By Par Personalized Cap Father's Day Gifts, Best Dad By Par, Best Grandpa By Par - Personalized Cap $29.95 USD" [ref=e99] [cursor=pointer]:
+            - /url: "#"
+            - img "Best Dad By Par Personalized Cap" [ref=e101]
+            - generic [ref=e102]:
+              - heading "Father's Day Gifts, Best Dad By Par, Best Grandpa By Par - Personalized Cap" [level=3] [ref=e103]
+              - paragraph [ref=e104]: $29.95 USD
+          - link "The Dad Times Drive Safe Personalized Car Visor Clip Father's Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip $24.95 USD" [ref=e105] [cursor=pointer]:
+            - /url: "#"
+            - img "The Dad Times Drive Safe Personalized Car Visor Clip" [ref=e107]
+            - generic [ref=e108]:
+              - heading "Father's Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip" [level=3] [ref=e109]
+              - paragraph [ref=e110]: $24.95 USD
+          - link "Senior Custom Vintage Photo Cups Senior Custom Vintage Photo - Personalized Cups $25.95 USD" [ref=e111] [cursor=pointer]:
+            - /url: "#"
+            - img "Senior Custom Vintage Photo Cups" [ref=e113]
+            - generic [ref=e114]:
+              - heading "Senior Custom Vintage Photo - Personalized Cups" [level=3] [ref=e115]
+              - paragraph [ref=e116]: $25.95 USD
+          - link "Classic Limited Edition Personalized Shirt Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt $24.95 USD" [ref=e117] [cursor=pointer]:
+            - /url: "#"
+            - img "Classic Limited Edition Personalized Shirt" [ref=e119]
+            - generic [ref=e120]:
+              - heading "Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt" [level=3] [ref=e121]
+              - paragraph [ref=e122]: $24.95 USD
+          - link "We Love You Custom Photo Sketch Line Art Desk Mat Father's Day Gifts, We Love You Custom Photo Sketch Line Art - Personalized Desk Mat $32.95 USD" [ref=e123] [cursor=pointer]:
+            - /url: "#"
+            - img "We Love You Custom Photo Sketch Line Art Desk Mat" [ref=e125]
+            - generic [ref=e126]:
+              - heading "Father's Day Gifts, We Love You Custom Photo Sketch Line Art - Personalized Desk Mat" [level=3] [ref=e127]
+              - paragraph [ref=e128]: $32.95 USD
+          - link "Thank You For Celebrating With Us Cups Thank You For Celebrating With Us - Personalized Cups $25.95 USD" [ref=e129] [cursor=pointer]:
+            - /url: "#"
+            - img "Thank You For Celebrating With Us Cups" [ref=e131]
+            - generic [ref=e132]:
+              - heading "Thank You For Celebrating With Us - Personalized Cups" [level=3] [ref=e133]
+              - paragraph [ref=e134]: $25.95 USD
+          - link "Everything Tastes Better When Grandpa Cutting Board Father's Day Gifts, Everything Tastes Better When Grandpa, Dad Grills It - Personalized Cutting Board $39.95 USD" [ref=e135] [cursor=pointer]:
+            - /url: "#"
+            - img "Everything Tastes Better When Grandpa Cutting Board" [ref=e137]
+            - generic [ref=e138]:
+              - heading "Father's Day Gifts, Everything Tastes Better When Grandpa, Dad Grills It - Personalized Cutting Board" [level=3] [ref=e139]
+              - paragraph [ref=e140]: $39.95 USD
+          - link "Dad's Grilling Buddies Personalized Platter Father's Day Gifts, Dad's Grilling Buddies - Personalized Platter $32.95 USD" [ref=e141] [cursor=pointer]:
+            - /url: "#"
+            - img "Dad's Grilling Buddies Personalized Platter" [ref=e143]
+            - generic [ref=e144]:
+              - heading "Father's Day Gifts, Dad's Grilling Buddies - Personalized Platter" [level=3] [ref=e145]
+              - paragraph [ref=e146]: $32.95 USD
+        - link "SHOP ALL" [ref=e148] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - heading "Made For Dads" [level=2] [ref=e153]
+            - paragraph [ref=e154]: Gifts that fit his style and routine
+            - link "EXPLORE" [ref=e155] [cursor=pointer]:
+              - /url: "#"
+          - img "Made For Dads — Father's Day collection" [ref=e157]
+        - generic [ref=e158]:
+          - generic [ref=e160]:
+            - button "Caps" [ref=e161]
+            - button "Shirts" [ref=e162]
+            - button "Car Visor Clips" [ref=e163]
+          - generic [ref=e164]:
+            - link "Best Dad By Par Personalized Cap Best Dad By Par, Best Grandpa By Par - Personalized Cap $29.95 USD" [ref=e165] [cursor=pointer]:
+              - /url: "#"
+              - img "Best Dad By Par Personalized Cap" [ref=e167]
+              - generic [ref=e168]:
+                - heading "Best Dad By Par, Best Grandpa By Par - Personalized Cap" [level=3] [ref=e169]
+                - paragraph [ref=e170]: $29.95 USD
+            - link "Fist Bump Daddy Grandpa Personalized Cap Fist Bump Daddy Grandpa - Personalized Classic Cap $29.95 USD" [ref=e171] [cursor=pointer]:
+              - /url: "#"
+              - img "Fist Bump Daddy Grandpa Personalized Cap" [ref=e173]
+              - generic [ref=e174]:
+                - heading "Fist Bump Daddy Grandpa - Personalized Classic Cap" [level=3] [ref=e175]
+                - paragraph [ref=e176]: $29.95 USD
+            - link "Best Dad Ever Metal Style Personalized Cap Best Dad Ever - Metal Style Print - Personalized Cap $29.95 USD" [ref=e177] [cursor=pointer]:
+              - /url: "#"
+              - img "Best Dad Ever Metal Style Personalized Cap" [ref=e179]
+              - generic [ref=e180]:
+                - heading "Best Dad Ever - Metal Style Print - Personalized Cap" [level=3] [ref=e181]
+                - paragraph [ref=e182]: $29.95 USD
+            - link "Dad The Man The Myth Personalized Hat Dad, The Man, The Myth, The Legend - Personalized Leather Patch Hat $34.95 USD" [ref=e183] [cursor=pointer]:
+              - /url: "#"
+              - img "Dad The Man The Myth Personalized Hat" [ref=e185]
+              - generic [ref=e186]:
+                - heading "Dad, The Man, The Myth, The Legend - Personalized Leather Patch Hat" [level=3] [ref=e187]
+                - paragraph [ref=e188]: $34.95 USD
+      - generic [ref=e190]:
+        - generic [ref=e191]:
+          - img "For Your Grad — Graduation collection" [ref=e193]
+          - generic [ref=e194]:
+            - heading "For Your Grad" [level=2] [ref=e195]
+            - paragraph [ref=e196]: Turn pride into a keepsake.
+            - link "EXPLORE" [ref=e197] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e198]:
+          - generic [ref=e200]:
+            - button "Frosted Cups" [ref=e201]
+            - button "Fans" [ref=e202]
+          - generic [ref=e203]:
+            - link "Senior Custom Vintage Photo Cups Senior Custom Vintage Photo - Personalized Cups $25.95 USD" [ref=e204] [cursor=pointer]:
+              - /url: "#"
+              - img "Senior Custom Vintage Photo Cups" [ref=e206]
+              - generic [ref=e207]:
+                - heading "Senior Custom Vintage Photo - Personalized Cups" [level=3] [ref=e208]
+                - paragraph [ref=e209]: $25.95 USD
+            - link "Custom Vintage Childhood Photo Cups Custom Vintage Childhood Photo - Graduation Gift Cups $25.95 USD" [ref=e210] [cursor=pointer]:
+              - /url: "#"
+              - img "Custom Vintage Childhood Photo Cups" [ref=e212]
+              - generic [ref=e213]:
+                - heading "Custom Vintage Childhood Photo - Graduation Gift Cups" [level=3] [ref=e214]
+                - paragraph [ref=e215]: $25.95 USD
+            - link "Graduation Custom Face Cups Graduation Custom Face and Name - Personalized Cups $25.95 USD" [ref=e216] [cursor=pointer]:
+              - /url: "#"
+              - img "Graduation Custom Face Cups" [ref=e218]
+              - generic [ref=e219]:
+                - heading "Graduation Custom Face and Name - Personalized Cups" [level=3] [ref=e220]
+                - paragraph [ref=e221]: $25.95 USD
+            - link "Graduation Party Cups Graduation Party - Personalized Cups $25.95 USD" [ref=e222] [cursor=pointer]:
+              - /url: "#"
+              - img "Graduation Party Cups" [ref=e224]
+              - generic [ref=e225]:
+                - heading "Graduation Party - Personalized Cups" [level=3] [ref=e226]
+                - paragraph [ref=e227]: $25.95 USD
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - heading "America's 250th" [level=2] [ref=e232]
+            - paragraph [ref=e233]: Gifts that carry history forward.
+            - link "EXPLORE" [ref=e234] [cursor=pointer]:
+              - /url: "#"
+          - img "America's 250th Anniversary collection" [ref=e236]
+        - generic [ref=e237]:
+          - button "Frosted Cups" [ref=e240]
+          - generic [ref=e241]:
+            - link "Thank You For Celebrating Cups Thank You For Celebrating With Us - Personalized Cups $25.95 USD" [ref=e242] [cursor=pointer]:
+              - /url: "#"
+              - img "Thank You For Celebrating Cups" [ref=e244]
+              - generic [ref=e245]:
+                - heading "Thank You For Celebrating With Us - Personalized Cups" [level=3] [ref=e246]
+                - paragraph [ref=e247]: $25.95 USD
+            - link "Red White Boom Cups Red White & Boom - Personalized Cups $25.95 USD" [ref=e248] [cursor=pointer]:
+              - /url: "#"
+              - img "Red White Boom Cups" [ref=e250]
+              - generic [ref=e251]:
+                - heading "Red White & Boom - Personalized Cups" [level=3] [ref=e252]
+                - paragraph [ref=e253]: $25.95 USD
+            - link "Celebrating Merica 250 Years Cups Celebrating 'Merica 250 Years Of Freedom - Personalized Cups $25.95 USD" [ref=e254] [cursor=pointer]:
+              - /url: "#"
+              - img "Celebrating Merica 250 Years Cups" [ref=e256]
+              - generic [ref=e257]:
+                - heading "Celebrating 'Merica 250 Years Of Freedom - Personalized Cups" [level=3] [ref=e258]
+                - paragraph [ref=e259]: $25.95 USD
+            - link "250 Years Of Freedom Cups 250 Years Of Freedom - Personalized Cups $25.95 USD" [ref=e260] [cursor=pointer]:
+              - /url: "#"
+              - img "250 Years Of Freedom Cups" [ref=e262]
+              - generic [ref=e263]:
+                - heading "250 Years Of Freedom - Personalized Cups" [level=3] [ref=e264]
+                - paragraph [ref=e265]: $25.95 USD
+      - generic [ref=e267]:
+        - heading "Shop By Recipient" [level=2] [ref=e268]
+        - generic [ref=e269]:
+          - link "For Bestie For Bestie" [ref=e270] [cursor=pointer]:
+            - /url: "#"
+            - img "For Bestie" [ref=e271]
+            - heading "For Bestie" [level=3] [ref=e273]
+          - link "For Partner For Partner" [ref=e274] [cursor=pointer]:
+            - /url: "#"
+            - img "For Partner" [ref=e275]
+            - heading "For Partner" [level=3] [ref=e277]
+          - link "For Sibling For Sibling" [ref=e278] [cursor=pointer]:
+            - /url: "#"
+            - img "For Sibling" [ref=e279]
+            - heading "For Sibling" [level=3] [ref=e281]
+          - link "For Pet Lover For Pet Lover" [ref=e282] [cursor=pointer]:
+            - /url: "#"
+            - img "For Pet Lover" [ref=e283]
+            - heading "For Pet Lover" [level=3] [ref=e285]
+          - link "For Family For Family" [ref=e286] [cursor=pointer]:
+            - /url: "#"
+            - img "For Family" [ref=e287]
+            - heading "For Family" [level=3] [ref=e289]
+          - link "For Mom For Mom" [ref=e290] [cursor=pointer]:
+            - /url: "#"
+            - img "For Mom" [ref=e291]
+            - heading "For Mom" [level=3] [ref=e293]
+          - link "For Dad For Dad" [ref=e294] [cursor=pointer]:
+            - /url: "#"
+            - img "For Dad" [ref=e295]
+            - heading "For Dad" [level=3] [ref=e297]
+          - link "For Kid & Baby For Kid & Baby" [ref=e298] [cursor=pointer]:
+            - /url: "#"
+            - img "For Kid & Baby" [ref=e299]
+            - heading "For Kid & Baby" [level=3] [ref=e301]
+      - generic [ref=e303]:
+        - heading "Shop By Product" [level=2] [ref=e304]
+        - generic [ref=e305]:
+          - link "Graduation Stole Graduation Stole" [ref=e306] [cursor=pointer]:
+            - /url: "#"
+            - img "Graduation Stole" [ref=e307]
+            - heading "Graduation Stole" [level=3] [ref=e309]
+          - link "Doormat Doormat" [ref=e310] [cursor=pointer]:
+            - /url: "#"
+            - img "Doormat" [ref=e311]
+            - heading "Doormat" [level=3] [ref=e313]
+          - link "Tassel Charm Tassel Charm" [ref=e314] [cursor=pointer]:
+            - /url: "#"
+            - img "Tassel Charm" [ref=e315]
+            - heading "Tassel Charm" [level=3] [ref=e317]
+          - link "Pocket Hug Pocket Hug" [ref=e318] [cursor=pointer]:
+            - /url: "#"
+            - img "Pocket Hug" [ref=e319]
+            - heading "Pocket Hug" [level=3] [ref=e321]
+          - link "Beach Towel Beach Towel" [ref=e322] [cursor=pointer]:
+            - /url: "#"
+            - img "Beach Towel" [ref=e323]
+            - heading "Beach Towel" [level=3] [ref=e325]
+          - link "Jewelry Dish Jewelry Dish" [ref=e326] [cursor=pointer]:
+            - /url: "#"
+            - img "Jewelry Dish" [ref=e327]
+            - heading "Jewelry Dish" [level=3] [ref=e329]
+          - link "Wooden Plaque Wooden Plaque" [ref=e330] [cursor=pointer]:
+            - /url: "#"
+            - img "Wooden Plaque" [ref=e331]
+            - heading "Wooden Plaque" [level=3] [ref=e333]
+          - link "Shirt Shirt" [ref=e334] [cursor=pointer]:
+            - /url: "#"
+            - img "Shirt" [ref=e335]
+            - heading "Shirt" [level=3] [ref=e337]
+          - link "Car Accessories Car Accessories" [ref=e338] [cursor=pointer]:
+            - /url: "#"
+            - img "Car Accessories" [ref=e339]
+            - heading "Car Accessories" [level=3] [ref=e341]
+          - link "Belt Belt" [ref=e342] [cursor=pointer]:
+            - /url: "#"
+            - img "Belt" [ref=e343]
+            - heading "Belt" [level=3] [ref=e345]
+          - link "Whiskey Glass Whiskey Glass" [ref=e346] [cursor=pointer]:
+            - /url: "#"
+            - img "Whiskey Glass" [ref=e347]
+            - heading "Whiskey Glass" [level=3] [ref=e349]
+          - link "Mug Mug" [ref=e350] [cursor=pointer]:
+            - /url: "#"
+            - img "Mug" [ref=e351]
+            - heading "Mug" [level=3] [ref=e353]
+      - generic [ref=e355]:
+        - generic [ref=e356]:
+          - heading "Happy Customers" [level=2] [ref=e357]
+          - paragraph [ref=e358]: See what our satisfied customers are saying about their personalized gifts.
+          - link "See More Reviews" [ref=e359] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e360]:
+          - img "Happy customer photo" [ref=e362] [cursor=pointer]
+          - img "Happy customer photo" [ref=e364] [cursor=pointer]
+          - img "Happy customer photo" [ref=e366] [cursor=pointer]
+          - img "Happy customer photo" [ref=e368] [cursor=pointer]
+          - img "Happy customer photo" [ref=e370] [cursor=pointer]
+          - img "Happy customer photo" [ref=e372] [cursor=pointer]
+      - paragraph [ref=e375]: ✨ Free shipping on orders over $50 — Limited time only!
+  - 'region "Today Only: Secret privileges for you!" [ref=e376]':
+    - generic [ref=e377]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e378]'
+      - generic [ref=e379]:
+        - generic [ref=e380]: Email
+        - textbox "Email" [ref=e381]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e382]
+  - contentinfo [ref=e383]:
+    - generic [ref=e384]:
+      - generic [ref=e385]:
+        - list [ref=e387]:
+          - listitem [ref=e388]:
+            - link "Gift Finder" [ref=e389] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e390]: Gift Finder
+          - listitem [ref=e391]:
+            - link "Shop By Product" [ref=e392] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e393]: Shop By Product
+              - img [ref=e394]
+          - listitem [ref=e396]:
+            - link "Shop By Occasion" [ref=e397] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e398]: Shop By Occasion
+              - img [ref=e399]
+          - listitem [ref=e401]:
+            - link "Shop By Recipient" [ref=e402] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e403]: Shop By Recipient
+              - img [ref=e404]
+          - listitem [ref=e406]:
+            - link "Shop By Hobby" [ref=e407] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e408]: Shop By Hobby
+              - img [ref=e409]
+        - generic [ref=e411]:
+          - heading "Macorner" [level=2] [ref=e412]
+          - list [ref=e413]:
+            - listitem [ref=e414]:
+              - link "About Us" [ref=e415] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e416]:
+              - link "Privacy Policy" [ref=e417] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e418]:
+              - link "Accessibility Statement" [ref=e419] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e420]:
+          - heading "Help and Support" [level=2] [ref=e421]
+          - list [ref=e422]:
+            - listitem [ref=e423]:
+              - link "Return Policy" [ref=e424] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e425]:
+              - link "Help Center" [ref=e426] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e427]:
+              - link "Size Chart" [ref=e428] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e429]:
+              - link "Shipping And Delivery" [ref=e430] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e431]:
+              - link "Cancellation & Modification Policy" [ref=e432] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e433]:
+              - link "Refund & Replacement Policy" [ref=e434] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e435]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e436] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e437]:
+          - heading "GET IN TOUCH" [level=2] [ref=e438]
+          - paragraph [ref=e439]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e440] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e441]:
+            - listitem [ref=e442]:
+              - link "Facebook" [ref=e443] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e444]
+            - listitem [ref=e446]:
+              - link "Instagram" [ref=e447] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e448]
+            - listitem [ref=e451]:
+              - link "Amazon" [ref=e452] [cursor=pointer]:
+                - /url: https://www.amazon.com/
+                - img [ref=e453]
+            - listitem [ref=e458]:
+              - link "X (Twitter)" [ref=e459] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e460]
+            - listitem [ref=e462]:
+              - link "TikTok" [ref=e463] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e464]
+            - listitem [ref=e466]:
+              - link "Pinterest" [ref=e467] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e468]
+      - list [ref=e470]:
+        - listitem [ref=e471]:
+          - img "American Express" [ref=e472]
+        - listitem [ref=e473]:
+          - img "Apple Pay" [ref=e474]
+        - listitem [ref=e475]:
+          - img "Bancontact" [ref=e476]
+        - listitem [ref=e477]:
+          - img "Diners Club" [ref=e478]
+        - listitem [ref=e479]:
+          - img "Discover" [ref=e480]
+        - listitem [ref=e481]:
+          - img "Google Pay" [ref=e482]
+        - listitem [ref=e483]:
+          - img "iDEAL" [ref=e484]
+        - listitem [ref=e485]:
+          - img "Mastercard" [ref=e486]
+        - listitem [ref=e487]:
+          - img "PayPal" [ref=e488]
+        - listitem [ref=e489]:
+          - img "Shop Pay" [ref=e490]
+        - listitem [ref=e491]:
+          - img "Venmo" [ref=e492]
+        - listitem [ref=e493]:
+          - img "Visa" [ref=e494]
+      - generic [ref=e495]:
+        - link "Terms Of Services" [ref=e496] [cursor=pointer]:
+          - /url: "#"
+        - text: •
+        - link "Privacy Policy" [ref=e497] [cursor=pointer]:
+          - /url: "#"
+        - text: •MA Commerce Inc.

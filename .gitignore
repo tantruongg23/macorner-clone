@@ -1,0 +1,69 @@
+# Root .gitignore for macorner-clone
+
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Build outputs
+dist/
+build/
+.next/
+.out/
+.cache/
+.vite/
+public/build/
+
+# Environment files (keep examples)
+.env
+.env.*
+!.env.example
+
+# BMad output (generated artifacts)
+_bmad-output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+pip-wheel-metadata/
+venv/
+venv*/
+.Python
+.pytest_cache/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Docker
+.docker/
+
+# Misc temporary files
+*.swp
+*~
+.cache/
+
+# Secrets/keys
+secrets/
+*.pem
+*.key

@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init *)"
+      "Bash(git init *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\workspace\\\\macorner-clone\\\\hydrogen-storefront\" -Depth 2 | Where-Object { $_.Name -match \"\\(app|src\\)\" } | Select-Object FullName)"
     ]
   }
 }

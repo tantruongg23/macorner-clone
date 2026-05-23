@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* Macorner brand colors */
+  --color-brand-orange: #f7921f;
+  --color-brand-orange-bold: #f36621;
+  --color-brand-orange-base: #fc6514;
+  --color-brand-orange-deep: #f16523;
+  --color-brand-cream: #fff2e7;
+  --color-brand-cream-light: #fff9f4;
+  --color-brand-cream-yellow: #fff8e6;
+  --color-brand-navy: #0b2a4a;
+  --color-brand-navy-light: #2e486d;
+  --color-brand-body: rgba(18, 18, 18, 0.75);
+  --color-brand-heading: rgb(18, 18, 18);
+  --color-brand-muted: #767676;
+  --color-brand-border: rgba(18, 18, 18, 0.1);
+  --color-brand-star: #f3912e;
+
+  /* Header-specific tokens (extracted from macorner.co computed styles 2026-05-23) */
+  --color-header-text: #353535;
+  --color-header-border: #d3d3d3;
+  --color-header-search-border: rgba(18, 18, 18, 0.75);
+  --color-cart-bubble: #ff453a;
+  --color-pipe-separator: rgb(136, 134, 134);
+
+  /* Footer tokens */
+  --color-footer-bg: rgb(11, 42, 74);
+  --color-footer-text: rgba(255, 255, 255, 0.75);
+  --color-footer-text-strong: rgb(255, 255, 255);
+  --color-newsletter-bg: rgb(255, 248, 230);
+  --color-newsletter-heading: rgb(11, 42, 74);
+  --color-newsletter-input-border: rgb(243, 102, 33);
+  --color-newsletter-button: rgb(251, 103, 24);
+
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+  --radius-img: 8px;
+
+  --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: rgba(18, 18, 18, 0.1);
+  }
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #ffffff;
+    color: rgba(18, 18, 18, 0.75);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 22.5px;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    margin: 0;
+  }
+  @media (min-width: 990px) {
+    body {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(18, 18, 18);
+    font-weight: 500;
+    letter-spacing: 0.6px;
+  }
+  /* Match macorner.co: every anchor has text-decoration: none site-wide. */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover, a:focus, a:active, a:visited {
+    text-decoration: none;
+  }
+  img {
+    border-radius: 0;
+  }
+}
+
+@layer utilities {
+  .container-macorner {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .heading-script {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--color-brand-orange-bold);
+    letter-spacing: 0.6px;
+  }
+
+  .btn-pill-orange {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    background-color: var(--color-brand-orange);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    transition: background-color 0.25s var(--ease-out-slow), transform 0.25s var(--ease-out-slow);
+    cursor: pointer;
+    border: 0;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .btn-pill-orange:hover {
+    background-color: var(--color-brand-orange-bold);
+  }
+
+  .btn-pill-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    color: var(--color-brand-orange);
+    border: 1px solid var(--color-brand-orange);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    transition: background-color 0.25s var(--ease-out-slow), color 0.25s var(--ease-out-slow);
+    cursor: pointer;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .btn-pill-outline:hover {
+    background-color: var(--color-brand-orange);
+    color: #ffffff;
+  }
+
+  .card-rounded {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Reveal animation */
+@keyframes slide-up-in {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; will-change: transform, opacity; }
+.reveal.in { animation: slide-up-in 0.6s cubic-bezier(0, 0, 0.3, 1) forwards; }

@@ -1,0 +1,30 @@
+# .gitignore for hydrogen-storefront subproject
+
+# Node
+node_modules/
+
+# Build / cache
+dist/
+build/
+.next/
+.cache/
+.vercel/
+.turbo/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+.shopify
