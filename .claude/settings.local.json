@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git init *)",
-      "PowerShell(Get-ChildItem -Path \"C:\\\\workspace\\\\macorner-clone\\\\hydrogen-storefront\" -Depth 2 | Where-Object { $_.Name -match \"\\(app|src\\)\" } | Select-Object FullName)"
+      "PowerShell(Get-ChildItem -Path \"C:\\\\workspace\\\\macorner-clone\\\\hydrogen-storefront\" -Depth 2 | Where-Object { $_.Name -match \"\\(app|src\\)\" } | Select-Object FullName)",
+      "Bash(node scripts/validate.mjs --code 'query GetCollectionProducts\\($handle: String!, $first: Int!\\) { *)"
     ]
   }
 }

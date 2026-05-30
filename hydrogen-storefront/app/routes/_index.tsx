@@ -16,13 +16,19 @@ import {
 } from '~/lib/content';
 import { CATEGORY_ICONS_QUERY } from '~/lib/graphql/categoryIcons';
 import { HERO_BANNER_QUERY } from '~/lib/graphql/heroBanner';
+import { COLLECTION_PRODUCTS_BY_KEY_QUERY } from '~/lib/graphql/collection';
+import { COLLECTION_KEYS } from '~/lib/constants';
 
 export async function loader({ context }: Route.LoaderArgs) {
   const { storefront } = context;
 
-  const [{ collections }, { metaobjects }] = await Promise.all([
+  const [{ collections }, { metaobjects }, { collection: bestSellingCollection }] = await Promise.all([
     storefront.query(CATEGORY_ICONS_QUERY, { cache: storefront.CacheLong() }),
     storefront.query(HERO_BANNER_QUERY, { cache: storefront.CacheLong() }),
+    storefront.query(COLLECTION_PRODUCTS_BY_KEY_QUERY, {
+      variables: { handle: COLLECTION_KEYS.BEST_SELLING, first: 8 },
+      cache: storefront.CacheLong(),
+    }),
   ]);
 
   const categoryIcons = collections.nodes.filter(
@@ -32,6 +38,12 @@ export async function loader({ context }: Route.LoaderArgs) {
 
   const heroFields: Record<string, string> = {};
   let heroImage: { url: string; altText: string | null } | null = null;
+
+  console.log('Loader Data:', {
+    data: JSON.stringify(bestSellingCollection, null, 2),
+  });
+
+  const bestSellingNode = bestSellingCollection;
 
   const heroNode = metaobjects?.nodes?.[0];
   if (heroNode) {
@@ -53,7 +65,23 @@ export async function loader({ context }: Route.LoaderArgs) {
       }
     : null;
 
-  return { categoryIcons, heroBanner };
+  const trendingProducts = (bestSellingNode?.products?.nodes ?? []).map(
+    (p: {
+      id: string;
+      title: string;
+      handle: string;
+      featuredImage: { url: string; altText: string | null } | null;
+      priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
+    }) => ({
+      title: p.title,
+      href: `/products/${p.handle}`,
+      imageSrc: p.featuredImage?.url ?? '',
+      alt: p.featuredImage?.altText ?? p.title,
+      price: `$${parseFloat(p.priceRange.minVariantPrice.amount).toFixed(2)} ${p.priceRange.minVariantPrice.currencyCode}`,
+    })
+  );
+
+  return { categoryIcons, heroBanner, trendingProducts };
 }
 
 export default function Homepage({ loaderData }: Route.ComponentProps) {
@@ -61,7 +89,7 @@ export default function Homepage({ loaderData }: Route.ComponentProps) {
     <div className="flex flex-col min-h-screen bg-white">
       <CategoryIconRow collections={loaderData.categoryIcons} />
       <HeroBanner data={loaderData.heroBanner} />
-      <TrendingNow />
+      <TrendingNow products={loaderData.trendingProducts} />
 
       <CollectionTabsSection
         bannerTitle="Made For Dads"

@@ -1,7 +1,9 @@
-import { ProductCard } from './ProductCard';
-import { TRENDING_NOW } from '~/lib/content';
+import { ProductCard, type MacornerProductCard } from './ProductCard';
+import { COLLECTION_KEYS } from '~/lib/constants';
 
-export function TrendingNow() {
+export function TrendingNow({ products }: { products: MacornerProductCard[] }) {
+  if (!products.length) return null;
+
   return (
     <section className="py-10 md:py-14">
       <div className="container-macorner">
@@ -9,12 +11,12 @@ export function TrendingNow() {
           Trending Now
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7">
-          {TRENDING_NOW.map((product) => (
-            <ProductCard key={product.title} product={product} />
+          {products.map((product) => (
+            <ProductCard key={product.href} product={product} />
           ))}
         </div>
         <div className="mt-8 md:mt-10 flex justify-center">
-          <a href="#" className="btn-pill-orange">
+          <a href={`/collections/${COLLECTION_KEYS.BEST_SELLING}`} className="btn-pill-orange">
             SHOP ALL
           </a>
         </div>
