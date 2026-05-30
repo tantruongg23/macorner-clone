@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "skills/shopify-storefront-graphql/SKILL.md",
       "computedHash": "b8a596d3c577ace49818be71c9535aedfaeb73661ac80cdd9c6a7f4998c2ed75"
+    },
+    "typescript-react-reviewer": {
+      "source": "dotneet/claude-code-marketplace",
+      "sourceType": "github",
+      "skillPath": "review-tool/skills/typescript-react-reviewer/SKILL.md",
+      "computedHash": "21fa76f3823df89fbd4e299d03772aaaa5c1d67c586a8b9b51d1888431acd84a"
     }
   }
 }

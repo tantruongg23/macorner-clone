@@ -14,6 +14,14 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/products/:handle": {
+    params: {
+      "handle": string;
+    };
+  };
+  "/cart": {
+    params: {};
+  };
   "/graphiql": {
     params: {};
   };
@@ -28,11 +36,19 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+    page: "/" | "/products/:handle" | "/cart" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+  };
+  "routes/products.$handle.tsx": {
+    id: "routes/products.$handle";
+    page: "/products/:handle";
   };
   "routes/_index.tsx": {
     id: "routes/_index";
     page: "/";
+  };
+  "routes/cart.tsx": {
+    id: "routes/cart";
+    page: "/cart";
   };
   "../../../../..//projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout.jsx": {
     id: "/projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
@@ -58,7 +74,9 @@ type RouteFiles = {
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
+  "routes/products.$handle": typeof import("./app/routes/products.$handle.tsx");
   "routes/_index": typeof import("./app/routes/_index.tsx");
+  "routes/cart": typeof import("./app/routes/cart.tsx");
   "/projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout": unknown;
   "vite/virtual-routes/routes/graphiql": unknown;
   "vite/virtual-routes/routes/subrequest-profiler": unknown;
