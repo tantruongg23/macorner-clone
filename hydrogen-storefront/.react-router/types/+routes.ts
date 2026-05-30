@@ -34,23 +34,23 @@ type RouteFiles = {
     id: "routes/_index";
     page: "/";
   };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout.jsx": {
-    id: "/Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
+  "../../../../..//projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout.jsx": {
+    id: "/projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
     page: "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json" | "/";
   };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/graphiql.jsx": {
+  "../../../../..//projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/graphiql.jsx": {
     id: "vite/virtual-routes/routes/graphiql";
     page: "/graphiql";
   };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/subrequest-profiler.jsx": {
+  "../../../../..//projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/subrequest-profiler.jsx": {
     id: "vite/virtual-routes/routes/subrequest-profiler";
     page: "/subrequest-profiler";
   };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json.jsx": {
+  "../../../../..//projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json.jsx": {
     id: "vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json";
     page: "/.well-known/appspecific/com.chrome.devtools.json";
   };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/index.jsx": {
+  "../../../../..//projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/index.jsx": {
     id: "vite/virtual-routes/routes/index";
     page: "/";
   };
@@ -59,7 +59,7 @@ type RouteFiles = {
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/_index": typeof import("./app/routes/_index.tsx");
-  "/Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout": unknown;
+  "/projects/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout": unknown;
   "vite/virtual-routes/routes/graphiql": unknown;
   "vite/virtual-routes/routes/subrequest-profiler": unknown;
   "vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json": unknown;

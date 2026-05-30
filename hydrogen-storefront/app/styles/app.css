@@ -52,6 +52,9 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
     background-color: #ffffff;
@@ -74,10 +77,24 @@
     font-weight: 500;
     letter-spacing: 0.6px;
   }
-  /* Match macorner.co: every anchor has text-decoration: none site-wide. */
+  
+  /* Focus outline for keyboard navigation */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--color-brand-orange-bold);
+    outline-offset: 2px;
+  }
+
+  /* Premium custom selection styles */
+  ::selection {
+    background-color: rgba(247, 146, 31, 0.15); /* Translucent brand orange */
+    color: var(--color-brand-orange-bold);
+  }
+
+  /* Match macorner.co: every anchor has text-decoration: none site-wide with smooth hover transitions. */
   a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.25s var(--ease-out-slow), opacity 0.25s var(--ease-out-slow);
   }
   a:hover, a:focus, a:active, a:visited {
     text-decoration: none;

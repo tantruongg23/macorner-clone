@@ -1,6 +1,13 @@
-import { HERO } from '~/lib/content';
+type HeroBannerData = {
+  title: string;
+  description: string;
+  actionLink: string;
+  image: { url: string; altText: string | null } | null;
+} | null;
 
-export function HeroBanner() {
+export function HeroBanner({ data }: { data: HeroBannerData }) {
+  if (!data) return null;
+
   return (
     <section className="py-3 md:py-6">
       <div className="container-macorner">
@@ -8,14 +15,14 @@ export function HeroBanner() {
           {/* Left: text */}
           <div className="order-2 md:order-1 px-6 py-8 md:px-14 md:py-12 flex flex-col gap-4 md:gap-5 justify-center">
             <h1 className="heading-script italic text-[36px] md:text-[64px] leading-[1] font-medium text-[#F36621]">
-              {HERO.title}
+              {data.title}
             </h1>
             <p className="text-[15px] md:text-base max-w-[320px] text-[rgba(18,18,18,0.7)] leading-snug">
-              {HERO.subtitle}
+              {data.description}
             </p>
             <div className="relative inline-flex items-center gap-3">
-              <a href={HERO.ctaHref} className="btn-pill-orange">
-                {HERO.cta}
+              <a href={data.actionLink} className="btn-pill-orange">
+                Shop Now
               </a>
               <span
                 aria-hidden
@@ -27,13 +34,15 @@ export function HeroBanner() {
           </div>
 
           {/* Right: image */}
-          <div className="order-1 md:order-2 relative min-h-[220px] md:min-h-[420px]">
-            <img
-              src={HERO.imageSrc}
-              alt={HERO.imageAlt}
-              className="h-full w-full object-cover"
-            />
-          </div>
+          {data.image && (
+            <div className="order-1 md:order-2 relative min-h-[220px] md:min-h-[420px]">
+              <img
+                src={data.image.url}
+                alt={data.image.altText ?? data.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -12,7 +12,8 @@ import {
 } from 'react-router';
 import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.svg';
-import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
+import { FOOTER_QUERY, HEADER_QUERY } from '~/lib/graphql/menu';
+import { NavigationService, type MenuItemNode } from '~/lib/navigation';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from './components/PageLayout';
@@ -99,18 +100,20 @@ export async function loader(args: Route.LoaderArgs) {
  */
 async function loadCriticalData({context}: Route.LoaderArgs) {
   const {storefront} = context;
+  const navigationService = new NavigationService(storefront);
 
-  const [header] = await Promise.all([
+  const [header, navigationTree] = await Promise.all([
     storefront.query(HEADER_QUERY, {
       cache: storefront.CacheLong(),
       variables: {
         headerMenuHandle: 'main-menu', // Adjust to your header menu handle
       },
     }),
+    navigationService.getNavigationTree(),
     // Add other queries here, so that they are loaded in parallel
   ]);
 
-  return {header};
+  return {header, navigationTree};
 }
 
 /**

@@ -1,4 +1,5 @@
 import {Link} from 'react-router';
+import type { MenuItemNode } from '~/lib/navigation';
 import {
   CartIcon,
   ChevronDownIcon,
@@ -7,21 +8,11 @@ import {
   SearchIcon,
 } from './icons';
 
-const HEADER_NAV = [
-  {label: 'Graduation', href: '/collections/graduation'},
-  {label: "Father's Day", href: '/pages/gifts-for-dad'},
-  {label: 'Gifts', href: '#', hasDropdown: true},
-  {label: 'Home & Living', href: '/collections/home-and-living'},
-  {label: 'Drink & Barware', href: '/collections/drink-and-barware'},
-  {label: 'Apparel', href: '/collections/apparel'},
-  {label: 'Accessories', href: '/collections/accessories'},
-  {label: 'Interests', href: '#', hasDropdown: true},
-  {label: 'Happy Customers', href: '/pages/happy-customers'},
-];
-
-export function MacornerHeader() {
+export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNode[] | null }) {
+  const navData = navigationTree ?? [];
+  
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[var(--color-header-border)]">
+    <header className="sticky top-0 z-50 relative bg-white border-b border-[var(--color-header-border)]">
       <div
         className="
           max-w-[1440px] mx-auto
@@ -204,27 +195,138 @@ export function MacornerHeader() {
           className="hidden min-[990px]:block text-center mt-[15px]"
         >
           <ul className="inline-flex flex-row list-none m-0 p-0">
-            {HEADER_NAV.map((item) => (
-              <li key={item.label} className="m-0 p-0">
-                <a
-                  href={item.href}
-                  className="
-                    inline-flex items-center gap-[12px]
-                    px-[12px] pt-[12px] pb-[20px]
-                    text-[14px] font-semibold leading-[18.2px] tracking-[0.6px]
-                    text-[var(--color-header-text)]
-                    hover:text-[#FC6514]
-                    border-b-2 border-transparent hover:border-[#FC6514]
-                    transition-colors
-                  "
-                >
-                  {item.label}
-                  {item.hasDropdown && (
-                    <ChevronDownIcon width={12} height={12} />
+            {navData.map((item) => {
+              const hasDropdown = item.items && item.items.length > 0;
+              return (
+                <li key={item.id} className="m-0 p-0 group text-static">
+                  <Link
+                    to={item.url}
+                    className="
+                      inline-flex items-center gap-[12px]
+                      px-[12px] pt-[12px] pb-[20px]
+                      text-[14px] font-semibold leading-[18.2px] tracking-[0.6px]
+                      text-[var(--color-header-text)]
+                      hover:text-[#FC6514]
+                      border-b-2 border-transparent hover:border-[#FC6514]
+                      transition-colors
+                    "
+                  >
+                    {item.title}
+                    {hasDropdown && (
+                      <ChevronDownIcon width={12} height={12} />
+                    )}
+                  </Link>
+
+                  {hasDropdown && (
+                    <div
+                      className="
+                        absolute left-0 right-0 top-full w-full bg-white
+                        border-b border-[var(--color-header-border)]
+                        shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                        invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                        transition-all duration-200 ease-out z-40
+                      "
+                    >
+                      <div
+                        className={`
+                          max-w-[1280px] mx-auto px-6 py-10
+                          grid gap-x-8 gap-y-12 text-left
+                          ${
+                            item.items!.length === 5 || item.items!.length === 10
+                              ? 'grid-cols-5'
+                              : item.items!.length === 3
+                              ? 'grid-cols-3'
+                              : 'grid-cols-1 max-w-[240px] ml-[44%]'
+                          }
+                        `}
+                      >
+                        {item.items!.length === 10 ? (
+                          Array.from({ length: 5 }).map((_, colIndex) => {
+                            const topItem = item.items![colIndex];
+                            const bottomItem = item.items![colIndex + 5];
+                            const hasTop = topItem && (topItem.title || (topItem.items && topItem.items.length > 0));
+                            const hasBottom = bottomItem && (bottomItem.title || (bottomItem.items && bottomItem.items.length > 0));
+                            
+                            return (
+                              <div key={`col-${colIndex}`} className="flex flex-col gap-8">
+                                {hasTop && (
+                                  <div className="flex flex-col gap-4">
+                                    <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
+                                      {topItem.title}
+                                    </h3>
+                                    <ul className="flex flex-col gap-2.5 list-none m-0 p-0">
+                                      {topItem.items &&
+                                        topItem.items.map((subItem) => (
+                                          <li key={subItem.id} className="m-0 p-0">
+                                            <Link
+                                              to={subItem.url}
+                                              className="text-[14px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
+                                            >
+                                              {subItem.title}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                    </ul>
+                                  </div>
+                                )}
+                                {hasBottom && (
+                                  <div className="flex flex-col gap-4 border-t border-[var(--color-header-border)] pt-6">
+                                    {bottomItem.title && (
+                                      <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
+                                        {bottomItem.title}
+                                      </h3>
+                                    )}
+                                    <ul className="flex flex-col gap-2.5 list-none m-0 p-0">
+                                      {bottomItem.items &&
+                                        bottomItem.items.map((subItem) => (
+                                          <li key={subItem.id} className="m-0 p-0">
+                                            <Link
+                                              to={subItem.url}
+                                              className="text-[14px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
+                                            >
+                                              {subItem.title}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                    </ul>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })
+                        ) : (
+                          item.items!.map((column) => {
+                            if (!column.title && (!column.items || column.items.length === 0)) {
+                              return <div key={column.id} className="hidden min-[990px]:block" />;
+                            }
+                            return (
+                              <div key={column.id} className="flex flex-col gap-4">
+                                <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
+                                  {column.title}
+                                </h3>
+                                <ul className="flex flex-col gap-2.5 list-none m-0 p-0">
+                                  {column.items &&
+                                    column.items.map((subItem) => (
+                                      <li key={subItem.id} className="m-0 p-0">
+                                        <Link
+                                          to={subItem.url}
+                                          className="text-[14px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
+                                        >
+                                          {subItem.title}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                </ul>
+                              </div>
+                            );
+                          })
+                        )}
+                      </div>
+                    </div>
                   )}
-                </a>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

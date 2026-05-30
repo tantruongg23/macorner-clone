@@ -1,3 +1,4 @@
+import type { Route } from './+types/_index';
 import { CategoryIconRow } from '~/components/macorner/CategoryIconRow';
 import { HeroBanner } from '~/components/macorner/HeroBanner';
 import { TrendingNow } from '~/components/macorner/TrendingNow';
@@ -13,12 +14,53 @@ import {
   SHOP_BY_RECIPIENT,
   SHOP_BY_PRODUCT,
 } from '~/lib/content';
+import { CATEGORY_ICONS_QUERY } from '~/lib/graphql/categoryIcons';
+import { HERO_BANNER_QUERY } from '~/lib/graphql/heroBanner';
 
-export default function Homepage() {
+export async function loader({ context }: Route.LoaderArgs) {
+  const { storefront } = context;
+
+  const [{ collections }, { metaobjects }] = await Promise.all([
+    storefront.query(CATEGORY_ICONS_QUERY, { cache: storefront.CacheLong() }),
+    storefront.query(HERO_BANNER_QUERY, { cache: storefront.CacheLong() }),
+  ]);
+
+  const categoryIcons = collections.nodes.filter(
+    (col: { isMainCollection?: { value: string } | null }) =>
+      col.isMainCollection?.value === 'true'
+  );
+
+  const heroFields: Record<string, string> = {};
+  let heroImage: { url: string; altText: string | null } | null = null;
+
+  const heroNode = metaobjects?.nodes?.[0];
+  if (heroNode) {
+    for (const field of heroNode.fields) {
+      if (field.key === 'image' && field.reference?.image) {
+        heroImage = field.reference.image;
+      } else if (field.value) {
+        heroFields[field.key] = field.value;
+      }
+    }
+  }
+
+  const heroBanner = heroNode
+    ? {
+        title: heroFields.title ?? '',
+        description: heroFields.description ?? '',
+        actionLink: heroFields.action_link ?? '#',
+        image: heroImage,
+      }
+    : null;
+
+  return { categoryIcons, heroBanner };
+}
+
+export default function Homepage({ loaderData }: Route.ComponentProps) {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <CategoryIconRow />
-      <HeroBanner />
+      <CategoryIconRow collections={loaderData.categoryIcons} />
+      <HeroBanner data={loaderData.heroBanner} />
       <TrendingNow />
 
       <CollectionTabsSection
