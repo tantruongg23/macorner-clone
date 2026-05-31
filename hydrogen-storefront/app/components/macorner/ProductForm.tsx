@@ -164,9 +164,8 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
   const [year, setYear] = useState('');
   const {open: openAside} = useAside();
   const fetchers = useFetchers();
-  const isAdding = fetchers.some(
-    (f) => f.formAction === '/cart' && f.state !== 'idle',
-  );
+  // useFetchers() only returns non-idle fetchers, so state check is unnecessary
+  const isAdding = fetchers.some((f) => f.formAction === '/cart');
 
   const price = selectedVariant?.price;
   const compareAtPrice = selectedVariant?.compareAtPrice;

@@ -15,7 +15,17 @@
       "Bash(node -e ' *)",
       "Bash(curl -s http://localhost:3001/products/classic-limited-edition-birthday-gift-vintage-old-age-gift-for-him-dad-husband-grandpa-personalized-shirt-mavikvdw6?variant=46787319791772)",
       "mcp__ide__getDiagnostics",
-      "Bash(echo \"---EXITCODE:$?\")"
+      "Bash(echo \"---EXITCODE:$?\")",
+      "Bash(dir)",
+      "Bash(npm install *)",
+      "Bash(npx playwright *)",
+      "Bash(node extract-accessories.mjs)",
+      "Bash(Get-Content \"C:\\\\Users\\\\nnpc\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--projects-macorner-clone\\\\5f725bbf-a6ce-4d59-9026-84e36439b4f4\\\\tasks\\\\b5qag7d15.output\" -Wait -Tail 0)",
+      "Bash(npx tsc *)",
+      "Bash(node extract-best-selling.mjs)",
+      "PowerShell(Receive-Job *)",
+      "PowerShell(Get-Job *)",
+      "Bash(curl -s http://localhost:3000/ -o /dev/null -w \"%{http_code}\")"
     ]
   }
 }

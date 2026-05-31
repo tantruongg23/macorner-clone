@@ -2,7 +2,7 @@ import type { Route } from './+types/_index';
 import { CategoryIconRow } from '~/components/macorner/CategoryIconRow';
 import { HeroBanner } from '~/components/macorner/HeroBanner';
 import { TrendingNow } from '~/components/macorner/TrendingNow';
-import { CollectionTabsSection } from '~/components/macorner/CollectionTabsSection';
+import { CollectionTabsSection, type CollectionTabsSectionProps } from '~/components/macorner/CollectionTabsSection';
 import { PhotoCategoryGrid } from '~/components/macorner/PhotoCategoryGrid';
 import { HappyCustomers } from '~/components/macorner/HappyCustomers';
 import { PromoBar } from '~/components/macorner/PromoBar';
@@ -13,6 +13,8 @@ import { HERO_BANNER_QUERY } from '~/lib/graphql/heroBanner';
 import { COLLECTION_PRODUCTS_BY_KEY_QUERY } from '~/lib/graphql/collection';
 import { HOME_CONTENT_QUERY } from '~/lib/graphql/homeContent';
 import { COLLECTION_KEYS } from '~/lib/constants';
+
+type HomeContentSectionItem = CollectionTabsSectionProps & {id: string};
 
 type StorefrontProduct = {
   id: string;
@@ -151,9 +153,11 @@ export default function Homepage({ loaderData }: Route.ComponentProps) {
       <TrendingNow products={loaderData.trendingProducts} />
 
       <div className="flex flex-col gap-8 md:gap-16">
-        {loaderData.homeContentSections.map(({id, ...section}) => (
-          <CollectionTabsSection key={id} {...section} />
-        ))}
+        {(loaderData.homeContentSections as HomeContentSectionItem[]).map(
+          ({id, ...section}) => (
+            <CollectionTabsSection key={id} {...section} />
+          ),
+        )}
       </div>
 
       <PhotoCategoryGrid title="Shop By Recipient" items={SHOP_BY_RECIPIENT} />
