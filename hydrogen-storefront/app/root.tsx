@@ -62,7 +62,12 @@ export function links() {
       rel: 'preconnect',
       href: 'https://shop.app',
     },
+    // SVG favicon for modern browsers (Chrome, Firefox, Edge)
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    // ICO fallback for Safari and older browsers
+    {rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico'},
+    // Apple touch icon for iOS devices
+    {rel: 'apple-touch-icon', href: '/favicon.ico'},
   ];
 }
 

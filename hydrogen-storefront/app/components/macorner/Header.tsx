@@ -1,5 +1,8 @@
+import {useRef} from 'react';
 import {Link} from 'react-router';
 import type { MenuItemNode } from '~/lib/navigation';
+import {SearchFormPredictive} from '~/components/SearchFormPredictive';
+import {MacornerSearchOverlay} from './SearchOverlay';
 import {
   CartIcon,
   ChevronDownIcon,
@@ -10,6 +13,7 @@ import {
 
 export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNode[] | null }) {
   const navData = navigationTree ?? [];
+  const searchContainerRef = useRef<HTMLDivElement>(null);
   
   return (
     <header className="sticky top-0 z-50 relative bg-white border-b border-[var(--color-header-border)]">
@@ -50,45 +54,57 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
             />
           </Link>
 
-          {/* Search (desktop) — rounded pill, orange search button on the RIGHT */}
-          <div className="hidden min-[990px]:flex flex-1 max-w-[602px]">
-            <form
-              action="/search"
-              method="get"
-              role="search"
-              className="relative w-full h-[50px]"
-            >
-              <input
-                type="search"
-                name="q"
-                placeholder="Search"
-                aria-label="Search"
-                className="
-                  w-full h-[48px] mx-px
-                  pl-[15px] pr-[98px] py-[15px]
-                  bg-white text-[15px] leading-[22.5px]
-                  text-[rgb(18,18,18)]
-                  placeholder:text-[rgb(209,214,220)]
-                  outline-none
-                  border border-[var(--color-header-search-border)]
-                  rounded-[25px]
-                  focus:border-[#FC6514]
-                  transition-colors
-                "
-              />
-              <button
-                type="submit"
-                aria-label="Search"
-                className="
-                  absolute top-1/2 -translate-y-1/2 right-[7px]
-                  w-9 h-9 inline-flex items-center justify-center
-                  rounded-full bg-[#FC6514] text-white
-                  hover:bg-[#e85a10] transition-colors
-                "
-              >
-                <SearchIcon width={18} height={18} />
-              </button>
-            </form>
+          {/* Search (desktop) — rounded pill with predictive dropdown */}
+          <div
+            ref={searchContainerRef}
+            className="hidden min-[990px]:flex flex-1 max-w-[602px] relative"
+          >
+            <SearchFormPredictive className="w-full">
+              {({inputRef, fetchResults, goToSearch}) => (
+                <>
+                  <div className="relative w-full h-[50px]">
+                    <input
+                      ref={inputRef}
+                      name="q"
+                      onChange={fetchResults}
+                      onKeyDown={(e) => e.key === 'Enter' && goToSearch()}
+                      placeholder="Search"
+                      aria-label="Search"
+                      className="
+                        w-full h-[48px] mx-px
+                        pl-[15px] pr-[98px] py-[15px]
+                        bg-white text-[15px] leading-[22.5px]
+                        text-[rgb(18,18,18)]
+                        placeholder:text-[rgb(209,214,220)]
+                        outline-none
+                        border border-[var(--color-header-search-border)]
+                        rounded-[25px]
+                        focus:border-[#FC6514]
+                        transition-colors
+                      "
+                    />
+                    <button
+                      type="button"
+                      onClick={goToSearch}
+                      aria-label="Search"
+                      className="
+                        absolute top-1/2 -translate-y-1/2 right-[7px]
+                        w-9 h-9 inline-flex items-center justify-center
+                        rounded-full bg-[#FC6514] text-white
+                        hover:bg-[#e85a10] transition-colors
+                      "
+                    >
+                      <SearchIcon width={18} height={18} />
+                    </button>
+                  </div>
+                  <MacornerSearchOverlay
+                    goToSearch={goToSearch}
+                    inputRef={inputRef}
+                    containerRef={searchContainerRef}
+                  />
+                </>
+              )}
+            </SearchFormPredictive>
           </div>
 
           {/* Utility cluster (desktop ≥ 990): Sign In · Wishlist · Track Order · Lang · Cart */}
