@@ -28,6 +28,9 @@ type Pages = {
   "/collections": {
     params: {};
   };
+  "/api/upload-image": {
+    params: {};
+  };
   "/products/:handle": {
     params: {
       "handle": string;
@@ -47,10 +50,21 @@ type Pages = {
       "handle": string;
     };
   };
+  "/newsletter": {
+    params: {};
+  };
   "/account": {
     params: {};
   };
   "/account/orders": {
+    params: {};
+  };
+  "/account/orders/:id": {
+    params: {
+      "id": string;
+    };
+  };
+  "/account/addresses": {
     params: {};
   };
   "/account/profile": {
@@ -67,21 +81,12 @@ type Pages = {
       "*": string;
     };
   };
-  "/graphiql": {
-    params: {};
-  };
-  "/subrequest-profiler": {
-    params: {};
-  };
-  "/.well-known/appspecific/com.chrome.devtools.json": {
-    params: {};
-  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/pages/tracking-order" | "/collections/:handle" | "/account/authorize" | "/collections" | "/products/:handle" | "/account/logout" | "/account/login" | "/pages/wishlist" | "/pages/:handle" | "/account" | "/account/orders" | "/account/profile" | "/search" | "/cart" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+    page: "/" | "/pages/tracking-order" | "/collections/:handle" | "/account/authorize" | "/collections" | "/api/upload-image" | "/products/:handle" | "/account/logout" | "/account/login" | "/pages/wishlist" | "/pages/:handle" | "/newsletter" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/search" | "/cart" | "/*";
   };
   "routes/pages.tracking-order.tsx": {
     id: "routes/pages.tracking-order";
@@ -98,6 +103,10 @@ type RouteFiles = {
   "routes/collections._index.tsx": {
     id: "routes/collections._index";
     page: "/collections";
+  };
+  "routes/api.upload-image.ts": {
+    id: "routes/api.upload-image";
+    page: "/api/upload-image";
   };
   "routes/products.$handle.tsx": {
     id: "routes/products.$handle";
@@ -119,13 +128,25 @@ type RouteFiles = {
     id: "routes/pages.$handle";
     page: "/pages/:handle";
   };
+  "routes/newsletter.tsx": {
+    id: "routes/newsletter";
+    page: "/newsletter";
+  };
   "routes/account.tsx": {
     id: "routes/account";
-    page: "/account" | "/account/orders" | "/account/profile";
+    page: "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile";
   };
   "routes/account.orders._index.tsx": {
     id: "routes/account.orders._index";
     page: "/account/orders";
+  };
+  "routes/account.orders.$id.tsx": {
+    id: "routes/account.orders.$id";
+    page: "/account/orders/:id";
+  };
+  "routes/account.addresses.tsx": {
+    id: "routes/account.addresses";
+    page: "/account/addresses";
   };
   "routes/account.profile.tsx": {
     id: "routes/account.profile";
@@ -151,26 +172,6 @@ type RouteFiles = {
     id: "routes/$";
     page: "/*";
   };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout.jsx": {
-    id: "/Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
-    page: "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json" | "/";
-  };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/graphiql.jsx": {
-    id: "vite/virtual-routes/routes/graphiql";
-    page: "/graphiql";
-  };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/subrequest-profiler.jsx": {
-    id: "vite/virtual-routes/routes/subrequest-profiler";
-    page: "/subrequest-profiler";
-  };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json.jsx": {
-    id: "vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json";
-    page: "/.well-known/appspecific/com.chrome.devtools.json";
-  };
-  "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/index.jsx": {
-    id: "vite/virtual-routes/routes/index";
-    page: "/";
-  };
 };
 
 type RouteModules = {
@@ -179,22 +180,21 @@ type RouteModules = {
   "routes/collections.$handle": typeof import("./app/routes/collections.$handle.tsx");
   "routes/account_.authorize": typeof import("./app/routes/account_.authorize.tsx");
   "routes/collections._index": typeof import("./app/routes/collections._index.tsx");
+  "routes/api.upload-image": typeof import("./app/routes/api.upload-image.ts");
   "routes/products.$handle": typeof import("./app/routes/products.$handle.tsx");
   "routes/account_.logout": typeof import("./app/routes/account_.logout.tsx");
   "routes/account_.login": typeof import("./app/routes/account_.login.tsx");
   "routes/pages.wishlist": typeof import("./app/routes/pages.wishlist.tsx");
   "routes/pages.$handle": typeof import("./app/routes/pages.$handle.tsx");
+  "routes/newsletter": typeof import("./app/routes/newsletter.tsx");
   "routes/account": typeof import("./app/routes/account.tsx");
   "routes/account.orders._index": typeof import("./app/routes/account.orders._index.tsx");
+  "routes/account.orders.$id": typeof import("./app/routes/account.orders.$id.tsx");
+  "routes/account.addresses": typeof import("./app/routes/account.addresses.tsx");
   "routes/account.profile": typeof import("./app/routes/account.profile.tsx");
   "routes/account._index": typeof import("./app/routes/account._index.tsx");
   "routes/search": typeof import("./app/routes/search.tsx");
   "routes/_index": typeof import("./app/routes/_index.tsx");
   "routes/cart": typeof import("./app/routes/cart.tsx");
   "routes/$": typeof import("./app/routes/$.tsx");
-  "/Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout": unknown;
-  "vite/virtual-routes/routes/graphiql": unknown;
-  "vite/virtual-routes/routes/subrequest-profiler": unknown;
-  "vite/virtual-routes/routes/[.]well-known.appspecific.com[.]chrome[.]devtools[.]json": unknown;
-  "vite/virtual-routes/routes/index": unknown;
 };

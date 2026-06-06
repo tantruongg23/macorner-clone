@@ -91,6 +91,22 @@ export function ChevronDownIcon(props: Props) {
   );
 }
 
+export function ChevronLeftIcon(props: Props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16" aria-hidden="true" {...props}>
+      <path d="M10.47 3.53a.75.75 0 0 1 0 1.06L7.06 8l3.41 3.41a.75.75 0 1 1-1.06 1.06l-4-4a.75.75 0 0 1 0-1.06l4-4a.75.75 0 0 1 1.06 0Z" />
+    </svg>
+  );
+}
+
+export function ChevronRightIcon(props: Props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16" aria-hidden="true" {...props}>
+      <path d="M5.53 3.53a.75.75 0 0 1 1.06 0l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 0 1-1.06-1.06L9.88 8 5.53 4.59a.75.75 0 0 1 0-1.06Z" />
+    </svg>
+  );
+}
+
 export function ChevronUpIcon(props: Props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16" aria-hidden="true" {...props}>

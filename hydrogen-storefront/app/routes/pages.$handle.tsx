@@ -17,10 +17,15 @@ export async function loader({params, context}: Route.LoaderArgs) {
 
 export function meta({data}: Route.MetaArgs) {
   if (!data?.page) return [{title: 'Page | Macorner'}];
+  const title = data.page.seo?.title ?? `${data.page.title} | Macorner`;
+  const description = data.page.seo?.description ?? '';
   return [
-    {title: data.page.seo?.title ?? `${data.page.title} | Macorner`},
-    ...(data.page.seo?.description
-      ? [{name: 'description', content: data.page.seo.description}]
+    {title},
+    ...(description ? [{name: 'description', content: description}] : []),
+    {property: 'og:title', content: title},
+    {property: 'og:type', content: 'website'},
+    ...(description
+      ? [{property: 'og:description', content: description}]
       : []),
   ];
 }

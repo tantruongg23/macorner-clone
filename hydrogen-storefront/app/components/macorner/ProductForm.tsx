@@ -149,6 +149,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
   const [quantity, setQuantity] = useState(1);
   const [personalizationValues, setPersonalizationValues] = useState<Record<string, string>>({});
   const [showPreview, setShowPreview] = useState(false);
+  const [isImageUploading, setIsImageUploading] = useState(false);
   const {open: openAside} = useAside();
 
   const personalizationFields = parsePersonalizationFields(
@@ -332,6 +333,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
       <Personalizer
         fields={personalizationFields}
         onChange={setPersonalizationValues}
+        onUploadStatusChange={setIsImageUploading}
       />
 
       {/* Quantity + CTA */}
@@ -347,8 +349,9 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
                   attributes: Object.entries(personalizationValues)
                     .filter(([, v]) => v)
                     .map(([key, value]) => ({
-                      // Prefix image attribute keys with _ so Shopify hides them from cart display
-                      key: value.startsWith('data:') ? `_${key}` : key,
+                      key: personalizationFields.find((f) => f.key === key)?.type === 'image'
+                        ? `_${key}`
+                        : key,
                       value,
                     })),
                 },
@@ -399,13 +402,19 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
           {/* Add to Cart */}
           <button
             type="submit"
-            disabled={!isAvailable || isAdding}
+            disabled={!isAvailable || isAdding || isImageUploading}
             onClick={() => {
-              if (isAvailable) openAside('cart');
+              if (isAvailable && !isImageUploading) openAside('cart');
             }}
             className="w-full h-12 btn-pill-orange text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isAdding ? 'Adding...' : isAvailable ? 'ADD TO CART' : 'SOLD OUT'}
+            {isImageUploading
+              ? 'Uploading photo…'
+              : isAdding
+              ? 'Adding...'
+              : isAvailable
+              ? 'ADD TO CART'
+              : 'SOLD OUT'}
           </button>
         </div>
       </CartForm>

@@ -7,16 +7,37 @@ import {
 } from '~/lib/search';
 import {SearchIcon} from './icons';
 
+const TRENDING_SEARCHES = [
+  'Personalized gift',
+  'Phone case',
+  'Christmas gift',
+  'Photo gift',
+  'Name necklace',
+  'Custom mug',
+  'Birthday gift',
+  'Couple gift',
+];
+
 type Props = {
   goToSearch: () => void;
   inputRef: React.MutableRefObject<HTMLInputElement | null>;
   containerRef: React.RefObject<HTMLDivElement | null>;
+  isInputFocused: boolean;
+  recentSearches: string[];
+  onSaveSearch: (term: string) => void;
+  onRemoveSearch: (term: string) => void;
+  onClearSearches: () => void;
 };
 
 export function MacornerSearchOverlay({
   goToSearch,
   inputRef,
   containerRef,
+  isInputFocused,
+  recentSearches,
+  onSaveSearch,
+  onRemoveSearch,
+  onClearSearches,
 }: Props) {
   const fetcher = useFetcher<PredictiveSearchReturn>({key: 'search'});
 
@@ -28,11 +49,13 @@ export function MacornerSearchOverlay({
   const collections = items?.collections ?? [];
   const products = items?.products ?? [];
 
-  const isOpen = term.length > 0 && !!data;
+  const showResults = term.length > 0 && !!data;
+  const showEmpty = isInputFocused && term.length === 0;
+  const showPanel = showResults || showEmpty;
 
   // Close on click outside the search container
   useEffect(() => {
-    if (!isOpen) return;
+    if (!showPanel) return;
     function handleClickOutside(event: MouseEvent) {
       if (
         containerRef.current &&
@@ -43,17 +66,17 @@ export function MacornerSearchOverlay({
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen, containerRef]);
+  }, [showPanel, containerRef]);
 
   // Close on Escape
   useEffect(() => {
-    if (!isOpen) return;
+    if (!showPanel) return;
     function handleEscape(event: KeyboardEvent) {
       if (event.key === 'Escape') clearInput();
     }
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen]);
+  }, [showPanel]);
 
   function clearInput() {
     if (inputRef.current) {
@@ -77,7 +100,7 @@ export function MacornerSearchOverlay({
     );
   }
 
-  if (!isOpen) return null;
+  if (!showPanel) return null;
 
   const searchUrl = `/search?q=${encodeURIComponent(term)}`;
   const hasProducts = products.length > 0;
@@ -86,9 +109,69 @@ export function MacornerSearchOverlay({
     <div
       className="absolute top-full left-0 right-0 bg-white shadow-[0_8px_24px_rgba(0,0,0,0.12)] z-50 border-t border-gray-100"
       role="dialog"
-      aria-label="Search results"
+      aria-label={showEmpty ? 'Search suggestions' : 'Search results'}
+      onMouseDown={(e) => e.preventDefault()}
     >
-      {hasProducts ? (
+      {showEmpty ? (
+        /* ── Empty-state panel: trending + recent ── */
+        <div className="px-8 py-6 flex flex-col gap-6">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[1px] text-[#888] mb-3">
+              Trending Searches
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {TRENDING_SEARCHES.map((pill) => (
+                <button
+                  key={pill}
+                  type="button"
+                  onClick={() => handleChipClick(pill)}
+                  className="px-4 py-[7px] border border-[#c8cdd3] rounded text-[14px] text-[#121212] hover:border-[#FC6514] hover:text-[#FC6514] transition-colors"
+                >
+                  {pill}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {recentSearches.length > 0 && (
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[1px] text-[#888]">
+                  Recent Searches
+                </p>
+                <button
+                  type="button"
+                  onClick={onClearSearches}
+                  className="text-[12px] text-[#888] hover:text-[#FC6514] transition-colors"
+                >
+                  Clear all
+                </button>
+              </div>
+              <ul className="flex flex-col gap-2">
+                {recentSearches.map((entry) => (
+                  <li key={entry} className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => handleChipClick(entry)}
+                      className="text-[14px] text-[#333] hover:text-[#FC6514] transition-colors text-left"
+                    >
+                      {entry}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onRemoveSearch(entry)}
+                      className="text-[#888] hover:text-[#FC6514] transition-colors ml-3 text-[14px] leading-none"
+                      aria-label={`Remove ${entry}`}
+                    >
+                      ×
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ) : hasProducts ? (
         /* ── Two-column layout: results found ── */
         <div className="flex">
           {/* Left column — suggestions + categories + CTA */}
@@ -109,7 +192,10 @@ export function MacornerSearchOverlay({
                       <li key={q.text}>
                         <Link
                           to={queryUrl}
-                          onClick={() => clearInput()}
+                          onClick={() => {
+                            onSaveSearch(term);
+                            clearInput();
+                          }}
                           className="flex items-center gap-2 text-[14px] text-[#333] hover:text-[#FC6514] transition-colors"
                         >
                           <SearchIcon
@@ -142,7 +228,10 @@ export function MacornerSearchOverlay({
                       <li key={c.id}>
                         <Link
                           to={collectionUrl}
-                          onClick={() => clearInput()}
+                          onClick={() => {
+                            onSaveSearch(term);
+                            clearInput();
+                          }}
                           className="text-[14px] text-[#333] hover:text-[#FC6514] transition-colors"
                         >
                           {c.title}
@@ -191,7 +280,10 @@ export function MacornerSearchOverlay({
                   <li key={product.id}>
                     <Link
                       to={productUrl}
-                      onClick={() => clearInput()}
+                      onClick={() => {
+                        onSaveSearch(term);
+                        clearInput();
+                      }}
                       className="flex items-start gap-3 hover:opacity-80 transition-opacity"
                     >
                       {variant?.image && (

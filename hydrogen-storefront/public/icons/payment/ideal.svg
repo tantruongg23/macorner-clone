@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 24" width="38" height="24" role="img" aria-label="iDEAL">
+  <rect width="38" height="24" rx="4" fill="white" stroke="#E0E0E0" stroke-width="0.5"/>
+  <rect x="0" y="0" width="12" height="24" rx="4" fill="#CC0066"/>
+  <rect x="8" y="0" width="4" height="24" fill="#CC0066"/>
+  <text x="23" y="15.5" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9" font-weight="bold" fill="#000000" text-anchor="middle">iDEAL</text>
+</svg>

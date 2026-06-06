@@ -1,0 +1,407 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - textbox "Search" [ref=e10]
+          - button "Search" [ref=e11]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+          - link "View cart" [ref=e23] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e24]
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Shirt" [ref=e33] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e34]:
+            - link "For Her" [ref=e35] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e36]:
+            - link "Father's Day" [ref=e37] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e38]:
+            - link "Family & Friends" [ref=e39] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e40]:
+            - link "Car Accessories" [ref=e41] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e42]:
+            - link "Graduation" [ref=e43] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e49]:
+        - link "Shirt Shirt" [ref=e50] [cursor=pointer]:
+          - /url: /collections/shirt
+          - img "Shirt" [ref=e52]
+          - generic [ref=e53]: Shirt
+        - link "For Her For Her" [ref=e54] [cursor=pointer]:
+          - /url: /collections/for-her
+          - img "For Her" [ref=e56]
+          - generic [ref=e57]: For Her
+        - link "For Him For Him" [ref=e58] [cursor=pointer]:
+          - /url: /collections/for-him
+          - img "For Him" [ref=e60]
+          - generic [ref=e61]: For Him
+        - link "Father's Day Father's Day" [ref=e62] [cursor=pointer]:
+          - /url: /collections/fathers-day
+          - img "Father's Day" [ref=e64]
+          - generic [ref=e65]: Father's Day
+        - link "Graduation Graduation" [ref=e66] [cursor=pointer]:
+          - /url: /collections/graduation
+          - img "Graduation" [ref=e68]
+          - generic [ref=e69]: Graduation
+        - link "Anniversary Anniversary" [ref=e70] [cursor=pointer]:
+          - /url: /collections/anniversary
+          - img "Anniversary" [ref=e72]
+          - generic [ref=e73]: Anniversary
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - heading "Father's Day" [level=1] [ref=e78]
+          - paragraph [ref=e79]: Thoughtful pieces made for everyday moments with Dad.
+          - generic [ref=e80]:
+            - link "Shop Now" [ref=e81] [cursor=pointer]:
+              - /url: "#"
+            - generic [ref=e82]: "+1"
+        - img "Father's Day" [ref=e84]
+      - generic [ref=e86]:
+        - heading "Trending Now" [level=2] [ref=e87]
+        - generic [ref=e88]:
+          - 'link "#Catmom - Personalized Women''s Pajamas Set Add to wishlist #Catmom - Personalized Women''s Pajamas Set $47.00 VND" [ref=e89] [cursor=pointer]':
+            - /url: /products/catmom-personalized-womens-pajamas-set-cat140202hukl
+            - generic [ref=e90]:
+              - img "#Catmom - Personalized Women's Pajamas Set" [ref=e91]
+              - button "Add to wishlist" [ref=e92]:
+                - img [ref=e93]
+            - generic [ref=e95]:
+              - heading "#Catmom - Personalized Women's Pajamas Set" [level=3] [ref=e96]
+              - paragraph [ref=e97]: $47.00 VND
+          - 'link "#Nurselife - Personalized Shirt Add to wishlist #Nurselife - Personalized Shirt $25.00 VND" [ref=e98] [cursor=pointer]':
+            - /url: /products/nurselife-personalized-shirt-nur190202ttkl
+            - generic [ref=e99]:
+              - img "#Nurselife - Personalized Shirt" [ref=e100]
+              - button "Add to wishlist" [ref=e101]:
+                - img [ref=e102]
+            - generic [ref=e104]:
+              - heading "#Nurselife - Personalized Shirt" [level=3] [ref=e105]
+              - paragraph [ref=e106]: $25.00 VND
+          - link "2026 Office Swear Word Funny Gag Gifts For Coworkers, Men, Women - Personalized Standing Desk Calendar 2026 Add to wishlist 2026 Office Swear Word Funny Gag Gifts For Coworkers, Men, Women - Personalized Standing Desk Calendar 2026 $30.00 VND" [ref=e107] [cursor=pointer]:
+            - /url: /products/2026-office-swear-word-funny-gag-gifts-for-coworkers-men-women-personalized-standing-desk-calendar-2026-sgt181101dohn
+            - generic [ref=e108]:
+              - img "2026 Office Swear Word Funny Gag Gifts For Coworkers, Men, Women - Personalized Standing Desk Calendar 2026" [ref=e109]
+              - button "Add to wishlist" [ref=e110]:
+                - img [ref=e111]
+            - generic [ref=e113]:
+              - heading "2026 Office Swear Word Funny Gag Gifts For Coworkers, Men, Women - Personalized Standing Desk Calendar 2026" [level=3] [ref=e114]
+              - paragraph [ref=e115]: $30.00 VND
+          - 'link "#AllRacksMatter - Personalized Leather Toiletry Bag Add to wishlist #AllRacksMatter - Personalized Leather Toiletry Bag $40.00 VND" [ref=e116] [cursor=pointer]':
+            - /url: /products/allracksmatter-personalized-leather-toiletry-bag-hut291203nakl
+            - generic [ref=e117]:
+              - img "#AllRacksMatter - Personalized Leather Toiletry Bag" [ref=e118]
+              - button "Add to wishlist" [ref=e119]:
+                - img [ref=e120]
+            - generic [ref=e122]:
+              - heading "#AllRacksMatter - Personalized Leather Toiletry Bag" [level=3] [ref=e123]
+              - paragraph [ref=e124]: $40.00 VND
+          - link "250 Years of Freedom Fighter Jet - Shirt Add to wishlist 250 Years of Freedom Fighter Jet - Shirt $25.00 VND" [ref=e125] [cursor=pointer]:
+            - /url: /products/250-years-of-freedom-fighter-jet-shirt-ma5v0hiea
+            - generic [ref=e126]:
+              - img "250 Years of Freedom Fighter Jet - Shirt" [ref=e127]
+              - button "Add to wishlist" [ref=e128]:
+                - img [ref=e129]
+            - generic [ref=e131]:
+              - heading "250 Years of Freedom Fighter Jet - Shirt" [level=3] [ref=e132]
+              - paragraph [ref=e133]: $25.00 VND
+          - link "250 Years Of Ribbiting Freedom Patriot Frog - Shirt Add to wishlist 250 Years Of Ribbiting Freedom Patriot Frog - Shirt $25.00 VND" [ref=e134] [cursor=pointer]:
+            - /url: /products/250-years-of-ribbiting-freedom-patriot-frog-shirt-macyh1zux
+            - generic [ref=e135]:
+              - img "250 Years Of Ribbiting Freedom Patriot Frog - Shirt" [ref=e136]
+              - button "Add to wishlist" [ref=e137]:
+                - img [ref=e138]
+            - generic [ref=e140]:
+              - heading "250 Years Of Ribbiting Freedom Patriot Frog - Shirt" [level=3] [ref=e141]
+              - paragraph [ref=e142]: $25.00 VND
+          - link "250 Years Distressed USA Flag - Back Printed Shirt Add to wishlist 250 Years Distressed USA Flag - Back Printed Shirt $25.00 VND" [ref=e143] [cursor=pointer]:
+            - /url: /products/250-years-distressed-usa-flag-back-printed-shirt-maynefxdn
+            - generic [ref=e144]:
+              - img "250 Years Distressed USA Flag - Back Printed Shirt" [ref=e145]
+              - button "Add to wishlist" [ref=e146]:
+                - img [ref=e147]
+            - generic [ref=e149]:
+              - heading "250 Years Distressed USA Flag - Back Printed Shirt" [level=3] [ref=e150]
+              - paragraph [ref=e151]: $25.00 VND
+          - link "250 Years One Nation Under God - Personalized Shirt Add to wishlist 250 Years One Nation Under God - Personalized Shirt $30.00 VND" [ref=e152] [cursor=pointer]:
+            - /url: /products/250-years-one-nation-under-god-personalized-shirt-ind270103hykl
+            - generic [ref=e153]:
+              - img "250 Years One Nation Under God - Personalized Shirt" [ref=e154]
+              - button "Add to wishlist" [ref=e155]:
+                - img [ref=e156]
+            - generic [ref=e158]:
+              - heading "250 Years One Nation Under God - Personalized Shirt" [level=3] [ref=e159]
+              - paragraph [ref=e160]: $30.00 VND
+        - link "SHOP ALL" [ref=e162] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e163]:
+        - generic [ref=e166]:
+          - img "Father's Day" [ref=e168]
+          - generic [ref=e169]:
+            - heading "Father's Day" [level=2] [ref=e170]
+            - paragraph [ref=e171]: Thoughtful pieces made for everyday moments with Dad.
+            - link "EXPLORE" [ref=e172] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e175]:
+          - img "For Your Grad" [ref=e177]
+          - generic [ref=e178]:
+            - heading "For Your Grad" [level=2] [ref=e179]
+            - paragraph [ref=e180]: Turn pride into a keepsake.
+            - link "EXPLORE" [ref=e181] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e183]:
+        - heading "Shop By Recipient" [level=2] [ref=e184]
+        - generic [ref=e185]:
+          - link "For Bestie For Bestie" [ref=e186] [cursor=pointer]:
+            - /url: "#"
+            - img "For Bestie" [ref=e187]
+            - heading "For Bestie" [level=3] [ref=e189]
+          - link "For Partner For Partner" [ref=e190] [cursor=pointer]:
+            - /url: "#"
+            - img "For Partner" [ref=e191]
+            - heading "For Partner" [level=3] [ref=e193]
+          - link "For Sibling For Sibling" [ref=e194] [cursor=pointer]:
+            - /url: "#"
+            - img "For Sibling" [ref=e195]
+            - heading "For Sibling" [level=3] [ref=e197]
+          - link "For Pet Lover For Pet Lover" [ref=e198] [cursor=pointer]:
+            - /url: "#"
+            - img "For Pet Lover" [ref=e199]
+            - heading "For Pet Lover" [level=3] [ref=e201]
+          - link "For Family For Family" [ref=e202] [cursor=pointer]:
+            - /url: "#"
+            - img "For Family" [ref=e203]
+            - heading "For Family" [level=3] [ref=e205]
+          - link "For Mom For Mom" [ref=e206] [cursor=pointer]:
+            - /url: "#"
+            - img "For Mom" [ref=e207]
+            - heading "For Mom" [level=3] [ref=e209]
+          - link "For Dad For Dad" [ref=e210] [cursor=pointer]:
+            - /url: "#"
+            - img "For Dad" [ref=e211]
+            - heading "For Dad" [level=3] [ref=e213]
+          - link "For Kid & Baby For Kid & Baby" [ref=e214] [cursor=pointer]:
+            - /url: "#"
+            - img "For Kid & Baby" [ref=e215]
+            - heading "For Kid & Baby" [level=3] [ref=e217]
+      - generic [ref=e219]:
+        - heading "Shop By Product" [level=2] [ref=e220]
+        - generic [ref=e221]:
+          - link "Graduation Stole Graduation Stole" [ref=e222] [cursor=pointer]:
+            - /url: "#"
+            - img "Graduation Stole" [ref=e223]
+            - heading "Graduation Stole" [level=3] [ref=e225]
+          - link "Doormat Doormat" [ref=e226] [cursor=pointer]:
+            - /url: "#"
+            - img "Doormat" [ref=e227]
+            - heading "Doormat" [level=3] [ref=e229]
+          - link "Tassel Charm Tassel Charm" [ref=e230] [cursor=pointer]:
+            - /url: "#"
+            - img "Tassel Charm" [ref=e231]
+            - heading "Tassel Charm" [level=3] [ref=e233]
+          - link "Pocket Hug Pocket Hug" [ref=e234] [cursor=pointer]:
+            - /url: "#"
+            - img "Pocket Hug" [ref=e235]
+            - heading "Pocket Hug" [level=3] [ref=e237]
+          - link "Beach Towel Beach Towel" [ref=e238] [cursor=pointer]:
+            - /url: "#"
+            - img "Beach Towel" [ref=e239]
+            - heading "Beach Towel" [level=3] [ref=e241]
+          - link "Jewelry Dish Jewelry Dish" [ref=e242] [cursor=pointer]:
+            - /url: "#"
+            - img "Jewelry Dish" [ref=e243]
+            - heading "Jewelry Dish" [level=3] [ref=e245]
+          - link "Wooden Plaque Wooden Plaque" [ref=e246] [cursor=pointer]:
+            - /url: "#"
+            - img "Wooden Plaque" [ref=e247]
+            - heading "Wooden Plaque" [level=3] [ref=e249]
+          - link "Shirt Shirt" [ref=e250] [cursor=pointer]:
+            - /url: "#"
+            - img "Shirt" [ref=e251]
+            - heading "Shirt" [level=3] [ref=e253]
+          - link "Car Accessories Car Accessories" [ref=e254] [cursor=pointer]:
+            - /url: "#"
+            - img "Car Accessories" [ref=e255]
+            - heading "Car Accessories" [level=3] [ref=e257]
+          - link "Belt Belt" [ref=e258] [cursor=pointer]:
+            - /url: "#"
+            - img "Belt" [ref=e259]
+            - heading "Belt" [level=3] [ref=e261]
+          - link "Whiskey Glass Whiskey Glass" [ref=e262] [cursor=pointer]:
+            - /url: "#"
+            - img "Whiskey Glass" [ref=e263]
+            - heading "Whiskey Glass" [level=3] [ref=e265]
+          - link "Mug Mug" [ref=e266] [cursor=pointer]:
+            - /url: "#"
+            - img "Mug" [ref=e267]
+            - heading "Mug" [level=3] [ref=e269]
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - heading "Happy Customers" [level=2] [ref=e273]
+          - paragraph [ref=e274]: See what our satisfied customers are saying about their personalized gifts.
+          - link "See More Reviews" [ref=e275] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e276]:
+          - img "Happy customer photo" [ref=e278] [cursor=pointer]
+          - img "Happy customer photo" [ref=e280] [cursor=pointer]
+          - img "Happy customer photo" [ref=e282] [cursor=pointer]
+          - img "Happy customer photo" [ref=e284] [cursor=pointer]
+          - img "Happy customer photo" [ref=e286] [cursor=pointer]
+          - img "Happy customer photo" [ref=e288] [cursor=pointer]
+      - paragraph [ref=e291]: ✨ Free shipping on orders over $50 — Limited time only!
+  - 'region "Today Only: Secret privileges for you!" [ref=e292]':
+    - generic [ref=e293]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e294]'
+      - generic [ref=e296]:
+        - generic [ref=e297]: Email
+        - textbox "Email" [ref=e298]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e299]
+  - contentinfo [ref=e300]:
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - button "Shop By" [ref=e304]:
+            - heading "Shop By" [level=2] [ref=e305]
+          - list [ref=e307]:
+            - listitem [ref=e308]:
+              - link "Gift Finder" [ref=e309] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e310]: Gift Finder
+            - listitem [ref=e311]:
+              - link "Shop By Product" [ref=e312] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e313]: Shop By Product
+                - img [ref=e314]
+            - listitem [ref=e316]:
+              - link "Shop By Occasion" [ref=e317] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e318]: Shop By Occasion
+                - img [ref=e319]
+            - listitem [ref=e321]:
+              - link "Shop By Recipient" [ref=e322] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e323]: Shop By Recipient
+                - img [ref=e324]
+            - listitem [ref=e326]:
+              - link "Shop By Hobby" [ref=e327] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e328]: Shop By Hobby
+                - img [ref=e329]
+        - generic [ref=e331]:
+          - button "Macorner" [ref=e332]:
+            - heading "Macorner" [level=2] [ref=e333]
+          - list [ref=e334]:
+            - listitem [ref=e335]:
+              - link "About Us" [ref=e336] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e337]:
+              - link "Privacy Policy" [ref=e338] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e339]:
+              - link "Accessibility Statement" [ref=e340] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e341]:
+          - button "Help and Support" [ref=e342]:
+            - heading "Help and Support" [level=2] [ref=e343]
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - link "Return Policy" [ref=e346] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e347]:
+              - link "Help Center" [ref=e348] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e349]:
+              - link "Size Chart" [ref=e350] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e351]:
+              - link "Shipping And Delivery" [ref=e352] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e353]:
+              - link "Cancellation & Modification Policy" [ref=e354] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e355]:
+              - link "Refund & Replacement Policy" [ref=e356] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e357]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e358] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e359]:
+          - heading "GET IN TOUCH" [level=2] [ref=e360]
+          - paragraph [ref=e361]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e362] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e363]:
+            - listitem [ref=e364]:
+              - link "X (Twitter)" [ref=e365] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e366]
+            - listitem [ref=e368]:
+              - link "Facebook" [ref=e369] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e370]
+            - listitem [ref=e372]:
+              - link "Pinterest" [ref=e373] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e374]
+            - listitem [ref=e376]:
+              - link "Instagram" [ref=e377] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e378]
+            - listitem [ref=e382]:
+              - link "TikTok" [ref=e383] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e384]
+      - list [ref=e386]:
+        - listitem [ref=e387]:
+          - img "American Express" [ref=e388]
+        - listitem [ref=e389]:
+          - img "Apple Pay" [ref=e390]
+        - listitem [ref=e391]:
+          - img "Bancontact" [ref=e392]
+        - listitem [ref=e393]:
+          - img "Diners Club" [ref=e394]
+        - listitem [ref=e395]:
+          - img "Discover" [ref=e396]
+        - listitem [ref=e397]:
+          - img "Google Pay" [ref=e398]
+        - listitem [ref=e399]:
+          - img "iDEAL" [ref=e400]
+        - listitem [ref=e401]:
+          - img "Mastercard" [ref=e402]
+        - listitem [ref=e403]:
+          - img "PayPal" [ref=e404]
+        - listitem [ref=e405]:
+          - img "Shop Pay" [ref=e406]
+        - listitem [ref=e407]:
+          - img "Venmo" [ref=e408]
+        - listitem [ref=e409]:
+          - img "Visa" [ref=e410]
+      - generic [ref=e411]:
+        - link "Terms Of Services" [ref=e412] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e413] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.

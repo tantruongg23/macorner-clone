@@ -1,4 +1,6 @@
-import {Link} from 'react-router';
+import {useState} from 'react';
+import {Link, useFetcher} from 'react-router';
+import type {action as newsletterAction} from '~/routes/newsletter';
 import {
   ChevronDownIcon,
   FacebookIcon,
@@ -10,7 +12,6 @@ import {
 
 type FooterLink = {label: string; href: string; external?: boolean};
 
-// Column 1: top-level links + accordion triggers ("Shop By X")
 const SHOP_NAV = [
   {label: 'Gift Finder', href: '/pages/gift-finder'},
   {label: 'Shop By Product', href: '/collections/all', hasChevron: true},
@@ -44,20 +45,19 @@ const SOCIAL_LINKS = [
   {platform: 'TikTok', icon: TiktokIcon, href: 'https://www.tiktok.com/@macorner_official'},
 ];
 
-// Payment provider labels rendered as plain text badges until SVG assets are downloaded.
-const PAYMENT_BADGES = [
-  'AMEX',
-  'Apple Pay',
-  'Bancontact',
-  'Diners',
-  'Discover',
-  'Google Pay',
-  'iDEAL',
-  'Mastercard',
-  'PayPal',
-  'Shop Pay',
-  'Venmo',
-  'Visa',
+const PAYMENT_ICONS: {label: string; slug: string}[] = [
+  {label: 'American Express', slug: 'amex'},
+  {label: 'Apple Pay', slug: 'apple-pay'},
+  {label: 'Bancontact', slug: 'bancontact'},
+  {label: 'Diners Club', slug: 'diners'},
+  {label: 'Discover', slug: 'discover'},
+  {label: 'Google Pay', slug: 'google-pay'},
+  {label: 'iDEAL', slug: 'ideal'},
+  {label: 'Mastercard', slug: 'mastercard'},
+  {label: 'PayPal', slug: 'paypal'},
+  {label: 'Shop Pay', slug: 'shop-pay'},
+  {label: 'Venmo', slug: 'venmo'},
+  {label: 'Visa', slug: 'visa'},
 ];
 
 export function MacornerFooter() {
@@ -80,41 +80,7 @@ export function MacornerFooter() {
           >
             Today Only: Secret privileges for you!
           </h2>
-          <form
-            action="#"
-            method="post"
-            className="mt-6 w-full mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 max-w-[600px]"
-          >
-            <label htmlFor="newsletter-email" className="sr-only">
-              Email
-            </label>
-            <input
-              id="newsletter-email"
-              type="email"
-              name="email"
-              placeholder=""
-              className="
-                w-full sm:w-[410px] h-[50px]
-                pl-4 pr-4
-                bg-white text-[15px] text-black
-                border border-[var(--color-newsletter-input-border)]
-                rounded-[8px]
-                outline-none focus:ring-2 focus:ring-[#FC6514]/30
-              "
-            />
-            <button
-              type="submit"
-              className="
-                h-[50px] px-[18px]
-                bg-[var(--color-newsletter-button)] text-white
-                text-[18px] md:text-[20px] font-bold tracking-wide whitespace-nowrap
-                rounded-[8px]
-                hover:bg-[#e85a10] transition-colors
-              "
-            >
-              REVEAL NOW
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
 
@@ -123,7 +89,7 @@ export function MacornerFooter() {
         <div className="max-w-[1440px] mx-auto px-[15px] md:px-[50px] py-[40px] md:py-[60px]">
           <div className="flex flex-col md:flex-row md:justify-center md:gap-[80px]">
             {/* Col 1: Shop By X */}
-            <div className="w-full md:w-[280px] mb-8 md:mb-0">
+            <FooterAccordionColumn heading="Shop By" width="md:w-[280px]">
               <ul className="list-none m-0 p-0">
                 {SHOP_NAV.map((nav) => (
                   <li key={nav.label}>
@@ -151,7 +117,7 @@ export function MacornerFooter() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </FooterAccordionColumn>
 
             {/* Col 2: Macorner */}
             <FooterMenuColumn
@@ -207,14 +173,17 @@ export function MacornerFooter() {
             </div>
           </div>
 
-          {/* Payment icons row — text badges until provider SVG assets are added */}
+          {/* Payment icons row */}
           <ul className="list-none mt-[40px] mx-[15px] md:mx-[37.5px] p-0 flex flex-wrap items-center justify-center gap-2">
-            {PAYMENT_BADGES.map((label) => (
-              <li
-                key={label}
-                className="h-[24px] px-2 flex items-center bg-white text-[11px] font-semibold tracking-tight text-[#0b2a4a] rounded-[3px]"
-              >
-                {label}
+            {PAYMENT_ICONS.map(({label, slug}) => (
+              <li key={slug}>
+                <img
+                  src={`/icons/payment/${slug}.svg`}
+                  alt={label}
+                  width={38}
+                  height={24}
+                  loading="lazy"
+                />
               </li>
             ))}
           </ul>
@@ -237,6 +206,109 @@ export function MacornerFooter() {
   );
 }
 
+// F.1: Newsletter form with Klaviyo useFetcher
+function NewsletterForm() {
+  const fetcher = useFetcher<typeof newsletterAction>();
+  const data = fetcher.data;
+  const isSubmitting = fetcher.state !== 'idle';
+
+  if (data?.success) {
+    return (
+      <p className="mt-6 text-[#0b2a4a] font-semibold text-[18px]">
+        You&apos;re subscribed!
+      </p>
+    );
+  }
+
+  return (
+    <div className="mt-6">
+      <fetcher.Form
+        action="/newsletter"
+        method="post"
+        className="w-full mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 max-w-[600px]"
+      >
+        <label htmlFor="newsletter-email" className="sr-only">
+          Email
+        </label>
+        <input
+          id="newsletter-email"
+          type="email"
+          name="email"
+          required
+          placeholder=""
+          className="
+            w-full sm:w-[410px] h-[50px]
+            pl-4 pr-4
+            bg-white text-[15px] text-black
+            border border-[var(--color-newsletter-input-border)]
+            rounded-[8px]
+            outline-none focus:ring-2 focus:ring-[#FC6514]/30
+          "
+        />
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="
+            h-[50px] px-[18px]
+            bg-[var(--color-newsletter-button)] text-white
+            text-[18px] md:text-[20px] font-bold tracking-wide whitespace-nowrap
+            rounded-[8px]
+            hover:bg-[#e85a10] transition-colors
+            disabled:opacity-70
+          "
+        >
+          {isSubmitting ? 'SUBSCRIBING...' : 'REVEAL NOW'}
+        </button>
+      </fetcher.Form>
+      {data?.error && (
+        <p className="mt-2 text-[#c0392b] text-[13px]">{data.error}</p>
+      )}
+    </div>
+  );
+}
+
+// F.3: Accordion column for mobile, expanded on desktop
+function FooterAccordionColumn({
+  heading,
+  children,
+  width,
+}: {
+  heading: string;
+  children: React.ReactNode;
+  width: string;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className={`w-full ${width}`}>
+      <button
+        type="button"
+        onClick={() => setIsOpen((o) => !o)}
+        className="flex w-full items-center justify-between min-[990px]:cursor-default py-3 min-[990px]:py-0 border-b border-white/20 min-[990px]:border-0 mb-0 min-[990px]:mb-4"
+        aria-expanded={isOpen}
+      >
+        <h2 className="text-[18px] font-medium leading-[23.4px] tracking-[0.6px] text-white m-0">
+          {heading}
+        </h2>
+        <ChevronDownIcon
+          width={16}
+          height={16}
+          className={`min-[990px]:hidden shrink-0 text-white transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-[max-height] duration-200 ${
+          isOpen ? 'max-h-[600px]' : 'max-h-0 min-[990px]:max-h-[9999px]'
+        } min-[990px]:max-h-[9999px] min-[990px]:overflow-visible`}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
 function FooterMenuColumn({
   heading,
   links,
@@ -246,6 +318,8 @@ function FooterMenuColumn({
   links: FooterLink[];
   width: string;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const linkClass = `
     inline-block
     text-[14px] font-normal leading-[25.2px] tracking-[0.6px] capitalize
@@ -253,12 +327,31 @@ function FooterMenuColumn({
     pb-[5px]
     hover:text-[#FC6514] transition-colors
   `;
+
   return (
-    <div className={`w-full ${width} mb-8 md:mb-0`}>
-      <h2 className="text-[18px] font-medium leading-[23.4px] tracking-[0.6px] text-white m-0 mb-[15px]">
-        {heading}
-      </h2>
-      <ul className="list-none m-0 p-0">
+    <div className={`w-full ${width}`}>
+      <button
+        type="button"
+        onClick={() => setIsOpen((o) => !o)}
+        className="flex w-full items-center justify-between min-[990px]:cursor-default py-3 min-[990px]:py-0 border-b border-white/20 min-[990px]:border-0 mb-0 min-[990px]:mb-[15px]"
+        aria-expanded={isOpen}
+      >
+        <h2 className="text-[18px] font-medium leading-[23.4px] tracking-[0.6px] text-white m-0">
+          {heading}
+        </h2>
+        <ChevronDownIcon
+          width={16}
+          height={16}
+          className={`min-[990px]:hidden shrink-0 text-white transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
+      <ul
+        className={`list-none m-0 p-0 overflow-hidden transition-[max-height] duration-200 ${
+          isOpen ? 'max-h-[600px]' : 'max-h-0 min-[990px]:max-h-[9999px]'
+        } min-[990px]:max-h-[9999px] min-[990px]:overflow-visible`}
+      >
         {links.map((link) => (
           <li key={link.label}>
             {link.external ? (

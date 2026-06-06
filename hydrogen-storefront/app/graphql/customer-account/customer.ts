@@ -83,3 +83,136 @@ export const CUSTOMER_ORDERS_QUERY = `#graphql
   }
   ${ORDER_ITEM_FRAGMENT}
 ` as const;
+
+export const CUSTOMER_ORDER_DETAIL_QUERY = `#graphql
+  query CustomerOrderDetail($orderId: ID!) {
+    order(id: $orderId) {
+      id
+      name
+      processedAt
+      financialStatus
+      fulfillments(first: 1) {
+        nodes {
+          status
+          trackingInformation {
+            company
+            number
+            url
+          }
+        }
+      }
+      lineItems(first: 100) {
+        nodes {
+          id
+          title
+          quantity
+          variantTitle
+          image {
+            url
+            altText
+            width
+            height
+          }
+          price {
+            amount
+            currencyCode
+          }
+          discountedTotalPrice {
+            amount
+            currencyCode
+          }
+          variant {
+            id
+            product {
+              handle
+            }
+          }
+        }
+      }
+      totalPrice {
+        amount
+        currencyCode
+      }
+      subtotal {
+        amount
+        currencyCode
+      }
+      totalTax {
+        amount
+        currencyCode
+      }
+      shippingAddress {
+        firstName
+        lastName
+        address1
+        address2
+        city
+        zoneCode
+        territoryCode
+        zip
+        phoneNumber
+      }
+    }
+  }
+` as const;
+
+export const CREATE_ADDRESS_MUTATION = `#graphql
+  mutation CreateAddress($address: CustomerAddressInput!) {
+    customerAddressCreate(address: $address) {
+      customerAddress {
+        id
+        ...CustomerAddress
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+  ${CUSTOMER_ADDRESS_FRAGMENT}
+` as const;
+
+export const UPDATE_ADDRESS_MUTATION = `#graphql
+  mutation UpdateAddress($addressId: ID!, $address: CustomerAddressInput!, $defaultAddress: Boolean) {
+    customerAddressUpdate(addressId: $addressId, address: $address, defaultAddress: $defaultAddress) {
+      customerAddress {
+        id
+        ...CustomerAddress
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+  ${CUSTOMER_ADDRESS_FRAGMENT}
+` as const;
+
+export const DELETE_ADDRESS_MUTATION = `#graphql
+  mutation DeleteAddress($addressId: ID!) {
+    customerAddressDelete(addressId: $addressId) {
+      deletedAddressId
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+` as const;
+
+export const SET_DEFAULT_ADDRESS_MUTATION = `#graphql
+  mutation SetDefaultAddress($addressId: ID!) {
+    customerDefaultAddressUpdate(addressId: $addressId) {
+      customer {
+        id
+        defaultAddress {
+          id
+        }
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+` as const;

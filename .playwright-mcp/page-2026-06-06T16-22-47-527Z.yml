@@ -1,0 +1,425 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Macorner" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Macorner" [ref=e9]
+      - search [ref=e12]:
+        - generic [ref=e13]:
+          - combobox "Search" [ref=e14]
+          - generic: Search
+          - button "Search" [ref=e15] [cursor=pointer]:
+            - img
+        - status [ref=e16]
+      - generic [ref=e17]:
+        - link "Log in Sign In" [ref=e18] [cursor=pointer]:
+          - /url: /account/login
+          - generic [ref=e19]: Log in
+          - generic [ref=e20]: Sign In
+        - link "Wishlist" [ref=e23] [cursor=pointer]:
+          - /url: /pages/wishlist
+          - generic [ref=e24]: Wishlist
+        - link "Track Order" [ref=e26] [cursor=pointer]:
+          - /url: /pages/tracking-order
+        - generic [ref=e27] [cursor=pointer]:
+          - img "Flags country" [ref=e29]
+          - generic [ref=e30]: United States
+        - link "Cart" [ref=e31] [cursor=pointer]:
+          - /url: /cart
+          - img
+          - generic [ref=e33]: "0"
+    - navigation [ref=e34]:
+      - list [ref=e35]:
+        - listitem [ref=e36]:
+          - link "Graduation" [ref=e37] [cursor=pointer]:
+            - /url: https://macorner.co/collections/graduation?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e38]: Graduation
+        - listitem [ref=e39]:
+          - link "Father's Day" [ref=e40] [cursor=pointer]:
+            - /url: https://macorner.co/pages/gifts-for-dad?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e41]: Father's Day
+        - listitem [ref=e42]:
+          - group [ref=e44]:
+            - button "Gifts" [ref=e45] [cursor=pointer]:
+              - link "Gifts" [ref=e46]:
+                - /url: "#"
+        - listitem [ref=e47]:
+          - group [ref=e49]:
+            - button "Home & Living" [ref=e50] [cursor=pointer]:
+              - link "Home & Living" [ref=e51]:
+                - /url: https://macorner.co/collections/home-and-living?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e52]:
+          - group [ref=e54]:
+            - button "Drink & Barware" [ref=e55] [cursor=pointer]:
+              - link "Drink & Barware" [ref=e56]:
+                - /url: https://macorner.co/collections/drink-and-barware?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e57]:
+          - group [ref=e59]:
+            - button "Apparel" [ref=e60] [cursor=pointer]:
+              - link "Apparel" [ref=e61]:
+                - /url: https://macorner.co/collections/apparel?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e62]:
+          - group [ref=e64]:
+            - button "Accessories" [ref=e65] [cursor=pointer]:
+              - link "Accessories" [ref=e66]:
+                - /url: https://macorner.co/collections/accessories?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e67]:
+          - group [ref=e69]:
+            - button "Interests" [ref=e70] [cursor=pointer]:
+              - link "Interests" [ref=e71]:
+                - /url: "#"
+        - listitem [ref=e72]:
+          - link "Happy Customers" [ref=e73] [cursor=pointer]:
+            - /url: https://macorner.co/pages/reviews?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e74]: Happy Customers
+  - main [ref=e75]:
+    - generic [ref=e79]:
+      - generic [ref=e84]:
+        - heading "Personalized Shirt" [level=1] [ref=e85]
+        - paragraph [ref=e86]: From milestones to everyday moments, our custom shirts are made to fit every personality.
+      - generic [ref=e88]:
+        - generic [ref=e93]:
+          - generic [ref=e98]:
+            - img "Funny Shirts" [ref=e99] [cursor=pointer]
+            - heading "Funny" [level=3] [ref=e100]:
+              - link "Funny" [ref=e101] [cursor=pointer]:
+                - /url: /collections/funny-shirts
+              - img [ref=e102]
+          - generic [ref=e107]:
+            - img "Shirts For Pet Lover.png__PID:50e92c90-869e-46cc-bb95-9fb777ea3203" [ref=e108] [cursor=pointer]
+            - heading "Pet Lover" [level=3] [ref=e109]:
+              - link "Pet Lover" [ref=e110] [cursor=pointer]:
+                - /url: /collections/shirt-for-pet-lovers
+              - img [ref=e111]
+          - generic [ref=e116]:
+            - img "Shirts For Book Lover" [ref=e117] [cursor=pointer]
+            - heading "Book Lover" [level=3] [ref=e118]:
+              - link "Book Lover" [ref=e119] [cursor=pointer]:
+                - /url: /collections/shirts-for-book-lover
+              - img [ref=e120]
+          - generic [ref=e125]:
+            - img "Memorial Shirts.png__PID:163cd6c0-2ca4-40e9-ac90-869ea6cc7b95" [ref=e126] [cursor=pointer]
+            - heading "Memorial" [level=3] [ref=e127]:
+              - link "Memorial" [ref=e128] [cursor=pointer]:
+                - /url: /collections/memorial-shirt
+              - img [ref=e129]
+          - generic [ref=e134]:
+            - img "Shirts For Family.png__PID:0386fe9b-ca0d-4764-84af-149c8bd62e8e" [ref=e135] [cursor=pointer]
+            - heading "Family" [level=3] [ref=e136]:
+              - link "Family" [ref=e137] [cursor=pointer]:
+                - /url: /collections/shirt-family
+              - img [ref=e138]
+          - generic [ref=e143]:
+            - img "Shirts For Couple.png__PID:2ca450e9-2c90-469e-a6cc-7b959fb777ea" [ref=e144] [cursor=pointer]
+            - heading "Couple" [level=3] [ref=e145]:
+              - link "Couple" [ref=e146] [cursor=pointer]:
+                - /url: /collections/shirts-for-couple
+              - img [ref=e147]
+          - generic [ref=e152]:
+            - img "Shirts For Friends.png__PID:a450e92c-9086-4ea6-8c7b-959fb777ea32" [ref=e153] [cursor=pointer]
+            - heading "Friend" [level=3] [ref=e154]:
+              - link "Friend" [ref=e155] [cursor=pointer]:
+                - /url: /collections/shirt-for-friend
+              - img [ref=e156]
+          - generic [ref=e161]:
+            - img "Shirts For Travel Lovers" [ref=e162] [cursor=pointer]
+            - heading "Travel Lover" [level=3] [ref=e163]:
+              - link "Travel Lover" [ref=e164] [cursor=pointer]:
+                - /url: /collections/summer-shirt
+              - img [ref=e165]
+        - generic [ref=e168]:
+          - heading "The Top Shirts Everyone’s Obsessed With" [level=2] [ref=e169]
+          - generic [ref=e171]:
+            - generic [ref=e177]:
+              - img "Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt" [ref=e185] [cursor=pointer]
+              - heading "Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt" [level=3] [ref=e186] [cursor=pointer]
+              - generic [ref=e187]:
+                - generic [ref=e188]: $24.95
+                - generic [ref=e189]: $34.95
+            - generic [ref=e195]:
+              - img "Fatherhood_Is_Kingdom_Work_Personalized_Shirt_1" [ref=e203] [cursor=pointer]
+              - heading "Father's Day Gifts, Fatherhood Is Kingdom Work - Personalized Shirt" [level=3] [ref=e204] [cursor=pointer]
+              - generic [ref=e205]:
+                - generic [ref=e206]: $29.95
+                - generic [ref=e207]: $40.95
+            - generic [ref=e213]:
+              - img "Vintage_Photo_And_Year_Senior_Personalized_Shirt_1" [ref=e221] [cursor=pointer]
+              - heading "Vintage Photo And Year Senior - Personalized Shirt" [level=3] [ref=e222] [cursor=pointer]
+              - generic [ref=e224]: $29.95
+            - generic [ref=e230]:
+              - img "Father's Day Gifts, Dad The Man The Myth The Legend - Personalized Shirt Father's Day" [ref=e238] [cursor=pointer]
+              - heading "Father's Day Gifts, Dad The Man The Myth The Legend - Personalized Shirt Father's Day" [level=3] [ref=e239] [cursor=pointer]
+              - generic [ref=e240]:
+                - generic [ref=e241]: $24.95
+                - generic [ref=e242]: $34.95
+            - generic [ref=e248]:
+              - img "Fathers-Day-Gift-For-Husband-Dad-Custom-Photo-Sketch-Line-Art-Personalized-Shirt-1" [ref=e256] [cursor=pointer]
+              - heading "Father's Day Gifts, Father's Day Gift For Husband, Dad Custom Photo Sketch Line Art - Personalized Shirt" [level=3] [ref=e257] [cursor=pointer]
+              - generic [ref=e258]:
+                - generic [ref=e259]: $26.95
+                - generic [ref=e260]: $34.95
+            - generic [ref=e266]:
+              - img "Best-Dad-Ever-Arcade-Theme-Personalized-Shirt-1" [ref=e274] [cursor=pointer]
+              - heading "Father's Day Gifts, Best Dad Ever Arcade Theme - Personalized Shirt" [level=3] [ref=e275] [cursor=pointer]
+              - generic [ref=e276]:
+                - generic [ref=e277]: $24.95
+                - generic [ref=e278]: $34.95
+            - generic [ref=e284]:
+              - img "Name In Nautical Flags - Personalized Shirt" [ref=e292] [cursor=pointer]
+              - heading "Name In Nautical Flags - Personalized Shirt" [level=3] [ref=e293] [cursor=pointer]
+              - generic [ref=e294]:
+                - generic [ref=e295]: $24.95
+                - generic [ref=e296]: $34.95
+            - generic [ref=e302]:
+              - img "Father's Day Gifts, Legend, Husband, Dad And Grandpa Custom Family Name - Personalized Shirt" [ref=e310] [cursor=pointer]
+              - heading "Father's Day Gifts, Legend, Husband, Dad And Grandpa Custom Family Name - Personalized Shirt" [level=3] [ref=e311] [cursor=pointer]
+              - generic [ref=e312]:
+                - generic [ref=e313]: $29.95
+                - generic [ref=e314]: $40.95
+            - generic [ref=e320]:
+              - img "Family_Matching_Graduation_Personalized_Shirt_1" [ref=e328] [cursor=pointer]
+              - heading "Family Matching Graduation - Personalized Shirt" [level=3] [ref=e329] [cursor=pointer]
+              - generic [ref=e330]:
+                - generic [ref=e331]: $24.95
+                - generic [ref=e332]: $34.95
+            - generic [ref=e338]:
+              - img "Pre K Graduation - Personalized Shirt" [ref=e346] [cursor=pointer]
+              - heading "Pre K Graduation - Personalized Shirt" [level=3] [ref=e347] [cursor=pointer]
+              - generic [ref=e349]: $24.99
+          - link "Shop All Shirts" [ref=e350] [cursor=pointer]:
+            - /url: /collections/personalized-shirt
+            - text: Shop All Shirts
+            - img [ref=e351]
+        - generic [ref=e354]:
+          - heading "Why Macorner is the Best Place to Shop" [level=2] [ref=e355]
+          - generic [ref=e357]:
+            - generic [ref=e360]:
+              - img "Perfect for Gifting.png__PID:16872816-389e-4664-a8ef-45a53c6746ef" [ref=e363]
+              - generic [ref=e365]:
+                - heading "Perfect for Gifting" [level=4] [ref=e366]
+                - paragraph [ref=e367]: The ideal gift that suit different styles.
+            - generic [ref=e370]:
+              - img "Unmatched Quality.png__PID:2816389e-7664-48ef-85a5-3c6746ef854d" [ref=e373]
+              - generic [ref=e375]:
+                - heading "Trusted Quality" [level=4] [ref=e376]
+                - paragraph [ref=e377]: Soft, breathable cotton for all-day comfort.
+            - generic [ref=e380]:
+              - img "Versatile Styles.png__PID:16389e76-64e8-4f45-a53c-6746ef854d83" [ref=e383]
+              - generic [ref=e385]:
+                - heading "Versatile Styles" [level=4] [ref=e386]
+                - paragraph [ref=e387]: Designs for every occasion and taste.
+            - generic [ref=e390]:
+              - img "Quicker Delivery.png__PID:87281638-9e76-44e8-af45-a53c6746ef85" [ref=e393]
+              - generic [ref=e395]:
+                - heading "Quicker Delivery" [level=4] [ref=e396]
+                - paragraph [ref=e397]: Fast processing and reliable shipping.
+        - generic [ref=e400]:
+          - heading "Happy Customer Snapshots in Our T-Shirts" [level=2] [ref=e401]
+          - generic [ref=e403]:
+            - img "Shirt Review" [ref=e409] [cursor=pointer]
+            - img "Shirt Review" [ref=e415] [cursor=pointer]
+            - img "Shirt Review" [ref=e421] [cursor=pointer]
+            - img "Shirt Review" [ref=e427] [cursor=pointer]
+            - img "Shirt Review" [ref=e433] [cursor=pointer]
+            - img "Shirt Review" [ref=e439] [cursor=pointer]
+            - img "Shirt Review" [ref=e445] [cursor=pointer]
+            - img "Shirt Review" [ref=e451] [cursor=pointer]
+            - img "Shirt Review" [ref=e457] [cursor=pointer]
+            - img "Shirt Review" [ref=e463] [cursor=pointer]
+            - button "Next" [ref=e464] [cursor=pointer]
+            - generic [ref=e465]:
+              - button [ref=e466] [cursor=pointer]
+              - button [ref=e467] [cursor=pointer]
+              - button [ref=e468] [cursor=pointer]
+        - generic [ref=e471]:
+          - heading "Frequently Asked Questions" [level=2] [ref=e472]
+          - generic [ref=e473]:
+            - group [ref=e474]:
+              - generic "How long will it take for my shirts to ship during the holiday season?" [ref=e475] [cursor=pointer]:
+                - generic [ref=e476]:
+                  - img
+                  - text: How long will it take for my shirts to ship during the holiday season?
+              - paragraph [ref=e483]: Typically, processing takes 1-3 days and shipping takes 4-7 days. However, due to high demand during the busy holiday season, we recommend placing your order as soon as possible to avoid any shipping delays.
+            - group [ref=e484]:
+              - generic "What styles do you offer?" [ref=e485] [cursor=pointer]:
+                - generic [ref=e486]:
+                  - img
+                  - text: What styles do you offer?
+            - group [ref=e487]:
+              - generic "What materials are your shirts made of?" [ref=e488] [cursor=pointer]:
+                - generic [ref=e489]:
+                  - img
+                  - text: What materials are your shirts made of?
+            - group [ref=e490]:
+              - generic "Are the colors of the shirts, sweaters, and hoodies true to what I see online?" [ref=e491] [cursor=pointer]:
+                - generic [ref=e492]:
+                  - img
+                  - text: Are the colors of the shirts, sweaters, and hoodies true to what I see online?
+            - group [ref=e493]:
+              - generic "Are the designs on your shirts, sweaters, and hoodies printed or embroidered?" [ref=e494] [cursor=pointer]:
+                - generic [ref=e495]:
+                  - img
+                  - text: Are the designs on your shirts, sweaters, and hoodies printed or embroidered?
+  - generic [ref=e496]:
+    - contentinfo [ref=e497]:
+      - generic [ref=e500]:
+        - generic [ref=e503]:
+          - 'heading "Today Only: Secret privileges for you!" [level=1] [ref=e507]'
+          - generic [ref=e508]:
+            - textbox "Your email address" [ref=e511]
+            - button "REVEAL NOW" [ref=e513] [cursor=pointer]
+        - alert [ref=e514]
+      - generic [ref=e516]:
+        - list [ref=e518]:
+          - listitem [ref=e519]:
+            - link "Gift Finder" [ref=e520] [cursor=pointer]:
+              - /url: https://macorner.co/pages/gift-finder?utm_source=desktop&utm_medium=footer
+          - listitem [ref=e521]:
+            - link "Shop By Product" [ref=e522] [cursor=pointer]:
+              - /url: /collections/all
+              - text: Shop By Product
+              - img
+          - listitem [ref=e523]:
+            - link "Shop by Occasion" [ref=e524] [cursor=pointer]:
+              - /url: /pages/shop-by-occasion
+              - text: Shop by Occasion
+              - img
+          - listitem [ref=e525]:
+            - link "Shop By Recipient" [ref=e526] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Recipient
+              - img
+          - listitem [ref=e527]:
+            - link "Shop By Hobby" [ref=e528] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Hobby
+              - img
+        - generic [ref=e529]:
+          - heading "Macorner" [level=2] [ref=e530]: Macorner
+          - list [ref=e531]:
+            - listitem [ref=e532]:
+              - link "About us" [ref=e533] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e534]:
+              - link "Privacy Policy" [ref=e535] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e536]:
+              - link "Accessibility Statement" [ref=e537] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e538]:
+          - heading "Help and Support" [level=2] [ref=e539]: Help and Support
+          - list [ref=e540]:
+            - listitem [ref=e541]:
+              - link "2026 Father's Day Delivery Cut-Off Dates" [ref=e542] [cursor=pointer]:
+                - /url: https://macorner.co/pages/2026-fathers-day-delivery-cut-off-dates
+            - listitem [ref=e543]:
+              - link "Return Policy" [ref=e544] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e545]:
+              - link "Help Center" [ref=e546] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e547]:
+              - link "Size Chart" [ref=e548] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e549]:
+              - link "Shipping And Delivery" [ref=e550] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e551]:
+              - link "Cancellation & Modification Policy" [ref=e552] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e553]:
+              - link "Refund & Replacement Policy" [ref=e554] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e555]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e556] [cursor=pointer]:
+                - /url: https://macorner.co/pages/disclaimer-regarding-fake-websites
+        - generic [ref=e558]:
+          - heading "GET IN TOUCH" [level=2] [ref=e559]
+          - paragraph [ref=e561]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e562] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e563]:
+            - listitem [ref=e564]:
+              - link "Facebook" [ref=e565] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img
+                - generic [ref=e566]: Facebook
+            - listitem [ref=e567]:
+              - link "Instagram" [ref=e568] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img
+                - generic [ref=e569]: Instagram
+            - listitem [ref=e570]:
+              - link "Vimeo" [ref=e571] [cursor=pointer]:
+                - /url: https://www.amazon.com/stores/page/3F9A8588-C207-4C07-9774-E3D24490E8A3
+                - img
+                - generic [ref=e572]: Vimeo
+            - listitem [ref=e573]:
+              - link "Twitter" [ref=e574] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img
+                - generic [ref=e575]: Twitter
+            - listitem [ref=e576]:
+              - link "TikTok" [ref=e577] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img
+                - generic [ref=e578]: TikTok
+            - listitem [ref=e579]:
+              - link "Pinterest" [ref=e580] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img
+                - generic [ref=e581]: Pinterest
+    - generic [ref=e582]:
+      - generic [ref=e584]:
+        - generic [ref=e585]: Payment methods
+        - list [ref=e586]:
+          - listitem [ref=e587]:
+            - img
+          - listitem [ref=e588]:
+            - img
+          - listitem [ref=e589]:
+            - img
+          - listitem [ref=e590]:
+            - img
+          - listitem [ref=e591]:
+            - img
+          - listitem [ref=e592]:
+            - img
+          - listitem [ref=e593]:
+            - img
+          - listitem [ref=e594]:
+            - img
+          - listitem [ref=e595]:
+            - img
+          - listitem [ref=e596]:
+            - img
+          - listitem [ref=e597]:
+            - img
+          - listitem [ref=e598]:
+            - img
+          - listitem [ref=e599]:
+            - img
+          - listitem [ref=e600]:
+            - link "DMCA.com Protection Status" [ref=e602] [cursor=pointer]:
+              - /url: https://www.dmca.com/Protection/Status.aspx?ID=05a441c4-efe1-422e-b8a8-b9326f259e04&refurl=https://macorner.co/collections/shirt
+              - img "DMCA.com Protection Status" [ref=e603]
+      - list [ref=e606]:
+        - listitem [ref=e607]:
+          - link "Terms Of Services" [ref=e608] [cursor=pointer]:
+            - /url: /pages/terms-of-services
+        - listitem [ref=e609]:
+          - text: •
+          - link "Privacy Policy" [ref=e610] [cursor=pointer]:
+            - /url: /pages/privacy-policy
+          - text: •
+        - listitem [ref=e611]: MA Commerce Inc.
+  - generic [ref=e612] [cursor=pointer]:
+    - img
+  - iframe [ref=e613]:
+    
+  - iframe [ref=e614]:
+    - generic [ref=f40e1] [cursor=pointer]:
+      - img "Help" [ref=f40e2]
+      - generic [ref=f40e4]: Help

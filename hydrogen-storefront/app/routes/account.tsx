@@ -1,5 +1,13 @@
 import {Form, NavLink, Outlet} from 'react-router';
 import type {Route} from './+types/account';
+
+export function meta() {
+  return [
+    {title: 'My Account — Macorner'},
+    {name: 'description', content: 'Manage your Macorner account, orders, and addresses.'},
+    {name: 'robots', content: 'noindex'},
+  ];
+}
 import {CUSTOMER_DETAILS_QUERY} from '~/graphql/customer-account/customer';
 
 export async function loader({context}: Route.LoaderArgs) {
@@ -53,6 +61,9 @@ export default function AccountLayout({loaderData}: Route.ComponentProps) {
       <nav className="flex flex-wrap gap-2 border-b border-[var(--color-header-border)] pb-5 mb-8">
         <NavLink to="/account/orders" className={navLinkClass}>
           Orders
+        </NavLink>
+        <NavLink to="/account/addresses" className={navLinkClass}>
+          Addresses
         </NavLink>
         <NavLink to="/account/profile" className={navLinkClass}>
           Profile

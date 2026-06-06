@@ -1,25 +1,21 @@
-export const RELATED_PRODUCTS_QUERY = `#graphql
-  query GetRelatedProducts(
-    $handle: String!
+export const PRODUCT_RECOMMENDATIONS_QUERY = `#graphql
+  query GetProductRecommendations(
+    $productId: ID!
     $country: CountryCode
     $language: LanguageCode
   ) @inContext(country: $country, language: $language) {
-    collection(handle: $handle) {
-      products(first: 5) {
-        nodes {
-          id
-          title
-          handle
-          featuredImage {
-            url
-            altText
-          }
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
+    productRecommendations(productId: $productId, intent: RELATED) {
+      id
+      title
+      handle
+      featuredImage {
+        url
+        altText
+      }
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
         }
       }
     }
@@ -42,8 +38,22 @@ export const PRODUCT_QUERY = `#graphql
       vendor
       productType
       tags
+      seo {
+        title
+        description
+      }
       personalizationField: metafield(namespace: "custom", key: "personalization") {
         value
+      }
+      collections(first: 6) {
+        nodes {
+          title
+          handle
+          image {
+            url
+            altText
+          }
+        }
       }
       images(first: 20) {
         nodes {

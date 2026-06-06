@@ -5,6 +5,7 @@ import type {MenuItemNode} from '~/lib/navigation';
 import {SearchFormPredictive} from '~/components/SearchFormPredictive';
 import {useAside} from '~/components/Aside';
 import {useWishlist} from '~/lib/useWishlist';
+import {useRecentSearches} from '~/lib/useRecentSearches';
 import {MacornerSearchOverlay} from './SearchOverlay';
 import {
   ArrowLeftIcon,
@@ -25,8 +26,15 @@ export function MacornerHeader({navigationTree, cart}: Props) {
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [desktopSearchFocused, setDesktopSearchFocused] = useState(false);
   const {type, open: openAside} = useAside();
   const prevTypeRef = useRef<string>('closed');
+  const {
+    searches: recentSearches,
+    save: saveSearch,
+    remove: removeSearch,
+    clear: clearSearches,
+  } = useRecentSearches();
 
   useEffect(() => {
     if (prevTypeRef.current === 'mobile' && type === 'closed') {
@@ -60,7 +68,7 @@ export function MacornerHeader({navigationTree, cart}: Props) {
             ref={hamburgerRef}
             aria-label="Open menu"
             onClick={() => openAside('mobile')}
-            className="min-[990px]:hidden w-[18px] h-[18px] inline-flex items-center justify-center text-[var(--color-header-text)]"
+            className="min-[990px]:hidden w-[18px] h-[18px] inline-flex items-center justify-center text-[var(--color-header-text)] cursor-pointer"
           >
             <MenuIcon width={18} height={18} />
           </button>
@@ -86,50 +94,64 @@ export function MacornerHeader({navigationTree, cart}: Props) {
             className="hidden min-[990px]:flex flex-1 max-w-[602px] relative"
           >
             <SearchFormPredictive className="w-full">
-              {({inputRef, fetchResults, goToSearch}) => (
-                <>
-                  <div className="relative w-full h-[50px]">
-                    <input
-                      ref={inputRef}
-                      name="q"
-                      onChange={fetchResults}
-                      onKeyDown={(e) => e.key === 'Enter' && goToSearch()}
-                      placeholder="Search"
-                      aria-label="Search"
-                      className="
-                        w-full h-[48px] mx-px
-                        pl-[15px] pr-[98px] py-[15px]
-                        bg-white text-[15px] leading-[22.5px]
-                        text-[rgb(18,18,18)]
-                        placeholder:text-[rgb(209,214,220)]
-                        outline-none
-                        border border-[var(--color-header-search-border)]
-                        rounded-[25px]
-                        focus:border-[#FC6514]
-                        transition-colors
-                      "
+              {({inputRef, fetchResults, goToSearch}) => {
+                function handleGoToSearch() {
+                  const q = inputRef.current?.value?.trim() ?? '';
+                  if (q) saveSearch(q);
+                  goToSearch();
+                }
+                return (
+                  <>
+                    <div className="relative w-full h-[50px]">
+                      <input
+                        ref={inputRef}
+                        name="q"
+                        onChange={fetchResults}
+                        onFocus={() => setDesktopSearchFocused(true)}
+                        onBlur={() => setDesktopSearchFocused(false)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleGoToSearch()}
+                        placeholder="Search"
+                        aria-label="Search"
+                        className="
+                          w-full h-[48px] mx-px
+                          pl-[15px] pr-[98px] py-[15px]
+                          bg-white text-[15px] leading-[22.5px]
+                          text-[rgb(18,18,18)]
+                          placeholder:text-[rgb(209,214,220)]
+                          outline-none
+                          border border-[var(--color-header-search-border)]
+                          rounded-[25px]
+                          focus:border-[#FC6514]
+                          transition-colors
+                        "
+                      />
+                      <button
+                        type="button"
+                        onClick={handleGoToSearch}
+                        aria-label="Search"
+                        className="
+                          absolute top-1/2 -translate-y-1/2 right-[7px]
+                          w-9 h-9 inline-flex items-center justify-center
+                          rounded-full bg-[#FC6514] text-white
+                          hover:bg-[#e85a10] transition-colors cursor-pointer
+                        "
+                      >
+                        <SearchIcon width={18} height={18} />
+                      </button>
+                    </div>
+                    <MacornerSearchOverlay
+                      goToSearch={handleGoToSearch}
+                      inputRef={inputRef}
+                      containerRef={searchContainerRef}
+                      isInputFocused={desktopSearchFocused}
+                      recentSearches={recentSearches}
+                      onSaveSearch={saveSearch}
+                      onRemoveSearch={removeSearch}
+                      onClearSearches={clearSearches}
                     />
-                    <button
-                      type="button"
-                      onClick={goToSearch}
-                      aria-label="Search"
-                      className="
-                        absolute top-1/2 -translate-y-1/2 right-[7px]
-                        w-9 h-9 inline-flex items-center justify-center
-                        rounded-full bg-[#FC6514] text-white
-                        hover:bg-[#e85a10] transition-colors
-                      "
-                    >
-                      <SearchIcon width={18} height={18} />
-                    </button>
-                  </div>
-                  <MacornerSearchOverlay
-                    goToSearch={goToSearch}
-                    inputRef={inputRef}
-                    containerRef={searchContainerRef}
-                  />
-                </>
-              )}
+                  </>
+                );
+              }}
             </SearchFormPredictive>
           </div>
 
@@ -163,7 +185,7 @@ export function MacornerHeader({navigationTree, cart}: Props) {
             <button
               type="button"
               aria-label="Choose region"
-              className="flex items-center text-[15px] font-medium leading-[22.5px] tracking-[0.6px] text-[var(--color-brand-body)] hover:text-[#FC6514] transition-colors"
+              className="flex items-center text-[15px] font-medium leading-[22.5px] tracking-[0.6px] text-[var(--color-brand-body)] hover:text-[#FC6514] transition-colors cursor-pointer"
             >
               <span className="relative w-10 h-[13.3px] flex items-center">
                 <img
@@ -198,7 +220,7 @@ export function MacornerHeader({navigationTree, cart}: Props) {
             <button
               aria-label="Search"
               onClick={() => setMobileSearchOpen(true)}
-              className="w-[18px] h-[22px] inline-flex items-center justify-center"
+              className="w-[18px] h-[22px] inline-flex items-center justify-center cursor-pointer"
             >
               <SearchIcon width={18} height={19} />
             </button>
@@ -383,7 +405,13 @@ export function MacornerHeader({navigationTree, cart}: Props) {
 
       {/* Mobile search overlay */}
       {mobileSearchOpen && (
-        <MobileSearchOverlay onClose={closeMobileSearch} />
+        <MobileSearchOverlay
+          onClose={closeMobileSearch}
+          recentSearches={recentSearches}
+          onSaveSearch={saveSearch}
+          onRemoveSearch={removeSearch}
+          onClearSearches={clearSearches}
+        />
       )}
     </header>
   );
@@ -435,7 +463,19 @@ function CartBadge({
   );
 }
 
-function MobileSearchOverlay({onClose}: {onClose: () => void}) {
+function MobileSearchOverlay({
+  onClose,
+  recentSearches,
+  onSaveSearch,
+  onRemoveSearch,
+  onClearSearches,
+}: {
+  onClose: () => void;
+  recentSearches: string[];
+  onSaveSearch: (term: string) => void;
+  onRemoveSearch: (term: string) => void;
+  onClearSearches: () => void;
+}) {
   const panelRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -453,72 +493,76 @@ function MobileSearchOverlay({onClose}: {onClose: () => void}) {
         className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md relative"
       >
         <SearchFormPredictive className="w-full">
-          {({inputRef, fetchResults, goToSearch}) => (
-            <>
-              <div className="flex items-center gap-3 px-4 h-[60px]">
-                <button
-                  type="button"
-                  aria-label="Close search"
-                  onClick={onClose}
-                  className="shrink-0 text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
-                >
-                  <ArrowLeftIcon width={20} height={20} />
-                </button>
-                <input
-                  ref={inputRef}
-                  name="q"
-                  autoFocus
-                  onChange={fetchResults}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                      goToSearch();
-                      onClose();
-                    }
-                    if (e.key === 'Escape') onClose();
-                  }}
-                  placeholder="Search products..."
-                  aria-label="Search"
-                  className="
-                    flex-1 h-[40px]
-                    px-[14px]
-                    bg-[#f5f5f5]
-                    text-[15px]
-                    text-[rgb(18,18,18)]
-                    placeholder:text-[rgb(180,185,192)]
-                    outline-none
-                    border border-transparent
-                    rounded-[20px]
-                    focus:border-[#FC6514] focus:bg-white
-                    transition-colors
-                  "
+          {({inputRef, fetchResults, goToSearch}) => {
+            function handleGoToSearch() {
+              const q = inputRef.current?.value?.trim() ?? '';
+              if (q) onSaveSearch(q);
+              goToSearch();
+              onClose();
+            }
+            return (
+              <>
+                <div className="flex items-center gap-3 px-4 h-[60px]">
+                  <button
+                    type="button"
+                    aria-label="Close search"
+                    onClick={onClose}
+                    className="shrink-0 text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors cursor-pointer"
+                  >
+                    <ArrowLeftIcon width={20} height={20} />
+                  </button>
+                  <input
+                    ref={inputRef}
+                    name="q"
+                    autoFocus
+                    onChange={fetchResults}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') handleGoToSearch();
+                      if (e.key === 'Escape') onClose();
+                    }}
+                    placeholder="Search products..."
+                    aria-label="Search"
+                    className="
+                      flex-1 h-[40px]
+                      px-[14px]
+                      bg-[#f5f5f5]
+                      text-[15px]
+                      text-[rgb(18,18,18)]
+                      placeholder:text-[rgb(180,185,192)]
+                      outline-none
+                      border border-transparent
+                      rounded-[20px]
+                      focus:border-[#FC6514] focus:bg-white
+                      transition-colors
+                    "
+                  />
+                  <button
+                    type="button"
+                    onClick={handleGoToSearch}
+                    aria-label="Search"
+                    className="
+                      shrink-0 w-9 h-9
+                      inline-flex items-center justify-center
+                      rounded-full bg-[#FC6514] text-white
+                      hover:bg-[#e85a10] transition-colors cursor-pointer
+                    "
+                  >
+                    <SearchIcon width={16} height={16} />
+                  </button>
+                </div>
+                <MacornerSearchOverlay
+                  goToSearch={handleGoToSearch}
+                  inputRef={inputRef}
+                  containerRef={panelRef}
+                  isInputFocused={true}
+                  recentSearches={recentSearches}
+                  onSaveSearch={onSaveSearch}
+                  onRemoveSearch={onRemoveSearch}
+                  onClearSearches={onClearSearches}
                 />
-                <button
-                  type="button"
-                  onClick={() => {
-                    goToSearch();
-                    onClose();
-                  }}
-                  aria-label="Search"
-                  className="
-                    shrink-0 w-9 h-9
-                    inline-flex items-center justify-center
-                    rounded-full bg-[#FC6514] text-white
-                    hover:bg-[#e85a10] transition-colors
-                  "
-                >
-                  <SearchIcon width={16} height={16} />
-                </button>
-              </div>
-              <MacornerSearchOverlay
-                goToSearch={() => {
-                  goToSearch();
-                  onClose();
-                }}
-                inputRef={inputRef}
-                containerRef={panelRef}
-              />
-            </>
-          )}
+              </>
+            );
+          }}
         </SearchFormPredictive>
       </div>
     </>

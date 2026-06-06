@@ -1,4 +1,4 @@
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 
 export interface PersonalizationField {
   key: string;
@@ -13,12 +13,21 @@ export interface PersonalizationField {
 interface PersonalizerProps {
   fields: PersonalizationField[];
   onChange: (values: Record<string, string>) => void;
+  onUploadStatusChange?: (isUploading: boolean) => void;
 }
 
-export function Personalizer({fields, onChange}: PersonalizerProps) {
+export function Personalizer({
+  fields,
+  onChange,
+  onUploadStatusChange,
+}: PersonalizerProps) {
   const [values, setValues] = useState<Record<string, string>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [previews, setPreviews] = useState<Record<string, string>>({});
+  const [isUploading, setIsUploading] = useState(false);
+
+  useEffect(() => {
+    onUploadStatusChange?.(isUploading);
+  }, [isUploading]);
 
   if (fields.length === 0) return null;
 
@@ -51,12 +60,9 @@ export function Personalizer({fields, onChange}: PersonalizerProps) {
           field={field}
           value={values[field.key] ?? ''}
           error={errors[field.key]}
-          preview={previews[field.key]}
           onChange={(val) => updateValue(field.key, val)}
           onBlur={() => validateField(field, values[field.key] ?? '')}
-          onPreview={(dataUrl) =>
-            setPreviews((prev) => ({...prev, [field.key]: dataUrl}))
-          }
+          onUploadStatusChange={setIsUploading}
         />
       ))}
     </div>
@@ -67,20 +73,30 @@ function FieldInput({
   field,
   value,
   error,
-  preview,
   onChange,
   onBlur,
-  onPreview,
+  onUploadStatusChange,
 }: {
   field: PersonalizationField;
   value: string;
   error?: string;
-  preview?: string;
   onChange: (val: string) => void;
   onBlur: () => void;
-  onPreview: (dataUrl: string) => void;
+  onUploadStatusChange: (isUploading: boolean) => void;
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+  const [uploadStatus, setUploadStatus] = useState<
+    'idle' | 'uploading' | 'done' | 'error'
+  >('idle');
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  // Revoke object URL on unmount or when preview changes
+  useEffect(() => {
+    return () => {
+      if (preview) URL.revokeObjectURL(preview);
+    };
+  }, [preview]);
 
   const labelEl = (
     <label className="text-sm font-medium text-[rgb(18,18,18)]">
@@ -159,20 +175,46 @@ function FieldInput({
   }
 
   if (field.type === 'image') {
-    function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+    async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
       const file = e.target.files?.[0];
       if (!file) return;
-      if (file.size > 10 * 1024 * 1024) {
-        alert('Image must be under 10 MB');
-        return;
+
+      // Immediate preview via object URL (not data-URL)
+      const objectUrl = URL.createObjectURL(file);
+      if (preview) URL.revokeObjectURL(preview);
+      setPreview(objectUrl);
+      setUploadStatus('uploading');
+      setUploadError(null);
+      onUploadStatusChange(true);
+      onChange('');
+
+      try {
+        const fd = new FormData();
+        fd.append('file', file);
+        const res = await fetch('/api/upload-image', {method: 'POST', body: fd});
+        const json = (await res.json()) as {cdnUrl?: string; error?: string};
+        if (!res.ok || json.error) throw new Error(json.error ?? 'Upload failed');
+        onChange(json.cdnUrl!);
+        setUploadStatus('done');
+      } catch (err) {
+        onChange('');
+        setUploadStatus('error');
+        setUploadError(
+          err instanceof Error ? err.message : 'Photo upload failed — please try again',
+        );
+      } finally {
+        onUploadStatusChange(false);
       }
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        const dataUrl = ev.target?.result as string;
-        onPreview(dataUrl);
-        onChange(dataUrl);
-      };
-      reader.readAsDataURL(file);
+    }
+
+    function handleRemove() {
+      if (preview) URL.revokeObjectURL(preview);
+      setPreview(null);
+      setUploadStatus('idle');
+      setUploadError(null);
+      onChange('');
+      onUploadStatusChange(false);
+      if (fileRef.current) fileRef.current.value = '';
     }
 
     return (
@@ -182,18 +224,37 @@ function FieldInput({
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className="px-4 py-2 text-sm border border-[rgba(18,18,18,0.2)] rounded-lg text-[rgb(18,18,18)] hover:border-[#f36621] hover:text-[#f36621] transition-colors"
+            disabled={uploadStatus === 'uploading'}
+            className="px-4 py-2 text-sm border border-[rgba(18,18,18,0.2)] rounded-lg text-[rgb(18,18,18)] hover:border-[#f36621] hover:text-[#f36621] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Choose Photo
+            {uploadStatus === 'uploading' ? 'Uploading…' : 'Choose Photo'}
           </button>
+
           {preview && (
-            <img
-              src={preview}
-              alt="Preview"
-              className="w-12 h-12 object-cover rounded border border-gray-200"
-            />
+            <div className="relative">
+              <img
+                src={preview}
+                alt="Preview"
+                className="w-12 h-12 object-cover rounded border border-gray-200"
+              />
+              <button
+                type="button"
+                onClick={handleRemove}
+                aria-label="Remove photo"
+                className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-gray-600 text-white text-[10px] flex items-center justify-center hover:bg-red-500 transition-colors cursor-pointer"
+              >
+                ×
+              </button>
+            </div>
           )}
         </div>
+
+        {uploadStatus === 'error' && (
+          <p className="text-xs text-red-500">
+            {uploadError ?? 'Photo upload failed — please try again'}
+          </p>
+        )}
+
         <input
           ref={fileRef}
           type="file"

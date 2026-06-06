@@ -1,0 +1,460 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - textbox "Search" [ref=e10]
+          - button "Search" [ref=e11] [cursor=pointer]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18] [cursor=pointer]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+          - link "View cart" [ref=e23] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e24]
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Shirt" [ref=e33] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e34]:
+            - link "For Her" [ref=e35] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e36]:
+            - link "Father's Day" [ref=e37] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e38]:
+            - link "Family & Friends" [ref=e39] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e40]:
+            - link "Car Accessories" [ref=e41] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e42]:
+            - link "Graduation" [ref=e43] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e44]:
+    - generic [ref=e48]:
+      - complementary "Shirt" [ref=e49]:
+        - generic [ref=e50]:
+          - heading "Shirt" [level=3] [ref=e51]
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - generic [ref=e55]: "Sort by:"
+              - generic [ref=e56]:
+                - combobox "Sort products" [ref=e57] [cursor=pointer]:
+                  - option "Featured" [selected]
+                  - option "Most relevant"
+                  - option "Best selling"
+                  - option "Alphabetically, A-Z"
+                  - option "Alphabetically, Z-A"
+                  - option "Price, low to high"
+                  - option "Price, high to low"
+                  - option "Date, old to new"
+                  - option "Date, new to old"
+                - img
+            - status [ref=e58]:
+              - paragraph [ref=e59]: 16 products
+      - generic [ref=e61]:
+        - generic "Collection filters" [ref=e62]:
+          - group [ref=e63]:
+            - generic "Availability" [ref=e64] [cursor=pointer]
+            - list [ref=e65]:
+              - listitem [ref=e66]:
+                - link "In stock (620)" [ref=e67] [cursor=pointer]:
+                  - /url: /collections/shirt?filter.v.availability=%7B%22available%22%3Atrue%7D
+                  - generic [ref=e69]: In stock
+                  - generic [ref=e70]: (620)
+              - listitem [ref=e71]:
+                - link "Out of stock (0)" [ref=e72] [cursor=pointer]:
+                  - /url: /collections/shirt?filter.v.availability=%7B%22available%22%3Afalse%7D
+                  - generic [ref=e74]: Out of stock
+                  - generic [ref=e75]: (0)
+          - group [ref=e76]:
+            - generic "Price" [ref=e77] [cursor=pointer]
+            - list [ref=e78]:
+              - listitem [ref=e79]:
+                - link "Price (0)" [ref=e80] [cursor=pointer]:
+                  - /url: /collections/shirt?filter.v.price=%7B%22price%22%3A%7B%22min%22%3A0%2C%22max%22%3A70.0%7D%7D
+                  - generic [ref=e82]: Price
+                  - generic [ref=e83]: (0)
+        - generic [ref=e84]:
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - generic [ref=e88]:
+                - generic [ref=e89]:
+                  - link [ref=e91] [cursor=pointer]:
+                    - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn
+                    - img [ref=e92]
+                  - button "Add to wishlist" [ref=e93] [cursor=pointer]:
+                    - img [ref=e94]
+                  - generic [ref=e96]: Save
+                - generic [ref=e98]:
+                  - heading "Funny Chicken Shirt - Look At My Pecker - Fun Gifts For Men, Women - Personalized Shirt" [level=3] [ref=e99]:
+                    - link "Funny Chicken Shirt - Look At My Pecker - Fun Gifts For Men, Women - Personalized Shirt" [ref=e100] [cursor=pointer]:
+                      - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn
+                  - generic [ref=e102]: $27.00 VND $37.00 VND
+            - listitem [ref=e103]:
+              - generic [ref=e105]:
+                - generic [ref=e106]:
+                  - link [ref=e108] [cursor=pointer]:
+                    - /url: /products/funny-chicken-shirt-ive-pecked-you-three-times-fun-gifts-for-men-women-personalized-shirt-ani261005dohn
+                    - img [ref=e109]
+                  - button "Add to wishlist" [ref=e110] [cursor=pointer]:
+                    - img [ref=e111]
+                  - generic [ref=e113]: Save
+                - generic [ref=e115]:
+                  - heading "Funny Chicken Shirt - I've Pecked You Three Times - Fun Gifts For Men, Women - Personalized Shirt" [level=3] [ref=e116]:
+                    - link "Funny Chicken Shirt - I've Pecked You Three Times - Fun Gifts For Men, Women - Personalized Shirt" [ref=e117] [cursor=pointer]:
+                      - /url: /products/funny-chicken-shirt-ive-pecked-you-three-times-fun-gifts-for-men-women-personalized-shirt-ani261005dohn
+                  - generic [ref=e119]: $25.00 VND $35.00 VND
+            - listitem [ref=e120]:
+              - generic [ref=e122]:
+                - generic [ref=e123]:
+                  - link [ref=e125] [cursor=pointer]:
+                    - /url: /products/funny-shirt-cluster-f-ck-fixer-fun-gifts-for-coworkers-boss-personalized-shirt-cow311002tthn
+                    - img [ref=e126]
+                  - button "Add to wishlist" [ref=e127] [cursor=pointer]:
+                    - img [ref=e128]
+                  - generic [ref=e130]: Save
+                - generic [ref=e132]:
+                  - heading "Funny Shirt - Cluster F*ck Fixer - Fun Gifts For Coworkers, Boss - Personalized Shirt" [level=3] [ref=e133]:
+                    - link "Funny Shirt - Cluster F*ck Fixer - Fun Gifts For Coworkers, Boss - Personalized Shirt" [ref=e134] [cursor=pointer]:
+                      - /url: /products/funny-shirt-cluster-f-ck-fixer-fun-gifts-for-coworkers-boss-personalized-shirt-cow311002tthn
+                  - generic [ref=e136]: $25.00 VND $35.00 VND
+            - listitem [ref=e137]:
+              - generic [ref=e139]:
+                - generic [ref=e140]:
+                  - link [ref=e142] [cursor=pointer]:
+                    - /url: /products/were-more-than-just-pickleball-friends-personalized-shirt-fri051102tuht
+                    - img [ref=e143]
+                  - button "Add to wishlist" [ref=e144] [cursor=pointer]:
+                    - img [ref=e145]
+                  - generic [ref=e147]: Save
+                - generic [ref=e149]:
+                  - heading "We're More Than Just Pickleball Friends - Personalized Shirt" [level=3] [ref=e150]:
+                    - link "We're More Than Just Pickleball Friends - Personalized Shirt" [ref=e151] [cursor=pointer]:
+                      - /url: /products/were-more-than-just-pickleball-friends-personalized-shirt-fri051102tuht
+                  - generic [ref=e153]: $25.00 VND $35.00 VND
+            - listitem [ref=e154]:
+              - generic [ref=e156]:
+                - generic [ref=e157]:
+                  - link [ref=e159] [cursor=pointer]:
+                    - /url: /products/family-elf-custom-face-personalized-photo-shirt-xma051104tuht
+                    - img [ref=e160]
+                  - button "Add to wishlist" [ref=e161] [cursor=pointer]:
+                    - img [ref=e162]
+                  - generic [ref=e164]: Save
+                - generic [ref=e166]:
+                  - heading "Family Elf Custom Face - Personalized Photo Shirt" [level=3] [ref=e167]:
+                    - link "Family Elf Custom Face - Personalized Photo Shirt" [ref=e168] [cursor=pointer]:
+                      - /url: /products/family-elf-custom-face-personalized-photo-shirt-xma051104tuht
+                  - generic [ref=e170]: $25.00 VND $35.00 VND
+            - listitem [ref=e171]:
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - link [ref=e176] [cursor=pointer]:
+                    - /url: /products/i-have-a-pickle-and-two-balls-personalized-shirt-osp061102tuht
+                    - img [ref=e177]
+                  - button "Add to wishlist" [ref=e178] [cursor=pointer]:
+                    - img [ref=e179]
+                  - generic [ref=e181]: Save
+                - generic [ref=e183]:
+                  - heading "I Have A Pickle And Two Balls - Personalized Shirt" [level=3] [ref=e184]:
+                    - link "I Have A Pickle And Two Balls - Personalized Shirt" [ref=e185] [cursor=pointer]:
+                      - /url: /products/i-have-a-pickle-and-two-balls-personalized-shirt-osp061102tuht
+                  - generic [ref=e187]: $25.00 VND $35.00 VND
+            - listitem [ref=e188]:
+              - generic [ref=e190]:
+                - generic [ref=e191]:
+                  - link [ref=e193] [cursor=pointer]:
+                    - /url: /products/merry-christmas-ya-filthy-animal-personalized-shirt-christmas-birthday-gift-for-pet-lover-dog-lover-pet-owner-dog-mom-dog-dad-xma040901halo
+                    - img [ref=e194]
+                  - button "Add to wishlist" [ref=e195] [cursor=pointer]:
+                    - img [ref=e196]
+                  - generic [ref=e198]: Save
+                - generic [ref=e200]:
+                  - heading "Merry Christmas Ya Filthy Animal Personalized Shirt" [level=3] [ref=e201]:
+                    - link "Merry Christmas Ya Filthy Animal Personalized Shirt" [ref=e202] [cursor=pointer]:
+                      - /url: /products/merry-christmas-ya-filthy-animal-personalized-shirt-christmas-birthday-gift-for-pet-lover-dog-lover-pet-owner-dog-mom-dog-dad-xma040901halo
+                  - generic [ref=e204]: $25.00 VND $35.00 VND
+            - listitem [ref=e205]:
+              - generic [ref=e207]:
+                - generic [ref=e208]:
+                  - link [ref=e210] [cursor=pointer]:
+                    - /url: /products/a-life-so-beautifully-lived-and-a-heart-so-deeply-loved-personalized-photo-shirt-mmr181101lamt
+                    - img [ref=e211]
+                  - button "Add to wishlist" [ref=e212] [cursor=pointer]:
+                    - img [ref=e213]
+                  - generic [ref=e215]: Save
+                - generic [ref=e217]:
+                  - heading "A Life So Beautifully Lived And A Heart So Deeply Loved - Personalized Photo Shirt" [level=3] [ref=e218]:
+                    - link "A Life So Beautifully Lived And A Heart So Deeply Loved - Personalized Photo Shirt" [ref=e219] [cursor=pointer]:
+                      - /url: /products/a-life-so-beautifully-lived-and-a-heart-so-deeply-loved-personalized-photo-shirt-mmr181101lamt
+                  - generic [ref=e221]: $25.00 VND $35.00 VND
+            - listitem [ref=e222]:
+              - generic [ref=e224]:
+                - generic [ref=e225]:
+                  - link [ref=e227] [cursor=pointer]:
+                    - /url: /products/if-i-had-anymore-christmas-spirit-personalized-shirt-xma221108patl
+                    - img [ref=e228]
+                  - button "Add to wishlist" [ref=e229] [cursor=pointer]:
+                    - img [ref=e230]
+                  - generic [ref=e232]: Save
+                - generic [ref=e234]:
+                  - heading "If I Had Anymore Christmas Spirit - Personalized Shirt" [level=3] [ref=e235]:
+                    - link "If I Had Anymore Christmas Spirit - Personalized Shirt" [ref=e236] [cursor=pointer]:
+                      - /url: /products/if-i-had-anymore-christmas-spirit-personalized-shirt-xma221108patl
+                  - generic [ref=e238]: $25.00 VND $35.00 VND
+            - listitem [ref=e239]:
+              - generic [ref=e241]:
+                - generic [ref=e242]:
+                  - link [ref=e244] [cursor=pointer]:
+                    - /url: /products/christmas-ghost-friends-personalized-shirt-fri231101vupg
+                    - img [ref=e245]
+                  - button "Add to wishlist" [ref=e246] [cursor=pointer]:
+                    - img [ref=e247]
+                  - generic [ref=e249]: Save
+                - generic [ref=e251]:
+                  - heading "Christmas Ghost Friends - Personalized Shirt" [level=3] [ref=e252]:
+                    - link "Christmas Ghost Friends - Personalized Shirt" [ref=e253] [cursor=pointer]:
+                      - /url: /products/christmas-ghost-friends-personalized-shirt-fri231101vupg
+                  - generic [ref=e255]: $25.00 VND $35.00 VND
+            - listitem [ref=e256]:
+              - generic [ref=e258]:
+                - generic [ref=e259]:
+                  - link [ref=e261] [cursor=pointer]:
+                    - /url: /products/christmas-sweatshirt-mindful-demure-cutesy-bougie-personalized-sweatshirt-oho281101dotd
+                    - img [ref=e262]
+                  - button "Add to wishlist" [ref=e263] [cursor=pointer]:
+                    - img [ref=e264]
+                  - generic [ref=e266]: Save
+                - generic [ref=e268]:
+                  - heading "Christmas Sweatshirt Mindful Demure Cutesy Bougie - Personalized Sweatshirt" [level=3] [ref=e269]:
+                    - link "Christmas Sweatshirt Mindful Demure Cutesy Bougie - Personalized Sweatshirt" [ref=e270] [cursor=pointer]:
+                      - /url: /products/christmas-sweatshirt-mindful-demure-cutesy-bougie-personalized-sweatshirt-oho281101dotd
+                  - generic [ref=e272]: $40.00 VND $50.00 VND
+            - listitem [ref=e273]:
+              - generic [ref=e275]:
+                - generic [ref=e276]:
+                  - link [ref=e278] [cursor=pointer]:
+                    - /url: /products/how-i-wait-for-christmas-very-demure-very-mindful-personalized-sweatshirt-xma291101dotd
+                    - img [ref=e279]
+                  - button "Add to wishlist" [ref=e280] [cursor=pointer]:
+                    - img [ref=e281]
+                  - generic [ref=e283]: Save
+                - generic [ref=e285]:
+                  - heading "How I Wait For Christmas? Very Demure, Very Mindful - Personalized Sweatshirt" [level=3] [ref=e286]:
+                    - link "How I Wait For Christmas? Very Demure, Very Mindful - Personalized Sweatshirt" [ref=e287] [cursor=pointer]:
+                      - /url: /products/how-i-wait-for-christmas-very-demure-very-mindful-personalized-sweatshirt-xma291101dotd
+                  - generic [ref=e289]: $40.00 VND $50.00 VND
+            - listitem [ref=e290]:
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - link [ref=e295] [cursor=pointer]:
+                    - /url: /products/girlfriend-collage-personalized-photo-shirt-bof091201tuht
+                    - img [ref=e296]
+                  - button "Add to wishlist" [ref=e297] [cursor=pointer]:
+                    - img [ref=e298]
+                  - generic [ref=e300]: Save
+                - generic [ref=e302]:
+                  - heading "Girlfriend Collage - Personalized Photo Shirt" [level=3] [ref=e303]:
+                    - link "Girlfriend Collage - Personalized Photo Shirt" [ref=e304] [cursor=pointer]:
+                      - /url: /products/girlfriend-collage-personalized-photo-shirt-bof091201tuht
+                  - generic [ref=e306]: $25.00 VND $35.00 VND
+            - listitem [ref=e307]:
+              - generic [ref=e309]:
+                - generic [ref=e310]:
+                  - link [ref=e312] [cursor=pointer]:
+                    - /url: /products/its-too-people-outside-personalized-shirt-pet161204vupg
+                    - img [ref=e313]
+                  - button "Add to wishlist" [ref=e314] [cursor=pointer]:
+                    - img [ref=e315]
+                  - generic [ref=e317]: Save
+                - generic [ref=e319]:
+                  - heading "It's Too People Outside - Personalized Shirt" [level=3] [ref=e320]:
+                    - link "It's Too People Outside - Personalized Shirt" [ref=e321] [cursor=pointer]:
+                      - /url: /products/its-too-people-outside-personalized-shirt-pet161204vupg
+                  - generic [ref=e323]: $25.00 VND $35.00 VND
+            - listitem [ref=e324]:
+              - generic [ref=e326]:
+                - generic [ref=e327]:
+                  - link [ref=e329] [cursor=pointer]:
+                    - /url: /products/i-dont-always-play-tennis-personalized-photo-shirt-ten251202dgcy
+                    - img [ref=e330]
+                  - button "Add to wishlist" [ref=e331] [cursor=pointer]:
+                    - img [ref=e332]
+                  - generic [ref=e334]: Save
+                - generic [ref=e336]:
+                  - heading "I Don't Always Play Tennis - Personalized Photo Shirt" [level=3] [ref=e337]:
+                    - link "I Don't Always Play Tennis - Personalized Photo Shirt" [ref=e338] [cursor=pointer]:
+                      - /url: /products/i-dont-always-play-tennis-personalized-photo-shirt-ten251202dgcy
+                  - generic [ref=e340]: $25.00 VND $35.00 VND
+            - listitem [ref=e341]:
+              - generic [ref=e343]:
+                - generic [ref=e344]:
+                  - link [ref=e346] [cursor=pointer]:
+                    - /url: /products/galentine-personalized-shirt-fri261205vupg
+                    - img [ref=e347]
+                  - button "Add to wishlist" [ref=e348] [cursor=pointer]:
+                    - img [ref=e349]
+                  - generic [ref=e351]: Save
+                - generic [ref=e353]:
+                  - heading "Galentine - Personalized Shirt" [level=3] [ref=e354]:
+                    - link "Galentine - Personalized Shirt" [ref=e355] [cursor=pointer]:
+                      - /url: /products/galentine-personalized-shirt-fri261205vupg
+                  - generic [ref=e357]: $25.00 VND $35.00 VND
+          - navigation "Pagination" [ref=e359]:
+            - list [ref=e360]:
+              - listitem [ref=e361]:
+                - img [ref=e363]
+              - listitem [ref=e365]:
+                - generic [ref=e366]: "1"
+              - listitem [ref=e367]:
+                - link "Next page" [ref=e368] [cursor=pointer]:
+                  - /url: /collections/shirt?cursor=eyJsYXN0X2lkIjo5MDUxMTc3NDUxNjc2LCJsYXN0X3ZhbHVlIjowLCJvZmZzZXQiOjE1fQ%3D%3D
+                  - img [ref=e369]
+  - 'region "Today Only: Secret privileges for you!" [ref=e371]':
+    - generic [ref=e372]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e373]'
+      - generic [ref=e375]:
+        - generic [ref=e376]: Email
+        - textbox "Email" [ref=e377]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e378]
+  - contentinfo [ref=e379]:
+    - generic [ref=e380]:
+      - generic [ref=e381]:
+        - generic [ref=e382]:
+          - button "Shop By" [ref=e383]:
+            - heading "Shop By" [level=2] [ref=e384]
+          - list [ref=e386]:
+            - listitem [ref=e387]:
+              - link "Gift Finder" [ref=e388] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e389]: Gift Finder
+            - listitem [ref=e390]:
+              - link "Shop By Product" [ref=e391] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e392]: Shop By Product
+                - img [ref=e393]
+            - listitem [ref=e395]:
+              - link "Shop By Occasion" [ref=e396] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e397]: Shop By Occasion
+                - img [ref=e398]
+            - listitem [ref=e400]:
+              - link "Shop By Recipient" [ref=e401] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e402]: Shop By Recipient
+                - img [ref=e403]
+            - listitem [ref=e405]:
+              - link "Shop By Hobby" [ref=e406] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e407]: Shop By Hobby
+                - img [ref=e408]
+        - generic [ref=e410]:
+          - button "Macorner" [ref=e411]:
+            - heading "Macorner" [level=2] [ref=e412]
+          - list [ref=e413]:
+            - listitem [ref=e414]:
+              - link "About Us" [ref=e415] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e416]:
+              - link "Privacy Policy" [ref=e417] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e418]:
+              - link "Accessibility Statement" [ref=e419] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e420]:
+          - button "Help and Support" [ref=e421]:
+            - heading "Help and Support" [level=2] [ref=e422]
+          - list [ref=e423]:
+            - listitem [ref=e424]:
+              - link "Return Policy" [ref=e425] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e426]:
+              - link "Help Center" [ref=e427] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e428]:
+              - link "Size Chart" [ref=e429] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e430]:
+              - link "Shipping And Delivery" [ref=e431] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e432]:
+              - link "Cancellation & Modification Policy" [ref=e433] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e434]:
+              - link "Refund & Replacement Policy" [ref=e435] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e436]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e437] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e438]:
+          - heading "GET IN TOUCH" [level=2] [ref=e439]
+          - paragraph [ref=e440]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e441] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e442]:
+            - listitem [ref=e443]:
+              - link "X (Twitter)" [ref=e444] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e445]
+            - listitem [ref=e447]:
+              - link "Facebook" [ref=e448] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e449]
+            - listitem [ref=e451]:
+              - link "Pinterest" [ref=e452] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e453]
+            - listitem [ref=e455]:
+              - link "Instagram" [ref=e456] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e457]
+            - listitem [ref=e461]:
+              - link "TikTok" [ref=e462] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e463]
+      - list [ref=e465]:
+        - listitem [ref=e466]:
+          - img "American Express" [ref=e467]
+        - listitem [ref=e468]:
+          - img "Apple Pay" [ref=e469]
+        - listitem [ref=e470]:
+          - img "Bancontact" [ref=e471]
+        - listitem [ref=e472]:
+          - img "Diners Club" [ref=e473]
+        - listitem [ref=e474]:
+          - img "Discover" [ref=e475]
+        - listitem [ref=e476]:
+          - img "Google Pay" [ref=e477]
+        - listitem [ref=e478]:
+          - img "iDEAL" [ref=e479]
+        - listitem [ref=e480]:
+          - img "Mastercard" [ref=e481]
+        - listitem [ref=e482]:
+          - img "PayPal" [ref=e483]
+        - listitem [ref=e484]:
+          - img "Shop Pay" [ref=e485]
+        - listitem [ref=e486]:
+          - img "Venmo" [ref=e487]
+        - listitem [ref=e488]:
+          - img "Visa" [ref=e489]
+      - generic [ref=e490]:
+        - link "Terms Of Services" [ref=e491] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e492] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.

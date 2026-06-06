@@ -1,6 +1,14 @@
 import {Link} from 'react-router';
 import {Money} from '@shopify/hydrogen';
 import type {Route} from './+types/account.orders._index';
+
+export function meta() {
+  return [
+    {title: 'My Orders — Macorner'},
+    {name: 'description', content: 'View your Macorner order history.'},
+    {name: 'robots', content: 'noindex'},
+  ];
+}
 import {CUSTOMER_ORDERS_QUERY} from '~/graphql/customer-account/customer';
 
 export async function loader({context}: Route.LoaderArgs) {
@@ -52,7 +60,12 @@ export default function Orders({loaderData}: Route.ComponentProps) {
           {nodes.map((order) => (
             <tr key={order.id} className="border-b border-[var(--color-header-border)]">
               <td className="py-4 pr-4 font-semibold text-[rgb(18,18,18)]">
-                #{order.number}
+                <Link
+                  to={`/account/orders/${btoa(order.id)}`}
+                  className="hover:text-[#FC6514] transition-colors"
+                >
+                  #{order.number}
+                </Link>
               </td>
               <td className="py-4 pr-4 text-[rgba(18,18,18,0.7)]">
                 {new Date(order.processedAt).toLocaleDateString()}

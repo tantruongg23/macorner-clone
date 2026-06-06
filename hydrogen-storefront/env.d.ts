@@ -5,3 +5,10 @@
 
 // Enhance TypeScript's built-in typings.
 import '@total-typescript/ts-reset';
+
+declare global {
+  interface Env {
+    PUBLIC_GA4_MEASUREMENT_ID?: string;
+    SHOPIFY_ADMIN_API_TOKEN: string;
+  }
+}

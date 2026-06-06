@@ -129,7 +129,20 @@ export async function loader({params, request, context}: Route.LoaderArgs) {
 
 export function meta({data}: Route.MetaArgs) {
   if (!data?.collection) return [{title: 'Collection | Macorner'}];
-  return [{title: `${data.collection.title} | Macorner`}];
+  const title = `${data.collection.title} — Macorner`;
+  const description = data.collection.description
+    ? data.collection.description.slice(0, 155)
+    : `Shop our ${data.collection.title} collection at Macorner.`;
+  return [
+    {title},
+    {name: 'description', content: description},
+    {property: 'og:title', content: title},
+    {property: 'og:description', content: description},
+    {property: 'og:type', content: 'website'},
+    ...(data.collection.image?.url
+      ? [{property: 'og:image', content: data.collection.image.url}]
+      : []),
+  ];
 }
 
 export default function CollectionPage({loaderData}: Route.ComponentProps) {

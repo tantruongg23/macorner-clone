@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 24" width="38" height="24" role="img" aria-label="Bancontact">
+  <rect width="38" height="24" rx="4" fill="white" stroke="#E0E0E0" stroke-width="0.5"/>
+  <rect width="38" height="12" rx="0" fill="#005498"/>
+  <rect y="12" width="38" height="12" rx="0" fill="#E6251F"/>
+  <rect width="38" height="24" rx="4" fill="none" stroke="#E0E0E0" stroke-width="0.5"/>
+  <text x="19" y="10" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="6.5" font-weight="bold" fill="white" text-anchor="middle">bancontact</text>
+</svg>

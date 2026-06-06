@@ -1,0 +1,334 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - textbox "Search" [ref=e10]
+          - button "Search" [ref=e11] [cursor=pointer]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18] [cursor=pointer]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+          - link "View cart" [ref=e23] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e24]
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Shirt" [ref=e33] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e34]:
+            - link "For Her" [ref=e35] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e36]:
+            - link "Father's Day" [ref=e37] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e38]:
+            - link "Family & Friends" [ref=e39] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e40]:
+            - link "Car Accessories" [ref=e41] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e42]:
+            - link "Graduation" [ref=e43] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e44]:
+    - generic [ref=e46]:
+      - navigation "Breadcrumb" [ref=e47]:
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - link "Home" [ref=e50] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e51]:
+            - generic [ref=e52]: /
+            - link "Shirt" [ref=e53] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e54]:
+            - generic [ref=e55]: /
+            - generic [ref=e56]: Funny Chicken Shirt - Look At My Pecker - Fun Gifts For Men, Women - Personalized Shirt
+      - generic [ref=e57]:
+        - generic [ref=e59]:
+          - button "Add to wishlist" [ref=e61] [cursor=pointer]:
+            - img [ref=e62]
+          - generic [ref=e64]:
+            - button [ref=e65]
+            - button [ref=e66]
+            - button [ref=e67]
+            - button [ref=e68]
+            - button [ref=e69]
+        - generic [ref=e70]:
+          - heading "Funny Chicken Shirt - Look At My Pecker - Fun Gifts For Men, Women - Personalized Shirt" [level=1] [ref=e71]
+          - link "Reviews" [ref=e72] [cursor=pointer]:
+            - /url: "#reviews"
+          - generic [ref=e73]:
+            - generic [ref=e74]: $27.00 USD
+            - generic [ref=e75]: $37.00 USD
+            - generic [ref=e76]: Save 27%
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - generic [ref=e79]: 🇺🇸
+              - generic [ref=e80]: Deliver to United States
+            - generic [ref=e81]:
+              - generic [ref=e82]: 🚚
+              - generic [ref=e83]:
+                - text: "Get it by:"
+                - strong [ref=e84]: Jun 11 – Jun 16
+            - generic [ref=e85]:
+              - text: Or faster delivery with
+              - strong [ref=e86]: Express Shipping
+          - generic [ref=e87]:
+            - paragraph [ref=e89]: Style
+            - generic [ref=e90]:
+              - link "Classic Tee" [ref=e91] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=S
+              - link "Sweater" [ref=e92] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Sweater&Color=Black&Size=S
+              - link "Pullover Hoodie" [ref=e93] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Pullover+Hoodie&Color=Black&Size=S
+          - generic [ref=e94]:
+            - paragraph [ref=e96]: Color
+            - generic [ref=e97]:
+              - link "Black" [ref=e98] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=S
+              - link "Navy" [ref=e99] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Navy&Size=S
+              - link "Forest Green" [ref=e100] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Forest+Green&Size=S
+              - link "Red" [ref=e101] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Red&Size=S
+              - link "Orange" [ref=e102] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Orange&Size=S
+              - link "Light Blue" [ref=e103] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Light+Blue&Size=S
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - paragraph [ref=e106]: Size
+              - link "Size Chart" [ref=e107] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=e108]:
+              - link "S" [ref=e109] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=S
+              - link "M" [ref=e110] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=M
+              - link "L" [ref=e111] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=L
+              - link "XL" [ref=e112] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=XL
+              - link "2XL" [ref=e113] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=2XL
+              - link "3XL" [ref=e114] [cursor=pointer]:
+                - /url: /products/funny-chicken-shirt-look-at-my-pecker-fun-gifts-for-men-women-personalized-shirt-ani261004dohn?Style=Classic+Tee&Color=Black&Size=3XL
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e118]: Quantity
+              - generic [ref=e119]:
+                - button "Decrease quantity" [ref=e120]: −
+                - generic [ref=e121]: "1"
+                - button "Increase quantity" [ref=e122]: +
+            - button "ADD TO CART" [ref=e123] [cursor=pointer]
+          - generic [ref=e124]:
+            - group [ref=e125]:
+              - generic "Description ›" [ref=e126] [cursor=pointer]:
+                - img [ref=e128]
+                - generic [ref=e130]: Description
+                - generic [ref=e131]: ›
+            - group [ref=e132]:
+              - generic "Shipping & Returns ›" [ref=e133] [cursor=pointer]:
+                - img [ref=e135]
+                - generic [ref=e140]: Shipping & Returns
+                - generic [ref=e141]: ›
+            - group [ref=e142]:
+              - generic "Personalization ›" [ref=e143] [cursor=pointer]:
+                - img [ref=e145]
+                - generic [ref=e148]: Personalization
+                - generic [ref=e149]: ›
+      - generic [ref=e151]:
+        - heading "Similar Categories" [level=2] [ref=e152]
+        - link "Shirt Shirt" [ref=e154] [cursor=pointer]:
+          - /url: /collections/shirt
+          - img "Shirt" [ref=e155]
+          - text: Shirt
+      - generic [ref=e156]:
+        - heading "More Items to Consider" [level=2] [ref=e157]
+        - generic [ref=e158]:
+          - link "Funny Chicken Shirt - I've Pecked You Three Times - Fun Gifts For Men, Women - Personalized Shirt Add to wishlist Funny Chicken Shirt - I've Pecked You Three Times - Fun Gifts For Men, Women - Personalized Shirt $25.00" [ref=e159] [cursor=pointer]:
+            - /url: /products/funny-chicken-shirt-ive-pecked-you-three-times-fun-gifts-for-men-women-personalized-shirt-ani261005dohn
+            - generic [ref=e160]:
+              - img "Funny Chicken Shirt - I've Pecked You Three Times - Fun Gifts For Men, Women - Personalized Shirt" [ref=e161]
+              - button "Add to wishlist" [ref=e162]:
+                - img [ref=e163]
+            - generic [ref=e165]:
+              - heading "Funny Chicken Shirt - I've Pecked You Three Times - Fun Gifts For Men, Women - Personalized Shirt" [level=3] [ref=e166]
+              - paragraph [ref=e167]: $25.00
+          - link "Funny Shirt - Cluster F*ck Fixer - Fun Gifts For Coworkers, Boss - Personalized Shirt Add to wishlist Funny Shirt - Cluster F*ck Fixer - Fun Gifts For Coworkers, Boss - Personalized Shirt $25.00" [ref=e168] [cursor=pointer]:
+            - /url: /products/funny-shirt-cluster-f-ck-fixer-fun-gifts-for-coworkers-boss-personalized-shirt-cow311002tthn
+            - generic [ref=e169]:
+              - img "Funny Shirt - Cluster F*ck Fixer - Fun Gifts For Coworkers, Boss - Personalized Shirt" [ref=e170]
+              - button "Add to wishlist" [ref=e171]:
+                - img [ref=e172]
+            - generic [ref=e174]:
+              - heading "Funny Shirt - Cluster F*ck Fixer - Fun Gifts For Coworkers, Boss - Personalized Shirt" [level=3] [ref=e175]
+              - paragraph [ref=e176]: $25.00
+          - link "We're More Than Just Pickleball Friends - Personalized Shirt Add to wishlist We're More Than Just Pickleball Friends - Personalized Shirt $25.00" [ref=e177] [cursor=pointer]:
+            - /url: /products/were-more-than-just-pickleball-friends-personalized-shirt-fri051102tuht
+            - generic [ref=e178]:
+              - img "We're More Than Just Pickleball Friends - Personalized Shirt" [ref=e179]
+              - button "Add to wishlist" [ref=e180]:
+                - img [ref=e181]
+            - generic [ref=e183]:
+              - heading "We're More Than Just Pickleball Friends - Personalized Shirt" [level=3] [ref=e184]
+              - paragraph [ref=e185]: $25.00
+          - link "Family Elf Custom Face - Personalized Photo Shirt Add to wishlist Family Elf Custom Face - Personalized Photo Shirt $25.00" [ref=e186] [cursor=pointer]:
+            - /url: /products/family-elf-custom-face-personalized-photo-shirt-xma051104tuht
+            - generic [ref=e187]:
+              - img "Family Elf Custom Face - Personalized Photo Shirt" [ref=e188]
+              - button "Add to wishlist" [ref=e189]:
+                - img [ref=e190]
+            - generic [ref=e192]:
+              - heading "Family Elf Custom Face - Personalized Photo Shirt" [level=3] [ref=e193]
+              - paragraph [ref=e194]: $25.00
+  - 'region "Today Only: Secret privileges for you!" [ref=e195]':
+    - generic [ref=e196]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e197]'
+      - generic [ref=e199]:
+        - generic [ref=e200]: Email
+        - textbox "Email" [ref=e201]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e202]
+  - contentinfo [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - button "Shop By" [ref=e207]:
+            - heading "Shop By" [level=2] [ref=e208]
+          - list [ref=e210]:
+            - listitem [ref=e211]:
+              - link "Gift Finder" [ref=e212] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e213]: Gift Finder
+            - listitem [ref=e214]:
+              - link "Shop By Product" [ref=e215] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e216]: Shop By Product
+                - img [ref=e217]
+            - listitem [ref=e219]:
+              - link "Shop By Occasion" [ref=e220] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e221]: Shop By Occasion
+                - img [ref=e222]
+            - listitem [ref=e224]:
+              - link "Shop By Recipient" [ref=e225] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e226]: Shop By Recipient
+                - img [ref=e227]
+            - listitem [ref=e229]:
+              - link "Shop By Hobby" [ref=e230] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e231]: Shop By Hobby
+                - img [ref=e232]
+        - generic [ref=e234]:
+          - button "Macorner" [ref=e235]:
+            - heading "Macorner" [level=2] [ref=e236]
+          - list [ref=e237]:
+            - listitem [ref=e238]:
+              - link "About Us" [ref=e239] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e240]:
+              - link "Privacy Policy" [ref=e241] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e242]:
+              - link "Accessibility Statement" [ref=e243] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e244]:
+          - button "Help and Support" [ref=e245]:
+            - heading "Help and Support" [level=2] [ref=e246]
+          - list [ref=e247]:
+            - listitem [ref=e248]:
+              - link "Return Policy" [ref=e249] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e250]:
+              - link "Help Center" [ref=e251] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e252]:
+              - link "Size Chart" [ref=e253] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e254]:
+              - link "Shipping And Delivery" [ref=e255] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e256]:
+              - link "Cancellation & Modification Policy" [ref=e257] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e258]:
+              - link "Refund & Replacement Policy" [ref=e259] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e260]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e261] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e262]:
+          - heading "GET IN TOUCH" [level=2] [ref=e263]
+          - paragraph [ref=e264]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e265] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e266]:
+            - listitem [ref=e267]:
+              - link "X (Twitter)" [ref=e268] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e269]
+            - listitem [ref=e271]:
+              - link "Facebook" [ref=e272] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e273]
+            - listitem [ref=e275]:
+              - link "Pinterest" [ref=e276] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e277]
+            - listitem [ref=e279]:
+              - link "Instagram" [ref=e280] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e281]
+            - listitem [ref=e285]:
+              - link "TikTok" [ref=e286] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e287]
+      - list [ref=e289]:
+        - listitem [ref=e290]:
+          - img "American Express" [ref=e291]
+        - listitem [ref=e292]:
+          - img "Apple Pay" [ref=e293]
+        - listitem [ref=e294]:
+          - img "Bancontact" [ref=e295]
+        - listitem [ref=e296]:
+          - img "Diners Club" [ref=e297]
+        - listitem [ref=e298]:
+          - img "Discover" [ref=e299]
+        - listitem [ref=e300]:
+          - img "Google Pay" [ref=e301]
+        - listitem [ref=e302]:
+          - img "iDEAL" [ref=e303]
+        - listitem [ref=e304]:
+          - img "Mastercard" [ref=e305]
+        - listitem [ref=e306]:
+          - img "PayPal" [ref=e307]
+        - listitem [ref=e308]:
+          - img "Shop Pay" [ref=e309]
+        - listitem [ref=e310]:
+          - img "Venmo" [ref=e311]
+        - listitem [ref=e312]:
+          - img "Visa" [ref=e313]
+      - generic [ref=e314]:
+        - link "Terms Of Services" [ref=e315] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e316] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.

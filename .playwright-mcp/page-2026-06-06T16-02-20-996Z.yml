@@ -1,0 +1,577 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - searchbox "Search" [ref=e414]: custom mug
+            - button "Search" [ref=e11]:
+              - img [ref=e12]
+          - dialog "Search results" [ref=e428]:
+            - generic [ref=e429]:
+              - generic [ref=e430]:
+                - generic [ref=e431]:
+                  - paragraph [ref=e432]: Popular Suggestions
+                  - list [ref=e433]:
+                    - listitem [ref=e434]:
+                      - link "monogram custom name mug" [ref=e435] [cursor=pointer]:
+                        - /url: /search?q=monogram%2520custom%2520name%2520mug&_pos=1&_psq=custom%20mug&_ss=e&_v=1.0
+                        - img [ref=e436]
+                        - generic [ref=e438]: monogram custom name mug
+                    - listitem [ref=e439]:
+                      - link "positivity custom name mug" [ref=e440] [cursor=pointer]:
+                        - /url: /search?q=positivity%2520custom%2520name%2520mug&_pos=2&_psq=custom%20mug&_ss=e&_v=1.0
+                        - img [ref=e441]
+                        - generic [ref=e443]: positivity custom name mug
+                    - listitem [ref=e444]:
+                      - link "custom funny moment mugshots" [ref=e445] [cursor=pointer]:
+                        - /url: /search?q=custom%2520funny%2520moment%2520mugshots&_pos=3&_psq=custom%20mug&_ss=e&_v=1.0
+                        - img [ref=e446]
+                        - generic [ref=e448]: custom funny moment mugshots
+                    - listitem [ref=e449]:
+                      - link "custom job title swear mug" [ref=e450] [cursor=pointer]:
+                        - /url: /search?q=custom%2520job%2520title%2520swear%2520mug&_pos=4&_psq=custom%20mug&_ss=e&_v=1.0
+                        - img [ref=e451]
+                        - generic [ref=e453]: custom job title swear mug
+                    - listitem [ref=e454]:
+                      - link "stripes monogram custom name mug" [ref=e455] [cursor=pointer]:
+                        - /url: /search?q=stripes%2520monogram%2520custom%2520name%2520mug&_pos=5&_psq=custom%20mug&_ss=e&_v=1.0
+                        - img [ref=e456]
+                        - generic [ref=e458]: stripes monogram custom name mug
+                - link "See All Products →" [ref=e460] [cursor=pointer]:
+                  - /url: /search?q=custom%20mug
+              - generic [ref=e461]:
+                - paragraph [ref=e462]: Products
+                - list [ref=e463]:
+                  - listitem [ref=e464]:
+                    - link "My Cup Of Positivity Custom Name Mug - Personalized Mug My Cup Of Positivity Custom Name Mug - Personalized Mug ₫25 VND 35.0" [ref=e465] [cursor=pointer]:
+                      - /url: /products/my-cup-of-positivity-custom-name-mug-personalized-mug-afm020101tttl?q=custom%2520mug&_pos=1&_psq=custom%20mug&_ss=e&_v=1.0
+                      - img "My Cup Of Positivity Custom Name Mug - Personalized Mug" [ref=e467]
+                      - generic [ref=e468]:
+                        - paragraph [ref=e469]: My Cup Of Positivity Custom Name Mug - Personalized Mug
+                        - generic [ref=e470]:
+                          - generic [ref=e472]: ₫25
+                          - generic [ref=e473]: VND 35.0
+                  - listitem [ref=e474]:
+                    - link "Custom Kid Names - Personalized Mug Custom Kid Names - Personalized Mug ₫25 VND 35.0" [ref=e475] [cursor=pointer]:
+                      - /url: /products/custom-kid-names-personalized-mug-map71dpwv?q=custom%2520mug&_pos=2&_psq=custom%20mug&_ss=e&_v=1.0
+                      - img "Custom Kid Names - Personalized Mug" [ref=e477]
+                      - generic [ref=e478]:
+                        - paragraph [ref=e479]: Custom Kid Names - Personalized Mug
+                        - generic [ref=e480]:
+                          - generic [ref=e482]: ₫25
+                          - generic [ref=e483]: VND 35.0
+                  - listitem [ref=e484]:
+                    - link "Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug ₫25 VND 35.0" [ref=e485] [cursor=pointer]:
+                      - /url: /products/custom-photo-bestie-mug-stripe-besties-picture-personalized-photo-mug-fri021203natl?q=custom%2520mug&_pos=3&_psq=custom%20mug&_ss=e&_v=1.0
+                      - img "Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug" [ref=e487]
+                      - generic [ref=e488]:
+                        - paragraph [ref=e489]: Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug
+                        - generic [ref=e490]:
+                          - generic [ref=e492]: ₫25
+                          - generic [ref=e493]: VND 35.0
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+          - link "View cart" [ref=e23] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e24]
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Shirt" [ref=e33] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e34]:
+            - link "For Her" [ref=e35] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e36]:
+            - link "Father's Day" [ref=e37] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e38]:
+            - link "Family & Friends" [ref=e39] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e40]:
+            - link "Car Accessories" [ref=e41] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e42]:
+            - link "Graduation" [ref=e43] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e44]:
+    - generic [ref=e494]:
+      - generic [ref=e495]:
+        - heading "Search results for \"custom mug\"" [level=1] [ref=e496]:
+          - text: Search results for
+          - generic [ref=e497]: "\"custom mug\""
+        - paragraph [ref=e498]: 312 products found
+      - generic [ref=e499]:
+        - searchbox "Search products…" [ref=e500]: custom mug
+        - button "Search" [ref=e501]
+      - generic [ref=e502]:
+        - paragraph [ref=e503]: 312 results
+        - generic [ref=e504]:
+          - generic [ref=e505]: "Sort by:"
+          - combobox "Sort by:" [ref=e506] [cursor=pointer]:
+            - option "Most relevant" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - 'option "Date: New to Old"'
+            - 'option "Date: Old to New"'
+      - generic [ref=e507]:
+        - generic [ref=e509]:
+          - generic [ref=e510]:
+            - link [ref=e512] [cursor=pointer]:
+              - /url: /products/my-cup-of-positivity-custom-name-mug-personalized-mug-afm020101tttl
+              - img [ref=e513]
+            - button "Add to wishlist" [ref=e514] [cursor=pointer]:
+              - img [ref=e515]
+            - generic [ref=e517]: Save
+          - generic [ref=e519]:
+            - heading "My Cup Of Positivity Custom Name Mug - Personalized Mug" [level=3] [ref=e520]:
+              - link "My Cup Of Positivity Custom Name Mug - Personalized Mug" [ref=e521] [cursor=pointer]:
+                - /url: /products/my-cup-of-positivity-custom-name-mug-personalized-mug-afm020101tttl
+            - generic [ref=e523]: $25.00 VND $35.00 VND
+        - generic [ref=e525]:
+          - generic [ref=e526]:
+            - link [ref=e528] [cursor=pointer]:
+              - /url: /products/custom-kid-names-personalized-mug-map71dpwv
+              - img [ref=e529]
+            - button "Add to wishlist" [ref=e530] [cursor=pointer]:
+              - img [ref=e531]
+            - generic [ref=e533]: Save
+          - generic [ref=e535]:
+            - heading "Custom Kid Names - Personalized Mug" [level=3] [ref=e536]:
+              - link "Custom Kid Names - Personalized Mug" [ref=e537] [cursor=pointer]:
+                - /url: /products/custom-kid-names-personalized-mug-map71dpwv
+            - generic [ref=e539]: $25.00 VND $35.00 VND
+        - generic [ref=e541]:
+          - generic [ref=e542]:
+            - link [ref=e544] [cursor=pointer]:
+              - /url: /products/custom-photo-bestie-mug-stripe-besties-picture-personalized-photo-mug-fri021203natl
+              - img [ref=e545]
+            - button "Add to wishlist" [ref=e546] [cursor=pointer]:
+              - img [ref=e547]
+            - generic [ref=e549]: Save
+          - generic [ref=e551]:
+            - heading "Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug" [level=3] [ref=e552]:
+              - link "Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug" [ref=e553] [cursor=pointer]:
+                - /url: /products/custom-photo-bestie-mug-stripe-besties-picture-personalized-photo-mug-fri021203natl
+            - generic [ref=e555]: $25.00 VND $35.00 VND
+        - generic [ref=e557]:
+          - generic [ref=e558]:
+            - link [ref=e560] [cursor=pointer]:
+              - /url: /products/hidden-swear-words-in-a-mug-custom-qr-voice-personalized-mug-cow010602dohn
+              - img [ref=e561]
+            - button "Add to wishlist" [ref=e562] [cursor=pointer]:
+              - img [ref=e563]
+            - generic [ref=e565]: Save
+          - generic [ref=e567]:
+            - heading "Hidden Swear Words In A Mug Custom QR Voice - Personalized Mug" [level=3] [ref=e568]:
+              - link "Hidden Swear Words In A Mug Custom QR Voice - Personalized Mug" [ref=e569] [cursor=pointer]:
+                - /url: /products/hidden-swear-words-in-a-mug-custom-qr-voice-personalized-mug-cow010602dohn
+            - generic [ref=e571]: $25.00 VND $35.00 VND
+        - generic [ref=e573]:
+          - generic [ref=e574]:
+            - link [ref=e576] [cursor=pointer]:
+              - /url: /products/custom-school-pennant-flag-personalized-mug-maw9q9p1y
+              - img [ref=e577]
+            - button "Add to wishlist" [ref=e578] [cursor=pointer]:
+              - img [ref=e579]
+            - generic [ref=e581]: Save
+          - generic [ref=e583]:
+            - heading "Custom School Pennant Flag - Personalized Mug" [level=3] [ref=e584]:
+              - link "Custom School Pennant Flag - Personalized Mug" [ref=e585] [cursor=pointer]:
+                - /url: /products/custom-school-pennant-flag-personalized-mug-maw9q9p1y
+            - generic [ref=e587]: $25.00 VND $35.00 VND
+        - generic [ref=e589]:
+          - generic [ref=e590]:
+            - link [ref=e592] [cursor=pointer]:
+              - /url: /products/funny-mug-custom-name-for-me-gift-the-f-ckening-personalized-mug-cow121103tutl
+              - img [ref=e593]
+            - button "Add to wishlist" [ref=e594] [cursor=pointer]:
+              - img [ref=e595]
+            - generic [ref=e597]: Save
+          - generic [ref=e599]:
+            - heading "Funny Mug Custom Name For Me Gift The F*ckening - Personalized Mug" [level=3] [ref=e600]:
+              - link "Funny Mug Custom Name For Me Gift The F*ckening - Personalized Mug" [ref=e601] [cursor=pointer]:
+                - /url: /products/funny-mug-custom-name-for-me-gift-the-f-ckening-personalized-mug-cow121103tutl
+            - generic [ref=e603]: $25.00 VND $35.00 VND
+        - generic [ref=e605]:
+          - generic [ref=e606]:
+            - link [ref=e608] [cursor=pointer]:
+              - /url: /products/best-team-coworker-mug-scrabble-custom-name-personalized-mug-cow271101hutl
+              - img [ref=e609]
+            - button "Add to wishlist" [ref=e610] [cursor=pointer]:
+              - img [ref=e611]
+            - generic [ref=e613]: Save
+          - generic [ref=e615]:
+            - heading "Best Team Coworker Mug Scrabble Custom Name - Personalized Mug" [level=3] [ref=e616]:
+              - link "Best Team Coworker Mug Scrabble Custom Name - Personalized Mug" [ref=e617] [cursor=pointer]:
+                - /url: /products/best-team-coworker-mug-scrabble-custom-name-personalized-mug-cow271101hutl
+            - generic [ref=e619]: $25.00 VND $35.00 VND
+        - generic [ref=e621]:
+          - generic [ref=e622]:
+            - link [ref=e624] [cursor=pointer]:
+              - /url: /products/funny-mug-custom-job-title-swear-mug-exchange-gifts-gag-gifts-for-coworkers-self-gift-mug-nm-cow24100401tthn
+              - img [ref=e625]
+            - button "Add to wishlist" [ref=e626] [cursor=pointer]:
+              - img [ref=e627]
+          - generic [ref=e630]:
+            - heading "Funny Mug - Custom Job Title Swear Mug - Exchange Gifts, Gag Gifts For Coworkers, Self Gift - Mug" [level=3] [ref=e631]:
+              - link "Funny Mug - Custom Job Title Swear Mug - Exchange Gifts, Gag Gifts For Coworkers, Self Gift - Mug" [ref=e632] [cursor=pointer]:
+                - /url: /products/funny-mug-custom-job-title-swear-mug-exchange-gifts-gag-gifts-for-coworkers-self-gift-mug-nm-cow24100401tthn
+            - generic [ref=e634]: $25.00 VND
+        - generic [ref=e636]:
+          - generic [ref=e637]:
+            - link [ref=e639] [cursor=pointer]:
+              - /url: /products/custom-pet-portrait-mug-unique-gift-for-pet-lovers-personalized-mug-ma94h9eqn
+              - img [ref=e640]
+            - button "Add to wishlist" [ref=e641] [cursor=pointer]:
+              - img [ref=e642]
+            - generic [ref=e644]: Save
+          - generic [ref=e646]:
+            - heading "Custom Pet Portrait Mug Unique Gift For Pet Lovers - Personalized Mug" [level=3] [ref=e647]:
+              - link "Custom Pet Portrait Mug Unique Gift For Pet Lovers - Personalized Mug" [ref=e648] [cursor=pointer]:
+                - /url: /products/custom-pet-portrait-mug-unique-gift-for-pet-lovers-personalized-mug-ma94h9eqn
+            - generic [ref=e650]: $27.00 VND $35.00 VND
+        - generic [ref=e652]:
+          - generic [ref=e653]:
+            - link [ref=e655] [cursor=pointer]:
+              - /url: /products/campfire-forest-coffee-custom-name-personalized-mug-sgt081205dgtx
+              - img [ref=e656]
+            - button "Add to wishlist" [ref=e657] [cursor=pointer]:
+              - img [ref=e658]
+            - generic [ref=e660]: Save
+          - generic [ref=e662]:
+            - heading "Campfire Forest Coffee Custom Name - Personalized Mug" [level=3] [ref=e663]:
+              - link "Campfire Forest Coffee Custom Name - Personalized Mug" [ref=e664] [cursor=pointer]:
+                - /url: /products/campfire-forest-coffee-custom-name-personalized-mug-sgt081205dgtx
+            - generic [ref=e666]: $25.00 VND $35.00 VND
+        - generic [ref=e668]:
+          - generic [ref=e669]:
+            - link [ref=e671] [cursor=pointer]:
+              - /url: /products/custom-pet-portrait-mug-dog-lover-cat-lover-gift-personalized-mug-pet011204tttl
+              - img [ref=e672]
+            - button "Add to wishlist" [ref=e673] [cursor=pointer]:
+              - img [ref=e674]
+            - generic [ref=e676]: Save
+          - generic [ref=e678]:
+            - heading "Custom Pet Portrait Mug Dog Lover Cat Lover Gift - Personalized Mug" [level=3] [ref=e679]:
+              - link "Custom Pet Portrait Mug Dog Lover Cat Lover Gift - Personalized Mug" [ref=e680] [cursor=pointer]:
+                - /url: /products/custom-pet-portrait-mug-dog-lover-cat-lover-gift-personalized-mug-pet011204tttl
+            - generic [ref=e682]: $25.00 VND $35.00 VND
+        - generic [ref=e684]:
+          - generic [ref=e685]:
+            - link [ref=e687] [cursor=pointer]:
+              - /url: /products/flower-toile-de-jouy-custom-color-personalized-mug-sgt300601paly
+              - img [ref=e688]
+            - button "Add to wishlist" [ref=e689] [cursor=pointer]:
+              - img [ref=e690]
+            - generic [ref=e692]: Save
+          - generic [ref=e694]:
+            - heading "Flower Toile De Jouy Custom Color - Personalized Mug" [level=3] [ref=e695]:
+              - link "Flower Toile De Jouy Custom Color - Personalized Mug" [ref=e696] [cursor=pointer]:
+                - /url: /products/flower-toile-de-jouy-custom-color-personalized-mug-sgt300601paly
+            - generic [ref=e698]: $25.00 VND $35.00 VND
+        - generic [ref=e700]:
+          - generic [ref=e701]:
+            - link [ref=e703] [cursor=pointer]:
+              - /url: /products/custom-name-for-me-gift-self-gift-personalized-mug-xma181102dotl
+              - img [ref=e704]
+            - button "Add to wishlist" [ref=e705] [cursor=pointer]:
+              - img [ref=e706]
+            - generic [ref=e708]: Save
+          - generic [ref=e710]:
+            - heading "Custom Name For Me Gift Self Gift - Personalized Mug" [level=3] [ref=e711]:
+              - link "Custom Name For Me Gift Self Gift - Personalized Mug" [ref=e712] [cursor=pointer]:
+                - /url: /products/custom-name-for-me-gift-self-gift-personalized-mug-xma181102dotl
+            - generic [ref=e714]: $25.00 VND $35.00 VND
+        - generic [ref=e716]:
+          - generic [ref=e717]:
+            - link [ref=e719] [cursor=pointer]:
+              - /url: /products/custom-photo-mug-mothers-day-gift-for-mom-mum-personalized-mug-mamxw3mke
+              - img [ref=e720]
+            - button "Add to wishlist" [ref=e721] [cursor=pointer]:
+              - img [ref=e722]
+            - generic [ref=e724]: Save
+          - generic [ref=e726]:
+            - heading "Custom Photo Mug Mother's Day Gift For Mom, Mum - Personalized Mug" [level=3] [ref=e727]:
+              - link "Custom Photo Mug Mother's Day Gift For Mom, Mum - Personalized Mug" [ref=e728] [cursor=pointer]:
+                - /url: /products/custom-photo-mug-mothers-day-gift-for-mom-mum-personalized-mug-mamxw3mke
+            - generic [ref=e730]: $27.00 VND $37.00 VND
+        - generic [ref=e732]:
+          - generic [ref=e733]:
+            - link [ref=e735] [cursor=pointer]:
+              - /url: /products/custom-name-with-naughty-alphabet-funny-mug-for-couples-coworkers-personalized-mug-mauempmh0
+              - img [ref=e736]
+            - button "Add to wishlist" [ref=e737] [cursor=pointer]:
+              - img [ref=e738]
+            - generic [ref=e740]: Save
+          - generic [ref=e742]:
+            - heading "Custom Name With Naughty Alphabet, Funny Mug For Couples, Coworkers - Personalized Mug" [level=3] [ref=e743]:
+              - link "Custom Name With Naughty Alphabet, Funny Mug For Couples, Coworkers - Personalized Mug" [ref=e744] [cursor=pointer]:
+                - /url: /products/custom-name-with-naughty-alphabet-funny-mug-for-couples-coworkers-personalized-mug-mauempmh0
+            - generic [ref=e746]: $25.00 VND $35.00 VND
+        - generic [ref=e748]:
+          - generic [ref=e749]:
+            - link [ref=e751] [cursor=pointer]:
+              - /url: /products/custom-funny-couple-face-personalized-photo-mug-cou021201vupg
+              - img [ref=e752]
+            - button "Add to wishlist" [ref=e753] [cursor=pointer]:
+              - img [ref=e754]
+            - generic [ref=e756]: Save
+          - generic [ref=e758]:
+            - heading "Custom Funny Couple Face - Personalized Photo Mug" [level=3] [ref=e759]:
+              - link "Custom Funny Couple Face - Personalized Photo Mug" [ref=e760] [cursor=pointer]:
+                - /url: /products/custom-funny-couple-face-personalized-photo-mug-cou021201vupg
+            - generic [ref=e762]: $25.00 VND $35.00 VND
+        - generic [ref=e764]:
+          - generic [ref=e765]:
+            - link [ref=e767] [cursor=pointer]:
+              - /url: /products/mothers-day-gifts-custom-softball-mom-grandma-personalized-mug-ma5o9edci
+              - img [ref=e768]
+            - button "Add to wishlist" [ref=e769] [cursor=pointer]:
+              - img [ref=e770]
+            - generic [ref=e772]: Save
+          - generic [ref=e774]:
+            - heading "Mother's Day Gifts, Custom Softball Mom, Grandma - Personalized Mug" [level=3] [ref=e775]:
+              - link "Mother's Day Gifts, Custom Softball Mom, Grandma - Personalized Mug" [ref=e776] [cursor=pointer]:
+                - /url: /products/mothers-day-gifts-custom-softball-mom-grandma-personalized-mug-ma5o9edci
+            - generic [ref=e778]: $25.00 VND $35.00 VND
+        - generic [ref=e780]:
+          - generic [ref=e781]:
+            - link [ref=e783] [cursor=pointer]:
+              - /url: /products/mothers-day-gifts-custom-hockey-mom-grandma-personalized-mug-mapeazce4
+              - img [ref=e784]
+            - button "Add to wishlist" [ref=e785] [cursor=pointer]:
+              - img [ref=e786]
+            - generic [ref=e788]: Save
+          - generic [ref=e790]:
+            - heading "Mother's Day Gifts, Custom Hockey Mom, Grandma - Personalized Mug" [level=3] [ref=e791]:
+              - link "Mother's Day Gifts, Custom Hockey Mom, Grandma - Personalized Mug" [ref=e792] [cursor=pointer]:
+                - /url: /products/mothers-day-gifts-custom-hockey-mom-grandma-personalized-mug-mapeazce4
+            - generic [ref=e794]: $25.00 VND $35.00 VND
+        - generic [ref=e796]:
+          - generic [ref=e797]:
+            - link [ref=e799] [cursor=pointer]:
+              - /url: /products/custom-photo-daughter-of-the-year-magazine-personalized-photo-mug-dau130102dotx
+              - img [ref=e800]
+            - button "Add to wishlist" [ref=e801] [cursor=pointer]:
+              - img [ref=e802]
+            - generic [ref=e804]: Save
+          - generic [ref=e806]:
+            - heading "Custom Photo Daughter Of The Year Magazine - Personalized Photo Mug" [level=3] [ref=e807]:
+              - link "Custom Photo Daughter Of The Year Magazine - Personalized Photo Mug" [ref=e808] [cursor=pointer]:
+                - /url: /products/custom-photo-daughter-of-the-year-magazine-personalized-photo-mug-dau130102dotx
+            - generic [ref=e810]: $25.00 VND $35.00 VND
+        - generic [ref=e812]:
+          - generic [ref=e813]:
+            - link [ref=e815] [cursor=pointer]:
+              - /url: /products/mothers-day-gifts-custom-football-mom-grandma-personalized-mug-mazurttpz
+              - img [ref=e816]
+            - button "Add to wishlist" [ref=e817] [cursor=pointer]:
+              - img [ref=e818]
+            - generic [ref=e820]: Save
+          - generic [ref=e822]:
+            - heading "Mother's Day Gifts, Custom Football Mom, Grandma - Personalized Mug" [level=3] [ref=e823]:
+              - link "Mother's Day Gifts, Custom Football Mom, Grandma - Personalized Mug" [ref=e824] [cursor=pointer]:
+                - /url: /products/mothers-day-gifts-custom-football-mom-grandma-personalized-mug-mazurttpz
+            - generic [ref=e826]: $25.00 VND $35.00 VND
+        - generic [ref=e828]:
+          - generic [ref=e829]:
+            - link [ref=e831] [cursor=pointer]:
+              - /url: /products/best-mom-ever-custom-kids-faces-personalized-photo-mug-mom170403hutl
+              - img [ref=e832]
+            - button "Add to wishlist" [ref=e833] [cursor=pointer]:
+              - img [ref=e834]
+            - generic [ref=e836]: Save
+          - generic [ref=e838]:
+            - heading "Best Mom Ever Custom Kids' Faces - Personalized Photo Mug" [level=3] [ref=e839]:
+              - link "Best Mom Ever Custom Kids' Faces - Personalized Photo Mug" [ref=e840] [cursor=pointer]:
+                - /url: /products/best-mom-ever-custom-kids-faces-personalized-photo-mug-mom170403hutl
+            - generic [ref=e842]: $25.00 VND $35.00 VND
+        - generic [ref=e844]:
+          - generic [ref=e845]:
+            - link [ref=e847] [cursor=pointer]:
+              - /url: /products/sisters-are-different-flowers-custom-mosaic-birth-flowers-personalized-mug-sis270801dgtl
+              - img [ref=e848]
+            - button "Add to wishlist" [ref=e849] [cursor=pointer]:
+              - img [ref=e850]
+            - generic [ref=e852]: Save
+          - generic [ref=e854]:
+            - heading "Sisters Are Different Flowers Custom Mosaic Birth Flowers - Personalized Mug" [level=3] [ref=e855]:
+              - link "Sisters Are Different Flowers Custom Mosaic Birth Flowers - Personalized Mug" [ref=e856] [cursor=pointer]:
+                - /url: /products/sisters-are-different-flowers-custom-mosaic-birth-flowers-personalized-mug-sis270801dgtl
+            - generic [ref=e858]: $25.00 VND $35.00 VND
+        - generic [ref=e860]:
+          - generic [ref=e861]:
+            - link [ref=e863] [cursor=pointer]:
+              - /url: /products/my-christmas-breakdown-mug-gnome-mug-personalized-mug-xma251101dotl
+              - img [ref=e864]
+            - button "Add to wishlist" [ref=e865] [cursor=pointer]:
+              - img [ref=e866]
+            - generic [ref=e868]: Save
+          - generic [ref=e870]:
+            - heading "My Christmas Breakdown Mug Gnome Mug - Personalized Mug" [level=3] [ref=e871]:
+              - link "My Christmas Breakdown Mug Gnome Mug - Personalized Mug" [ref=e872] [cursor=pointer]:
+                - /url: /products/my-christmas-breakdown-mug-gnome-mug-personalized-mug-xma251101dotl
+            - generic [ref=e874]: $25.00 VND $35.00 VND
+        - generic [ref=e876]:
+          - generic [ref=e877]:
+            - link [ref=e879] [cursor=pointer]:
+              - /url: /products/custom-vintage-retro-polaroid-friendship-photo-personalized-photo-mug-fri101201huhn
+              - img [ref=e880]
+            - button "Add to wishlist" [ref=e881] [cursor=pointer]:
+              - img [ref=e882]
+            - generic [ref=e884]: Save
+          - generic [ref=e886]:
+            - heading "Custom Vintage Retro Polaroid Friendship Photo - Personalized Photo Mug" [level=3] [ref=e887]:
+              - link "Custom Vintage Retro Polaroid Friendship Photo - Personalized Photo Mug" [ref=e888] [cursor=pointer]:
+                - /url: /products/custom-vintage-retro-polaroid-friendship-photo-personalized-photo-mug-fri101201huhn
+            - generic [ref=e890]: $25.00 VND $35.00 VND
+      - link "Load more" [ref=e892] [cursor=pointer]:
+        - /url: /search?q=custom%20mug&sort=relevance&cursor=eyJwYWdlIjoyLCJsYXN0X2lkIjo5MDI2NDgwNzk5OTAwLCJyZXZlcnNlIjp0cnVlLCJvZmZzZXQiOjIzfQ==
+  - 'region "Today Only: Secret privileges for you!" [ref=e292]':
+    - generic [ref=e293]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e294]'
+      - generic [ref=e296]:
+        - generic [ref=e297]: Email
+        - textbox "Email" [ref=e298]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e299]
+  - contentinfo [ref=e300]:
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - button "Shop By" [ref=e304]:
+            - heading "Shop By" [level=2] [ref=e305]
+          - list [ref=e307]:
+            - listitem [ref=e308]:
+              - link "Gift Finder" [ref=e309] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e310]: Gift Finder
+            - listitem [ref=e311]:
+              - link "Shop By Product" [ref=e312] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e313]: Shop By Product
+                - img [ref=e314]
+            - listitem [ref=e316]:
+              - link "Shop By Occasion" [ref=e317] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e318]: Shop By Occasion
+                - img [ref=e319]
+            - listitem [ref=e321]:
+              - link "Shop By Recipient" [ref=e322] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e323]: Shop By Recipient
+                - img [ref=e324]
+            - listitem [ref=e326]:
+              - link "Shop By Hobby" [ref=e327] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e328]: Shop By Hobby
+                - img [ref=e329]
+        - generic [ref=e331]:
+          - button "Macorner" [ref=e332]:
+            - heading "Macorner" [level=2] [ref=e333]
+          - list [ref=e334]:
+            - listitem [ref=e335]:
+              - link "About Us" [ref=e336] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e337]:
+              - link "Privacy Policy" [ref=e338] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e339]:
+              - link "Accessibility Statement" [ref=e340] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e341]:
+          - button "Help and Support" [ref=e342]:
+            - heading "Help and Support" [level=2] [ref=e343]
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - link "Return Policy" [ref=e346] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e347]:
+              - link "Help Center" [ref=e348] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e349]:
+              - link "Size Chart" [ref=e350] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e351]:
+              - link "Shipping And Delivery" [ref=e352] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e353]:
+              - link "Cancellation & Modification Policy" [ref=e354] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e355]:
+              - link "Refund & Replacement Policy" [ref=e356] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e357]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e358] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e359]:
+          - heading "GET IN TOUCH" [level=2] [ref=e360]
+          - paragraph [ref=e361]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e362] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e363]:
+            - listitem [ref=e364]:
+              - link "X (Twitter)" [ref=e365] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e366]
+            - listitem [ref=e368]:
+              - link "Facebook" [ref=e369] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e370]
+            - listitem [ref=e372]:
+              - link "Pinterest" [ref=e373] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e374]
+            - listitem [ref=e376]:
+              - link "Instagram" [ref=e377] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e378]
+            - listitem [ref=e382]:
+              - link "TikTok" [ref=e383] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e384]
+      - list [ref=e386]:
+        - listitem [ref=e387]:
+          - img "American Express" [ref=e388]
+        - listitem [ref=e389]:
+          - img "Apple Pay" [ref=e390]
+        - listitem [ref=e391]:
+          - img "Bancontact" [ref=e392]
+        - listitem [ref=e393]:
+          - img "Diners Club" [ref=e394]
+        - listitem [ref=e395]:
+          - img "Discover" [ref=e396]
+        - listitem [ref=e397]:
+          - img "Google Pay" [ref=e398]
+        - listitem [ref=e399]:
+          - img "iDEAL" [ref=e400]
+        - listitem [ref=e401]:
+          - img "Mastercard" [ref=e402]
+        - listitem [ref=e403]:
+          - img "PayPal" [ref=e404]
+        - listitem [ref=e405]:
+          - img "Shop Pay" [ref=e406]
+        - listitem [ref=e407]:
+          - img "Venmo" [ref=e408]
+        - listitem [ref=e409]:
+          - img "Visa" [ref=e410]
+      - generic [ref=e411]:
+        - link "Terms Of Services" [ref=e412] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e413] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.

@@ -1,0 +1,292 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - searchbox "Search" [ref=e10]
+          - button "Search" [ref=e11]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+          - link "View cart" [ref=e23] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e24]
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Shirt" [ref=e33] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e34]:
+            - link "For Her" [ref=e35] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e36]:
+            - link "Father's Day" [ref=e37] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e38]:
+            - link "Family & Friends" [ref=e39] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e40]:
+            - link "Car Accessories" [ref=e41] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e42]:
+            - link "Graduation" [ref=e43] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e44]:
+    - generic [ref=e513]:
+      - navigation "Breadcrumb" [ref=e514]:
+        - list [ref=e515]:
+          - listitem [ref=e516]:
+            - link "Home" [ref=e517] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e518]:
+            - generic [ref=e519]: /
+            - generic [ref=e520]: My Christmas Breakdown Mug Gnome Mug - Personalized Mug
+      - generic [ref=e521]:
+        - generic [ref=e523]:
+          - button "Add to wishlist" [ref=e525] [cursor=pointer]:
+            - img [ref=e526]
+          - generic [ref=e528]:
+            - button [ref=e529]
+            - button [ref=e530]
+            - button [ref=e531]
+            - button [ref=e532]
+            - button [ref=e533]
+            - button [ref=e534]
+            - button [ref=e535]
+            - button [ref=e536]
+        - generic [ref=e537]:
+          - heading "My Christmas Breakdown Mug Gnome Mug - Personalized Mug" [level=1] [ref=e538]
+          - link "Reviews" [ref=e539] [cursor=pointer]:
+            - /url: "#reviews"
+          - generic [ref=e540]:
+            - generic [ref=e541]: $25.00 USD
+            - generic [ref=e542]: $35.00 USD
+            - generic [ref=e543]: Save 29%
+          - generic [ref=e544]:
+            - generic [ref=e545]:
+              - generic [ref=e546]: 🇺🇸
+              - generic [ref=e547]: Deliver to United States
+            - generic [ref=e548]:
+              - generic [ref=e549]: 🚚
+              - generic [ref=e550]:
+                - text: "Get it by:"
+                - strong [ref=e551]: Jun 11 – Jun 16
+            - generic [ref=e552]:
+              - text: Or faster delivery with
+              - strong [ref=e553]: Express Shipping
+          - generic [ref=e554]:
+            - paragraph [ref=e556]: Title
+            - generic [ref=e557]:
+              - link "Mug / White / 11oz" [ref=e558] [cursor=pointer]:
+                - /url: /products/my-christmas-breakdown-mug-gnome-mug-personalized-mug-xma251101dotl?q=mug&_pos=1&_psq=mug&_ss=e&_v=1.0&Title=Mug+%2F+White+%2F+11oz
+              - link "Mug / White / 15oz" [ref=e559] [cursor=pointer]:
+                - /url: /products/my-christmas-breakdown-mug-gnome-mug-personalized-mug-xma251101dotl?q=mug&_pos=1&_psq=mug&_ss=e&_v=1.0&Title=Mug+%2F+White+%2F+15oz
+          - generic [ref=e561]:
+            - generic [ref=e562]:
+              - generic [ref=e563]: Quantity
+              - generic [ref=e564]:
+                - button "Decrease quantity" [ref=e565]: −
+                - generic [ref=e566]: "1"
+                - button "Increase quantity" [ref=e567]: +
+            - button "ADD TO CART" [ref=e568] [cursor=pointer]
+          - generic [ref=e569]:
+            - group [ref=e570]:
+              - generic "Description ›" [ref=e571] [cursor=pointer]:
+                - img [ref=e573]
+                - generic [ref=e575]: Description
+                - generic [ref=e576]: ›
+            - group [ref=e577]:
+              - generic "Shipping & Returns ›" [ref=e578] [cursor=pointer]:
+                - img [ref=e580]
+                - generic [ref=e585]: Shipping & Returns
+                - generic [ref=e586]: ›
+            - group [ref=e587]:
+              - generic "Personalization ›" [ref=e588] [cursor=pointer]:
+                - img [ref=e590]
+                - generic [ref=e593]: Personalization
+                - generic [ref=e594]: ›
+      - generic [ref=e596]:
+        - heading "More Items to Consider" [level=2] [ref=e597]
+        - generic [ref=e598]:
+          - link "You Are Beautiful And Kind - Personalized Photo Wearable Blanket Hoodie Add to wishlist You Are Beautiful And Kind - Personalized Photo Wearable Blanket Hoodie $60.00" [ref=e599] [cursor=pointer]:
+            - /url: /products/you-are-beautiful-and-kind-personalized-photo-wearable-hooded-blanket-dau261003tval
+            - generic [ref=e600]:
+              - img "You Are Beautiful And Kind - Personalized Photo Wearable Blanket Hoodie" [ref=e601]
+              - button "Add to wishlist" [ref=e602]:
+                - img [ref=e603]
+            - generic [ref=e605]:
+              - heading "You Are Beautiful And Kind - Personalized Photo Wearable Blanket Hoodie" [level=3] [ref=e606]
+              - paragraph [ref=e607]: $60.00
+          - link "Family, Friends, Siblings - Sweet Moment - Personalized Acrylic Photo Ornament Add to wishlist Family, Friends, Siblings - Sweet Moment - Personalized Acrylic Photo Ornament $19.00" [ref=e608] [cursor=pointer]:
+            - /url: /products/family-friends-siblings-sweet-moment-personalized-acrylic-photo-ornament-xma261002vupg
+            - generic [ref=e609]:
+              - img "Family, Friends, Siblings - Sweet Moment - Personalized Acrylic Photo Ornament" [ref=e610]
+              - button "Add to wishlist" [ref=e611]:
+                - img [ref=e612]
+            - generic [ref=e614]:
+              - heading "Family, Friends, Siblings - Sweet Moment - Personalized Acrylic Photo Ornament" [level=3] [ref=e615]
+              - paragraph [ref=e616]: $19.00
+          - link "Funny Mug - Funtie Definition - Fun Gifts Aunt, Auntie, Women - Personalized Mug Add to wishlist Funny Mug - Funtie Definition - Fun Gifts Aunt, Auntie, Women - Personalized Mug $25.00" [ref=e617] [cursor=pointer]:
+            - /url: /products/funny-mug-funtie-definition-fun-gifts-aunt-auntie-women-personalized-mug-ofa261001tthn
+            - generic [ref=e618]:
+              - img "Funny Mug - Funtie Definition - Fun Gifts Aunt, Auntie, Women - Personalized Mug" [ref=e619]
+              - button "Add to wishlist" [ref=e620]:
+                - img [ref=e621]
+            - generic [ref=e623]:
+              - heading "Funny Mug - Funtie Definition - Fun Gifts Aunt, Auntie, Women - Personalized Mug" [level=3] [ref=e624]
+              - paragraph [ref=e625]: $25.00
+          - link "Family Where Life Begins And Love Never Ends - Personalized Ceramic Plate Add to wishlist Family Where Life Begins And Love Never Ends - Personalized Ceramic Plate $40.00" [ref=e626] [cursor=pointer]:
+            - /url: /products/family-where-life-begins-and-love-never-ends-personalized-ceramic-plate-pan281001dgnh
+            - generic [ref=e627]:
+              - img "Family Where Life Begins And Love Never Ends - Personalized Ceramic Plate" [ref=e628]
+              - button "Add to wishlist" [ref=e629]:
+                - img [ref=e630]
+            - generic [ref=e632]:
+              - heading "Family Where Life Begins And Love Never Ends - Personalized Ceramic Plate" [level=3] [ref=e633]
+              - paragraph [ref=e634]: $40.00
+  - 'region "Today Only: Secret privileges for you!" [ref=e292]':
+    - generic [ref=e293]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e294]'
+      - generic [ref=e296]:
+        - generic [ref=e297]: Email
+        - textbox "Email" [ref=e298]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e299]
+  - contentinfo [ref=e300]:
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - button "Shop By" [ref=e304]:
+            - heading "Shop By" [level=2] [ref=e305]
+          - list [ref=e307]:
+            - listitem [ref=e308]:
+              - link "Gift Finder" [ref=e309] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e310]: Gift Finder
+            - listitem [ref=e311]:
+              - link "Shop By Product" [ref=e312] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e313]: Shop By Product
+                - img [ref=e314]
+            - listitem [ref=e316]:
+              - link "Shop By Occasion" [ref=e317] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e318]: Shop By Occasion
+                - img [ref=e319]
+            - listitem [ref=e321]:
+              - link "Shop By Recipient" [ref=e322] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e323]: Shop By Recipient
+                - img [ref=e324]
+            - listitem [ref=e326]:
+              - link "Shop By Hobby" [ref=e327] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e328]: Shop By Hobby
+                - img [ref=e329]
+        - generic [ref=e331]:
+          - button "Macorner" [ref=e332]:
+            - heading "Macorner" [level=2] [ref=e333]
+          - list [ref=e334]:
+            - listitem [ref=e335]:
+              - link "About Us" [ref=e336] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e337]:
+              - link "Privacy Policy" [ref=e338] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e339]:
+              - link "Accessibility Statement" [ref=e340] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e341]:
+          - button "Help and Support" [ref=e342]:
+            - heading "Help and Support" [level=2] [ref=e343]
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - link "Return Policy" [ref=e346] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e347]:
+              - link "Help Center" [ref=e348] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e349]:
+              - link "Size Chart" [ref=e350] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e351]:
+              - link "Shipping And Delivery" [ref=e352] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e353]:
+              - link "Cancellation & Modification Policy" [ref=e354] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e355]:
+              - link "Refund & Replacement Policy" [ref=e356] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e357]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e358] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e359]:
+          - heading "GET IN TOUCH" [level=2] [ref=e360]
+          - paragraph [ref=e361]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e362] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e363]:
+            - listitem [ref=e364]:
+              - link "X (Twitter)" [ref=e365] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e366]
+            - listitem [ref=e368]:
+              - link "Facebook" [ref=e369] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e370]
+            - listitem [ref=e372]:
+              - link "Pinterest" [ref=e373] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e374]
+            - listitem [ref=e376]:
+              - link "Instagram" [ref=e377] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e378]
+            - listitem [ref=e382]:
+              - link "TikTok" [ref=e383] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e384]
+      - list [ref=e386]:
+        - listitem [ref=e387]:
+          - img "American Express" [ref=e388]
+        - listitem [ref=e389]:
+          - img "Apple Pay" [ref=e390]
+        - listitem [ref=e391]:
+          - img "Bancontact" [ref=e392]
+        - listitem [ref=e393]:
+          - img "Diners Club" [ref=e394]
+        - listitem [ref=e395]:
+          - img "Discover" [ref=e396]
+        - listitem [ref=e397]:
+          - img "Google Pay" [ref=e398]
+        - listitem [ref=e399]:
+          - img "iDEAL" [ref=e400]
+        - listitem [ref=e401]:
+          - img "Mastercard" [ref=e402]
+        - listitem [ref=e403]:
+          - img "PayPal" [ref=e404]
+        - listitem [ref=e405]:
+          - img "Shop Pay" [ref=e406]
+        - listitem [ref=e407]:
+          - img "Venmo" [ref=e408]
+        - listitem [ref=e409]:
+          - img "Visa" [ref=e410]
+      - generic [ref=e411]:
+        - link "Terms Of Services" [ref=e412] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e413] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.

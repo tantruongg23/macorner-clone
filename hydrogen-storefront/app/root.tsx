@@ -1,4 +1,5 @@
 import {Analytics, getShopAnalytics, useNonce} from '@shopify/hydrogen';
+import {GA4Analytics} from '~/lib/analytics/ga4';
 import {
   Outlet,
   useRouteError,
@@ -84,6 +85,7 @@ export async function loader(args: Route.LoaderArgs) {
     ...deferredData,
     ...criticalData,
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
+    ga4MeasurementId: env.PUBLIC_GA4_MEASUREMENT_ID ?? '',
     shop: getShopAnalytics({
       storefront,
       publicStorefrontId: env.PUBLIC_STOREFRONT_ID,
@@ -184,6 +186,7 @@ export default function App() {
       shop={data.shop}
       consent={data.consent}
     >
+      <GA4Analytics measurementId={data.ga4MeasurementId} />
       <PageLayout {...data}>
         <Outlet />
       </PageLayout>

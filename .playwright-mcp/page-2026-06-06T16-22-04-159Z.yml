@@ -1,0 +1,512 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - textbox "Search" [ref=e10]
+          - button "Search" [ref=e11] [cursor=pointer]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18] [cursor=pointer]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+          - link "View cart" [ref=e23] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e24]
+      - navigation "Main" [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Shirt" [ref=e33] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e34]:
+            - link "For Her" [ref=e35] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e36]:
+            - link "Father's Day" [ref=e37] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e38]:
+            - link "Family & Friends" [ref=e39] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e40]:
+            - link "Car Accessories" [ref=e41] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e42]:
+            - link "Graduation" [ref=e43] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - heading "Search results for \"mug\"" [level=1] [ref=e47]:
+          - text: Search results for
+          - generic [ref=e48]: "\"mug\""
+        - paragraph [ref=e49]: 948 products found
+      - generic [ref=e50]:
+        - searchbox "Search products…" [ref=e51]: mug
+        - button "Search" [ref=e52]
+      - generic [ref=e53]:
+        - paragraph [ref=e54]: 948 results
+        - generic [ref=e55]:
+          - generic [ref=e56]: "Sort by:"
+          - combobox "Sort by:" [ref=e57] [cursor=pointer]:
+            - option "Most relevant" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - 'option "Date: New to Old"'
+            - 'option "Date: Old to New"'
+      - generic [ref=e58]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - link [ref=e63] [cursor=pointer]:
+              - /url: /products/my-christmas-breakdown-mug-gnome-mug-personalized-mug-xma251101dotl
+              - img [ref=e64]
+            - button "Add to wishlist" [ref=e65] [cursor=pointer]:
+              - img [ref=e66]
+            - generic [ref=e68]: Save
+          - generic [ref=e70]:
+            - heading "My Christmas Breakdown Mug Gnome Mug - Personalized Mug" [level=3] [ref=e71]:
+              - link "My Christmas Breakdown Mug Gnome Mug - Personalized Mug" [ref=e72] [cursor=pointer]:
+                - /url: /products/my-christmas-breakdown-mug-gnome-mug-personalized-mug-xma251101dotl
+            - generic [ref=e74]: $25.00 VND $35.00 VND
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - link [ref=e79] [cursor=pointer]:
+              - /url: /products/motivational-mug-mug-of-positivitea-gifts-for-friend-daughter-mom-sister-personalized-mug-afm251202tthn
+              - img [ref=e80]
+            - button "Add to wishlist" [ref=e81] [cursor=pointer]:
+              - img [ref=e82]
+            - generic [ref=e84]: Save
+          - generic [ref=e86]:
+            - heading "Motivational Mug - Mug Of Positivitea - Gifts For Friend, Daughter, Mom, Sister - Personalized Mug" [level=3] [ref=e87]:
+              - link "Motivational Mug - Mug Of Positivitea - Gifts For Friend, Daughter, Mom, Sister - Personalized Mug" [ref=e88] [cursor=pointer]:
+                - /url: /products/motivational-mug-mug-of-positivitea-gifts-for-friend-daughter-mom-sister-personalized-mug-afm251202tthn
+            - generic [ref=e90]: $25.00 VND $35.00 VND
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - link [ref=e95] [cursor=pointer]:
+              - /url: /products/this-is-my-reading-mug-personalized-mug-boo281105naht
+              - img [ref=e96]
+            - button "Add to wishlist" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+            - generic [ref=e100]: Save
+          - generic [ref=e102]:
+            - heading "This Is My Reading Mug - Personalized Mug" [level=3] [ref=e103]:
+              - link "This Is My Reading Mug - Personalized Mug" [ref=e104] [cursor=pointer]:
+                - /url: /products/this-is-my-reading-mug-personalized-mug-boo281105naht
+            - generic [ref=e106]: $25.00 VND $35.00 VND
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - link [ref=e111] [cursor=pointer]:
+              - /url: /products/my-morning-mindset-mug-self-love-mug-self-gift-personalized-mug-afm251103patl
+              - img [ref=e112]
+            - button "Add to wishlist" [ref=e113] [cursor=pointer]:
+              - img [ref=e114]
+            - generic [ref=e116]: Save
+          - generic [ref=e118]:
+            - heading "My Morning Mindset Mug Self Love Mug Self Gift - Personalized Mug" [level=3] [ref=e119]:
+              - link "My Morning Mindset Mug Self Love Mug Self Gift - Personalized Mug" [ref=e120] [cursor=pointer]:
+                - /url: /products/my-morning-mindset-mug-self-love-mug-self-gift-personalized-mug-afm251103patl
+            - generic [ref=e122]: $25.00 VND $35.00 VND
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - link [ref=e127] [cursor=pointer]:
+              - /url: /products/true-crime-watching-mug-personalized-accent-mug-mov090101ttcy
+              - img [ref=e128]
+            - button "Add to wishlist" [ref=e129] [cursor=pointer]:
+              - img [ref=e130]
+            - generic [ref=e132]: Save
+          - generic [ref=e134]:
+            - heading "True Crime Watching Mug - Personalized Accent Mug" [level=3] [ref=e135]:
+              - link "True Crime Watching Mug - Personalized Accent Mug" [ref=e136] [cursor=pointer]:
+                - /url: /products/true-crime-watching-mug-personalized-accent-mug-mov090101ttcy
+            - generic [ref=e138]: $27.00 VND $37.00 VND
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - link [ref=e143] [cursor=pointer]:
+              - /url: /products/seems-like-gift-enough-but-heres-a-mug-fun-mug-for-family-personalized-mug-sib151001dohn
+              - img [ref=e144]
+            - button "Add to wishlist" [ref=e145] [cursor=pointer]:
+              - img [ref=e146]
+            - generic [ref=e148]: Save
+          - generic [ref=e150]:
+            - heading "Seems Like Gift Enough But Here's A Mug - Fun Mug For Family - Personalized Mug" [level=3] [ref=e151]:
+              - link "Seems Like Gift Enough But Here's A Mug - Fun Mug For Family - Personalized Mug" [ref=e152] [cursor=pointer]:
+                - /url: /products/seems-like-gift-enough-but-heres-a-mug-fun-mug-for-family-personalized-mug-sib151001dohn
+            - generic [ref=e154]: $25.00 VND $35.00 VND
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - link [ref=e159] [cursor=pointer]:
+              - /url: /products/this-is-my-christmas-movie-watching-mug-personalized-mug-mov211003ttec
+              - img [ref=e160]
+            - button "Add to wishlist" [ref=e161] [cursor=pointer]:
+              - img [ref=e162]
+            - generic [ref=e164]: Save
+          - generic [ref=e166]:
+            - heading "This Is My Christmas Movie Watching Mug - Personalized Mug" [level=3] [ref=e167]:
+              - link "This Is My Christmas Movie Watching Mug - Personalized Mug" [ref=e168] [cursor=pointer]:
+                - /url: /products/this-is-my-christmas-movie-watching-mug-personalized-mug-mov211003ttec
+            - generic [ref=e170]: $25.00 VND $35.00 VND
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - link [ref=e175] [cursor=pointer]:
+              - /url: /products/my-cup-of-positivity-custom-name-mug-personalized-mug-afm020101tttl
+              - img [ref=e176]
+            - button "Add to wishlist" [ref=e177] [cursor=pointer]:
+              - img [ref=e178]
+            - generic [ref=e180]: Save
+          - generic [ref=e182]:
+            - heading "My Cup Of Positivity Custom Name Mug - Personalized Mug" [level=3] [ref=e183]:
+              - link "My Cup Of Positivity Custom Name Mug - Personalized Mug" [ref=e184] [cursor=pointer]:
+                - /url: /products/my-cup-of-positivity-custom-name-mug-personalized-mug-afm020101tttl
+            - generic [ref=e186]: $25.00 VND $35.00 VND
+        - generic [ref=e188]:
+          - generic [ref=e189]:
+            - link [ref=e191] [cursor=pointer]:
+              - /url: /products/funny-mug-this-mug-could-ve-been-an-email-exchange-gifts-gag-gift-for-coworkers-personalized-mug-cow171103tthn
+              - img [ref=e192]
+            - button "Add to wishlist" [ref=e193] [cursor=pointer]:
+              - img [ref=e194]
+            - generic [ref=e196]: Save
+          - generic [ref=e198]:
+            - heading "Funny Mug - This Mug Could’ve Been An Email - Exchange Gifts, Gag Gift For Coworkers - Personalized Mug" [level=3] [ref=e199]:
+              - link "Funny Mug - This Mug Could’ve Been An Email - Exchange Gifts, Gag Gift For Coworkers - Personalized Mug" [ref=e200] [cursor=pointer]:
+                - /url: /products/funny-mug-this-mug-could-ve-been-an-email-exchange-gifts-gag-gift-for-coworkers-personalized-mug-cow171103tthn
+            - generic [ref=e202]: $25.00 VND $35.00 VND
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - link [ref=e207] [cursor=pointer]:
+              - /url: /products/bad-b-tch-definition-funny-mug-personalized-mug-cow281102tttl
+              - img [ref=e208]
+            - button "Add to wishlist" [ref=e209] [cursor=pointer]:
+              - img [ref=e210]
+            - generic [ref=e212]: Save
+          - generic [ref=e214]:
+            - heading "Bad B*tch Definition Funny Mug - Personalized Mug" [level=3] [ref=e215]:
+              - link "Bad B*tch Definition Funny Mug - Personalized Mug" [ref=e216] [cursor=pointer]:
+                - /url: /products/bad-b-tch-definition-funny-mug-personalized-mug-cow281102tttl
+            - generic [ref=e218]: $25.00 VND $35.00 VND
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - link [ref=e223] [cursor=pointer]:
+              - /url: /products/paws-off-my-daddys-mug-personalized-mug-pet181201vupg
+              - img [ref=e224]
+            - button "Add to wishlist" [ref=e225] [cursor=pointer]:
+              - img [ref=e226]
+            - generic [ref=e228]: Save
+          - generic [ref=e230]:
+            - heading "Paws Off ! My Daddy's Mug - Personalized Mug" [level=3] [ref=e231]:
+              - link "Paws Off ! My Daddy's Mug - Personalized Mug" [ref=e232] [cursor=pointer]:
+                - /url: /products/paws-off-my-daddys-mug-personalized-mug-pet181201vupg
+            - generic [ref=e234]: $25.00 VND $35.00 VND
+        - generic [ref=e236]:
+          - generic [ref=e237]:
+            - link [ref=e239] [cursor=pointer]:
+              - /url: /products/my-christmas-movie-watching-mug-personalized-accent-mug-xma240902naht
+              - img [ref=e240]
+            - button "Add to wishlist" [ref=e241] [cursor=pointer]:
+              - img [ref=e242]
+            - generic [ref=e244]: Save
+          - generic [ref=e246]:
+            - heading "My Christmas Movie Watching Mug - Personalized Accent Mug" [level=3] [ref=e247]:
+              - link "My Christmas Movie Watching Mug - Personalized Accent Mug" [ref=e248] [cursor=pointer]:
+                - /url: /products/my-christmas-movie-watching-mug-personalized-accent-mug-xma240902naht
+            - generic [ref=e250]: $27.00 VND $37.00 VND
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - link [ref=e255] [cursor=pointer]:
+              - /url: /products/custom-photo-bestie-mug-stripe-besties-picture-personalized-photo-mug-fri021203natl
+              - img [ref=e256]
+            - button "Add to wishlist" [ref=e257] [cursor=pointer]:
+              - img [ref=e258]
+            - generic [ref=e260]: Save
+          - generic [ref=e262]:
+            - heading "Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug" [level=3] [ref=e263]:
+              - link "Custom Photo Bestie Mug Stripe Besties Picture - Personalized Photo Mug" [ref=e264] [cursor=pointer]:
+                - /url: /products/custom-photo-bestie-mug-stripe-besties-picture-personalized-photo-mug-fri021203natl
+            - generic [ref=e266]: $25.00 VND $35.00 VND
+        - generic [ref=e268]:
+          - generic [ref=e269]:
+            - link [ref=e271] [cursor=pointer]:
+              - /url: /products/funny-mug-christmas-spirit-for-me-gift-personalized-mug-xma091101patl
+              - img [ref=e272]
+            - button "Add to wishlist" [ref=e273] [cursor=pointer]:
+              - img [ref=e274]
+            - generic [ref=e276]: Save
+          - generic [ref=e278]:
+            - heading "Funny Mug Christmas Spirit For Me Gift - Personalized Mug" [level=3] [ref=e279]:
+              - link "Funny Mug Christmas Spirit For Me Gift - Personalized Mug" [ref=e280] [cursor=pointer]:
+                - /url: /products/funny-mug-christmas-spirit-for-me-gift-personalized-mug-xma091101patl
+            - generic [ref=e282]: $25.00 VND $35.00 VND
+        - generic [ref=e284]:
+          - generic [ref=e285]:
+            - link [ref=e287] [cursor=pointer]:
+              - /url: /products/hidden-swear-words-in-a-mug-custom-qr-voice-personalized-mug-cow010602dohn
+              - img [ref=e288]
+            - button "Add to wishlist" [ref=e289] [cursor=pointer]:
+              - img [ref=e290]
+            - generic [ref=e292]: Save
+          - generic [ref=e294]:
+            - heading "Hidden Swear Words In A Mug Custom QR Voice - Personalized Mug" [level=3] [ref=e295]:
+              - link "Hidden Swear Words In A Mug Custom QR Voice - Personalized Mug" [ref=e296] [cursor=pointer]:
+                - /url: /products/hidden-swear-words-in-a-mug-custom-qr-voice-personalized-mug-cow010602dohn
+            - generic [ref=e298]: $25.00 VND $35.00 VND
+        - generic [ref=e300]:
+          - generic [ref=e301]:
+            - link [ref=e303] [cursor=pointer]:
+              - /url: /products/funny-mug-custom-job-title-swear-mug-exchange-gifts-gag-gifts-for-coworkers-self-gift-mug-nm-cow24100401tthn
+              - img [ref=e304]
+            - button "Add to wishlist" [ref=e305] [cursor=pointer]:
+              - img [ref=e306]
+          - generic [ref=e309]:
+            - heading "Funny Mug - Custom Job Title Swear Mug - Exchange Gifts, Gag Gifts For Coworkers, Self Gift - Mug" [level=3] [ref=e310]:
+              - link "Funny Mug - Custom Job Title Swear Mug - Exchange Gifts, Gag Gifts For Coworkers, Self Gift - Mug" [ref=e311] [cursor=pointer]:
+                - /url: /products/funny-mug-custom-job-title-swear-mug-exchange-gifts-gag-gifts-for-coworkers-self-gift-mug-nm-cow24100401tthn
+            - generic [ref=e313]: $25.00 VND
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - link [ref=e318] [cursor=pointer]:
+              - /url: /products/f-cktose-intolerant-funny-mug-fun-gift-for-coworkers-personalized-mug-cow240703xltl
+              - img [ref=e319]
+            - button "Add to wishlist" [ref=e320] [cursor=pointer]:
+              - img [ref=e321]
+            - generic [ref=e323]: Save
+          - generic [ref=e325]:
+            - heading "F*cktose Intolerant Funny Mug Fun Gift For Coworkers - Personalized Mug" [level=3] [ref=e326]:
+              - link "F*cktose Intolerant Funny Mug Fun Gift For Coworkers - Personalized Mug" [ref=e327] [cursor=pointer]:
+                - /url: /products/f-cktose-intolerant-funny-mug-fun-gift-for-coworkers-personalized-mug-cow240703xltl
+            - generic [ref=e329]: $25.00 VND $35.00 VND
+        - generic [ref=e331]:
+          - generic [ref=e332]:
+            - link [ref=e334] [cursor=pointer]:
+              - /url: /products/manifesting-mantras-mug-manifest-for-me-gift-personalized-mug-afm231102patl
+              - img [ref=e335]
+            - button "Add to wishlist" [ref=e336] [cursor=pointer]:
+              - img [ref=e337]
+            - generic [ref=e339]: Save
+          - generic [ref=e341]:
+            - heading "Manifesting Mantras Mug Manifest For Me Gift - Personalized Mug" [level=3] [ref=e342]:
+              - link "Manifesting Mantras Mug Manifest For Me Gift - Personalized Mug" [ref=e343] [cursor=pointer]:
+                - /url: /products/manifesting-mantras-mug-manifest-for-me-gift-personalized-mug-afm231102patl
+            - generic [ref=e345]: $25.00 VND $35.00 VND
+        - generic [ref=e347]:
+          - generic [ref=e348]:
+            - link [ref=e350] [cursor=pointer]:
+              - /url: /products/i-love-you-silly-goose-funny-couple-mug-personalized-mug-cou201102tttl
+              - img [ref=e351]
+            - button "Add to wishlist" [ref=e352] [cursor=pointer]:
+              - img [ref=e353]
+            - generic [ref=e355]: Save
+          - generic [ref=e357]:
+            - heading "I Love You Silly Goose Funny Couple Mug - Personalized Mug" [level=3] [ref=e358]:
+              - link "I Love You Silly Goose Funny Couple Mug - Personalized Mug" [ref=e359] [cursor=pointer]:
+                - /url: /products/i-love-you-silly-goose-funny-couple-mug-personalized-mug-cou201102tttl
+            - generic [ref=e361]: $25.00 VND $35.00 VND
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - link [ref=e366] [cursor=pointer]:
+              - /url: /products/accent-mug-grandma-claus-with-grandkids-personalized-accent-mug-grm251003tvmt
+              - img [ref=e367]
+            - button "Add to wishlist" [ref=e368] [cursor=pointer]:
+              - img [ref=e369]
+            - generic [ref=e371]: Save
+          - generic [ref=e373]:
+            - heading "Accent Mug Grandma Claus With Grandkids - Personalized Accent Mug" [level=3] [ref=e374]:
+              - link "Accent Mug Grandma Claus With Grandkids - Personalized Accent Mug" [ref=e375] [cursor=pointer]:
+                - /url: /products/accent-mug-grandma-claus-with-grandkids-personalized-accent-mug-grm251003tvmt
+            - generic [ref=e377]: $27.00 VND $37.00 VND
+        - generic [ref=e379]:
+          - generic [ref=e380]:
+            - link [ref=e382] [cursor=pointer]:
+              - /url: /products/funny-mug-retirement-fun-gifts-for-coworker-friends-boss-personalized-mug-rtm261003tthn
+              - img [ref=e383]
+            - button "Add to wishlist" [ref=e384] [cursor=pointer]:
+              - img [ref=e385]
+            - generic [ref=e387]: Save
+          - generic [ref=e389]:
+            - heading "Funny Mug - Retirement - Fun Gifts For Coworker, Friends, Boss - Personalized Mug" [level=3] [ref=e390]:
+              - link "Funny Mug - Retirement - Fun Gifts For Coworker, Friends, Boss - Personalized Mug" [ref=e391] [cursor=pointer]:
+                - /url: /products/funny-mug-retirement-fun-gifts-for-coworker-friends-boss-personalized-mug-rtm261003tthn
+            - generic [ref=e393]: $25.00 VND $35.00 VND
+        - generic [ref=e395]:
+          - generic [ref=e396]:
+            - link [ref=e398] [cursor=pointer]:
+              - /url: /products/best-grandpa-ever-mug-nm-grp10110101hukl
+              - img [ref=e399]
+            - button "Add to wishlist" [ref=e400] [cursor=pointer]:
+              - img [ref=e401]
+          - generic [ref=e404]:
+            - heading "Best Grandpa Ever - Mug" [level=3] [ref=e405]:
+              - link "Best Grandpa Ever - Mug" [ref=e406] [cursor=pointer]:
+                - /url: /products/best-grandpa-ever-mug-nm-grp10110101hukl
+            - generic [ref=e408]: $25.00 VND
+        - generic [ref=e410]:
+          - generic [ref=e411]:
+            - link [ref=e413] [cursor=pointer]:
+              - /url: /products/my-affirmations-mug-self-gift-gifts-for-daughter-friends-personalized-mug-afm191202lahn
+              - img [ref=e414]
+            - button "Add to wishlist" [ref=e415] [cursor=pointer]:
+              - img [ref=e416]
+            - generic [ref=e418]: Save
+          - generic [ref=e420]:
+            - heading "My Affirmations Mug - Self Gift, Gifts For Daughter, Friends - Personalized Mug" [level=3] [ref=e421]:
+              - link "My Affirmations Mug - Self Gift, Gifts For Daughter, Friends - Personalized Mug" [ref=e422] [cursor=pointer]:
+                - /url: /products/my-affirmations-mug-self-gift-gifts-for-daughter-friends-personalized-mug-afm191202lahn
+            - generic [ref=e424]: $25.00 VND $35.00 VND
+        - generic [ref=e426]:
+          - generic [ref=e427]:
+            - link [ref=e429] [cursor=pointer]:
+              - /url: /products/funny-mug-for-friends-i-knew-by-your-sarcastic-undertones-personalized-mug-fri251103tthn
+              - img [ref=e430]
+            - button "Add to wishlist" [ref=e431] [cursor=pointer]:
+              - img [ref=e432]
+            - generic [ref=e434]: Save
+          - generic [ref=e436]:
+            - heading "Funny Mug For Friends - I Knew By Your Sarcastic Undertones - Personalized Mug" [level=3] [ref=e437]:
+              - link "Funny Mug For Friends - I Knew By Your Sarcastic Undertones - Personalized Mug" [ref=e438] [cursor=pointer]:
+                - /url: /products/funny-mug-for-friends-i-knew-by-your-sarcastic-undertones-personalized-mug-fri251103tthn
+            - generic [ref=e440]: $25.00 VND $35.00 VND
+      - link "Load more" [ref=e442] [cursor=pointer]:
+        - /url: /search?q=mug&sort=relevance&cursor=eyJwYWdlIjoyLCJsYXN0X2lkIjo5MDUyMTU4ODg2MDQ0LCJyZXZlcnNlIjp0cnVlLCJvZmZzZXQiOjIzfQ==
+  - 'region "Today Only: Secret privileges for you!" [ref=e443]':
+    - generic [ref=e444]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e445]'
+      - generic [ref=e447]:
+        - generic [ref=e448]: Email
+        - textbox "Email" [ref=e449]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e450]
+  - contentinfo [ref=e451]:
+    - generic [ref=e452]:
+      - generic [ref=e453]:
+        - generic [ref=e454]:
+          - button "Shop By" [ref=e455]:
+            - heading "Shop By" [level=2] [ref=e456]
+          - list [ref=e458]:
+            - listitem [ref=e459]:
+              - link "Gift Finder" [ref=e460] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e461]: Gift Finder
+            - listitem [ref=e462]:
+              - link "Shop By Product" [ref=e463] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e464]: Shop By Product
+                - img [ref=e465]
+            - listitem [ref=e467]:
+              - link "Shop By Occasion" [ref=e468] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e469]: Shop By Occasion
+                - img [ref=e470]
+            - listitem [ref=e472]:
+              - link "Shop By Recipient" [ref=e473] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e474]: Shop By Recipient
+                - img [ref=e475]
+            - listitem [ref=e477]:
+              - link "Shop By Hobby" [ref=e478] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e479]: Shop By Hobby
+                - img [ref=e480]
+        - generic [ref=e482]:
+          - button "Macorner" [ref=e483]:
+            - heading "Macorner" [level=2] [ref=e484]
+          - list [ref=e485]:
+            - listitem [ref=e486]:
+              - link "About Us" [ref=e487] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e488]:
+              - link "Privacy Policy" [ref=e489] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e490]:
+              - link "Accessibility Statement" [ref=e491] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e492]:
+          - button "Help and Support" [ref=e493]:
+            - heading "Help and Support" [level=2] [ref=e494]
+          - list [ref=e495]:
+            - listitem [ref=e496]:
+              - link "Return Policy" [ref=e497] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e498]:
+              - link "Help Center" [ref=e499] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e500]:
+              - link "Size Chart" [ref=e501] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e502]:
+              - link "Shipping And Delivery" [ref=e503] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e504]:
+              - link "Cancellation & Modification Policy" [ref=e505] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e506]:
+              - link "Refund & Replacement Policy" [ref=e507] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e508]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e509] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e510]:
+          - heading "GET IN TOUCH" [level=2] [ref=e511]
+          - paragraph [ref=e512]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e513] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e514]:
+            - listitem [ref=e515]:
+              - link "X (Twitter)" [ref=e516] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e517]
+            - listitem [ref=e519]:
+              - link "Facebook" [ref=e520] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e521]
+            - listitem [ref=e523]:
+              - link "Pinterest" [ref=e524] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e525]
+            - listitem [ref=e527]:
+              - link "Instagram" [ref=e528] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e529]
+            - listitem [ref=e533]:
+              - link "TikTok" [ref=e534] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e535]
+      - list [ref=e537]:
+        - listitem [ref=e538]:
+          - img "American Express" [ref=e539]
+        - listitem [ref=e540]:
+          - img "Apple Pay" [ref=e541]
+        - listitem [ref=e542]:
+          - img "Bancontact" [ref=e543]
+        - listitem [ref=e544]:
+          - img "Diners Club" [ref=e545]
+        - listitem [ref=e546]:
+          - img "Discover" [ref=e547]
+        - listitem [ref=e548]:
+          - img "Google Pay" [ref=e549]
+        - listitem [ref=e550]:
+          - img "iDEAL" [ref=e551]
+        - listitem [ref=e552]:
+          - img "Mastercard" [ref=e553]
+        - listitem [ref=e554]:
+          - img "PayPal" [ref=e555]
+        - listitem [ref=e556]:
+          - img "Shop Pay" [ref=e557]
+        - listitem [ref=e558]:
+          - img "Venmo" [ref=e559]
+        - listitem [ref=e560]:
+          - img "Visa" [ref=e561]
+      - generic [ref=e562]:
+        - link "Terms Of Services" [ref=e563] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e564] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.
