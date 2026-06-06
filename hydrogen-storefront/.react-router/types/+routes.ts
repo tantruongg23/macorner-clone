@@ -14,21 +14,58 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/pages/tracking-order": {
+    params: {};
+  };
   "/collections/:handle": {
     params: {
       "handle": string;
     };
+  };
+  "/account/authorize": {
+    params: {};
+  };
+  "/collections": {
+    params: {};
   };
   "/products/:handle": {
     params: {
       "handle": string;
     };
   };
+  "/account/logout": {
+    params: {};
+  };
+  "/account/login": {
+    params: {};
+  };
+  "/pages/wishlist": {
+    params: {};
+  };
+  "/pages/:handle": {
+    params: {
+      "handle": string;
+    };
+  };
+  "/account": {
+    params: {};
+  };
+  "/account/orders": {
+    params: {};
+  };
+  "/account/profile": {
+    params: {};
+  };
   "/search": {
     params: {};
   };
   "/cart": {
     params: {};
+  };
+  "/*": {
+    params: {
+      "*": string;
+    };
   };
   "/graphiql": {
     params: {};
@@ -44,15 +81,59 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/collections/:handle" | "/products/:handle" | "/search" | "/cart" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+    page: "/" | "/pages/tracking-order" | "/collections/:handle" | "/account/authorize" | "/collections" | "/products/:handle" | "/account/logout" | "/account/login" | "/pages/wishlist" | "/pages/:handle" | "/account" | "/account/orders" | "/account/profile" | "/search" | "/cart" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+  };
+  "routes/pages.tracking-order.tsx": {
+    id: "routes/pages.tracking-order";
+    page: "/pages/tracking-order";
   };
   "routes/collections.$handle.tsx": {
     id: "routes/collections.$handle";
     page: "/collections/:handle";
   };
+  "routes/account_.authorize.tsx": {
+    id: "routes/account_.authorize";
+    page: "/account/authorize";
+  };
+  "routes/collections._index.tsx": {
+    id: "routes/collections._index";
+    page: "/collections";
+  };
   "routes/products.$handle.tsx": {
     id: "routes/products.$handle";
     page: "/products/:handle";
+  };
+  "routes/account_.logout.tsx": {
+    id: "routes/account_.logout";
+    page: "/account/logout";
+  };
+  "routes/account_.login.tsx": {
+    id: "routes/account_.login";
+    page: "/account/login";
+  };
+  "routes/pages.wishlist.tsx": {
+    id: "routes/pages.wishlist";
+    page: "/pages/wishlist";
+  };
+  "routes/pages.$handle.tsx": {
+    id: "routes/pages.$handle";
+    page: "/pages/:handle";
+  };
+  "routes/account.tsx": {
+    id: "routes/account";
+    page: "/account" | "/account/orders" | "/account/profile";
+  };
+  "routes/account.orders._index.tsx": {
+    id: "routes/account.orders._index";
+    page: "/account/orders";
+  };
+  "routes/account.profile.tsx": {
+    id: "routes/account.profile";
+    page: "/account/profile";
+  };
+  "routes/account._index.tsx": {
+    id: "routes/account._index";
+    page: "/account";
   };
   "routes/search.tsx": {
     id: "routes/search";
@@ -65,6 +146,10 @@ type RouteFiles = {
   "routes/cart.tsx": {
     id: "routes/cart";
     page: "/cart";
+  };
+  "routes/$.tsx": {
+    id: "routes/$";
+    page: "/*";
   };
   "../../../../..//Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout.jsx": {
     id: "/Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
@@ -90,11 +175,23 @@ type RouteFiles = {
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
+  "routes/pages.tracking-order": typeof import("./app/routes/pages.tracking-order.tsx");
   "routes/collections.$handle": typeof import("./app/routes/collections.$handle.tsx");
+  "routes/account_.authorize": typeof import("./app/routes/account_.authorize.tsx");
+  "routes/collections._index": typeof import("./app/routes/collections._index.tsx");
   "routes/products.$handle": typeof import("./app/routes/products.$handle.tsx");
+  "routes/account_.logout": typeof import("./app/routes/account_.logout.tsx");
+  "routes/account_.login": typeof import("./app/routes/account_.login.tsx");
+  "routes/pages.wishlist": typeof import("./app/routes/pages.wishlist.tsx");
+  "routes/pages.$handle": typeof import("./app/routes/pages.$handle.tsx");
+  "routes/account": typeof import("./app/routes/account.tsx");
+  "routes/account.orders._index": typeof import("./app/routes/account.orders._index.tsx");
+  "routes/account.profile": typeof import("./app/routes/account.profile.tsx");
+  "routes/account._index": typeof import("./app/routes/account._index.tsx");
   "routes/search": typeof import("./app/routes/search.tsx");
   "routes/_index": typeof import("./app/routes/_index.tsx");
   "routes/cart": typeof import("./app/routes/cart.tsx");
+  "routes/$": typeof import("./app/routes/$.tsx");
   "/Workspace/macorner-clone/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout": unknown;
   "vite/virtual-routes/routes/graphiql": unknown;
   "vite/virtual-routes/routes/subrequest-profiler": unknown;

@@ -53,8 +53,117 @@ export function Aside({
     return () => abortController.abort();
   }, [close, expanded]);
 
+  // Body scroll lock
+  useEffect(() => {
+    if (expanded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [expanded]);
+
   return (
-    <>  </>
+    <div
+      aria-expanded={expanded}
+      aria-labelledby={`${id}-heading`}
+      aria-modal="true"
+      role="dialog"
+      style={{
+        // Keep in DOM so Suspense/Await can resolve; hide visually when closed
+        visibility: expanded ? 'visible' : 'hidden',
+      }}
+    >
+      {/* Backdrop */}
+      <div
+        aria-hidden="true"
+        onClick={close}
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(0,0,0,0.45)',
+          zIndex: 90,
+          opacity: expanded ? 1 : 0,
+          transition: 'opacity 0.25s ease',
+          pointerEvents: expanded ? 'auto' : 'none',
+        }}
+      />
+
+      {/* Panel */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          maxWidth: type === 'cart' ? '440px' : '100%',
+          background: '#fff',
+          zIndex: 100,
+          display: 'flex',
+          flexDirection: 'column',
+          boxShadow: '-4px 0 24px rgba(0,0,0,0.12)',
+          transform: expanded ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)',
+          overflowY: 'auto',
+        }}
+      >
+        {/* Panel header */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '16px 20px',
+            borderBottom: '1px solid #e5e7eb',
+            position: 'sticky',
+            top: 0,
+            background: '#fff',
+            zIndex: 1,
+          }}
+        >
+          <h2
+            id={`${id}-heading`}
+            style={{
+              margin: 0,
+              fontSize: '14px',
+              fontWeight: 700,
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              color: 'rgb(18,18,18)',
+              fontFamily: 'Poppins, sans-serif',
+            }}
+          >
+            {heading}
+          </h2>
+          <button
+            onClick={close}
+            aria-label="Close"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '4px',
+              color: 'rgba(18,18,18,0.55)',
+              lineHeight: 1,
+              fontSize: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Panel content */}
+        <div style={{flex: 1, overflowY: 'auto'}}>
+          {children}
+        </div>
+      </div>
+    </div>
   );
 }
 

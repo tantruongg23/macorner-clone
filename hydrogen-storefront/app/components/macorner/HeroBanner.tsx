@@ -2,8 +2,9 @@ type HeroBannerData = {
   title: string;
   description: string;
   actionLink: string;
-  image: { url: string; altText: string | null } | null;
+  image: { url: string; altText?: string | null | undefined } | null;
 } | null;
+
 
 export function HeroBanner({ data }: { data: HeroBannerData }) {
   if (!data) return null;

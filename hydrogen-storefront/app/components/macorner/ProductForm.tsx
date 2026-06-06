@@ -2,6 +2,9 @@ import {useState} from 'react';
 import {Link, useSearchParams, useFetchers} from 'react-router';
 import {CartForm} from '@shopify/hydrogen';
 import {useAside} from '~/components/Aside';
+import {Personalizer, parsePersonalizationFields} from './Personalizer';
+import {PreviewModal} from './PreviewModal';
+import {JudgeMeStarBadge} from './ProductReviews';
 
 interface Money {
   amount: string;
@@ -16,7 +19,6 @@ interface VariantOption {
 interface Variant {
   id: string;
   availableForSale: boolean;
-  quantityAvailable?: number | null;
   price: Money;
   compareAtPrice: Money | null;
   selectedOptions: VariantOption[];
@@ -47,6 +49,7 @@ interface Product {
   options: ProductOption[];
   selectedVariant: Variant | null;
   variants: {nodes: Variant[]};
+  personalizationField?: {value: string | null} | null;
 }
 
 interface ProductFormProps {
@@ -139,30 +142,18 @@ function getDeliveryRange(): {start: string; end: string} {
   return {start: fmt(start), end: fmt(end)};
 }
 
-function StarRating({count = 5}: {count?: number}) {
-  return (
-    <span className="flex items-center gap-0.5">
-      {Array.from({length: 5}).map((_, i) => (
-        <svg
-          key={i}
-          className={`w-4 h-4 ${i < count ? 'text-[#f3912e]' : 'text-[rgba(18,18,18,0.2)]'}`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-    </span>
-  );
-}
-
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export function ProductForm({product, selectedVariant}: ProductFormProps) {
   const [searchParams] = useSearchParams();
   const [quantity, setQuantity] = useState(1);
-  const [year, setYear] = useState('');
+  const [personalizationValues, setPersonalizationValues] = useState<Record<string, string>>({});
+  const [showPreview, setShowPreview] = useState(false);
   const {open: openAside} = useAside();
+
+  const personalizationFields = parsePersonalizationFields(
+    product.personalizationField?.value,
+  );
   const fetchers = useFetchers();
   // useFetchers() only returns non-idle fetchers, so state check is unnecessary
   const isAdding = fetchers.some((f) => f.formAction === '/cart');
@@ -188,17 +179,12 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
         {product.title}
       </h1>
 
-      {/* Stars + social proof */}
-      <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-2 flex-wrap">
-          <StarRating count={5} />
-          <a href="#reviews" className="text-sm text-[#f36621] hover:underline">
-            64 reviews
-          </a>
-        </div>
-        <p className="text-sm font-semibold text-[#f36621]">
-          4K+ bought in past month
-        </p>
+      {/* Stars — Judge.me replaces this badge with live rating + review count */}
+      <div className="flex items-center gap-2 flex-wrap">
+        <JudgeMeStarBadge productId={product.id} productHandle={product.handle} />
+        <a href="#reviews" className="text-sm text-[#f36621] hover:underline sr-only">
+          Reviews
+        </a>
       </div>
 
       {/* Price */}
@@ -342,41 +328,11 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
           );
         })}
 
-      {/* PERSONALIZED box */}
-      <div className="bg-[#f6f6f6] rounded-xl p-4 flex flex-col gap-3">
-        <p className="text-sm font-bold text-[rgb(18,18,18)] text-center uppercase tracking-wider">
-          Personalized
-        </p>
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="personalization-year"
-            className="text-sm font-medium text-[rgb(18,18,18)]"
-          >
-            Enter Year{' '}
-            <span className="text-[#f36621]">*</span>
-          </label>
-          <div className="relative">
-            <input
-              id="personalization-year"
-              type="text"
-              value={year}
-              onChange={(e) => {
-                const val = e.target.value.replace(/\D/g, '').slice(0, 4);
-                setYear(val);
-              }}
-              placeholder="Example: 1976"
-              maxLength={4}
-              className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] placeholder-[rgba(18,18,18,0.35)] focus:outline-none focus:border-[#f36621] transition-colors pr-12"
-            />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[rgba(18,18,18,0.4)]">
-              {year.length}/4
-            </span>
-          </div>
-          <p className="text-xs text-[rgba(18,18,18,0.5)]">
-            Press Space On The Keyboard If You Don&apos;t Want To Include Year
-          </p>
-        </div>
-      </div>
+      {/* Personalization fields — driven by product metafield */}
+      <Personalizer
+        fields={personalizationFields}
+        onChange={setPersonalizationValues}
+      />
 
       {/* Quantity + CTA */}
       <CartForm
@@ -388,7 +344,13 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
                 {
                   merchandiseId: selectedVariant.id,
                   quantity,
-                  attributes: year ? [{key: 'Year', value: year}] : [],
+                  attributes: Object.entries(personalizationValues)
+                    .filter(([, v]) => v)
+                    .map(([key, value]) => ({
+                      // Prefix image attribute keys with _ so Shopify hides them from cart display
+                      key: value.startsWith('data:') ? `_${key}` : key,
+                      value,
+                    })),
                 },
               ]
             : [],
@@ -424,9 +386,15 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
           </div>
 
           {/* Preview Your Personalization */}
-          <button type="button" className="w-full h-12 btn-pill-outline text-sm font-semibold">
-            Preview Your Personalization
-          </button>
+          {personalizationFields.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setShowPreview(true)}
+              className="w-full h-12 btn-pill-outline text-sm font-semibold"
+            >
+              Preview Your Personalization
+            </button>
+          )}
 
           {/* Add to Cart */}
           <button
@@ -503,12 +471,18 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
             <span className="text-[rgba(18,18,18,0.35)] text-lg transition-transform group-open:rotate-90">›</span>
           </summary>
           <div className="pb-4 pl-7 pr-2 text-sm text-[rgba(18,18,18,0.75)] flex flex-col gap-2">
-            <p>Enter the year in the field above (e.g. <strong>1976</strong>).</p>
+            <p>Fill in the personalization fields above before adding to cart.</p>
             <p>Use standard English only — no special characters or emojis.</p>
-            <p>Leave blank if you do not want a year printed on the shirt.</p>
           </div>
         </details>
       </div>
+
+      {showPreview && (
+        <PreviewModal
+          values={personalizationValues}
+          onClose={() => setShowPreview(false)}
+        />
+      )}
     </div>
   );
 }

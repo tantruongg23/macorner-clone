@@ -1,3 +1,4 @@
+import {Link} from 'react-router';
 import {
   ChevronDownIcon,
   FacebookIcon,
@@ -7,29 +8,31 @@ import {
   TwitterIcon,
 } from './icons';
 
+type FooterLink = {label: string; href: string; external?: boolean};
+
 // Column 1: top-level links + accordion triggers ("Shop By X")
 const SHOP_NAV = [
-  {label: 'Gift Finder', href: '#'},
-  {label: 'Shop By Product', href: '#', hasChevron: true},
-  {label: 'Shop By Occasion', href: '#', hasChevron: true},
-  {label: 'Shop By Recipient', href: '#', hasChevron: true},
-  {label: 'Shop By Hobby', href: '#', hasChevron: true},
+  {label: 'Gift Finder', href: '/pages/gift-finder'},
+  {label: 'Shop By Product', href: '/collections/all', hasChevron: true},
+  {label: 'Shop By Occasion', href: '/pages/shop-by-occasion', hasChevron: true},
+  {label: 'Shop By Recipient', href: '/collections/gift-for-her', hasChevron: true},
+  {label: 'Shop By Hobby', href: '/collections/sport', hasChevron: true},
 ];
 
-const COLUMN_MACORNER = [
-  {label: 'About Us', href: '#'},
-  {label: 'Privacy Policy', href: '#'},
-  {label: 'Accessibility Statement', href: '#'},
+const COLUMN_MACORNER: FooterLink[] = [
+  {label: 'About Us', href: '/pages/about-us'},
+  {label: 'Privacy Policy', href: '/pages/privacy-policy'},
+  {label: 'Accessibility Statement', href: '/pages/accessibility'},
 ];
 
-const COLUMN_HELP = [
-  {label: 'Return Policy', href: '#'},
-  {label: 'Help Center', href: '#'},
-  {label: 'Size Chart', href: '#'},
-  {label: 'Shipping And Delivery', href: '#'},
-  {label: 'Cancellation & Modification Policy', href: '#'},
-  {label: 'Refund & Replacement Policy', href: '#'},
-  {label: 'Disclaimer Regarding Fake Websites', href: '#'},
+const COLUMN_HELP: FooterLink[] = [
+  {label: 'Return Policy', href: '/pages/return-policy'},
+  {label: 'Help Center', href: 'https://macorner.freshdesk.com/support/home', external: true},
+  {label: 'Size Chart', href: '/pages/size-chart'},
+  {label: 'Shipping And Delivery', href: '/pages/shipping-delivery'},
+  {label: 'Cancellation & Modification Policy', href: '/pages/cancellation-modification-policy'},
+  {label: 'Refund & Replacement Policy', href: '/pages/replacement-refund'},
+  {label: 'Disclaimer Regarding Fake Websites', href: '/pages/disclaimer-regarding-fake-websites'},
 ];
 
 // Order from live macorner.co footer: Twitter (X) → Facebook → Pinterest → Instagram → TikTok
@@ -124,8 +127,8 @@ export function MacornerFooter() {
               <ul className="list-none m-0 p-0">
                 {SHOP_NAV.map((nav) => (
                   <li key={nav.label}>
-                    <a
-                      href={nav.href}
+                    <Link
+                      to={nav.href}
                       className="
                         flex items-center justify-between gap-3
                         py-[5px]
@@ -144,7 +147,7 @@ export function MacornerFooter() {
                           className="shrink-0"
                         />
                       )}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -218,13 +221,13 @@ export function MacornerFooter() {
 
           {/* Bottom terms row */}
           <div className="mt-6 text-center text-white text-[14px] font-medium tracking-[0.6px]">
-            <a href="#" className="hover:text-[#FC6514] transition-colors">
+            <Link to="/pages/terms-of-services" className="hover:text-[#FC6514] transition-colors">
               Terms Of Services
-            </a>
+            </Link>
             <span className="mx-2" aria-hidden="true">•</span>
-            <a href="#" className="hover:text-[#FC6514] transition-colors">
+            <Link to="/pages/privacy-policy" className="hover:text-[#FC6514] transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <span className="mx-2" aria-hidden="true">•</span>
             <span>MA Commerce Inc.</span>
           </div>
@@ -240,9 +243,16 @@ function FooterMenuColumn({
   width,
 }: {
   heading: string;
-  links: {label: string; href: string}[];
+  links: FooterLink[];
   width: string;
 }) {
+  const linkClass = `
+    inline-block
+    text-[14px] font-normal leading-[25.2px] tracking-[0.6px] capitalize
+    text-[rgba(255,255,255,0.75)]
+    pb-[5px]
+    hover:text-[#FC6514] transition-colors
+  `;
   return (
     <div className={`w-full ${width} mb-8 md:mb-0`}>
       <h2 className="text-[18px] font-medium leading-[23.4px] tracking-[0.6px] text-white m-0 mb-[15px]">
@@ -251,18 +261,20 @@ function FooterMenuColumn({
       <ul className="list-none m-0 p-0">
         {links.map((link) => (
           <li key={link.label}>
-            <a
-              href={link.href}
-              className="
-                inline-block
-                text-[14px] font-normal leading-[25.2px] tracking-[0.6px] capitalize
-                text-[rgba(255,255,255,0.75)]
-                pb-[5px]
-                hover:text-[#FC6514] transition-colors
-              "
-            >
-              {link.label}
-            </a>
+            {link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={linkClass}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link to={link.href} className={linkClass}>
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

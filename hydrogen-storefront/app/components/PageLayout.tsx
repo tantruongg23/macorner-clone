@@ -5,11 +5,11 @@ import type {
   FooterQuery,
   HeaderQuery,
 } from 'storefrontapi.generated';
-import type { MenuItemNode } from '~/lib/navigation';
+import type {MenuItemNode} from '~/lib/navigation';
 import {Aside} from '~/components/Aside';
 import {MacornerFooter} from '~/components/macorner/Footer';
 import {MacornerHeader} from '~/components/macorner/Header';
-import {HeaderMenu} from '~/components/Header';
+import {MobileNavDrawer} from '~/components/macorner/MobileNavDrawer';
 import {CartMain} from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
@@ -40,8 +40,8 @@ export function PageLayout({
     <Aside.Provider>
       <CartAside cart={cart} />
       <SearchAside />
-      <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
-      <MacornerHeader navigationTree={navigationTree} />
+      <MobileNavDrawer navigationTree={navigationTree} />
+      <MacornerHeader navigationTree={navigationTree} cart={cart} />
       <main>{children}</main>
       <MacornerFooter />
     </Aside.Provider>
@@ -141,27 +141,5 @@ function SearchAside() {
         </SearchResultsPredictive>
       </div>
     </Aside>
-  );
-}
-
-function MobileMenuAside({
-  header,
-  publicStoreDomain,
-}: {
-  header: PageLayoutProps['header'];
-  publicStoreDomain: PageLayoutProps['publicStoreDomain'];
-}) {
-  return (
-    header.menu &&
-    header.shop.primaryDomain?.url && (
-      <Aside type="mobile" heading="MENU">
-        <HeaderMenu
-          menu={header.menu}
-          viewport="mobile"
-          primaryDomainUrl={header.shop.primaryDomain.url}
-          publicStoreDomain={publicStoreDomain}
-        />
-      </Aside>
-    )
   );
 }

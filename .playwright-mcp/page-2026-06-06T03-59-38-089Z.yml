@@ -1,0 +1,522 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Macorner" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Macorner" [ref=e9]
+      - search [ref=e12]:
+        - generic [ref=e13]:
+          - combobox "Search" [ref=e14]
+          - generic: Search
+          - button "Search" [ref=e15] [cursor=pointer]:
+            - img [ref=e16]
+        - status [ref=e17]
+      - generic [ref=e18]:
+        - link "Log in Sign In" [ref=e19] [cursor=pointer]:
+          - /url: /account/login
+          - generic [ref=e20]: Log in
+          - generic [ref=e21]: Sign In
+        - link "Wishlist" [ref=e24] [cursor=pointer]:
+          - /url: /pages/wishlist
+          - generic [ref=e25]: Wishlist
+        - link "Track Order" [ref=e27] [cursor=pointer]:
+          - /url: /pages/tracking-order
+        - generic [ref=e28] [cursor=pointer]:
+          - img "Flags country" [ref=e30]
+          - generic [ref=e31]: United States
+        - link "Cart" [ref=e32] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e33]
+          - generic [ref=e41]: "0"
+    - navigation [ref=e42]:
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "Graduation" [ref=e45] [cursor=pointer]:
+            - /url: https://macorner.co/collections/graduation?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e46]: Graduation
+        - listitem [ref=e47]:
+          - link "Father's Day" [ref=e48] [cursor=pointer]:
+            - /url: https://macorner.co/pages/gifts-for-dad?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e49]: Father's Day
+        - listitem [ref=e50]:
+          - group [ref=e52]:
+            - button "Gifts" [ref=e53] [cursor=pointer]:
+              - link "Gifts" [ref=e54]:
+                - /url: "#"
+        - listitem [ref=e55]:
+          - group [ref=e57]:
+            - button "Home & Living" [ref=e58] [cursor=pointer]:
+              - link "Home & Living" [ref=e59]:
+                - /url: https://macorner.co/collections/home-and-living?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e60]:
+          - group [ref=e62]:
+            - button "Drink & Barware" [ref=e63] [cursor=pointer]:
+              - link "Drink & Barware" [ref=e64]:
+                - /url: https://macorner.co/collections/drink-and-barware?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e65]:
+          - group [ref=e67]:
+            - button "Apparel" [ref=e68] [cursor=pointer]:
+              - link "Apparel" [ref=e69]:
+                - /url: https://macorner.co/collections/apparel?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e70]:
+          - group [ref=e72]:
+            - button "Accessories" [ref=e73] [cursor=pointer]:
+              - link "Accessories" [ref=e74]:
+                - /url: https://macorner.co/collections/accessories?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e75]:
+          - group [ref=e77]:
+            - button "Interests" [ref=e78] [cursor=pointer]:
+              - link "Interests" [ref=e79]:
+                - /url: "#"
+        - listitem [ref=e80]:
+          - link "Happy Customers" [ref=e81] [cursor=pointer]:
+            - /url: https://macorner.co/pages/reviews?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e82]: Happy Customers
+  - main [ref=e83]:
+    - generic [ref=e86]:
+      - complementary [ref=e87]:
+        - generic [ref=e88]:
+          - heading "Birthday Gifts" [level=3] [ref=e89]
+          - generic [ref=e91]:
+            - generic [ref=e93]:
+              - heading "Sort by:" [level=2] [ref=e94]
+              - generic [ref=e95]:
+                - combobox "Sort by:" [ref=e96] [cursor=pointer]:
+                  - option "Featured"
+                  - option "Most relevant"
+                  - option "Best selling" [selected]
+                  - option "Alphabetically, A-Z"
+                  - option "Alphabetically, Z-A"
+                  - option "Price, low to high"
+                  - option "Price, high to low"
+                  - option "Date, old to new"
+                  - option "Date, new to old"
+                - img
+            - status [ref=e97]:
+              - heading "2166 products" [level=2] [ref=e98]
+      - generic [ref=e100]:
+        - list [ref=e101]:
+          - listitem [ref=e102]:
+            - generic [ref=e104]:
+              - img "God Says I Am Name Letter In Bible Toile De Jouy Style - Personalized Jewelry Dish" [ref=e108]
+              - generic [ref=e111]:
+                - heading "Add to wishlist God Says I Am Name Letter In Bible Toile De Jouy Style - Personalized Jewelry Dish Save" [level=3] [ref=e112]:
+                  - button "Add to wishlist" [ref=e114] [cursor=pointer]:
+                    - img [ref=e115]
+                  - link "God Says I Am Name Letter In Bible Toile De Jouy Style - Personalized Jewelry Dish Save" [ref=e117] [cursor=pointer]:
+                    - /url: /products/god-says-i-am-name-letter-in-bible-toile-de-jouy-style-personalized-jewelry-dish-sgt090704dotl
+                    - text: God Says I Am Name Letter In Bible Toile De Jouy Style - Personalized Jewelry Dish
+                - generic [ref=e118]:
+                  - generic [ref=e122]:
+                    - generic [ref=e123]: Sale price
+                    - generic [ref=e124]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e125]:
+            - generic [ref=e127]:
+              - img "Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt" [ref=e131]
+              - generic [ref=e134]:
+                - heading "Add to wishlist Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt Save" [level=3] [ref=e135]:
+                  - button "Add to wishlist" [ref=e137] [cursor=pointer]:
+                    - img [ref=e138]
+                  - link "Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt Save" [ref=e140] [cursor=pointer]:
+                    - /url: /products/classic-limited-edition-birthday-gift-vintage-old-age-gift-for-him-dad-husband-grandpa-personalized-shirt-mavikvdw6
+                    - text: Father's Day Gifts, Classic Limited Edition - Birthday Gift, Vintage Old Age Gift For Him, Dad, Husband, Grandpa - Personalized Shirt
+                - generic [ref=e141]:
+                  - generic [ref=e145]:
+                    - generic [ref=e146]: Sale price
+                    - generic [ref=e147]: $24.95 USD
+                  - text:  ( )
+          - listitem [ref=e148]:
+            - generic [ref=e150]:
+              - img "Custom_Moon_Phase_By_Date_Gift_For_Mom_Mother_S_Day_Keepsake_Personalized_Night_Light_1" [ref=e154]
+              - generic [ref=e157]:
+                - heading "Add to wishlist Custom Moon Phase By Date Gift For Mom Mother's Day Keepsake - Personalized Night Light" [level=3] [ref=e158]:
+                  - button "Add to wishlist" [ref=e160] [cursor=pointer]:
+                    - img [ref=e161]
+                  - link "Custom Moon Phase By Date Gift For Mom Mother's Day Keepsake - Personalized Night Light" [ref=e163] [cursor=pointer]:
+                    - /url: /products/custom-moon-phase-by-date-gift-for-mom-mothers-day-keepsake-personalized-night-light-ma6z1r5j0
+                - generic [ref=e164]:
+                  - generic [ref=e167]:
+                    - generic [ref=e168]: Regular price
+                    - generic [ref=e169]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e170]:
+            - generic [ref=e172]:
+              - img "Friends, Sisters Sitting On The Moon - Personalized Window Hanging Suncatcher Ornament - Gifts For Women - Gift For Friend" [ref=e176]
+              - generic [ref=e179]:
+                - heading "Add to wishlist Friends, Sisters Sitting On The Moon - Personalized Window Hanging Suncatcher Ornament - Gifts For Women - Gift For Friend Save" [level=3] [ref=e180]:
+                  - button "Add to wishlist" [ref=e182] [cursor=pointer]:
+                    - img [ref=e183]
+                  - link "Friends, Sisters Sitting On The Moon - Personalized Window Hanging Suncatcher Ornament - Gifts For Women - Gift For Friend Save" [ref=e185] [cursor=pointer]:
+                    - /url: /products/friends-sitting-on-the-moon-personalized-window-hanging-suncatcher-ornament-fri250301vupg
+                    - text: Friends, Sisters Sitting On The Moon - Personalized Window Hanging Suncatcher Ornament - Gifts For Women - Gift For Friend
+                - generic [ref=e186]:
+                  - generic [ref=e190]:
+                    - generic [ref=e191]: Sale price
+                    - generic [ref=e192]: $26.95 USD
+                  - text:  ( )
+          - listitem [ref=e193]:
+            - generic [ref=e195]:
+              - img "Kid Birth Flower God Says I Am - Personalized Pillow (Insert Included)" [ref=e199]
+              - generic [ref=e202]:
+                - heading "Add to wishlist Kid Birth Flower God Says I Am - Personalized Pillow (Insert Included) Save" [level=3] [ref=e203]:
+                  - button "Add to wishlist" [ref=e205] [cursor=pointer]:
+                    - img [ref=e206]
+                  - link "Kid Birth Flower God Says I Am - Personalized Pillow (Insert Included) Save" [ref=e208] [cursor=pointer]:
+                    - /url: /products/kid-birth-flower-god-says-i-am-personalized-pillow-insert-included-kid101002hutx
+                    - text: Kid Birth Flower God Says I Am - Personalized Pillow (Insert Included)
+                - generic [ref=e209]:
+                  - generic [ref=e213]:
+                    - generic [ref=e214]: Sale price
+                    - generic [ref=e215]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e216]:
+            - generic [ref=e218]:
+              - img "Custom-Birth-Flower-&-Name-For-Her,-Wife,-Daughter,-Sister-Personalized-Notebook-Set-1" [ref=e222]
+              - generic [ref=e225]:
+                - heading "Add to wishlist Custom Birth Flower & Name For Her, Wife, Daughter, Sister - Personalized Notebook Set" [level=3] [ref=e226]:
+                  - button "Add to wishlist" [ref=e228] [cursor=pointer]:
+                    - img [ref=e229]
+                  - link "Custom Birth Flower & Name For Her, Wife, Daughter, Sister - Personalized Notebook Set" [ref=e231] [cursor=pointer]:
+                    - /url: /products/custom-birth-flower-name-for-her-wife-daughter-sister-personalized-notebook-set-mar6sp7pn
+                - generic [ref=e232]:
+                  - generic [ref=e235]:
+                    - generic [ref=e236]: Regular price
+                    - generic [ref=e237]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e238]:
+            - generic [ref=e240]:
+              - img "Custom Birth Flower & Name For Her, Wife, Daughter, Sister - Personalized Leather Journal" [ref=e244]
+              - generic [ref=e247]:
+                - heading "Add to wishlist Custom Birth Flower & Name For Her, Wife, Daughter, Sister - Personalized Leather Journal Save" [level=3] [ref=e248]:
+                  - button "Add to wishlist" [ref=e250] [cursor=pointer]:
+                    - img [ref=e251]
+                  - link "Custom Birth Flower & Name For Her, Wife, Daughter, Sister - Personalized Leather Journal Save" [ref=e253] [cursor=pointer]:
+                    - /url: /products/custom-birth-flower-name-for-her-wife-daughter-sister-personalized-leather-journal-sgt291001pahn
+                    - text: Custom Birth Flower & Name For Her, Wife, Daughter, Sister - Personalized Leather Journal
+                - generic [ref=e254]:
+                  - generic [ref=e257]:
+                    - generic [ref=e258]: Regular price
+                    - generic [ref=e259]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e260]:
+            - generic [ref=e262]:
+              - img "If Besties Were Flowers I'd Pick You - Toile De Jouy Birth Flowers - Personalized Mug" [ref=e266]
+              - generic [ref=e269]:
+                - heading "Add to wishlist If Besties Were Flowers I'd Pick You - Toile De Jouy Birth Flowers - Personalized Mug Save" [level=3] [ref=e270]:
+                  - button "Add to wishlist" [ref=e272] [cursor=pointer]:
+                    - img [ref=e273]
+                  - link "If Besties Were Flowers I'd Pick You - Toile De Jouy Birth Flowers - Personalized Mug Save" [ref=e275] [cursor=pointer]:
+                    - /url: /products/if-besties-were-flowers-id-pick-you-toile-de-jouy-birth-flowers-personalized-mug-fri230603pahn
+                    - text: If Besties Were Flowers I'd Pick You - Toile De Jouy Birth Flowers - Personalized Mug
+                - generic [ref=e276]:
+                  - generic [ref=e280]:
+                    - generic [ref=e281]: Sale price
+                    - generic [ref=e282]: $24.95 USD
+                  - text:  ( )
+          - listitem [ref=e283]:
+            - generic [ref=e285]:
+              - img "God Says I Am Name Letter In Bible Birth Flower Toile De Jouy Style - Personalized Mug" [ref=e289]
+              - generic [ref=e292]:
+                - heading "Add to wishlist God Says I Am Name Letter In Bible Birth Flower Toile De Jouy Style - Personalized Mug Save" [level=3] [ref=e293]:
+                  - button "Add to wishlist" [ref=e295] [cursor=pointer]:
+                    - img [ref=e296]
+                  - link "God Says I Am Name Letter In Bible Birth Flower Toile De Jouy Style - Personalized Mug Save" [ref=e298] [cursor=pointer]:
+                    - /url: /products/god-says-i-am-name-letter-in-bible-birth-flower-toile-de-jouy-style-personalized-mug-sgt070801dotl
+                    - text: God Says I Am Name Letter In Bible Birth Flower Toile De Jouy Style - Personalized Mug
+                - generic [ref=e299]:
+                  - generic [ref=e303]:
+                    - generic [ref=e304]: Sale price
+                    - generic [ref=e305]: $24.95 USD
+                  - text:  ( )
+          - listitem [ref=e306]:
+            - generic [ref=e308]:
+              - img "Birth Flower Book Lover - Personalized Resin Book Page Holder" [ref=e312]
+              - generic [ref=e315]:
+                - heading "Add to wishlist Birth Flower Book Lover - Personalized Resin Book Page Holder Save" [level=3] [ref=e316]:
+                  - button "Add to wishlist" [ref=e318] [cursor=pointer]:
+                    - img [ref=e319]
+                  - link "Birth Flower Book Lover - Personalized Resin Book Page Holder Save" [ref=e321] [cursor=pointer]:
+                    - /url: /products/birth-flower-book-lover-personalized-resin-book-page-holder-boo190905tvht
+                    - text: Birth Flower Book Lover - Personalized Resin Book Page Holder
+                - generic [ref=e322]:
+                  - generic [ref=e325]:
+                    - generic [ref=e326]: Regular price
+                    - generic [ref=e327]: $19.95 USD
+                  - text:  ( )
+          - listitem [ref=e328]:
+            - generic [ref=e330]:
+              - img "Just One More Chapter - Personalized Pocket Pillow (Insert Included) - Gift For Daughter" [ref=e334]
+              - generic [ref=e337]:
+                - heading "Add to wishlist Just One More Chapter - Personalized Pocket Pillow (Insert Included) - Gift For Daughter Save" [level=3] [ref=e338]:
+                  - button "Add to wishlist" [ref=e340] [cursor=pointer]:
+                    - img [ref=e341]
+                  - link "Just One More Chapter - Personalized Pocket Pillow (Insert Included) - Gift For Daughter Save" [ref=e343] [cursor=pointer]:
+                    - /url: /products/just-one-more-chapter-personalized-pocket-pillow-insert-included-boo120503tvcy
+                    - text: Just One More Chapter - Personalized Pocket Pillow (Insert Included) - Gift For Daughter
+                - generic [ref=e344]:
+                  - generic [ref=e348]:
+                    - generic [ref=e349]: Sale price
+                    - generic [ref=e350]: $32.95 USD
+                  - text:  ( )
+          - listitem [ref=e351]:
+            - generic [ref=e353]:
+              - img "Custom-Moon-Phase-By-Date-Gift-For-Dad-Father's-Day-Keepsake-Personalized-Night-Light-1" [ref=e357]
+              - generic [ref=e360]:
+                - heading "Add to wishlist Father's Day Gifts, Custom Moon Phase By Date Gift For Dad Father's Day Keepsake - Personalized Night Light" [level=3] [ref=e361]:
+                  - button "Add to wishlist" [ref=e363] [cursor=pointer]:
+                    - img [ref=e364]
+                  - link "Father's Day Gifts, Custom Moon Phase By Date Gift For Dad Father's Day Keepsake - Personalized Night Light" [ref=e366] [cursor=pointer]:
+                    - /url: /products/custom-moon-phase-by-date-gift-for-dad-fathers-day-keepsake-personalized-night-light-mavmhgcmx
+                - generic [ref=e367]:
+                  - generic [ref=e370]:
+                    - generic [ref=e371]: Regular price
+                    - generic [ref=e372]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e373]:
+            - generic [ref=e375]:
+              - img "Usa 250Th Birthday Faux Yarn Pattern - Personalized Doormat" [ref=e379]
+              - generic [ref=e382]:
+                - heading "Add to wishlist Usa 250Th Birthday Faux Yarn Pattern - Personalized Doormat Save" [level=3] [ref=e383]:
+                  - button "Add to wishlist" [ref=e385] [cursor=pointer]:
+                    - img [ref=e386]
+                  - link "Usa 250Th Birthday Faux Yarn Pattern - Personalized Doormat Save" [ref=e388] [cursor=pointer]:
+                    - /url: /products/usa-250th-birthday-faux-yarn-pattern-personalized-doormat-ind190102xlec
+                    - text: Usa 250Th Birthday Faux Yarn Pattern - Personalized Doormat
+                - generic [ref=e389]:
+                  - generic [ref=e393]:
+                    - generic [ref=e394]: Sale price
+                    - generic [ref=e395]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e396]:
+            - generic [ref=e398]:
+              - img "Rise And Shine Mother Cluckers - Personalized Metal Sign" [ref=e402]
+              - generic [ref=e405]:
+                - heading "Add to wishlist Rise And Shine Mother Cluckers - Personalized Metal Sign Save" [level=3] [ref=e406]:
+                  - button "Add to wishlist" [ref=e408] [cursor=pointer]:
+                    - img [ref=e409]
+                  - link "Rise And Shine Mother Cluckers - Personalized Metal Sign Save" [ref=e411] [cursor=pointer]:
+                    - /url: /products/rise-and-shine-mother-cluckers-personalized-vintage-metal-sign-decor-birthday-gift-for-farmers-chicken-lady-far120301vupg
+                    - text: Rise And Shine Mother Cluckers - Personalized Metal Sign
+                - generic [ref=e412]:
+                  - generic [ref=e416]:
+                    - generic [ref=e417]: Sale price
+                    - generic [ref=e418]: $29.99 USD
+                  - text:  ( )
+          - listitem [ref=e419]:
+            - generic [ref=e421]:
+              - img "We'll Be Friends Until We're Old And Senile - Personalized Wine Tumbler - 50th 60th Birthday Gift Ideas - Gift For Friend" [ref=e425]
+              - generic [ref=e428]:
+                - heading "Add to wishlist We'll Be Friends Until We're Old And Senile - Personalized Wine Tumbler - 50th 60th Birthday Gift Ideas - Gift For Friend Save" [level=3] [ref=e429]:
+                  - button "Add to wishlist" [ref=e431] [cursor=pointer]:
+                    - img [ref=e432]
+                  - link "We'll Be Friends Until We're Old And Senile - Personalized Wine Tumbler - 50th 60th Birthday Gift Ideas - Gift For Friend Save" [ref=e434] [cursor=pointer]:
+                    - /url: /products/well-be-friends-until-were-old-and-senile-personalized-wine-tumbler-fri121201tuhn
+                    - text: We'll Be Friends Until We're Old And Senile - Personalized Wine Tumbler - 50th 60th Birthday Gift Ideas - Gift For Friend
+                - generic [ref=e435]:
+                  - generic [ref=e439]:
+                    - generic [ref=e440]: Sale price
+                    - generic [ref=e441]: $29.95 USD
+                  - text:  ( )
+          - listitem [ref=e442]:
+            - generic [ref=e444]:
+              - img "Custom_Birth_Flower_Name_For_Her_Coworkers_Friends_Teacher_Personalized_Desk_Mat_2" [ref=e448]
+              - generic [ref=e451]:
+                - heading "Add to wishlist Custom Birth Flower & Name For Her, Coworkers, Friends, Teacher - Personalized Desk Mat" [level=3] [ref=e452]:
+                  - button "Add to wishlist" [ref=e454] [cursor=pointer]:
+                    - img [ref=e455]
+                  - link "Custom Birth Flower & Name For Her, Coworkers, Friends, Teacher - Personalized Desk Mat" [ref=e457] [cursor=pointer]:
+                    - /url: /products/custom-birth-flower-name-for-her-coworkers-friends-teacher-personalized-desk-mat-mawepm5ap
+                - generic [ref=e458]:
+                  - generic [ref=e461]:
+                    - generic [ref=e462]: Regular price
+                    - generic [ref=e463]: $29.95 USD
+                  - text:  ( )
+        - navigation "Pagination" [ref=e465]:
+          - list [ref=e466]:
+            - listitem [ref=e467]:
+              - link "Page 1" [disabled] [ref=e468]: "1"
+            - listitem [ref=e469]:
+              - link "Page 2" [ref=e470] [cursor=pointer]:
+                - /url: /collections/birthday?page=2
+                - text: "2"
+            - listitem [ref=e471]:
+              - link "Page 3" [ref=e472] [cursor=pointer]:
+                - /url: /collections/birthday?page=3
+                - text: "3"
+            - listitem [ref=e473]:
+              - generic [ref=e474]: …
+            - listitem [ref=e475]:
+              - link "Page 136" [ref=e476] [cursor=pointer]:
+                - /url: /collections/birthday?page=136
+                - text: "136"
+            - listitem [ref=e477]:
+              - link "Next page" [ref=e478] [cursor=pointer]:
+                - /url: /collections/birthday?page=2
+                - img [ref=e479]
+    - generic [ref=e484]:
+      - heading "Macorner's Thoughtful and Practical Birthday Gifts are Perfect for Everyone!" [level=4] [ref=e485]:
+        - strong [ref=e486]: Macorner's Thoughtful and Practical Birthday Gifts are Perfect for Everyone!
+      - paragraph [ref=e487]: Make birthdays special with a personalized gift set from Macorner. Celebrating the day of our birth with loved ones is a time to reflect, set new goals, and appreciate meaningful relationships. That's why we offer a wide range of birthday gift ideas for everyone - mom, dad, husband, wife, or best friend. Our carefully selected collection of birthday gifts is practical and thoughtful, sure to impress. Make their special day even more memorable with our personalized gifts. Happy birthday to your loved one from Macorner!
+  - generic [ref=e488]:
+    - contentinfo [ref=e489]:
+      - generic [ref=e492]:
+        - generic [ref=e495]:
+          - 'heading "Today Only: Secret privileges for you!" [level=1] [ref=e499]'
+          - generic [ref=e500]:
+            - textbox "Your email address" [ref=e503]
+            - button "REVEAL NOW" [ref=e505] [cursor=pointer]
+        - alert [ref=e506]
+      - generic [ref=e508]:
+        - list [ref=e510]:
+          - listitem [ref=e511]:
+            - link "Gift Finder" [ref=e512] [cursor=pointer]:
+              - /url: https://macorner.co/pages/gift-finder?utm_source=desktop&utm_medium=footer
+          - listitem [ref=e513]:
+            - link "Shop By Product" [ref=e514] [cursor=pointer]:
+              - /url: /collections/all
+              - text: Shop By Product
+              - img [ref=e515]
+          - listitem [ref=e517]:
+            - link "Shop by Occasion" [ref=e518] [cursor=pointer]:
+              - /url: /pages/shop-by-occasion
+              - text: Shop by Occasion
+              - img [ref=e519]
+          - listitem [ref=e521]:
+            - link "Shop By Recipient" [ref=e522] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Recipient
+              - img [ref=e523]
+          - listitem [ref=e525]:
+            - link "Shop By Hobby" [ref=e526] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Hobby
+              - img [ref=e527]
+        - generic [ref=e529]:
+          - heading "Macorner" [level=2] [ref=e530]: Macorner
+          - list [ref=e531]:
+            - listitem [ref=e532]:
+              - link "About us" [ref=e533] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e534]:
+              - link "Privacy Policy" [ref=e535] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e536]:
+              - link "Accessibility Statement" [ref=e537] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e538]:
+          - heading "Help and Support" [level=2] [ref=e539]: Help and Support
+          - list [ref=e540]:
+            - listitem [ref=e541]:
+              - link "2026 Father's Day Delivery Cut-Off Dates" [ref=e542] [cursor=pointer]:
+                - /url: https://macorner.co/pages/2026-fathers-day-delivery-cut-off-dates
+            - listitem [ref=e543]:
+              - link "Return Policy" [ref=e544] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e545]:
+              - link "Help Center" [ref=e546] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e547]:
+              - link "Size Chart" [ref=e548] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e549]:
+              - link "Shipping And Delivery" [ref=e550] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e551]:
+              - link "Cancellation & Modification Policy" [ref=e552] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e553]:
+              - link "Refund & Replacement Policy" [ref=e554] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e555]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e556] [cursor=pointer]:
+                - /url: https://macorner.co/pages/disclaimer-regarding-fake-websites
+        - generic [ref=e558]:
+          - heading "GET IN TOUCH" [level=2] [ref=e559]
+          - paragraph [ref=e561]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e562] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e563]:
+            - listitem [ref=e564]:
+              - link "Facebook" [ref=e565] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e566]
+                - generic [ref=e568]: Facebook
+            - listitem [ref=e569]:
+              - link "Instagram" [ref=e570] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e571]
+                - generic [ref=e575]: Instagram
+            - listitem [ref=e576]:
+              - link "Vimeo" [ref=e577] [cursor=pointer]:
+                - /url: https://www.amazon.com/stores/page/3F9A8588-C207-4C07-9774-E3D24490E8A3
+                - img [ref=e578]
+                - generic [ref=e581]: Vimeo
+            - listitem [ref=e582]:
+              - link "Twitter" [ref=e583] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e584]
+                - generic [ref=e586]: Twitter
+            - listitem [ref=e587]:
+              - link "TikTok" [ref=e588] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e589]
+                - generic [ref=e591]: TikTok
+            - listitem [ref=e592]:
+              - link "Pinterest" [ref=e593] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e594]
+                - generic [ref=e596]: Pinterest
+    - generic [ref=e597]:
+      - generic [ref=e599]:
+        - generic [ref=e600]: Payment methods
+        - list [ref=e601]:
+          - listitem [ref=e602]:
+            - img [ref=e603]
+          - listitem [ref=e608]:
+            - img [ref=e609]
+          - listitem [ref=e618]:
+            - img [ref=e619]
+          - listitem [ref=e630]:
+            - img [ref=e631]
+          - listitem [ref=e638]:
+            - img [ref=e639]
+          - listitem [ref=e643]:
+            - img [ref=e644]
+          - listitem [ref=e653]:
+            - img [ref=e654]
+          - listitem [ref=e662]:
+            - img [ref=e663]
+          - listitem [ref=e678]:
+            - img [ref=e679]
+          - listitem [ref=e685]:
+            - img [ref=e686]
+          - listitem [ref=e692]:
+            - img [ref=e693]
+          - listitem [ref=e697]:
+            - img [ref=e698]
+          - listitem [ref=e703]:
+            - img [ref=e704]
+          - listitem [ref=e708]:
+            - link "DMCA.com Protection Status" [ref=e710] [cursor=pointer]:
+              - /url: https://www.dmca.com/Protection/Status.aspx?ID=05a441c4-efe1-422e-b8a8-b9326f259e04&refurl=https://macorner.co/collections/birthday
+              - img "DMCA.com Protection Status" [ref=e711]
+      - list [ref=e714]:
+        - listitem [ref=e715]:
+          - link "Terms Of Services" [ref=e716] [cursor=pointer]:
+            - /url: /pages/terms-of-services
+        - listitem [ref=e717]:
+          - text: •
+          - link "Privacy Policy" [ref=e718] [cursor=pointer]:
+            - /url: /pages/privacy-policy
+          - text: •
+        - listitem [ref=e719]: MA Commerce Inc.
+  - img [ref=e721] [cursor=pointer]
+  - iframe [ref=e723]:
+    
+  - iframe [ref=e724]:
+    - generic [ref=f65e1] [cursor=pointer]:
+      - img "Help" [ref=f65e2]
+      - generic [ref=f65e4]: Help

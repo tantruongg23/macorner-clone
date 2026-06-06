@@ -1,9 +1,13 @@
-import {useRef} from 'react';
-import {Link} from 'react-router';
-import type { MenuItemNode } from '~/lib/navigation';
+import {Suspense, useEffect, useRef, useState} from 'react';
+import {Await, Link} from 'react-router';
+import type {CartApiQueryFragment} from 'storefrontapi.generated';
+import type {MenuItemNode} from '~/lib/navigation';
 import {SearchFormPredictive} from '~/components/SearchFormPredictive';
+import {useAside} from '~/components/Aside';
+import {useWishlist} from '~/lib/useWishlist';
 import {MacornerSearchOverlay} from './SearchOverlay';
 import {
+  ArrowLeftIcon,
   CartIcon,
   ChevronDownIcon,
   HeartIcon,
@@ -11,10 +15,30 @@ import {
   SearchIcon,
 } from './icons';
 
-export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNode[] | null }) {
+interface Props {
+  navigationTree?: MenuItemNode[] | null;
+  cart?: Promise<CartApiQueryFragment | null>;
+}
+
+export function MacornerHeader({navigationTree, cart}: Props) {
   const navData = navigationTree ?? [];
   const searchContainerRef = useRef<HTMLDivElement>(null);
-  
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const {type, open: openAside} = useAside();
+  const prevTypeRef = useRef<string>('closed');
+
+  useEffect(() => {
+    if (prevTypeRef.current === 'mobile' && type === 'closed') {
+      hamburgerRef.current?.focus();
+    }
+    prevTypeRef.current = type;
+  }, [type]);
+
+  function closeMobileSearch() {
+    setMobileSearchOpen(false);
+  }
+
   return (
     <header className="sticky top-0 z-50 relative bg-white border-b border-[var(--color-header-border)]">
       <div
@@ -33,7 +57,9 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
         >
           {/* Mobile hamburger (hidden on desktop) */}
           <button
+            ref={hamburgerRef}
             aria-label="Open menu"
+            onClick={() => openAside('mobile')}
             className="min-[990px]:hidden w-[18px] h-[18px] inline-flex items-center justify-center text-[var(--color-header-text)]"
           >
             <MenuIcon width={18} height={18} />
@@ -121,9 +147,10 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
             <Link
               to="/pages/wishlist"
               title="Wishlist"
-              className="text-[15px] font-medium leading-[22.5px] tracking-[0.6px] hover:text-[#FC6514] transition-colors"
+              className="relative text-[15px] font-medium leading-[22.5px] tracking-[0.6px] hover:text-[#FC6514] transition-colors"
             >
               Wishlist
+              <WishlistCountBadge />
             </Link>
             <Link
               to="/pages/tracking-order"
@@ -132,7 +159,7 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
               Track Order
             </Link>
 
-            {/* Language switcher: flag | text */}
+            {/* Language switcher */}
             <button
               type="button"
               aria-label="Choose region"
@@ -158,26 +185,21 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
             <Link
               to="/cart"
               title="Cart"
+              aria-label="View cart"
               className="relative flex flex-col items-center w-[29px] h-[25.3px] text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
             >
               <CartIcon className="block w-[29px] h-[22.3px] mb-[3px]" />
-              <span
-                className="
-                  absolute -top-1.5 -right-1.5
-                  w-[19px] h-[19px] rounded-full
-                  bg-[var(--color-cart-bubble)] text-white
-                  text-[9px] font-medium leading-none
-                  inline-flex items-center justify-center
-                "
-              >
-                0
-              </span>
+              <CartBadge cart={cart} size="desktop" />
             </Link>
           </nav>
 
-          {/* Mobile right cluster: search icon · wishlist heart · cart (with smaller 15×15 bubble) */}
+          {/* Mobile right cluster: search icon · wishlist heart · cart */}
           <div className="min-[990px]:hidden flex items-center gap-4 text-[var(--color-header-text)]">
-            <button aria-label="Search" className="w-[18px] h-[22px] inline-flex items-center justify-center">
+            <button
+              aria-label="Search"
+              onClick={() => setMobileSearchOpen(true)}
+              className="w-[18px] h-[22px] inline-flex items-center justify-center"
+            >
               <SearchIcon width={18} height={19} />
             </button>
             <Link
@@ -188,19 +210,13 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
             >
               <HeartIcon width={22} height={19} />
             </Link>
-            <Link to="/cart" aria-label="Cart" className="relative flex items-center">
+            <Link
+              to="/cart"
+              aria-label="View cart"
+              className="relative flex items-center text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+            >
               <CartIcon className="block w-[24px] h-[18.5px]" />
-              <span
-                className="
-                  absolute -top-1 -right-2
-                  w-[15px] h-[15px] rounded-full
-                  bg-[var(--color-cart-bubble)] text-white
-                  text-[9px] font-medium leading-none
-                  inline-flex items-center justify-center
-                "
-              >
-                0
-              </span>
+              <CartBadge cart={cart} size="mobile" />
             </Link>
           </div>
         </div>
@@ -257,14 +273,24 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
                         `}
                       >
                         {item.items!.length === 10 ? (
-                          Array.from({ length: 5 }).map((_, colIndex) => {
+                          Array.from({length: 5}).map((_, colIndex) => {
                             const topItem = item.items![colIndex];
                             const bottomItem = item.items![colIndex + 5];
-                            const hasTop = topItem && (topItem.title || (topItem.items && topItem.items.length > 0));
-                            const hasBottom = bottomItem && (bottomItem.title || (bottomItem.items && bottomItem.items.length > 0));
-                            
+                            const hasTop =
+                              topItem &&
+                              (topItem.title ||
+                                (topItem.items && topItem.items.length > 0));
+                            const hasBottom =
+                              bottomItem &&
+                              (bottomItem.title ||
+                                (bottomItem.items &&
+                                  bottomItem.items.length > 0));
+
                             return (
-                              <div key={`col-${colIndex}`} className="flex flex-col gap-8">
+                              <div
+                                key={`col-${colIndex}`}
+                                className="flex flex-col gap-8"
+                              >
                                 {hasTop && (
                                   <div className="flex flex-col gap-4">
                                     <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
@@ -312,8 +338,16 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
                           })
                         ) : (
                           item.items!.map((column) => {
-                            if (!column.title && (!column.items || column.items.length === 0)) {
-                              return <div key={column.id} className="hidden min-[990px]:block" />;
+                            if (
+                              !column.title &&
+                              (!column.items || column.items.length === 0)
+                            ) {
+                              return (
+                                <div
+                                  key={column.id}
+                                  className="hidden min-[990px]:block"
+                                />
+                              );
                             }
                             return (
                               <div key={column.id} className="flex flex-col gap-4">
@@ -346,6 +380,147 @@ export function MacornerHeader({ navigationTree }: { navigationTree?: MenuItemNo
           </ul>
         </nav>
       </div>
+
+      {/* Mobile search overlay */}
+      {mobileSearchOpen && (
+        <MobileSearchOverlay onClose={closeMobileSearch} />
+      )}
     </header>
+  );
+}
+
+function WishlistCountBadge() {
+  const {count} = useWishlist();
+  if (count === 0) return null;
+  return (
+    <span className="absolute -top-1.5 -right-2.5 w-[17px] h-[17px] rounded-full bg-[#f7921f] text-white text-[9px] font-medium leading-none inline-flex items-center justify-center">
+      {count}
+    </span>
+  );
+}
+
+function CartBadge({
+  cart,
+  size,
+}: {
+  cart?: Promise<CartApiQueryFragment | null>;
+  size: 'desktop' | 'mobile';
+}) {
+  const baseClass =
+    size === 'desktop'
+      ? 'absolute -top-1.5 -right-1.5 w-[19px] h-[19px]'
+      : 'absolute -top-1 -right-2 w-[15px] h-[15px]';
+
+  return (
+    <Suspense fallback={null}>
+      <Await resolve={cart ?? Promise.resolve(null)}>
+        {(cartData) => {
+          const count = cartData?.totalQuantity ?? 0;
+          if (count === 0) return null;
+          return (
+            <span
+              className={`
+                ${baseClass}
+                rounded-full bg-[var(--color-cart-bubble)] text-white
+                text-[9px] font-medium leading-none
+                inline-flex items-center justify-center
+              `}
+            >
+              {count}
+            </span>
+          );
+        }}
+      </Await>
+    </Suspense>
+  );
+}
+
+function MobileSearchOverlay({onClose}: {onClose: () => void}) {
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <>
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 bg-black/30 z-40"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Search panel — fixed, full width, sits above backdrop */}
+      <div
+        ref={panelRef}
+        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md relative"
+      >
+        <SearchFormPredictive className="w-full">
+          {({inputRef, fetchResults, goToSearch}) => (
+            <>
+              <div className="flex items-center gap-3 px-4 h-[60px]">
+                <button
+                  type="button"
+                  aria-label="Close search"
+                  onClick={onClose}
+                  className="shrink-0 text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+                >
+                  <ArrowLeftIcon width={20} height={20} />
+                </button>
+                <input
+                  ref={inputRef}
+                  name="q"
+                  autoFocus
+                  onChange={fetchResults}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      goToSearch();
+                      onClose();
+                    }
+                    if (e.key === 'Escape') onClose();
+                  }}
+                  placeholder="Search products..."
+                  aria-label="Search"
+                  className="
+                    flex-1 h-[40px]
+                    px-[14px]
+                    bg-[#f5f5f5]
+                    text-[15px]
+                    text-[rgb(18,18,18)]
+                    placeholder:text-[rgb(180,185,192)]
+                    outline-none
+                    border border-transparent
+                    rounded-[20px]
+                    focus:border-[#FC6514] focus:bg-white
+                    transition-colors
+                  "
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    goToSearch();
+                    onClose();
+                  }}
+                  aria-label="Search"
+                  className="
+                    shrink-0 w-9 h-9
+                    inline-flex items-center justify-center
+                    rounded-full bg-[#FC6514] text-white
+                    hover:bg-[#e85a10] transition-colors
+                  "
+                >
+                  <SearchIcon width={16} height={16} />
+                </button>
+              </div>
+              <MacornerSearchOverlay
+                goToSearch={() => {
+                  goToSearch();
+                  onClose();
+                }}
+                inputRef={inputRef}
+                containerRef={panelRef}
+              />
+            </>
+          )}
+        </SearchFormPredictive>
+      </div>
+    </>
   );
 }

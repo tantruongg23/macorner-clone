@@ -1,4 +1,6 @@
 import {useState, useEffect} from 'react';
+import {WishlistHeart} from './WishlistHeart';
+import type {WishlistItem} from '~/lib/useWishlist';
 
 interface ImageNode {
   id: string;
@@ -11,9 +13,14 @@ interface ImageNode {
 interface ProductGalleryProps {
   images: ImageNode[];
   selectedVariantImage?: ImageNode | null;
+  wishlistProduct?: WishlistItem;
 }
 
-export function ProductGallery({images, selectedVariantImage}: ProductGalleryProps) {
+export function ProductGallery({
+  images,
+  selectedVariantImage,
+  wishlistProduct,
+}: ProductGalleryProps) {
   const allImages = selectedVariantImage
     ? [
         selectedVariantImage,
@@ -25,7 +32,9 @@ export function ProductGallery({images, selectedVariantImage}: ProductGalleryPro
 
   useEffect(() => {
     if (selectedVariantImage) {
-      const idx = allImages.findIndex((img) => img.id === selectedVariantImage.id);
+      const idx = allImages.findIndex(
+        (img) => img.id === selectedVariantImage.id,
+      );
       if (idx !== -1) setActiveIndex(idx);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -38,13 +47,20 @@ export function ProductGallery({images, selectedVariantImage}: ProductGalleryPro
   return (
     <div className="flex flex-col gap-3">
       {/* Main image */}
-      <div className="aspect-square rounded-[20px] overflow-hidden bg-[#f5f5f5] cursor-zoom-in">
+      <div className="relative aspect-square rounded-[20px] overflow-hidden bg-[#f5f5f5] cursor-zoom-in">
         <img
           src={activeImage.url}
           alt={activeImage.altText ?? ''}
           className="w-full h-full object-cover transition-opacity duration-300"
           loading="eager"
         />
+        {/* Wishlist heart — top-right corner of main image */}
+        {wishlistProduct && (
+          <WishlistHeart
+            product={wishlistProduct}
+            className="absolute top-3 right-3 z-[2] w-9 h-9 rounded-full flex items-center justify-center cursor-pointer bg-white/85 border-none p-0 shadow-sm hover:bg-white transition-colors"
+          />
+        )}
       </div>
 
       {/* Thumbnails — horizontal row below */}

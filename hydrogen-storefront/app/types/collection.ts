@@ -43,6 +43,23 @@ export type ProductNode = {
 export type PageInfo = {
   hasPreviousPage: boolean;
   hasNextPage: boolean;
-  startCursor: string;
-  endCursor: string;
+  startCursor?: string | null | undefined;
+  endCursor?: string | null | undefined;
 };
+
+export type FilterType = 'LIST' | 'PRICE_RANGE' | 'BOOLEAN';
+
+export type FilterValue = {
+  id: string;
+  label: string;
+  count: number;
+  input: string;
+};
+
+export type Filter = {
+  id: string;
+  label: string;
+  type: FilterType;
+  values: FilterValue[];
+};
+

@@ -54,14 +54,15 @@ export function CollectionPagination({pageInfo, sortBy}: Props) {
     const p = new URLSearchParams(searchParams);
     if (sortBy !== 'manual') p.set('sort_by', sortBy);
     if (type === 'next') {
-      p.set('cursor', pageInfo.endCursor);
+      p.set('cursor', pageInfo.endCursor ?? '');
       p.delete('prev');
     } else {
-      p.set('prev', pageInfo.startCursor);
+      p.set('prev', pageInfo.startCursor ?? '');
       p.delete('cursor');
     }
     return `?${p.toString()}`;
   }
+
 
   return (
     <div className="pagination-wrapper" style={{margin: '50px 0 15px'}}>

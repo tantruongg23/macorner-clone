@@ -42,6 +42,9 @@ export const PRODUCT_QUERY = `#graphql
       vendor
       productType
       tags
+      personalizationField: metafield(namespace: "custom", key: "personalization") {
+        value
+      }
       images(first: 20) {
         nodes {
           id
@@ -87,7 +90,6 @@ export const PRODUCT_QUERY = `#graphql
   fragment ProductVariantFields on ProductVariant {
     id
     availableForSale
-    quantityAvailable
     price {
       amount
       currencyCode

@@ -1,7 +1,12 @@
-import type {
-  PredictiveSearchQuery,
-  RegularSearchQuery,
-} from 'storefrontapi.generated';
+import type {PredictiveSearchQuery} from 'storefrontapi.generated';
+
+// RegularSearchQuery is not generated in this project's schema; define the
+// minimal shape used by the app here.
+type RegularSearchQuery = {
+  products?: {nodes: unknown[]} | null;
+  pages?: {nodes: unknown[]} | null;
+  articles?: {nodes: unknown[]} | null;
+};
 
 type ResultWithItems<Type extends 'predictive' | 'regular', Items> = {
   type: Type;

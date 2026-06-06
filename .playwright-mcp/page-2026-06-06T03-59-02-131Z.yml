@@ -1,0 +1,574 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Macorner" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Macorner" [ref=e9]
+      - search [ref=e12]:
+        - generic [ref=e13]:
+          - combobox "Search" [ref=e14]
+          - generic: Search
+          - button "Search" [ref=e15] [cursor=pointer]:
+            - img [ref=e16]
+        - status [ref=e17]
+      - generic [ref=e18]:
+        - link "Log in Sign In" [ref=e19] [cursor=pointer]:
+          - /url: /account/login
+          - generic [ref=e20]: Log in
+          - generic [ref=e21]: Sign In
+        - link "Wishlist" [ref=e24] [cursor=pointer]:
+          - /url: /pages/wishlist
+          - generic [ref=e25]: Wishlist
+        - link "Track Order" [ref=e27] [cursor=pointer]:
+          - /url: /pages/tracking-order
+        - generic [ref=e28] [cursor=pointer]:
+          - img "Flags country" [ref=e30]
+          - generic [ref=e31]: United States
+        - link "Cart" [ref=e32] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e33]
+          - generic [ref=e41]: "0"
+    - navigation [ref=e42]:
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "Graduation" [ref=e45] [cursor=pointer]:
+            - /url: https://macorner.co/collections/graduation?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e46]: Graduation
+        - listitem [ref=e47]:
+          - link "Father's Day" [ref=e48] [cursor=pointer]:
+            - /url: https://macorner.co/pages/gifts-for-dad?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e49]: Father's Day
+        - listitem [ref=e50]:
+          - group [ref=e52]:
+            - button "Gifts" [ref=e53] [cursor=pointer]:
+              - link "Gifts" [ref=e54]:
+                - /url: "#"
+        - listitem [ref=e55]:
+          - group [ref=e57]:
+            - button "Home & Living" [ref=e58] [cursor=pointer]:
+              - link "Home & Living" [ref=e59]:
+                - /url: https://macorner.co/collections/home-and-living?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e60]:
+          - group [ref=e62]:
+            - button "Drink & Barware" [ref=e63] [cursor=pointer]:
+              - link "Drink & Barware" [ref=e64]:
+                - /url: https://macorner.co/collections/drink-and-barware?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e65]:
+          - group [ref=e67]:
+            - button "Apparel" [ref=e68] [cursor=pointer]:
+              - link "Apparel" [ref=e69]:
+                - /url: https://macorner.co/collections/apparel?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e70]:
+          - group [ref=e72]:
+            - button "Accessories" [ref=e73] [cursor=pointer]:
+              - link "Accessories" [ref=e74]:
+                - /url: https://macorner.co/collections/accessories?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e75]:
+          - group [ref=e77]:
+            - button "Interests" [ref=e78] [cursor=pointer]:
+              - link "Interests" [ref=e79]:
+                - /url: "#"
+        - listitem [ref=e80]:
+          - link "Happy Customers" [ref=e81] [cursor=pointer]:
+            - /url: https://macorner.co/pages/reviews?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e82]: Happy Customers
+  - main [ref=e83]:
+    - generic [ref=e84]:
+      - generic:
+        - generic:
+          - generic:
+            - img
+          - paragraph: Let us help save your time!
+          - paragraph:
+            - text: You have a previous customization.
+            - text: Do you want to auto-fill that customization?
+          - generic:
+            - button "Yes"
+            - button "No, Thanks"
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - link "Home" [ref=e87] [cursor=pointer]:
+            - /url: https://macorner.co
+          - text: /
+          - link "Collection" [ref=e88] [cursor=pointer]:
+            - /url: /collections/all
+          - text: /
+          - link "Father's Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip" [ref=e89] [cursor=pointer]:
+            - /url: /products/the-dad-times-drive-safe-daddy-we-love-you-personalized-car-visor-clip-ma02pfhsd
+        - generic [ref=e90]:
+          - region "Gallery Viewer" [ref=e93]:
+            - status [ref=e94]
+            - generic [ref=e95]:
+              - link "Skip to product information" [ref=e96] [cursor=pointer]:
+                - /url: "#ProductInfo-template--20498116182172__main"
+              - button "Add to wishlist" [ref=e98] [cursor=pointer]:
+                - img [ref=e99]
+              - img [ref=e105]
+            - generic [ref=e106]:
+              - button "Slide left" [disabled] [ref=e107]:
+                - img [ref=e108]
+              - list [ref=e109]:
+                - listitem [ref=e110]:
+                  - button "Load image 1 in gallery view" [ref=e111] [cursor=pointer]:
+                    - img "The_Dad_Times_Drive_Safe_Daddy_We_Love_You_Personalized_Car_Visor_Clip_1"
+                - listitem [ref=e112]:
+                  - button "Load image 2 in gallery view" [ref=e113] [cursor=pointer]:
+                    - img "The_Dad_Times_Drive_Safe_Daddy_We_Love_You_Personalized_Car_Visor_Clip_2"
+                - listitem [ref=e114]:
+                  - button "Load image 3 in gallery view" [ref=e115] [cursor=pointer]:
+                    - img "Anhbt_06e85a95-db3f-4734-bbec-189481de52b1"
+                - listitem [ref=e116]:
+                  - button "Load image 4 in gallery view" [ref=e117] [cursor=pointer]:
+                    - img "The_Dad_Times_Drive_Safe_Daddy_We_Love_You_Personalized_Car_Visor_Clip_3"
+                - listitem [ref=e118]:
+                  - button "Load image 5 in gallery view" [ref=e119] [cursor=pointer]:
+                    - img "The_Dad_Times_Drive_Safe_Daddy_We_Love_You_Personalized_Car_Visor_Clip_4"
+                - listitem [ref=e120]:
+                  - button "Load image 6 in gallery view" [ref=e121] [cursor=pointer]:
+                    - img "Father's Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip"
+              - button "Slide right" [ref=e122] [cursor=pointer]:
+                - img [ref=e123]
+          - generic [ref=e125]:
+            - heading "Father's Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip" [level=1] [ref=e127]
+            - generic [ref=e130] [cursor=pointer]:
+              - button "5.00 stars" [ref=e131]:
+                - generic [ref=e132]: 
+                - generic [ref=e133]: 
+                - generic [ref=e134]: 
+                - generic [ref=e135]: 
+                - generic [ref=e136]: 
+              - text: 31 reviews
+            - paragraph [ref=e137]: 9K+ bought in past month
+            - status [ref=e138]:
+              - generic [ref=e141]:
+                - generic [ref=e142]: Regular price
+                - generic [ref=e143]: $24.95 USD
+            - generic [ref=e144]:
+              - generic [ref=e146] [cursor=pointer]:
+                - img "country shipping" [ref=e147]
+                - generic [ref=e148]: Deliver to
+                - generic [ref=e149]: United States
+              - generic [ref=e150]:
+                - img "country" [ref=e151]
+                - generic [ref=e153]: "Get it by: June 15-19"
+            - generic [ref=e154]:
+              - group "Size" [ref=e155]:
+                - generic [ref=e156]: Size
+                - radio "3.5 inches" [checked] [ref=e157]
+                - generic [ref=e158] [cursor=pointer]: 3.5 inches
+                - radio "4.5 inches" [ref=e159]
+                - generic [ref=e160] [cursor=pointer]: 4.5 inches
+                - radio "5.5 inches" [ref=e161]
+                - generic [ref=e162] [cursor=pointer]: 5.5 inches
+              - group "Buy More Save More (Different Designs)" [ref=e163]:
+                - generic [ref=e164]: Buy More Save More (Different Designs)
+                - radio "1 PC $24.95 /pc" [checked] [ref=e165]
+                - generic [ref=e167] [cursor=pointer]:
+                  - paragraph [ref=e168]: 1 PC
+                  - generic [ref=e169]:
+                    - paragraph [ref=e170]: $24.95
+                    - paragraph [ref=e171]: /pc
+                - radio "2 PCS $19.97 /pc" [ref=e172]
+                - generic [ref=e174] [cursor=pointer]:
+                  - paragraph [ref=e175]: 2 PCS
+                  - generic [ref=e176]:
+                    - paragraph [ref=e177]: $19.97
+                    - paragraph [ref=e178]: /pc
+                - radio "3 PCS $16.65 /pc" [ref=e179]
+                - generic [ref=e181] [cursor=pointer]:
+                  - paragraph [ref=e182]: 3 PCS
+                  - generic [ref=e183]:
+                    - paragraph [ref=e184]: $16.65
+                    - paragraph [ref=e185]: /pc
+                - radio "4 PCS $16.65 /pc" [ref=e186]
+                - generic [ref=e188] [cursor=pointer]:
+                  - paragraph [ref=e189]: 4 PCS
+                  - generic [ref=e190]:
+                    - paragraph [ref=e191]: $16.65
+                    - paragraph [ref=e192]: /pc
+                - radio "5 PCS $16.65 /pc" [ref=e193]
+                - generic [ref=e195] [cursor=pointer]:
+                  - paragraph [ref=e196]: 5 PCS
+                  - generic [ref=e197]:
+                    - paragraph [ref=e198]: $16.65
+                    - paragraph [ref=e199]: /pc
+                - radio "6 PCS $16.65 /pc" [ref=e200]
+                - generic [ref=e202] [cursor=pointer]:
+                  - paragraph [ref=e203]: 6 PCS
+                  - generic [ref=e204]:
+                    - paragraph [ref=e205]: $16.65
+                    - paragraph [ref=e206]: /pc
+            - generic [ref=e209]:
+              - generic [ref=e210]:
+                - generic [ref=e211]: PERSONALIZED
+                - paragraph [ref=e212] [cursor=pointer]:
+                  - img "icon-photo" [ref=e213]
+                  - generic [ref=e214]: View photo upload guidelines here
+              - generic [ref=e215]:
+                - paragraph [ref=e216]: Add-On Gift Box Service
+                - generic [ref=e220]:
+                  - paragraph [ref=e221]: Only $4.99 USD /each
+                  - paragraph [ref=e222]: Make a lasting impression with our gift box!
+                  - generic [ref=e223]:
+                    - checkbox "Choose to buy" [checked] [ref=e224] [cursor=pointer]
+                    - generic [ref=e225] [cursor=pointer]: Choose to buy
+                  - generic [ref=e226]:
+                    - button [ref=e227] [cursor=pointer]:
+                      - img [ref=e228]
+                    - spinbutton [ref=e229]: "1"
+                    - button [ref=e230] [cursor=pointer]:
+                      - img [ref=e231]
+              - generic [ref=e232]:
+                - generic [ref=e233]: Quantity
+                - generic [ref=e235]:
+                  - button "Decrease quantity for Father&#39;s Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip" [ref=e236]:
+                    - generic [ref=e237]: Decrease quantity for Father&#39;s Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip
+                    - img
+                  - spinbutton "Quantity" [ref=e238]: "1"
+                  - button "Increase quantity for Father&#39;s Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip" [ref=e239] [cursor=pointer]:
+                    - generic [ref=e240]: Increase quantity for Father&#39;s Day Gifts, The Dad Times Drive Safe, Daddy We Love You - Personalized Car Visor Clip
+                    - img
+              - generic [ref=e241]:
+                - generic [ref=e242]:
+                  - link "Preview Your Personalization":
+                    - /url: "#"
+                - button "Add to cart":
+                  - generic: Add to cart
+            - group [ref=e244]:
+              - button "detail Description" [ref=e245] [cursor=pointer]:
+                - generic [ref=e246]:
+                  - img "detail" [ref=e247]
+                  - heading "Description" [level=2] [ref=e248]
+                - img [ref=e249]
+            - group [ref=e251]:
+              - button "detail Shipping & Returns" [ref=e252] [cursor=pointer]:
+                - generic [ref=e253]:
+                  - img "detail" [ref=e254]
+                  - heading "Shipping & Returns" [level=2] [ref=e255]
+                - img [ref=e256]
+            - group [ref=e258]:
+              - button "detail Personalization" [ref=e259] [cursor=pointer]:
+                - generic [ref=e260]:
+                  - img "detail" [ref=e261]
+                  - heading "Personalization" [level=2] [ref=e262]
+                - img [ref=e263]
+        - generic:                   
+    - generic [ref=e269]:
+      - generic [ref=e270]:
+        - heading "Customer Reviews" [level=2] [ref=e271]
+        - generic [ref=e272]:
+          - generic [ref=e274]:
+            - img "Average rating is 5.00 stars" [ref=e275]:
+              - generic [ref=e276]: 
+              - generic [ref=e277]: 
+              - generic [ref=e278]: 
+              - generic [ref=e279]: 
+              - generic [ref=e280]: 
+              - link "5.00 out of 5" [ref=e282] [cursor=pointer]:
+                - /url: https://app.judge.me/reviews/stores/macorner
+            - generic [ref=e283]:
+              - text: Based on 31 reviews
+              - img "Verified Checkmark" [ref=e284]
+          - generic [ref=e285]:
+            - generic [ref=e286] [cursor=pointer]:
+              - button "100% (31) reviews with 5 star rating" [ref=e287]:
+                - generic [ref=e288]: 
+                - generic [ref=e289]: 
+                - generic [ref=e290]: 
+                - generic [ref=e291]: 
+                - generic [ref=e292]: 
+              - generic [ref=e295]: "31"
+            - generic:
+              - button "0% (0) reviews with 4 star rating":
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+              - generic: "0"
+            - generic:
+              - button "0% (0) reviews with 3 star rating":
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+              - generic: "0"
+            - generic:
+              - button "0% (0) reviews with 2 star rating":
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+              - generic: "0"
+            - generic:
+              - button "0% (0) reviews with 1 star rating":
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+                - generic: 
+              - generic: "0"
+      - generic [ref=e299]:
+        - combobox "Sort dropdown" [ref=e300] [cursor=pointer]:
+          - option "Most Recent"
+          - option "Highest Rating"
+          - option "Lowest Rating"
+          - option "Only Pictures"
+          - option "Pictures First" [selected]
+          - option "Videos First"
+          - option "Most Helpful"
+        - generic [ref=e301]: 
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - generic [ref=e306]:
+                - img "5 star review" [ref=e307]:
+                  - generic [ref=e308]: 
+                  - generic [ref=e309]: 
+                  - generic [ref=e310]: 
+                  - generic [ref=e311]: 
+                  - generic [ref=e312]: 
+                - generic [ref=e313]: 05/11/2026
+              - generic [ref=e314]:
+                - generic [ref=e315]: 
+                - generic [ref=e316]: Helen Moore
+            - generic [ref=e318]:
+              - paragraph [ref=e320]: The message made this gift really special. It feels durable and well made.
+              - link "Link to user picture 1" [ref=e322] [cursor=pointer]:
+                - /url: https://judgeme.imgix.net/macorner/1778683917__0__CysYIojw__DAD140405HYHN-(6)__original.jpg?auto=format&w=1024
+          - generic [ref=e323]:
+            - generic [ref=e324]:
+              - generic [ref=e325]:
+                - img "5 star review" [ref=e326]:
+                  - generic [ref=e327]: 
+                  - generic [ref=e328]: 
+                  - generic [ref=e329]: 
+                  - generic [ref=e330]: 
+                  - generic [ref=e331]: 
+                - generic [ref=e332]: 05/06/2026
+              - generic [ref=e333]:
+                - generic [ref=e334]: 
+                - generic [ref=e335]: Sara Ward
+            - generic [ref=e337]:
+              - paragraph [ref=e339]: Such a thoughtful gift for Fathers Day. It arrived on time and was packaged nicely.
+              - link "Link to user picture 1" [ref=e341] [cursor=pointer]:
+                - /url: https://judgeme.imgix.net/macorner/1778683911__0__sHoEO_n9__DAD140405HYHN-(3)__original.jpg?auto=format&w=1024
+          - generic [ref=e342]:
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - img "5 star review" [ref=e345]:
+                  - generic [ref=e346]: 
+                  - generic [ref=e347]: 
+                  - generic [ref=e348]: 
+                  - generic [ref=e349]: 
+                  - generic [ref=e350]: 
+                - generic [ref=e351]: 05/06/2026
+              - generic [ref=e352]:
+                - generic [ref=e353]: 
+                - generic [ref=e354]: Jeffrey Cook
+            - generic [ref=e356]:
+              - paragraph [ref=e358]: Great quality and lightweight design. Delivery was smooth and faster than expected.
+              - link "Link to user picture 1" [ref=e360] [cursor=pointer]:
+                - /url: https://judgeme.imgix.net/macorner/1778683911__0___RTFfeJM__DAD140405HYHN-(5)__original.jpg?auto=format&w=1024
+          - generic [ref=e361]:
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - img "5 star review" [ref=e364]:
+                  - generic [ref=e365]: 
+                  - generic [ref=e366]: 
+                  - generic [ref=e367]: 
+                  - generic [ref=e368]: 
+                  - generic [ref=e369]: 
+                - generic [ref=e370]: 05/06/2026
+              - generic [ref=e371]:
+                - generic [ref=e372]: 
+                - generic [ref=e373]: Patricia Murphy
+            - generic [ref=e375]:
+              - paragraph [ref=e377]: I bought this for my husband and he absolutely loved it. The print quality is clear and beautiful.
+              - link "Link to user picture 1" [ref=e379] [cursor=pointer]:
+                - /url: https://judgeme.imgix.net/macorner/1778683912__0__QvfobcjX__DAD140405HYHN-(2)__original.jpg?auto=format&w=1024
+          - generic [ref=e380]:
+            - generic [ref=e381]:
+              - generic [ref=e382]:
+                - img "5 star review" [ref=e383]:
+                  - generic [ref=e384]: 
+                  - generic [ref=e385]: 
+                  - generic [ref=e386]: 
+                  - generic [ref=e387]: 
+                  - generic [ref=e388]: 
+                - generic [ref=e389]: 05/02/2026
+              - generic [ref=e390]:
+                - generic [ref=e391]: 
+                - generic [ref=e392]: Mark Begum
+            - generic [ref=e394]:
+              - paragraph [ref=e396]: The visor clip looks even better in person and feels very sturdy. Shipping was quick and it arrived safely.
+              - link "Link to user picture 1" [ref=e398] [cursor=pointer]:
+                - /url: https://judgeme.imgix.net/macorner/1778683911__0__TPe9WcMA__DAD140405HYHN-(1)__original.jpg?auto=format&w=1024
+        - generic [ref=e399]:
+          - button "Page 1": "1"
+          - button "Page 2" [ref=e400] [cursor=pointer]: "2"
+          - button "Page 3" [ref=e401] [cursor=pointer]: "3"
+          - button "Page 2" [ref=e402] [cursor=pointer]: 
+          - button "Page 7" [ref=e403] [cursor=pointer]: 
+    - heading "More Items to Consider" [level=2] [ref=e407]
+  - generic [ref=e408]:
+    - contentinfo [ref=e409]:
+      - generic [ref=e412]:
+        - generic [ref=e415]:
+          - 'heading "Today Only: Secret privileges for you!" [level=1] [ref=e419]'
+          - generic [ref=e420]:
+            - textbox "Your email address" [ref=e423]
+            - button "REVEAL NOW" [ref=e425] [cursor=pointer]
+        - alert [ref=e426]
+      - generic [ref=e428]:
+        - list [ref=e430]:
+          - listitem [ref=e431]:
+            - link "Gift Finder" [ref=e432] [cursor=pointer]:
+              - /url: https://macorner.co/pages/gift-finder?utm_source=desktop&utm_medium=footer
+          - listitem [ref=e433]:
+            - link "Shop By Product" [ref=e434] [cursor=pointer]:
+              - /url: /collections/all
+              - text: Shop By Product
+              - img [ref=e435]
+          - listitem [ref=e437]:
+            - link "Shop by Occasion" [ref=e438] [cursor=pointer]:
+              - /url: /pages/shop-by-occasion
+              - text: Shop by Occasion
+              - img [ref=e439]
+          - listitem [ref=e441]:
+            - link "Shop By Recipient" [ref=e442] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Recipient
+              - img [ref=e443]
+          - listitem [ref=e445]:
+            - link "Shop By Hobby" [ref=e446] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Hobby
+              - img [ref=e447]
+        - generic [ref=e449]:
+          - heading "Macorner" [level=2] [ref=e450]: Macorner
+          - list [ref=e451]:
+            - listitem [ref=e452]:
+              - link "About us" [ref=e453] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e454]:
+              - link "Privacy Policy" [ref=e455] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e456]:
+              - link "Accessibility Statement" [ref=e457] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e458]:
+          - heading "Help and Support" [level=2] [ref=e459]: Help and Support
+          - list [ref=e460]:
+            - listitem [ref=e461]:
+              - link "2026 Father's Day Delivery Cut-Off Dates" [ref=e462] [cursor=pointer]:
+                - /url: https://macorner.co/pages/2026-fathers-day-delivery-cut-off-dates
+            - listitem [ref=e463]:
+              - link "Return Policy" [ref=e464] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e465]:
+              - link "Help Center" [ref=e466] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e467]:
+              - link "Size Chart" [ref=e468] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e469]:
+              - link "Shipping And Delivery" [ref=e470] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e471]:
+              - link "Cancellation & Modification Policy" [ref=e472] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e473]:
+              - link "Refund & Replacement Policy" [ref=e474] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e475]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e476] [cursor=pointer]:
+                - /url: https://macorner.co/pages/disclaimer-regarding-fake-websites
+        - generic [ref=e478]:
+          - heading "GET IN TOUCH" [level=2] [ref=e479]
+          - paragraph [ref=e481]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e482] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e483]:
+            - listitem [ref=e484]:
+              - link "Facebook" [ref=e485] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e486]
+                - generic [ref=e488]: Facebook
+            - listitem [ref=e489]:
+              - link "Instagram" [ref=e490] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e491]
+                - generic [ref=e495]: Instagram
+            - listitem [ref=e496]:
+              - link "Vimeo" [ref=e497] [cursor=pointer]:
+                - /url: https://www.amazon.com/stores/page/3F9A8588-C207-4C07-9774-E3D24490E8A3
+                - img [ref=e498]
+                - generic [ref=e501]: Vimeo
+            - listitem [ref=e502]:
+              - link "Twitter" [ref=e503] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e504]
+                - generic [ref=e506]: Twitter
+            - listitem [ref=e507]:
+              - link "TikTok" [ref=e508] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e509]
+                - generic [ref=e511]: TikTok
+            - listitem [ref=e512]:
+              - link "Pinterest" [ref=e513] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e514]
+                - generic [ref=e516]: Pinterest
+    - generic [ref=e517]:
+      - generic [ref=e519]:
+        - generic [ref=e520]: Payment methods
+        - list [ref=e521]:
+          - listitem [ref=e522]:
+            - img [ref=e523]
+          - listitem [ref=e528]:
+            - img [ref=e529]
+          - listitem [ref=e538]:
+            - img [ref=e539]
+          - listitem [ref=e550]:
+            - img [ref=e551]
+          - listitem [ref=e558]:
+            - img [ref=e559]
+          - listitem [ref=e563]:
+            - img [ref=e564]
+          - listitem [ref=e573]:
+            - img [ref=e574]
+          - listitem [ref=e582]:
+            - img [ref=e583]
+          - listitem [ref=e598]:
+            - img [ref=e599]
+          - listitem [ref=e605]:
+            - img [ref=e606]
+          - listitem [ref=e612]:
+            - img [ref=e613]
+          - listitem [ref=e617]:
+            - img [ref=e618]
+          - listitem [ref=e623]:
+            - img [ref=e624]
+          - listitem [ref=e628]:
+            - link "DMCA.com Protection Status" [ref=e630] [cursor=pointer]:
+              - /url: https://www.dmca.com/Protection/Status.aspx?ID=05a441c4-efe1-422e-b8a8-b9326f259e04&refurl=https://macorner.co/products/the-dad-times-drive-safe-daddy-we-love-you-personalized-car-visor-clip-ma02pfhsd
+              - img "DMCA.com Protection Status" [ref=e631]
+      - list [ref=e634]:
+        - listitem [ref=e635]:
+          - link "Terms Of Services" [ref=e636] [cursor=pointer]:
+            - /url: /pages/terms-of-services
+        - listitem [ref=e637]:
+          - text: •
+          - link "Privacy Policy" [ref=e638] [cursor=pointer]:
+            - /url: /pages/privacy-policy
+          - text: •
+        - listitem [ref=e639]: MA Commerce Inc.
+  - img [ref=e641] [cursor=pointer]
+  - iframe [ref=e643]:
+    

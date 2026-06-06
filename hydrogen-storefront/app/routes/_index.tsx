@@ -20,28 +20,30 @@ type StorefrontProduct = {
   id: string;
   title: string;
   handle: string;
-  featuredImage: { url: string; altText: string | null } | null;
+  featuredImage?: { url: string; altText?: string | null | undefined } | null | undefined;
   priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
 };
 
+
 type HomeContentNode = {
   id: string;
-  title: { value: string | null } | null;
-  description: { value: string | null } | null;
-  actionLink: { value: string | null } | null;
-  image: {
-    reference: { image: { url: string; altText: string | null } } | null;
-  } | null;
-  collections: {
-    references: {
+  title?: { value?: string | null | undefined } | null | undefined;
+  description?: { value?: string | null | undefined } | null | undefined;
+  actionLink?: { value?: string | null | undefined } | null | undefined;
+  image?: {
+    reference?: { image?: { url: string; altText?: string | null | undefined } | null | undefined } | null | undefined;
+  } | null | undefined;
+  collections?: {
+    references?: {
       nodes: {
         title: string;
         handle: string;
         products: { nodes: StorefrontProduct[] };
       }[];
-    } | null;
-  } | null;
+    } | null | undefined;
+  } | null | undefined;
 };
+
 
 function formatPrice(amount: string, currencyCode: string): string {
   const parsed = parseFloat(amount);
@@ -74,7 +76,7 @@ export async function loader({ context }: Route.LoaderArgs) {
   );
 
   const heroFields: Record<string, string> = {};
-  let heroImage: { url: string; altText: string | null } | null = null;
+  let heroImage: { url: string; altText?: string | null | undefined } | null = null;
   const bestSellingNode = bestSellingCollection;
 
   const heroNode = metaobjects?.nodes?.[0];

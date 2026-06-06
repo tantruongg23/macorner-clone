@@ -1,5 +1,7 @@
 import {Link} from 'react-router';
 import type {ProductNode} from '~/types/collection';
+import {WishlistHeart} from './WishlistHeart';
+import {JudgeMeStarBadge} from './ProductReviews';
 
 function fmtMoney(amount: string, currency: string) {
   const n = parseFloat(amount);
@@ -9,62 +11,6 @@ function fmtMoney(amount: string, currency: string) {
 function isOnSale(price: string, compare: string) {
   const p = parseFloat(price), c = parseFloat(compare);
   return !!c && c > p;
-}
-
-function HeartIcon() {
-  return (
-    <svg
-      className="icon icon-heart"
-      viewBox="0 0 290 256"
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      style={{fill: 'transparent', stroke: '#F16523', strokeWidth: 20, transition: 'fill 0.3s ease'}}
-    >
-      <path
-        d="M258.844192 127.790368L145 241.63456 31.1558082 127.790368c-26.9461761-26.946176-26.9461761-70.6345598 0-97.5807359 26.9461762-26.94617613 70.6345598-26.94617613 97.5807358 0L145 46.4730881l16.263456-16.263456c26.946176-26.94617613 70.63456-26.94617613 97.580736 0 26.946176 26.9461761 26.946176 70.6345599 0 97.5807359z"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function StarRating({score = 4.89, count = 0}: {score?: number; count?: number}) {
-  return (
-    <div
-      className="jdgm-prev-badge"
-      style={{display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '4px'}}
-    >
-      <span
-        className="jdgm-prev-badge__stars"
-        aria-label={`${score} stars`}
-        style={{display: 'flex', gap: '1px'}}
-      >
-        {[1, 2, 3, 4, 5].map((i) => (
-          <span
-            key={i}
-            style={{
-              display: 'inline-block',
-              width: '13px',
-              height: '13px',
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' fill='%23F3912E'/%3E%3C/svg%3E")`,
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              opacity: i <= Math.round(score) ? 1 : 0.25,
-            }}
-          />
-        ))}
-      </span>
-      {count > 0 && (
-        <span
-          className="jdgm-prev-badge__text"
-          style={{fontSize: '12px', color: 'rgba(18,18,18,0.5)', letterSpacing: '0.4px'}}
-        >
-          ({count})
-        </span>
-      )}
-    </div>
-  );
 }
 
 export function CollectionProductCard({product}: {product: ProductNode}) {
@@ -119,21 +65,15 @@ export function CollectionProductCard({product}: {product: ProductNode}) {
           </div>
 
           {/* Wishlist button — top-right */}
-          <button
-            type="button"
-            aria-label="Add to wishlist"
-            className="button-wishlist"
-            data-product-handle={product.handle}
-            style={{
-              position: 'absolute', top: '8px', right: '8px',
-              background: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%',
-              width: '32px', height: '32px',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              cursor: 'pointer', zIndex: 2, padding: 0,
+          <WishlistHeart
+            product={{
+              handle: product.handle,
+              title: product.title,
+              image: product.featuredImage?.url,
+              price: fmtMoney(price.amount, price.currencyCode),
             }}
-          >
-            <HeartIcon />
-          </button>
+            className="absolute top-[8px] right-[8px] z-[2] w-8 h-8 rounded-full flex items-center justify-center cursor-pointer bg-white/85 border-none p-0 hover:bg-white transition-colors"
+          />
 
           {/* Sale badge */}
           {sale && (
@@ -189,7 +129,8 @@ export function CollectionProductCard({product}: {product: ProductNode}) {
               </Link>
             </h3>
 
-            <StarRating />
+            {/* Judge.me star badge — replaced by widget script after load */}
+            <JudgeMeStarBadge productId={product.id} productHandle={product.handle} />
 
             <div className="card-information">
               {sale ? (

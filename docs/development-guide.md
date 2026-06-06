@@ -166,6 +166,49 @@ For this clone to work, your Shopify store needs:
 | `home_content` metaobject type | Fields: `title`, `description`, `actionLink`, `image`, `collections` (list of collection references) |
 | `isMainCollection` metafield | Boolean on Collection — set to `"true"` on main categories |
 | `best-selling` collection | Handle must match `COLLECTION_KEYS.BEST_SELLING` |
+| `custom.personalization` metafield | Type: `json`, namespace: `custom`, key: `personalization`, on Product — see schema below |
+
+### `custom.personalization` Metafield Schema
+
+Create this metafield definition in Shopify Admin → Settings → Custom data → Products → Add definition.
+
+- **Namespace:** `custom`
+- **Key:** `personalization`
+- **Type:** JSON
+
+The value must be a JSON array of field descriptor objects. Example:
+
+```json
+[
+  {
+    "key": "name",
+    "label": "Name",
+    "type": "text",
+    "required": true,
+    "maxLength": 30,
+    "placeholder": "Enter recipient name"
+  },
+  {
+    "key": "style",
+    "label": "Style",
+    "type": "select",
+    "required": false,
+    "options": ["Classic", "Modern", "Script"]
+  },
+  {
+    "key": "photo",
+    "label": "Photo",
+    "type": "image",
+    "required": false
+  }
+]
+```
+
+Supported `type` values: `"text"`, `"textarea"`, `"select"`, `"image"`.
+
+If the metafield is absent or null on a product, `Personalizer` renders nothing (graceful fallback — no fields shown).
+
+> **Known limitation:** Shopify line-item attributes are truncated at ~5 KB. Image uploads stored as data-URLs (base64) will be truncated for large files. A production-grade solution would upload the image to a CDN and store the URL instead.
 
 ---
 

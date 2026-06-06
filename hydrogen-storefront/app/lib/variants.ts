@@ -1,4 +1,4 @@
-import type {SelectedOption} from 'storefrontapi.generated';
+import type {SelectedOption} from '@shopify/hydrogen/storefront-api-types';
 
 /**
  * Build a URL string for a product variant based on handle and selected options

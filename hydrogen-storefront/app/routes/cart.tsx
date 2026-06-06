@@ -1,5 +1,7 @@
 import {CartForm} from '@shopify/hydrogen';
+import {useLoaderData} from 'react-router';
 import type {Route} from './+types/cart';
+import {CartMain} from '~/components/CartMain';
 
 export async function action({request, context}: Route.ActionArgs) {
   const {cart} = context;
@@ -37,5 +39,10 @@ export async function loader({context}: Route.LoaderArgs) {
 }
 
 export default function CartPage() {
-  return null;
+  const cart = useLoaderData<typeof loader>();
+  return (
+    <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <CartMain cart={cart} layout="page" />
+    </div>
+  );
 }
