@@ -32,7 +32,7 @@ export function CartSummary({cart, layout}: CartSummaryProps) {
             <dt className="text-[14px] text-gray-500">Subtotal</dt>
             <dd className="text-[14px] font-semibold text-[rgb(18,18,18)]">
               {cart?.cost?.subtotalAmount?.amount ? (
-                <Money data={cart.cost.subtotalAmount} />
+                <Money data={{...cart.cost.subtotalAmount, currencyCode: 'USD' as const}} />
               ) : (
                 '—'
               )}
@@ -53,7 +53,7 @@ export function CartSummary({cart, layout}: CartSummaryProps) {
             </span>
             <span className="text-[15px] font-semibold text-[rgb(18,18,18)]">
               {cart?.cost?.subtotalAmount?.amount ? (
-                <Money data={cart.cost.subtotalAmount} />
+                <Money data={{...cart.cost.subtotalAmount, currencyCode: 'USD' as const}} />
               ) : (
                 '—'
               )}
@@ -95,7 +95,7 @@ export function CartSummary({cart, layout}: CartSummaryProps) {
         <dt className="text-[14px] font-medium text-gray-600">Subtotal</dt>
         <dd className="text-[14px] font-semibold text-[rgb(18,18,18)]">
           {cart?.cost?.subtotalAmount?.amount ? (
-            <Money data={cart.cost.subtotalAmount} />
+            <Money data={{...cart.cost.subtotalAmount, currencyCode: 'USD' as const}} />
           ) : (
             '—'
           )}
@@ -287,7 +287,7 @@ function CartGiftCard({
             >
               <span className="text-[13px] text-green-600">
                 Gift card: ***{giftCard.lastCharacters}{' '}
-                <Money data={giftCard.amountUsed} />
+                <Money data={{...giftCard.amountUsed, currencyCode: 'USD' as const}} />
               </span>
               <CartForm
                 route="/cart"

@@ -17,7 +17,7 @@ export function FreeShippingBar({subtotalAmount}: FreeShippingBarProps) {
 
   const remainingFormatted = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: subtotalAmount?.currencyCode ?? 'USD',
+    currency: 'USD',
     minimumFractionDigits: 2,
   }).format(remaining / 100);
 

@@ -16,6 +16,255 @@ import {
   SearchIcon,
 } from './icons';
 
+type CountryEntry = {name: string; code: string; currency: string};
+
+const COUNTRIES: CountryEntry[] = [
+  {name: 'Australia', code: 'AU', currency: 'AUD'},
+  {name: 'Austria', code: 'AT', currency: 'EUR'},
+  {name: 'Belgium', code: 'BE', currency: 'EUR'},
+  {name: 'Canada', code: 'CA', currency: 'CAD'},
+  {name: 'France', code: 'FR', currency: 'EUR'},
+  {name: 'Germany', code: 'DE', currency: 'EUR'},
+  {name: 'Italy', code: 'IT', currency: 'EUR'},
+  {name: 'Netherlands', code: 'NL', currency: 'EUR'},
+  {name: 'United Kingdom', code: 'GB', currency: 'GBP'},
+  {name: 'United States', code: 'US', currency: 'USD'},
+  {name: 'Afghanistan', code: 'AF', currency: 'AFN'},
+  {name: 'Åland Islands', code: 'AX', currency: 'EUR'},
+  {name: 'Albania', code: 'AL', currency: 'ALL'},
+  {name: 'Algeria', code: 'DZ', currency: 'DZD'},
+  {name: 'Andorra', code: 'AD', currency: 'EUR'},
+  {name: 'Angola', code: 'AO', currency: 'USD'},
+  {name: 'Anguilla', code: 'AI', currency: 'XCD'},
+  {name: 'Antigua & Barbuda', code: 'AG', currency: 'XCD'},
+  {name: 'Argentina', code: 'AR', currency: 'USD'},
+  {name: 'Armenia', code: 'AM', currency: 'AMD'},
+  {name: 'Aruba', code: 'AW', currency: 'AWG'},
+  {name: 'Ascension Island', code: 'AC', currency: 'SHP'},
+  {name: 'Azerbaijan', code: 'AZ', currency: 'AZN'},
+  {name: 'Bahamas', code: 'BS', currency: 'BSD'},
+  {name: 'Bahrain', code: 'BH', currency: 'USD'},
+  {name: 'Bangladesh', code: 'BD', currency: 'BDT'},
+  {name: 'Barbados', code: 'BB', currency: 'BBD'},
+  {name: 'Belarus', code: 'BY', currency: 'USD'},
+  {name: 'Belize', code: 'BZ', currency: 'BZD'},
+  {name: 'Benin', code: 'BJ', currency: 'XOF'},
+  {name: 'Bermuda', code: 'BM', currency: 'USD'},
+  {name: 'Bhutan', code: 'BT', currency: 'USD'},
+  {name: 'Bolivia', code: 'BO', currency: 'BOB'},
+  {name: 'Bosnia & Herzegovina', code: 'BA', currency: 'BAM'},
+  {name: 'Botswana', code: 'BW', currency: 'BWP'},
+  {name: 'Brazil', code: 'BR', currency: 'USD'},
+  {name: 'British Indian Ocean Territory', code: 'IO', currency: 'USD'},
+  {name: 'British Virgin Islands', code: 'VG', currency: 'USD'},
+  {name: 'Brunei', code: 'BN', currency: 'BND'},
+  {name: 'Bulgaria', code: 'BG', currency: 'EUR'},
+  {name: 'Burkina Faso', code: 'BF', currency: 'XOF'},
+  {name: 'Burundi', code: 'BI', currency: 'BIF'},
+  {name: 'Cambodia', code: 'KH', currency: 'KHR'},
+  {name: 'Cameroon', code: 'CM', currency: 'XAF'},
+  {name: 'Cape Verde', code: 'CV', currency: 'CVE'},
+  {name: 'Caribbean Netherlands', code: 'BQ', currency: 'USD'},
+  {name: 'Cayman Islands', code: 'KY', currency: 'KYD'},
+  {name: 'Central African Republic', code: 'CF', currency: 'XAF'},
+  {name: 'Chad', code: 'TD', currency: 'XAF'},
+  {name: 'Chile', code: 'CL', currency: 'USD'},
+  {name: 'Christmas Island', code: 'CX', currency: 'AUD'},
+  {name: 'Cocos (Keeling) Islands', code: 'CC', currency: 'AUD'},
+  {name: 'Colombia', code: 'CO', currency: 'USD'},
+  {name: 'Comoros', code: 'KM', currency: 'KMF'},
+  {name: 'Congo - Brazzaville', code: 'CG', currency: 'XAF'},
+  {name: 'Congo - Kinshasa', code: 'CD', currency: 'CDF'},
+  {name: 'Cook Islands', code: 'CK', currency: 'NZD'},
+  {name: 'Costa Rica', code: 'CR', currency: 'CRC'},
+  {name: "Côte d'Ivoire", code: 'CI', currency: 'XOF'},
+  {name: 'Croatia', code: 'HR', currency: 'EUR'},
+  {name: 'Curaçao', code: 'CW', currency: 'ANG'},
+  {name: 'Cyprus', code: 'CY', currency: 'EUR'},
+  {name: 'Czechia', code: 'CZ', currency: 'CZK'},
+  {name: 'Denmark', code: 'DK', currency: 'DKK'},
+  {name: 'Djibouti', code: 'DJ', currency: 'DJF'},
+  {name: 'Dominica', code: 'DM', currency: 'XCD'},
+  {name: 'Dominican Republic', code: 'DO', currency: 'DOP'},
+  {name: 'Ecuador', code: 'EC', currency: 'USD'},
+  {name: 'Egypt', code: 'EG', currency: 'EGP'},
+  {name: 'El Salvador', code: 'SV', currency: 'USD'},
+  {name: 'Equatorial Guinea', code: 'GQ', currency: 'XAF'},
+  {name: 'Eritrea', code: 'ER', currency: 'USD'},
+  {name: 'Estonia', code: 'EE', currency: 'EUR'},
+  {name: 'Eswatini', code: 'SZ', currency: 'USD'},
+  {name: 'Ethiopia', code: 'ET', currency: 'ETB'},
+  {name: 'Falkland Islands', code: 'FK', currency: 'FKP'},
+  {name: 'Faroe Islands', code: 'FO', currency: 'DKK'},
+  {name: 'Fiji', code: 'FJ', currency: 'FJD'},
+  {name: 'Finland', code: 'FI', currency: 'EUR'},
+  {name: 'French Guiana', code: 'GF', currency: 'EUR'},
+  {name: 'French Polynesia', code: 'PF', currency: 'XPF'},
+  {name: 'French Southern Territories', code: 'TF', currency: 'EUR'},
+  {name: 'Gabon', code: 'GA', currency: 'XOF'},
+  {name: 'Gambia', code: 'GM', currency: 'GMD'},
+  {name: 'Georgia', code: 'GE', currency: 'USD'},
+  {name: 'Ghana', code: 'GH', currency: 'USD'},
+  {name: 'Gibraltar', code: 'GI', currency: 'GBP'},
+  {name: 'Greece', code: 'GR', currency: 'EUR'},
+  {name: 'Greenland', code: 'GL', currency: 'DKK'},
+  {name: 'Grenada', code: 'GD', currency: 'XCD'},
+  {name: 'Guadeloupe', code: 'GP', currency: 'EUR'},
+  {name: 'Guatemala', code: 'GT', currency: 'GTQ'},
+  {name: 'Guernsey', code: 'GG', currency: 'GBP'},
+  {name: 'Guinea', code: 'GN', currency: 'GNF'},
+  {name: 'Guinea-Bissau', code: 'GW', currency: 'XOF'},
+  {name: 'Guyana', code: 'GY', currency: 'GYD'},
+  {name: 'Haiti', code: 'HT', currency: 'USD'},
+  {name: 'Honduras', code: 'HN', currency: 'HNL'},
+  {name: 'Hong Kong SAR', code: 'HK', currency: 'HKD'},
+  {name: 'Hungary', code: 'HU', currency: 'HUF'},
+  {name: 'Iceland', code: 'IS', currency: 'ISK'},
+  {name: 'India', code: 'IN', currency: 'INR'},
+  {name: 'Indonesia', code: 'ID', currency: 'IDR'},
+  {name: 'Iraq', code: 'IQ', currency: 'USD'},
+  {name: 'Ireland', code: 'IE', currency: 'EUR'},
+  {name: 'Isle of Man', code: 'IM', currency: 'GBP'},
+  {name: 'Israel', code: 'IL', currency: 'ILS'},
+  {name: 'Jamaica', code: 'JM', currency: 'JMD'},
+  {name: 'Japan', code: 'JP', currency: 'JPY'},
+  {name: 'Jersey', code: 'JE', currency: 'USD'},
+  {name: 'Jordan', code: 'JO', currency: 'USD'},
+  {name: 'Kazakhstan', code: 'KZ', currency: 'KZT'},
+  {name: 'Kenya', code: 'KE', currency: 'KES'},
+  {name: 'Kiribati', code: 'KI', currency: 'USD'},
+  {name: 'Kosovo', code: 'XK', currency: 'EUR'},
+  {name: 'Kuwait', code: 'KW', currency: 'USD'},
+  {name: 'Kyrgyzstan', code: 'KG', currency: 'KGS'},
+  {name: 'Laos', code: 'LA', currency: 'LAK'},
+  {name: 'Latvia', code: 'LV', currency: 'EUR'},
+  {name: 'Lebanon', code: 'LB', currency: 'LBP'},
+  {name: 'Lesotho', code: 'LS', currency: 'USD'},
+  {name: 'Liberia', code: 'LR', currency: 'USD'},
+  {name: 'Libya', code: 'LY', currency: 'USD'},
+  {name: 'Liechtenstein', code: 'LI', currency: 'CHF'},
+  {name: 'Lithuania', code: 'LT', currency: 'EUR'},
+  {name: 'Luxembourg', code: 'LU', currency: 'EUR'},
+  {name: 'Macao SAR', code: 'MO', currency: 'MOP'},
+  {name: 'Madagascar', code: 'MG', currency: 'USD'},
+  {name: 'Malawi', code: 'MW', currency: 'MWK'},
+  {name: 'Malaysia', code: 'MY', currency: 'MYR'},
+  {name: 'Maldives', code: 'MV', currency: 'MVR'},
+  {name: 'Mali', code: 'ML', currency: 'XOF'},
+  {name: 'Malta', code: 'MT', currency: 'EUR'},
+  {name: 'Martinique', code: 'MQ', currency: 'EUR'},
+  {name: 'Mauritania', code: 'MR', currency: 'USD'},
+  {name: 'Mauritius', code: 'MU', currency: 'MUR'},
+  {name: 'Mayotte', code: 'YT', currency: 'EUR'},
+  {name: 'Mexico', code: 'MX', currency: 'USD'},
+  {name: 'Moldova', code: 'MD', currency: 'MDL'},
+  {name: 'Monaco', code: 'MC', currency: 'EUR'},
+  {name: 'Mongolia', code: 'MN', currency: 'MNT'},
+  {name: 'Montenegro', code: 'ME', currency: 'EUR'},
+  {name: 'Montserrat', code: 'MS', currency: 'XCD'},
+  {name: 'Morocco', code: 'MA', currency: 'MAD'},
+  {name: 'Mozambique', code: 'MZ', currency: 'USD'},
+  {name: 'Myanmar (Burma)', code: 'MM', currency: 'MMK'},
+  {name: 'Namibia', code: 'NA', currency: 'USD'},
+  {name: 'Nauru', code: 'NR', currency: 'AUD'},
+  {name: 'Nepal', code: 'NP', currency: 'NPR'},
+  {name: 'New Caledonia', code: 'NC', currency: 'XPF'},
+  {name: 'New Zealand', code: 'NZ', currency: 'NZD'},
+  {name: 'Nicaragua', code: 'NI', currency: 'NIO'},
+  {name: 'Niger', code: 'NE', currency: 'XOF'},
+  {name: 'Nigeria', code: 'NG', currency: 'NGN'},
+  {name: 'Niue', code: 'NU', currency: 'NZD'},
+  {name: 'Norfolk Island', code: 'NF', currency: 'AUD'},
+  {name: 'North Macedonia', code: 'MK', currency: 'MKD'},
+  {name: 'Norway', code: 'NO', currency: 'USD'},
+  {name: 'Oman', code: 'OM', currency: 'USD'},
+  {name: 'Pakistan', code: 'PK', currency: 'PKR'},
+  {name: 'Palestinian Territories', code: 'PS', currency: 'ILS'},
+  {name: 'Panama', code: 'PA', currency: 'USD'},
+  {name: 'Papua New Guinea', code: 'PG', currency: 'PGK'},
+  {name: 'Paraguay', code: 'PY', currency: 'PYG'},
+  {name: 'Peru', code: 'PE', currency: 'PEN'},
+  {name: 'Philippines', code: 'PH', currency: 'PHP'},
+  {name: 'Pitcairn Islands', code: 'PN', currency: 'NZD'},
+  {name: 'Poland', code: 'PL', currency: 'PLN'},
+  {name: 'Portugal', code: 'PT', currency: 'EUR'},
+  {name: 'Qatar', code: 'QA', currency: 'QAR'},
+  {name: 'Réunion', code: 'RE', currency: 'EUR'},
+  {name: 'Romania', code: 'RO', currency: 'RON'},
+  {name: 'Russia', code: 'RU', currency: 'USD'},
+  {name: 'Rwanda', code: 'RW', currency: 'RWF'},
+  {name: 'Samoa', code: 'WS', currency: 'WST'},
+  {name: 'San Marino', code: 'SM', currency: 'EUR'},
+  {name: 'São Tomé & Príncipe', code: 'ST', currency: 'STD'},
+  {name: 'Saudi Arabia', code: 'SA', currency: 'SAR'},
+  {name: 'Senegal', code: 'SN', currency: 'XOF'},
+  {name: 'Serbia', code: 'RS', currency: 'RSD'},
+  {name: 'Seychelles', code: 'SC', currency: 'USD'},
+  {name: 'Sierra Leone', code: 'SL', currency: 'SLL'},
+  {name: 'Singapore', code: 'SG', currency: 'SGD'},
+  {name: 'Sint Maarten', code: 'SX', currency: 'ANG'},
+  {name: 'Slovakia', code: 'SK', currency: 'EUR'},
+  {name: 'Slovenia', code: 'SI', currency: 'EUR'},
+  {name: 'Solomon Islands', code: 'SB', currency: 'SBD'},
+  {name: 'Somalia', code: 'SO', currency: 'USD'},
+  {name: 'South Africa', code: 'ZA', currency: 'USD'},
+  {name: 'South Georgia & South Sandwich Islands', code: 'GS', currency: 'GBP'},
+  {name: 'South Korea', code: 'KR', currency: 'KRW'},
+  {name: 'South Sudan', code: 'SS', currency: 'USD'},
+  {name: 'Spain', code: 'ES', currency: 'EUR'},
+  {name: 'Sri Lanka', code: 'LK', currency: 'LKR'},
+  {name: 'St. Barthélemy', code: 'BL', currency: 'EUR'},
+  {name: 'St. Helena', code: 'SH', currency: 'SHP'},
+  {name: 'St. Kitts & Nevis', code: 'KN', currency: 'XCD'},
+  {name: 'St. Lucia', code: 'LC', currency: 'XCD'},
+  {name: 'St. Martin', code: 'MF', currency: 'EUR'},
+  {name: 'St. Pierre & Miquelon', code: 'PM', currency: 'EUR'},
+  {name: 'St. Vincent & Grenadines', code: 'VC', currency: 'XCD'},
+  {name: 'Sudan', code: 'SD', currency: 'USD'},
+  {name: 'Suriname', code: 'SR', currency: 'USD'},
+  {name: 'Svalbard & Jan Mayen', code: 'SJ', currency: 'USD'},
+  {name: 'Sweden', code: 'SE', currency: 'SEK'},
+  {name: 'Switzerland', code: 'CH', currency: 'CHF'},
+  {name: 'Taiwan', code: 'TW', currency: 'TWD'},
+  {name: 'Tajikistan', code: 'TJ', currency: 'TJS'},
+  {name: 'Tanzania', code: 'TZ', currency: 'TZS'},
+  {name: 'Thailand', code: 'TH', currency: 'THB'},
+  {name: 'Timor-Leste', code: 'TL', currency: 'USD'},
+  {name: 'Togo', code: 'TG', currency: 'XOF'},
+  {name: 'Tokelau', code: 'TK', currency: 'NZD'},
+  {name: 'Tonga', code: 'TO', currency: 'TOP'},
+  {name: 'Trinidad & Tobago', code: 'TT', currency: 'TTD'},
+  {name: 'Tristan da Cunha', code: 'TA', currency: 'SHP'},
+  {name: 'Tunisia', code: 'TN', currency: 'USD'},
+  {name: 'Türkiye', code: 'TR', currency: 'USD'},
+  {name: 'Turkmenistan', code: 'TM', currency: 'USD'},
+  {name: 'Turks & Caicos Islands', code: 'TC', currency: 'USD'},
+  {name: 'Tuvalu', code: 'TV', currency: 'AUD'},
+  {name: 'U.S. Outlying Islands', code: 'UM', currency: 'USD'},
+  {name: 'Uganda', code: 'UG', currency: 'UGX'},
+  {name: 'Ukraine', code: 'UA', currency: 'UAH'},
+  {name: 'United Arab Emirates', code: 'AE', currency: 'AED'},
+  {name: 'Uruguay', code: 'UY', currency: 'UYU'},
+  {name: 'Uzbekistan', code: 'UZ', currency: 'UZS'},
+  {name: 'Vanuatu', code: 'VU', currency: 'VUV'},
+  {name: 'Vatican City', code: 'VA', currency: 'EUR'},
+  {name: 'Venezuela', code: 'VE', currency: 'USD'},
+  {name: 'Wallis & Futuna', code: 'WF', currency: 'XPF'},
+  {name: 'Western Sahara', code: 'EH', currency: 'MAD'},
+  {name: 'Yemen', code: 'YE', currency: 'YER'},
+  {name: 'Zambia', code: 'ZM', currency: 'USD'},
+  {name: 'Zimbabwe', code: 'ZW', currency: 'USD'},
+];
+
+function flagEmoji(code: string): string {
+  const offset = 0x1f1e6;
+  const A = 65;
+  return String.fromCodePoint(
+    offset + code.charCodeAt(0) - A,
+    offset + code.charCodeAt(1) - A,
+  );
+}
+
 interface Props {
   navigationTree?: MenuItemNode[] | null;
   cart?: Promise<CartApiQueryFragment | null>;
@@ -27,6 +276,17 @@ export function MacornerHeader({navigationTree, cart}: Props) {
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [desktopSearchFocused, setDesktopSearchFocused] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [selectedCode, setSelectedCode] = useState('US');
+  const [pendingCode, setPendingCode] = useState('US');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('macorner_region');
+    if (saved && COUNTRIES.some((c) => c.code === saved)) {
+      setSelectedCode(saved);
+      setPendingCode(saved);
+    }
+  }, []);
   const {type, open: openAside} = useAside();
   const prevTypeRef = useRef<string>('closed');
   const {
@@ -181,27 +441,46 @@ export function MacornerHeader({navigationTree, cart}: Props) {
               Track Order
             </Link>
 
-            {/* Language switcher */}
-            <button
-              type="button"
-              aria-label="Choose region"
-              className="flex items-center text-[15px] font-medium leading-[22.5px] tracking-[0.6px] text-[var(--color-brand-body)] hover:text-[#FC6514] transition-colors cursor-pointer"
-            >
-              <span className="relative w-10 h-[13.3px] flex items-center">
-                <img
-                  src="/icons/US.svg"
-                  alt="United States flag"
-                  width={20}
-                  height={14}
-                  className="block w-5 h-[13.3px]"
-                />
-                <span
-                  aria-hidden="true"
-                  className="absolute left-[33px] top-0 bottom-0 w-[2px] h-[13px] my-auto bg-[var(--color-pipe-separator)]"
-                />
-              </span>
-              <span className="whitespace-nowrap">United States</span>
-            </button>
+            {/* Language / region switcher */}
+            {(() => {
+              const country =
+                COUNTRIES.find((c) => c.code === selectedCode) ??
+                COUNTRIES[9];
+              const isUS = country.code === 'US';
+              return (
+                <button
+                  type="button"
+                  aria-label="Choose region"
+                  onClick={() => {
+                    setPendingCode(selectedCode);
+                    setLangOpen(true);
+                  }}
+                  className="flex items-center gap-[6px] text-[15px] font-medium leading-[22.5px] tracking-[0.6px] text-[var(--color-brand-body)] hover:text-[#FC6514] transition-colors cursor-pointer"
+                >
+                  {isUS ? (
+                    <span className="relative flex items-center w-10 h-[13.3px] shrink-0">
+                      <img
+                        src="/icons/US.svg"
+                        alt="United States flag"
+                        width={20}
+                        height={14}
+                        className="block w-5 h-[13.3px]"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-[33px] top-0 bottom-0 w-[2px] h-[13px] my-auto bg-[var(--color-pipe-separator)]"
+                      />
+                    </span>
+                  ) : (
+                    <span className="text-[16px] leading-none shrink-0">
+                      {flagEmoji(country.code)}
+                    </span>
+                  )}
+                  <span className="whitespace-nowrap">{country.name}</span>
+                  <ChevronDownIcon width={10} height={10} className="shrink-0 text-current" />
+                </button>
+              );
+            })()}
 
             {/* Cart (desktop) */}
             <Link
@@ -413,7 +692,113 @@ export function MacornerHeader({navigationTree, cart}: Props) {
           onClearSearches={clearSearches}
         />
       )}
+
+      {/* Region selector modal */}
+      {langOpen && (
+        <RegionSelectorModal
+          pendingCode={pendingCode}
+          onPendingChange={setPendingCode}
+          onSave={() => {
+            setSelectedCode(pendingCode);
+            localStorage.setItem('macorner_region', pendingCode);
+            setLangOpen(false);
+          }}
+          onClose={() => setLangOpen(false)}
+        />
+      )}
     </header>
+  );
+}
+
+function RegionSelectorModal({
+  pendingCode,
+  onPendingChange,
+  onSave,
+  onClose,
+}: {
+  pendingCode: string;
+  onPendingChange: (code: string) => void;
+  onSave: () => void;
+  onClose: () => void;
+}) {
+  return (
+    <>
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 bg-black/50 z-[60]"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Modal card */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Update Your Preferences"
+        className="fixed z-[70] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100vw-32px)] max-w-[420px] bg-white rounded-[8px] shadow-[0_8px_40px_rgba(0,0,0,0.18)] p-6"
+      >
+        {/* Header row */}
+        <div className="flex items-center justify-between mb-4">
+          <h4 className="text-[17px] font-semibold text-[rgb(18,18,18)] leading-snug">
+            Update Your Preferences
+          </h4>
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={onClose}
+            className="w-7 h-7 flex items-center justify-center text-gray-400 hover:text-gray-700 transition-colors cursor-pointer rounded"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Country select */}
+        <div className="mb-4">
+          <label
+            htmlFor="region-select"
+            className="block text-[13px] text-gray-500 mb-1.5"
+          >
+            Select your shipping country
+          </label>
+          <select
+            id="region-select"
+            aria-label="Country/region"
+            value={pendingCode}
+            onChange={(e) => onPendingChange(e.target.value)}
+            className="w-full h-[42px] border border-gray-300 rounded-[4px] px-3 text-[14px] text-[rgb(18,18,18)] bg-white focus:outline-none focus:border-[#FC6514] transition-colors cursor-pointer"
+          >
+            {COUNTRIES.map((c) => (
+              <option key={c.code} value={c.code}>
+                {c.name} ({c.currency})
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Save button */}
+        <button
+          type="button"
+          onClick={onSave}
+          className="w-full h-[44px] bg-[#FC6514] hover:bg-[#e85a10] text-white text-[14px] font-semibold rounded-[4px] transition-colors cursor-pointer"
+        >
+          Save &amp; Continue
+        </button>
+
+        {/* Shipping policy link */}
+        <p className="mt-3 text-center text-[12px] text-gray-400">
+          Learn more about our{' '}
+          <Link
+            to="/pages/shipping-delivery"
+            onClick={onClose}
+            className="underline hover:text-[#FC6514] transition-colors"
+          >
+            Shipping Policy
+          </Link>
+        </p>
+      </div>
+    </>
   );
 }
 

@@ -13,7 +13,7 @@ export function ProductPrice({
     <span className={className ?? 'product-price'}>
       {new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: price.currencyCode || 'USD',
+        currency: 'USD',
       }).format(parseFloat(price.amount))}
     </span>
   );

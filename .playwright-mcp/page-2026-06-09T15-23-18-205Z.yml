@@ -1,0 +1,243 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - textbox "Search" [ref=e10]
+          - button "Search" [ref=e11] [cursor=pointer]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18] [cursor=pointer]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+            - img [ref=e23]
+          - link "View cart" [ref=e25] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e26]
+            - generic [ref=e32]: "1"
+      - navigation "Main" [ref=e33]:
+        - list [ref=e34]:
+          - listitem [ref=e35]:
+            - link "Shirt" [ref=e36] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e37]:
+            - link "For Her" [ref=e38] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e39]:
+            - link "Father's Day" [ref=e40] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e41]:
+            - link "Family & Friends" [ref=e42] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e43]:
+            - link "Car Accessories" [ref=e44] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e45]:
+            - link "Graduation" [ref=e46] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e47]:
+    - region "Cart page" [ref=e49]:
+      - generic [ref=e50]:
+        - heading "Shopping Cart" [level=1] [ref=e51]
+        - paragraph [ref=e52]: 1 item
+      - generic [ref=e53]:
+        - paragraph [ref=e54]:
+          - text: Add
+          - strong [ref=e55]: $45.00
+          - text: more to get
+          - strong [ref=e56]: free shipping
+        - progressbar "Free shipping progress" [ref=e58]
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: Product
+            - generic [ref=e63]: Quantity
+            - generic [ref=e64]: Total
+          - list "Cart items" [ref=e65]:
+            - listitem [ref=e66]:
+              - generic [ref=e67]:
+                - link "Wooden" [ref=e68] [cursor=pointer]:
+                  - /url: /products/all-that-i-am-and-hope-to-be-personalized-graduation-cap-topper-gra080301tvmt?Title=Wooden
+                  - img "Wooden" [ref=e69]
+                - generic [ref=e70]:
+                  - link "All That I Am And Hope To Be - Personalized Graduation Cap Topper" [ref=e71] [cursor=pointer]:
+                    - /url: /products/all-that-i-am-and-hope-to-be-personalized-graduation-cap-topper-gra080301tvmt?Title=Wooden
+                    - paragraph [ref=e72]: All That I Am And Hope To Be - Personalized Graduation Cap Topper
+                  - list [ref=e73]:
+                    - listitem [ref=e74]:
+                      - generic [ref=e75]: "Title: Wooden"
+                  - button "Remove" [ref=e77]
+                - generic [ref=e79]:
+                  - button "Decrease quantity" [disabled] [ref=e81]: −
+                  - generic [ref=e82]: "1"
+                  - button "Increase quantity" [ref=e84]: +
+                - generic [ref=e86]: $30.00
+        - generic "Order Summary" [ref=e88]:
+          - heading "Order Summary" [level=2] [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - term [ref=e92]: Subtotal
+              - definition [ref=e93]:
+                - generic [ref=e94]: $30.00
+            - generic [ref=e95]:
+              - term [ref=e96]: Shipping
+              - definition [ref=e97]: Calculated at checkout
+          - generic [ref=e99]:
+            - generic [ref=e100]: Estimated Total
+            - generic [ref=e102]: $30.00
+          - link "Checkout →" [ref=e103] [cursor=pointer]:
+            - /url: https://theme-dawn-2.myshopify.com/cart/c/hWND90jGqGcEgSJ5z9yoMVzI?key=9a56cf116c1a7d07cf94e796031f407f&_s=05424666-cfd0-406c-b786-0ba1a11e514f&_y=61296be1-7ce4-40eb-836f-2f21e52ed3e7&_cs=3.AMPS
+          - link "← Continue Shopping" [ref=e104] [cursor=pointer]:
+            - /url: /collections
+          - generic [ref=e108]:
+            - generic [ref=e109]: Discount code
+            - textbox "Discount code" [ref=e110]
+            - button "Apply" [ref=e111]
+          - generic [ref=e114]:
+            - generic [ref=e115]: Gift card code
+            - textbox "Gift card code" [ref=e116]
+            - button "Apply" [ref=e117]
+  - 'region "Today Only: Secret privileges for you!" [ref=e118]':
+    - generic [ref=e119]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e120]'
+      - generic [ref=e122]:
+        - generic [ref=e123]: Email
+        - textbox "Email" [ref=e124]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e125]
+  - contentinfo [ref=e126]:
+    - generic [ref=e127]:
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - button "Shop By" [ref=e130]:
+            - heading "Shop By" [level=2] [ref=e131]
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - link "Gift Finder" [ref=e135] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e136]: Gift Finder
+            - listitem [ref=e137]:
+              - link "Shop By Product" [ref=e138] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e139]: Shop By Product
+                - img [ref=e140]
+            - listitem [ref=e142]:
+              - link "Shop By Occasion" [ref=e143] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e144]: Shop By Occasion
+                - img [ref=e145]
+            - listitem [ref=e147]:
+              - link "Shop By Recipient" [ref=e148] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e149]: Shop By Recipient
+                - img [ref=e150]
+            - listitem [ref=e152]:
+              - link "Shop By Hobby" [ref=e153] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e154]: Shop By Hobby
+                - img [ref=e155]
+        - generic [ref=e157]:
+          - button "Macorner" [ref=e158]:
+            - heading "Macorner" [level=2] [ref=e159]
+          - list [ref=e160]:
+            - listitem [ref=e161]:
+              - link "About Us" [ref=e162] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e163]:
+              - link "Privacy Policy" [ref=e164] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e165]:
+              - link "Accessibility Statement" [ref=e166] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e167]:
+          - button "Help and Support" [ref=e168]:
+            - heading "Help and Support" [level=2] [ref=e169]
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - link "Return Policy" [ref=e172] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e173]:
+              - link "Help Center" [ref=e174] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e175]:
+              - link "Size Chart" [ref=e176] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e177]:
+              - link "Shipping And Delivery" [ref=e178] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e179]:
+              - link "Cancellation & Modification Policy" [ref=e180] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e181]:
+              - link "Refund & Replacement Policy" [ref=e182] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e183]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e184] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e185]:
+          - heading "GET IN TOUCH" [level=2] [ref=e186]
+          - paragraph [ref=e187]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e188] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e189]:
+            - listitem [ref=e190]:
+              - link "X (Twitter)" [ref=e191] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e192]
+            - listitem [ref=e194]:
+              - link "Facebook" [ref=e195] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e196]
+            - listitem [ref=e198]:
+              - link "Pinterest" [ref=e199] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e200]
+            - listitem [ref=e202]:
+              - link "Instagram" [ref=e203] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e204]
+            - listitem [ref=e208]:
+              - link "TikTok" [ref=e209] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e210]
+      - list [ref=e212]:
+        - listitem [ref=e213]:
+          - img "American Express" [ref=e214]
+        - listitem [ref=e215]:
+          - img "Apple Pay" [ref=e216]
+        - listitem [ref=e217]:
+          - img "Bancontact" [ref=e218]
+        - listitem [ref=e219]:
+          - img "Diners Club" [ref=e220]
+        - listitem [ref=e221]:
+          - img "Discover" [ref=e222]
+        - listitem [ref=e223]:
+          - img "Google Pay" [ref=e224]
+        - listitem [ref=e225]:
+          - img "iDEAL" [ref=e226]
+        - listitem [ref=e227]:
+          - img "Mastercard" [ref=e228]
+        - listitem [ref=e229]:
+          - img "PayPal" [ref=e230]
+        - listitem [ref=e231]:
+          - img "Shop Pay" [ref=e232]
+        - listitem [ref=e233]:
+          - img "Venmo" [ref=e234]
+        - listitem [ref=e235]:
+          - img "Visa" [ref=e236]
+      - generic [ref=e237]:
+        - link "Terms Of Services" [ref=e238] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e239] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.

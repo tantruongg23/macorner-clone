@@ -21,6 +21,9 @@ export async function action({request, context}: Route.ActionArgs) {
     case CartForm.ACTIONS.LinesRemove:
       result = await cart.removeLines(inputs.lineIds);
       break;
+    case CartForm.ACTIONS.BuyerIdentityUpdate:
+      result = await cart.updateBuyerIdentity(inputs.buyerIdentity as Parameters<typeof cart.updateBuyerIdentity>[0]);
+      break;
     default:
       throw new Error(`Unknown cart action: ${action}`);
   }

@@ -1,5 +1,6 @@
-import {useOptimisticCart} from '@shopify/hydrogen';
-import {Link} from 'react-router';
+import {useOptimisticCart, CartForm} from '@shopify/hydrogen';
+import {Link, useFetcher} from 'react-router';
+import {useEffect, useRef} from 'react';
 import type {CartApiQueryFragment} from 'storefrontapi.generated';
 import {useAside} from '~/components/Aside';
 import {CartLineItem, type CartLine} from '~/components/CartLineItem';
@@ -44,6 +45,7 @@ export function CartMain({layout, cart: originalCart}: CartMainProps) {
   if (layout === 'page') {
     return (
       <section aria-label="Cart page">
+        <CartBuyerIdentitySync cart={originalCart} />
         <div className="mb-6 sm:mb-8">
           <h1 className="text-[24px] sm:text-[28px] font-semibold text-[rgb(18,18,18)] tracking-[0.3px]">
             Shopping Cart
@@ -107,6 +109,7 @@ export function CartMain({layout, cart: originalCart}: CartMainProps) {
       aria-label="Cart drawer"
       className={cart?.discountCodes?.filter((c) => c.applicable).length ? 'with-discount' : ''}
     >
+      <CartBuyerIdentitySync cart={originalCart} />
       {cartHasItems && (
         <FreeShippingBar subtotalAmount={cart?.cost?.subtotalAmount} />
       )}
@@ -137,6 +140,28 @@ export function CartMain({layout, cart: originalCart}: CartMainProps) {
       </div>
     </section>
   );
+}
+
+function CartBuyerIdentitySync({cart}: {cart: CartApiQueryFragment | null}) {
+  const fetcher = useFetcher();
+  const submitted = useRef(false);
+  const countryCode = cart?.buyerIdentity?.countryCode;
+
+  useEffect(() => {
+    if (submitted.current || !cart || countryCode === 'US') return;
+    submitted.current = true;
+    fetcher.submit(
+      {
+        cartFormInput: JSON.stringify({
+          action: CartForm.ACTIONS.BuyerIdentityUpdate,
+          inputs: {buyerIdentity: {countryCode: 'US'}},
+        }),
+      },
+      {method: 'POST', action: '/cart'},
+    );
+  }, [cart?.id, countryCode]);
+
+  return null;
 }
 
 function CartEmpty({

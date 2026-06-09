@@ -52,6 +52,7 @@ export async function createHydrogenRouterContext(
       cart: {
         queryFragment: CART_QUERY_FRAGMENT,
       },
+      buyerIdentity: {countryCode: 'US'},
     },
     additionalContext,
   );

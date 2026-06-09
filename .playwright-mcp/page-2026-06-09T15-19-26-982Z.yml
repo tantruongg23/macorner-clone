@@ -1,0 +1,557 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Macorner" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Macorner" [ref=e6]
+        - generic [ref=e9]:
+          - textbox "Search" [ref=e10]
+          - button "Search" [ref=e11] [cursor=pointer]:
+            - img [ref=e12]
+        - navigation "User menu" [ref=e14]:
+          - link "Sign In" [ref=e15] [cursor=pointer]:
+            - /url: /account/login
+          - link "Wishlist" [ref=e16] [cursor=pointer]:
+            - /url: /pages/wishlist
+          - link "Track Order" [ref=e17] [cursor=pointer]:
+            - /url: /pages/tracking-order
+          - button "Choose region" [ref=e18] [cursor=pointer]:
+            - img "United States flag" [ref=e20]
+            - generic [ref=e22]: United States
+            - img [ref=e23]
+          - link "View cart" [ref=e25] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e26]
+      - navigation "Main" [ref=e32]:
+        - list [ref=e33]:
+          - listitem [ref=e34]:
+            - link "Shirt" [ref=e35] [cursor=pointer]:
+              - /url: /collections/shirt
+          - listitem [ref=e36]:
+            - link "For Her" [ref=e37] [cursor=pointer]:
+              - /url: /collections/for-her
+          - listitem [ref=e38]:
+            - link "Father's Day" [ref=e39] [cursor=pointer]:
+              - /url: /collections/fathers-day
+          - listitem [ref=e40]:
+            - link "Family & Friends" [ref=e41] [cursor=pointer]:
+              - /url: /collections/family-friends
+          - listitem [ref=e42]:
+            - link "Car Accessories" [ref=e43] [cursor=pointer]:
+              - /url: /collections/car-accessories
+          - listitem [ref=e44]:
+            - link "Graduation" [ref=e45] [cursor=pointer]:
+              - /url: /collections/graduation
+  - main [ref=e46]:
+    - generic [ref=e50]:
+      - complementary "Graduation" [ref=e51]:
+        - generic [ref=e52]:
+          - heading "Graduation" [level=3] [ref=e53]
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - generic [ref=e57]: "Sort by:"
+              - generic [ref=e58]:
+                - combobox "Sort products" [ref=e59] [cursor=pointer]:
+                  - option "Featured" [selected]
+                  - option "Most relevant"
+                  - option "Best selling"
+                  - option "Alphabetically, A-Z"
+                  - option "Alphabetically, Z-A"
+                  - option "Price, low to high"
+                  - option "Price, high to low"
+                  - option "Date, old to new"
+                  - option "Date, new to old"
+                - img
+            - status [ref=e60]:
+              - paragraph [ref=e61]: 16 products
+      - generic [ref=e63]:
+        - generic "Collection filters" [ref=e64]:
+          - group [ref=e65]:
+            - generic "Availability" [ref=e66] [cursor=pointer]
+            - list [ref=e67]:
+              - listitem [ref=e68]:
+                - link "In stock (19)" [ref=e69] [cursor=pointer]:
+                  - /url: /collections/graduation?filter.v.availability=%7B%22available%22%3Atrue%7D
+                  - generic [ref=e71]: In stock
+                  - generic [ref=e72]: (19)
+              - listitem [ref=e73]:
+                - link "Out of stock (0)" [ref=e74] [cursor=pointer]:
+                  - /url: /collections/graduation?filter.v.availability=%7B%22available%22%3Afalse%7D
+                  - generic [ref=e76]: Out of stock
+                  - generic [ref=e77]: (0)
+          - group [ref=e78]:
+            - generic "Price" [ref=e79] [cursor=pointer]
+            - list [ref=e80]:
+              - listitem [ref=e81]:
+                - link "Price (0)" [ref=e82] [cursor=pointer]:
+                  - /url: /collections/graduation?filter.v.price=%7B%22price%22%3A%7B%22min%22%3A0%2C%22max%22%3A46.0%7D%7D
+                  - generic [ref=e84]: Price
+                  - generic [ref=e85]: (0)
+        - generic [ref=e86]:
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - generic [ref=e90]:
+                - generic [ref=e91]:
+                  - link [ref=e93] [cursor=pointer]:
+                    - /url: /products/all-that-i-am-and-hope-to-be-personalized-graduation-cap-topper-gra080301tvmt
+                    - img [ref=e94]
+                  - button "Add to wishlist" [ref=e95] [cursor=pointer]:
+                    - img [ref=e96]
+                  - generic [ref=e98]: Save
+                - generic [ref=e100]:
+                  - heading "All That I Am And Hope To Be - Personalized Graduation Cap Topper" [level=3] [ref=e101]:
+                    - link "All That I Am And Hope To Be - Personalized Graduation Cap Topper" [ref=e102] [cursor=pointer]:
+                      - /url: /products/all-that-i-am-and-hope-to-be-personalized-graduation-cap-topper-gra080301tvmt
+                  - generic [ref=e104]:
+                    - img [ref=e105]
+                    - img [ref=e107]
+                    - img [ref=e109]
+                    - img [ref=e111]
+                    - img [ref=e113]
+                  - generic [ref=e116]: $30.00 VND $40.00 VND
+            - listitem [ref=e117]:
+              - generic [ref=e119]:
+                - generic [ref=e120]:
+                  - link [ref=e122] [cursor=pointer]:
+                    - /url: /products/i-remembered-who-was-watching-personalized-photo-graduation-cap-topper-gra040302ttmt
+                    - img [ref=e123]
+                  - button "Add to wishlist" [ref=e124] [cursor=pointer]:
+                    - img [ref=e125]
+                  - generic [ref=e127]: Save
+                - generic [ref=e129]:
+                  - heading "I Remembered Who Was Watching - Personalized Photo Graduation Cap Topper" [level=3] [ref=e130]:
+                    - link "I Remembered Who Was Watching - Personalized Photo Graduation Cap Topper" [ref=e131] [cursor=pointer]:
+                      - /url: /products/i-remembered-who-was-watching-personalized-photo-graduation-cap-topper-gra040302ttmt
+                  - generic [ref=e133]:
+                    - img [ref=e134]
+                    - img [ref=e136]
+                    - img [ref=e138]
+                    - img [ref=e140]
+                    - img [ref=e142]
+                  - generic [ref=e145]: $30.00 VND $40.00 VND
+            - listitem [ref=e146]:
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - link [ref=e151] [cursor=pointer]:
+                    - /url: /products/behind-you-all-your-memories-personalized-photo-graduation-cap-topper-gra030303dgmt
+                    - img [ref=e152]
+                  - button "Add to wishlist" [ref=e153] [cursor=pointer]:
+                    - img [ref=e154]
+                  - generic [ref=e156]: Save
+                - generic [ref=e158]:
+                  - heading "Behind You All Your Memories - Personalized Photo Graduation Cap Topper" [level=3] [ref=e159]:
+                    - link "Behind You All Your Memories - Personalized Photo Graduation Cap Topper" [ref=e160] [cursor=pointer]:
+                      - /url: /products/behind-you-all-your-memories-personalized-photo-graduation-cap-topper-gra030303dgmt
+                  - generic [ref=e162]:
+                    - img [ref=e163]
+                    - img [ref=e165]
+                    - img [ref=e167]
+                    - img [ref=e169]
+                    - img [ref=e171]
+                  - generic [ref=e174]: $30.00 VND $40.00 VND
+            - listitem [ref=e175]:
+              - generic [ref=e177]:
+                - generic [ref=e178]:
+                  - link [ref=e180] [cursor=pointer]:
+                    - /url: /products/i-am-chosen-created-loved-personalized-graduation-cap-topper-gra050301laly
+                    - img [ref=e181]
+                  - button "Add to wishlist" [ref=e182] [cursor=pointer]:
+                    - img [ref=e183]
+                  - generic [ref=e185]: Save
+                - generic [ref=e187]:
+                  - heading "I Am Chosen Created Loved - Personalized Graduation Cap Topper" [level=3] [ref=e188]:
+                    - link "I Am Chosen Created Loved - Personalized Graduation Cap Topper" [ref=e189] [cursor=pointer]:
+                      - /url: /products/i-am-chosen-created-loved-personalized-graduation-cap-topper-gra050301laly
+                  - generic [ref=e191]:
+                    - img [ref=e192]
+                    - img [ref=e194]
+                    - img [ref=e196]
+                    - img [ref=e198]
+                    - img [ref=e200]
+                  - generic [ref=e203]: $30.00 VND $40.00 VND
+            - listitem [ref=e204]:
+              - generic [ref=e206]:
+                - generic [ref=e207]:
+                  - link [ref=e209] [cursor=pointer]:
+                    - /url: /products/graduation-custom-name-and-photo-personalized-photo-graduation-cap-topper-gra030302dgmt
+                    - img [ref=e210]
+                  - button "Add to wishlist" [ref=e211] [cursor=pointer]:
+                    - img [ref=e212]
+                  - generic [ref=e214]: Save
+                - generic [ref=e216]:
+                  - heading "Graduation Custom Name And Photo - Personalized Photo Graduation Cap Topper" [level=3] [ref=e217]:
+                    - link "Graduation Custom Name And Photo - Personalized Photo Graduation Cap Topper" [ref=e218] [cursor=pointer]:
+                      - /url: /products/graduation-custom-name-and-photo-personalized-photo-graduation-cap-topper-gra030302dgmt
+                  - generic [ref=e220]:
+                    - img [ref=e221]
+                    - img [ref=e223]
+                    - img [ref=e225]
+                    - img [ref=e227]
+                    - img [ref=e229]
+                  - generic [ref=e232]: $30.00 VND $40.00 VND
+            - listitem [ref=e233]:
+              - generic [ref=e235]:
+                - generic [ref=e236]:
+                  - link [ref=e238] [cursor=pointer]:
+                    - /url: /products/this-queen-finally-got-her-crown-personalized-graduation-cap-topper-gra070302tvmt
+                    - img [ref=e239]
+                  - button "Add to wishlist" [ref=e240] [cursor=pointer]:
+                    - img [ref=e241]
+                  - generic [ref=e243]: Save
+                - generic [ref=e245]:
+                  - heading "This Queen Finally Got Her Crown - Personalized Graduation Cap Topper" [level=3] [ref=e246]:
+                    - link "This Queen Finally Got Her Crown - Personalized Graduation Cap Topper" [ref=e247] [cursor=pointer]:
+                      - /url: /products/this-queen-finally-got-her-crown-personalized-graduation-cap-topper-gra070302tvmt
+                  - generic [ref=e249]:
+                    - img [ref=e250]
+                    - img [ref=e252]
+                    - img [ref=e254]
+                    - img [ref=e256]
+                    - img [ref=e258]
+                  - generic [ref=e261]: $30.00 VND $40.00 VND
+            - listitem [ref=e262]:
+              - generic [ref=e264]:
+                - generic [ref=e265]:
+                  - link [ref=e267] [cursor=pointer]:
+                    - /url: /products/i-did-my-best-and-god-did-the-rest-personalized-graduation-cap-topper-gra070302dgmt
+                    - img [ref=e268]
+                  - button "Add to wishlist" [ref=e269] [cursor=pointer]:
+                    - img [ref=e270]
+                  - generic [ref=e272]: Save
+                - generic [ref=e274]:
+                  - heading "I Did My Best And God Did The Rest - Personalized Graduation Cap Topper" [level=3] [ref=e275]:
+                    - link "I Did My Best And God Did The Rest - Personalized Graduation Cap Topper" [ref=e276] [cursor=pointer]:
+                      - /url: /products/i-did-my-best-and-god-did-the-rest-personalized-graduation-cap-topper-gra070302dgmt
+                  - generic [ref=e278]:
+                    - img [ref=e279]
+                    - img [ref=e281]
+                    - img [ref=e283]
+                    - img [ref=e285]
+                    - img [ref=e287]
+                  - generic [ref=e290]: $30.00 VND $40.00 VND
+            - listitem [ref=e291]:
+              - generic [ref=e293]:
+                - generic [ref=e294]:
+                  - link [ref=e296] [cursor=pointer]:
+                    - /url: /products/i-did-it-so-my-dogs-can-have-a-better-life-personalized-graduation-cap-topper-gra070302lamt
+                    - img [ref=e297]
+                  - button "Add to wishlist" [ref=e298] [cursor=pointer]:
+                    - img [ref=e299]
+                  - generic [ref=e301]: Save
+                - generic [ref=e303]:
+                  - heading "I Did It So My Dogs Can Have A Better Life - Personalized Graduation Cap Topper" [level=3] [ref=e304]:
+                    - link "I Did It So My Dogs Can Have A Better Life - Personalized Graduation Cap Topper" [ref=e305] [cursor=pointer]:
+                      - /url: /products/i-did-it-so-my-dogs-can-have-a-better-life-personalized-graduation-cap-topper-gra070302lamt
+                  - generic [ref=e307]:
+                    - img [ref=e308]
+                    - img [ref=e310]
+                    - img [ref=e312]
+                    - img [ref=e314]
+                    - img [ref=e316]
+                  - generic [ref=e319]: $30.00 VND $40.00 VND
+            - listitem [ref=e320]:
+              - generic [ref=e322]:
+                - generic [ref=e323]:
+                  - link [ref=e325] [cursor=pointer]:
+                    - /url: /products/graduation-gift-if-your-dreams-dont-scare-you-personalized-graduation-cap-topper-gra200302dgmt
+                    - img [ref=e326]
+                  - button "Add to wishlist" [ref=e327] [cursor=pointer]:
+                    - img [ref=e328]
+                  - generic [ref=e330]: Save
+                - generic [ref=e332]:
+                  - heading "Graduation Gift If Your Dreams Don't Scare You - Personalized Graduation Cap Topper" [level=3] [ref=e333]:
+                    - link "Graduation Gift If Your Dreams Don't Scare You - Personalized Graduation Cap Topper" [ref=e334] [cursor=pointer]:
+                      - /url: /products/graduation-gift-if-your-dreams-dont-scare-you-personalized-graduation-cap-topper-gra200302dgmt
+                  - generic [ref=e336]:
+                    - img [ref=e337]
+                    - img [ref=e339]
+                    - img [ref=e341]
+                    - img [ref=e343]
+                    - img [ref=e345]
+                  - generic [ref=e348]: $30.00 VND $40.00 VND
+            - listitem [ref=e349]:
+              - generic [ref=e351]:
+                - generic [ref=e352]:
+                  - link [ref=e354] [cursor=pointer]:
+                    - /url: /products/educated-dope-black-king-queen-personalized-graduation-cap-topper-gra020401vuly
+                    - img [ref=e355]
+                  - button "Add to wishlist" [ref=e356] [cursor=pointer]:
+                    - img [ref=e357]
+                  - generic [ref=e359]: Save
+                - generic [ref=e361]:
+                  - heading "Educated Dope Black King Queen - Personalized Graduation Cap Topper" [level=3] [ref=e362]:
+                    - link "Educated Dope Black King Queen - Personalized Graduation Cap Topper" [ref=e363] [cursor=pointer]:
+                      - /url: /products/educated-dope-black-king-queen-personalized-graduation-cap-topper-gra020401vuly
+                  - generic [ref=e365]:
+                    - img [ref=e366]
+                    - img [ref=e368]
+                    - img [ref=e370]
+                    - img [ref=e372]
+                    - img [ref=e374]
+                  - generic [ref=e377]: $30.00 VND $40.00 VND
+            - listitem [ref=e378]:
+              - generic [ref=e380]:
+                - generic [ref=e381]:
+                  - link [ref=e383] [cursor=pointer]:
+                    - /url: /products/graduation-gift-personalized-graduation-cap-pendant-necklace-with-birthstone-gra020402dgxy
+                    - img [ref=e384]
+                  - button "Add to wishlist" [ref=e385] [cursor=pointer]:
+                    - img [ref=e386]
+                  - generic [ref=e388]: Save
+                - generic [ref=e390]:
+                  - heading "Graduation Gift - Personalized Graduation Cap Pendant Necklace With Birthstone" [level=3] [ref=e391]:
+                    - link "Graduation Gift - Personalized Graduation Cap Pendant Necklace With Birthstone" [ref=e392] [cursor=pointer]:
+                      - /url: /products/graduation-gift-personalized-graduation-cap-pendant-necklace-with-birthstone-gra020402dgxy
+                  - generic [ref=e394]:
+                    - img [ref=e395]
+                    - img [ref=e397]
+                    - img [ref=e399]
+                    - img [ref=e401]
+                    - img [ref=e403]
+                  - generic [ref=e406]: $27.00 VND $37.00 VND
+            - listitem [ref=e407]:
+              - generic [ref=e409]:
+                - generic [ref=e410]:
+                  - link [ref=e412] [cursor=pointer]:
+                    - /url: /products/graduation-set-gift-personalized-graduation-cap-topper-and-tassel-photo-charm-gra170403tvmt
+                    - img [ref=e413]
+                  - button "Add to wishlist" [ref=e414] [cursor=pointer]:
+                    - img [ref=e415]
+                  - generic [ref=e417]: Save
+                - generic [ref=e419]:
+                  - heading "Graduation Set Gift - Personalized Graduation Cap Topper And Tassel Photo Charm" [level=3] [ref=e420]:
+                    - link "Graduation Set Gift - Personalized Graduation Cap Topper And Tassel Photo Charm" [ref=e421] [cursor=pointer]:
+                      - /url: /products/graduation-set-gift-personalized-graduation-cap-topper-and-tassel-photo-charm-gra170403tvmt
+                  - generic [ref=e423]:
+                    - img [ref=e424]
+                    - img [ref=e426]
+                    - img [ref=e428]
+                    - img [ref=e430]
+                    - img [ref=e432]
+                  - generic [ref=e435]: $40.00 VND $70.00 VND
+            - listitem [ref=e436]:
+              - generic [ref=e438]:
+                - generic [ref=e439]:
+                  - link [ref=e441] [cursor=pointer]:
+                    - /url: /products/never-give-up-personalized-graduation-cap-pendant-necklace-with-birthstone-gra240401ttmt
+                    - img [ref=e442]
+                  - button "Add to wishlist" [ref=e443] [cursor=pointer]:
+                    - img [ref=e444]
+                  - generic [ref=e446]: Save
+                - generic [ref=e448]:
+                  - heading "Never Give Up - Personalized Graduation Cap Pendant Necklace With Birthstone" [level=3] [ref=e449]:
+                    - link "Never Give Up - Personalized Graduation Cap Pendant Necklace With Birthstone" [ref=e450] [cursor=pointer]:
+                      - /url: /products/never-give-up-personalized-graduation-cap-pendant-necklace-with-birthstone-gra240401ttmt
+                  - generic [ref=e452]:
+                    - img [ref=e453]
+                    - img [ref=e455]
+                    - img [ref=e457]
+                    - img [ref=e459]
+                    - img [ref=e461]
+                  - generic [ref=e464]: $30.00 VND $45.00 VND
+            - listitem [ref=e465]:
+              - generic [ref=e467]:
+                - generic [ref=e468]:
+                  - link [ref=e470] [cursor=pointer]:
+                    - /url: /products/you-are-chosen-bible-personalized-graduation-cap-pendant-necklace-with-birthstone-gra220403huly
+                    - img [ref=e471]
+                  - button "Add to wishlist" [ref=e472] [cursor=pointer]:
+                    - img [ref=e473]
+                  - generic [ref=e475]: Save
+                - generic [ref=e477]:
+                  - heading "You Are Chosen Bible - Personalized Graduation Cap Pendant Necklace With Birthstone" [level=3] [ref=e478]:
+                    - link "You Are Chosen Bible - Personalized Graduation Cap Pendant Necklace With Birthstone" [ref=e479] [cursor=pointer]:
+                      - /url: /products/you-are-chosen-bible-personalized-graduation-cap-pendant-necklace-with-birthstone-gra220403huly
+                  - generic [ref=e481]:
+                    - img [ref=e482]
+                    - img [ref=e484]
+                    - img [ref=e486]
+                    - img [ref=e488]
+                    - img [ref=e490]
+                  - generic [ref=e493]: $30.00 VND $45.00 VND
+            - listitem [ref=e494]:
+              - generic [ref=e496]:
+                - generic [ref=e497]:
+                  - link [ref=e499] [cursor=pointer]:
+                    - /url: /products/gift-for-daughter-personalized-graduation-cap-pendant-necklace-with-birthstone-gra230402ttmt
+                    - img [ref=e500]
+                  - button "Add to wishlist" [ref=e501] [cursor=pointer]:
+                    - img [ref=e502]
+                  - generic [ref=e504]: Save
+                - generic [ref=e506]:
+                  - heading "Gift For Daughter - Personalized Graduation Cap Pendant Necklace With Birthstone" [level=3] [ref=e507]:
+                    - link "Gift For Daughter - Personalized Graduation Cap Pendant Necklace With Birthstone" [ref=e508] [cursor=pointer]:
+                      - /url: /products/gift-for-daughter-personalized-graduation-cap-pendant-necklace-with-birthstone-gra230402ttmt
+                  - generic [ref=e510]:
+                    - img [ref=e511]
+                    - img [ref=e513]
+                    - img [ref=e515]
+                    - img [ref=e517]
+                    - img [ref=e519]
+                  - generic [ref=e522]: $30.00 VND $45.00 VND
+            - listitem [ref=e523]:
+              - generic [ref=e525]:
+                - generic [ref=e526]:
+                  - link [ref=e528] [cursor=pointer]:
+                    - /url: /products/my-love-with-you-personalized-photo-graduation-cap-pendant-necklace-with-birthstone-gra230403ttmt
+                    - img [ref=e529]
+                  - button "Add to wishlist" [ref=e530] [cursor=pointer]:
+                    - img [ref=e531]
+                  - generic [ref=e533]: Save
+                - generic [ref=e535]:
+                  - heading "My Love With You - Personalized Photo Graduation Cap Pendant Necklace With Birthstone" [level=3] [ref=e536]:
+                    - link "My Love With You - Personalized Photo Graduation Cap Pendant Necklace With Birthstone" [ref=e537] [cursor=pointer]:
+                      - /url: /products/my-love-with-you-personalized-photo-graduation-cap-pendant-necklace-with-birthstone-gra230403ttmt
+                  - generic [ref=e539]:
+                    - img [ref=e540]
+                    - img [ref=e542]
+                    - img [ref=e544]
+                    - img [ref=e546]
+                    - img [ref=e548]
+                  - generic [ref=e551]: $30.00 VND $45.00 VND
+          - navigation "Pagination" [ref=e553]:
+            - list [ref=e554]:
+              - listitem [ref=e555]:
+                - img [ref=e557]
+              - listitem [ref=e559]:
+                - generic [ref=e560]: "1"
+              - listitem [ref=e561]:
+                - link "Next page" [ref=e562] [cursor=pointer]:
+                  - /url: /collections/graduation?cursor=eyJsYXN0X2lkIjo5MDQ5MTIwODY2NDYwLCJsYXN0X3ZhbHVlIjowLCJvZmZzZXQiOjE1fQ%3D%3D
+                  - img [ref=e563]
+  - 'region "Today Only: Secret privileges for you!" [ref=e565]':
+    - generic [ref=e566]:
+      - 'heading "Today Only: Secret privileges for you!" [level=2] [ref=e567]'
+      - generic [ref=e569]:
+        - generic [ref=e570]: Email
+        - textbox "Email" [ref=e571]:
+          - /placeholder: ""
+        - button "REVEAL NOW" [ref=e572]
+  - contentinfo [ref=e573]:
+    - generic [ref=e574]:
+      - generic [ref=e575]:
+        - generic [ref=e576]:
+          - button "Shop By" [ref=e577]:
+            - heading "Shop By" [level=2] [ref=e578]
+          - list [ref=e580]:
+            - listitem [ref=e581]:
+              - link "Gift Finder" [ref=e582] [cursor=pointer]:
+                - /url: /pages/gift-finder
+                - generic [ref=e583]: Gift Finder
+            - listitem [ref=e584]:
+              - link "Shop By Product" [ref=e585] [cursor=pointer]:
+                - /url: /collections/all
+                - generic [ref=e586]: Shop By Product
+                - img [ref=e587]
+            - listitem [ref=e589]:
+              - link "Shop By Occasion" [ref=e590] [cursor=pointer]:
+                - /url: /pages/shop-by-occasion
+                - generic [ref=e591]: Shop By Occasion
+                - img [ref=e592]
+            - listitem [ref=e594]:
+              - link "Shop By Recipient" [ref=e595] [cursor=pointer]:
+                - /url: /collections/gift-for-her
+                - generic [ref=e596]: Shop By Recipient
+                - img [ref=e597]
+            - listitem [ref=e599]:
+              - link "Shop By Hobby" [ref=e600] [cursor=pointer]:
+                - /url: /collections/sport
+                - generic [ref=e601]: Shop By Hobby
+                - img [ref=e602]
+        - generic [ref=e604]:
+          - button "Macorner" [ref=e605]:
+            - heading "Macorner" [level=2] [ref=e606]
+          - list [ref=e607]:
+            - listitem [ref=e608]:
+              - link "About Us" [ref=e609] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e610]:
+              - link "Privacy Policy" [ref=e611] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e612]:
+              - link "Accessibility Statement" [ref=e613] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e614]:
+          - button "Help and Support" [ref=e615]:
+            - heading "Help and Support" [level=2] [ref=e616]
+          - list [ref=e617]:
+            - listitem [ref=e618]:
+              - link "Return Policy" [ref=e619] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e620]:
+              - link "Help Center" [ref=e621] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e622]:
+              - link "Size Chart" [ref=e623] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e624]:
+              - link "Shipping And Delivery" [ref=e625] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e626]:
+              - link "Cancellation & Modification Policy" [ref=e627] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e628]:
+              - link "Refund & Replacement Policy" [ref=e629] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e630]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e631] [cursor=pointer]:
+                - /url: /pages/disclaimer-regarding-fake-websites
+        - generic [ref=e632]:
+          - heading "GET IN TOUCH" [level=2] [ref=e633]
+          - paragraph [ref=e634]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e635] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e636]:
+            - listitem [ref=e637]:
+              - link "X (Twitter)" [ref=e638] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e639]
+            - listitem [ref=e641]:
+              - link "Facebook" [ref=e642] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e643]
+            - listitem [ref=e645]:
+              - link "Pinterest" [ref=e646] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e647]
+            - listitem [ref=e649]:
+              - link "Instagram" [ref=e650] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e651]
+            - listitem [ref=e655]:
+              - link "TikTok" [ref=e656] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e657]
+      - list [ref=e659]:
+        - listitem [ref=e660]:
+          - img "American Express" [ref=e661]
+        - listitem [ref=e662]:
+          - img "Apple Pay" [ref=e663]
+        - listitem [ref=e664]:
+          - img "Bancontact" [ref=e665]
+        - listitem [ref=e666]:
+          - img "Diners Club" [ref=e667]
+        - listitem [ref=e668]:
+          - img "Discover" [ref=e669]
+        - listitem [ref=e670]:
+          - img "Google Pay" [ref=e671]
+        - listitem [ref=e672]:
+          - img "iDEAL" [ref=e673]
+        - listitem [ref=e674]:
+          - img "Mastercard" [ref=e675]
+        - listitem [ref=e676]:
+          - img "PayPal" [ref=e677]
+        - listitem [ref=e678]:
+          - img "Shop Pay" [ref=e679]
+        - listitem [ref=e680]:
+          - img "Venmo" [ref=e681]
+        - listitem [ref=e682]:
+          - img "Visa" [ref=e683]
+      - generic [ref=e684]:
+        - link "Terms Of Services" [ref=e685] [cursor=pointer]:
+          - /url: /pages/terms-of-services
+        - text: •
+        - link "Privacy Policy" [ref=e686] [cursor=pointer]:
+          - /url: /pages/privacy-policy
+        - text: •MA Commerce Inc.
