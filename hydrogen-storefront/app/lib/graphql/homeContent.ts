@@ -1,5 +1,8 @@
 export const HOME_CONTENT_QUERY = `#graphql
-  query GetHomeContent {
+  query GetHomeContent(
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
     metaobjects(type: "home_content", first: 10) {
       nodes {
         id

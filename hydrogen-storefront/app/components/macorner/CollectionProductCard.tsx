@@ -3,9 +3,10 @@ import type {ProductNode} from '~/types/collection';
 import {WishlistHeart} from './WishlistHeart';
 import {JudgeMeStarBadge} from './ProductReviews';
 
-function fmtMoney(amount: string, currency: string) {
+function fmtMoney(amount: string) {
+  // Always display as USD dollars since macorner.co is a USD store
   const n = parseFloat(amount);
-  return `$${Number.isNaN(n) ? '0.00' : n.toFixed(2)} ${currency}`;
+  return `$${Number.isNaN(n) ? '0.00' : n.toFixed(2)}`;
 }
 
 function isOnSale(price: string, compare: string) {
@@ -70,7 +71,7 @@ export function CollectionProductCard({product}: {product: ProductNode}) {
               handle: product.handle,
               title: product.title,
               image: product.featuredImage?.url,
-              price: fmtMoney(price.amount, price.currencyCode),
+              price: fmtMoney(price.amount),
             }}
             className="absolute top-[8px] right-[8px] z-[2] w-8 h-8 rounded-full flex items-center justify-center cursor-pointer bg-white/85 border-none p-0 hover:bg-white transition-colors"
           />
@@ -136,17 +137,17 @@ export function CollectionProductCard({product}: {product: ProductNode}) {
               {sale ? (
                 <div className="price price--on-sale" style={{fontSize: '16px', letterSpacing: '0.6px', lineHeight: '24px'}}>
                   <span className="price-item price-item--sale price-item--last money" style={{color: 'rgba(18,18,18,0.75)'}}>
-                    {fmtMoney(price.amount, price.currencyCode)}
+                    {fmtMoney(price.amount)}
                   </span>
                   {' '}
                   <span className="price-item price-item--regular money" style={{color: 'rgba(18,18,18,0.4)', textDecoration: 'line-through', fontSize: '14px'}}>
-                    {fmtMoney(compareAt.amount, compareAt.currencyCode)}
+                    {fmtMoney(compareAt.amount)}
                   </span>
                 </div>
               ) : (
                 <div className="price" style={{fontSize: '16px', letterSpacing: '0.6px', lineHeight: '24px', color: soldOut ? 'rgba(18,18,18,0.4)' : 'rgba(18,18,18,0.75)'}}>
                   <span className="price-item price-item--regular money">
-                    {fmtMoney(price.amount, price.currencyCode)}
+                    {fmtMoney(price.amount)}
                   </span>
                 </div>
               )}

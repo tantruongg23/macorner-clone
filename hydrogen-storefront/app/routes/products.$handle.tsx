@@ -139,7 +139,8 @@ export default function ProductPage({loaderData}: Route.ComponentProps) {
     offers: selectedVariant
       ? {
           '@type': 'Offer',
-          priceCurrency: selectedVariant.price.currencyCode,
+          // Always USD since macorner.co displays prices as USD dollars
+          priceCurrency: 'USD',
           price: selectedVariant.price.amount,
           availability: selectedVariant.availableForSale
             ? 'https://schema.org/InStock'

@@ -304,14 +304,12 @@ export function MacornerSearchOverlay({
                         <div className="mt-1 flex items-center gap-2">
                           {variant?.price && (
                             <span className="text-[13px] text-[#FC6514] font-medium">
-                              <Money data={variant.price} />
+                              <Money data={{...variant.price, currencyCode: 'USD' as const}} />
                             </span>
                           )}
                           {hasCompare && compareAtPrice && (
                             <span className="text-[12px] text-[#888] line-through">
-                              {compareAtPrice.currencyCode === 'USD'
-                                ? `$${Number(compareAtPrice.amount).toFixed(2)}`
-                                : `${compareAtPrice.currencyCode} ${compareAtPrice.amount}`}
+                              ${Number(compareAtPrice.amount).toFixed(2)}
                             </span>
                           )}
                         </div>

@@ -48,9 +48,10 @@ type HomeContentNode = {
 };
 
 
-function formatPrice(amount: string, currencyCode: string): string {
+function formatPrice(amount: string): string {
+  // Always display as USD dollars since macorner.co is a USD store
   const parsed = parseFloat(amount);
-  return `$${Number.isNaN(parsed) ? '0.00' : parsed.toFixed(2)} ${currencyCode}`;
+  return `$${Number.isNaN(parsed) ? '0.00' : parsed.toFixed(2)}`;
 }
 
 export function meta() {
@@ -80,11 +81,22 @@ export async function loader({ context }: Route.LoaderArgs) {
     storefront.query(CATEGORY_ICONS_QUERY, { cache: storefront.CacheLong() }),
     storefront.query(HERO_BANNER_QUERY, { cache: storefront.CacheLong() }),
     storefront.query(COLLECTION_PRODUCTS_BY_KEY_QUERY, {
-      variables: { handle: COLLECTION_KEYS.BEST_SELLING, first: 8 },
+      variables: {
+        handle: COLLECTION_KEYS.BEST_SELLING,
+        first: 8,
+        country: storefront.i18n.country,
+        language: storefront.i18n.language,
+      },
       cache: storefront.CacheLong(),
     }),
     storefront
-      .query(HOME_CONTENT_QUERY, { cache: storefront.CacheShort() })
+      .query(HOME_CONTENT_QUERY, {
+        variables: {
+          country: storefront.i18n.country,
+          language: storefront.i18n.language,
+        },
+        cache: storefront.CacheShort(),
+      })
       .catch(() => ({ metaobjects: null })),
     storefront
       .query(HERO_CAROUSEL_QUERY, { cache: storefront.CacheLong() })
@@ -150,10 +162,7 @@ export async function loader({ context }: Route.LoaderArgs) {
       href: `/products/${p.handle}`,
       imageSrc: p.featuredImage?.url ?? '',
       alt: p.featuredImage?.altText ?? p.title,
-      price: formatPrice(
-        p.priceRange.minVariantPrice.amount,
-        p.priceRange.minVariantPrice.currencyCode,
-      ),
+      price: formatPrice(p.priceRange.minVariantPrice.amount),
     })
   );
 
@@ -169,10 +178,7 @@ export async function loader({ context }: Route.LoaderArgs) {
             href: `/products/${p.handle}`,
             imageSrc: p.featuredImage?.url ?? '',
             alt: p.featuredImage?.altText ?? p.title,
-            price: formatPrice(
-              p.priceRange.minVariantPrice.amount,
-              p.priceRange.minVariantPrice.currencyCode,
-            ),
+            price: formatPrice(p.priceRange.minVariantPrice.amount),
           })),
         }));
 

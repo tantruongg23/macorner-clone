@@ -1,5 +1,10 @@
 export const COLLECTION_PRODUCTS_BY_KEY_QUERY = `#graphql
-  query GetCollectionProducts($handle: String!, $first: Int!) {
+  query GetCollectionProducts(
+    $handle: String!
+    $first: Int!
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
     collection(handle: $handle) {
       products(first: $first) {
           nodes {

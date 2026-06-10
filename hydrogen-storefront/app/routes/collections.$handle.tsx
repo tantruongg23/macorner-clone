@@ -20,7 +20,9 @@ const COLLECTION_QUERY = `#graphql
     $sortKey: ProductCollectionSortKeys
     $reverse: Boolean
     $filters: [ProductFilter!]
-  ) {
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
     collection(handle: $handle) {
       id
       title
@@ -116,6 +118,8 @@ export async function loader({params, request, context}: Route.LoaderArgs) {
       sortKey: opt.key as any,
       reverse: opt.reverse,
       filters: activeFilters.length > 0 ? (activeFilters as any) : undefined,
+      country: storefront.i18n.country,
+      language: storefront.i18n.language,
       ...(prev
         ? {last: PRODUCTS_PER_PAGE, startCursor: prev}
         : {first: PRODUCTS_PER_PAGE, endCursor: cursor}),
