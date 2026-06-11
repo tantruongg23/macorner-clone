@@ -24,6 +24,15 @@ export interface ReviewPhoto {
   alt: string;
 }
 
+export interface PromoCTAItem {
+  title: string;
+  subtitle: string;
+  imageSrc: string;
+  alt: string;
+  href: string;
+  cta: string;
+}
+
 export const HERO = {
   title: "Father's Day",
   subtitle: "Thoughtful pieces made for everyday moments with Dad.",
@@ -323,6 +332,33 @@ export const SHOP_BY_PRODUCT: PhotoCategory[] = [
   { label: "Belt", imageSrc: "/images/Belt.webp", href: "#", alt: "Belt" },
   { label: "Whiskey Glass", imageSrc: "/images/Whiskey_Glass_2a0e6b84-bce4-498d-8a30-91788ba3449f.webp", href: "#", alt: "Whiskey Glass" },
   { label: "Mug", imageSrc: "/images/Mug_e104b31d-b065-4f0d-9104-2517ffccb52f.webp", href: "#", alt: "Mug" },
+];
+
+export const PROMO_CTA_ITEMS: PromoCTAItem[] = [
+  {
+    title: "Father's Day Gifts",
+    subtitle: "Thoughtful picks Dad will love",
+    imageSrc: "/images/Father_s_Day_homepage_banner_2000x.webp",
+    alt: "Father's Day Gifts",
+    href: "/collections/fathers-day",
+    cta: "Shop Now",
+  },
+  {
+    title: "Graduation Gifts",
+    subtitle: "Celebrate every milestone in style",
+    imageSrc: "/images/Graduation_Homepage_Banner_1_2000x.webp",
+    alt: "Graduation Gifts",
+    href: "/collections/graduation",
+    cta: "Shop Now",
+  },
+  {
+    title: "Anniversary Collection",
+    subtitle: "Mark the moment with a custom keepsake",
+    imageSrc: "/images/Banner_4th_of_July_30cebbd1-f91e-4c39-9883-310480047909_2000x.webp",
+    alt: "Anniversary Collection",
+    href: "/collections/anniversary",
+    cta: "Buy Now",
+  },
 ];
 
 export const HAPPY_CUSTOMERS_PHOTOS: ReviewPhoto[] = [

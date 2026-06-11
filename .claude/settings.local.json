@@ -25,7 +25,8 @@
       "Bash(node extract-best-selling.mjs)",
       "PowerShell(Receive-Job *)",
       "PowerShell(Get-Job *)",
-      "Bash(curl -s http://localhost:3000/ -o /dev/null -w \"%{http_code}\")"
+      "Bash(curl -s http://localhost:3000/ -o /dev/null -w \"%{http_code}\")",
+      "mcp__playwright__browser_tabs"
     ]
   }
 }

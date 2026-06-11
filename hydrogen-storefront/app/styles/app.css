@@ -189,3 +189,21 @@
 }
 .reveal { opacity: 0; will-change: transform, opacity; }
 .reveal.in { animation: slide-up-in 0.6s cubic-bezier(0, 0, 0.3, 1) forwards; }
+
+/* Promo bar marquee */
+@keyframes marquee-ltr {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.promo-marquee-track {
+  animation: marquee-ltr 28s linear infinite;
+  will-change: transform;
+}
+.promo-marquee:hover .promo-marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .promo-marquee-track {
+    animation: none;
+  }
+}

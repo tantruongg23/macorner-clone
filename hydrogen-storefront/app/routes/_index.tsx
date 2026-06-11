@@ -6,10 +6,11 @@ import { SecondaryBanner } from '~/components/macorner/SecondaryBanner';
 import { TrendingNow } from '~/components/macorner/TrendingNow';
 import { CollectionTabsSection, type CollectionTabsSectionProps } from '~/components/macorner/CollectionTabsSection';
 import { PhotoCategoryGrid } from '~/components/macorner/PhotoCategoryGrid';
+import { PromoCTAGrid } from '~/components/macorner/PromoCTAGrid';
 import { HappyCustomers } from '~/components/macorner/HappyCustomers';
 import { PromoBar } from '~/components/macorner/PromoBar';
 import { BackToTopButton } from '~/components/macorner/BackToTopButton';
-import { SHOP_BY_RECIPIENT, SHOP_BY_PRODUCT } from '~/lib/content';
+import { SHOP_BY_RECIPIENT, SHOP_BY_PRODUCT, PROMO_CTA_ITEMS } from '~/lib/content';
 import { CATEGORY_ICONS_QUERY } from '~/lib/graphql/categoryIcons';
 import {HERO_BANNER_QUERY, HERO_CAROUSEL_QUERY} from '~/lib/graphql/heroBanner';
 import type {HeroBannerData} from '~/components/macorner/HeroBanner';
@@ -207,6 +208,21 @@ const ORGANIZATION_JSON_LD = {
 };
 
 export default function Homepage({ loaderData }: Route.ComponentProps) {
+  const bestSeller = loaderData.trendingProducts[0];
+  const promoCTAItems = bestSeller
+    ? [
+        {
+          title: 'Best Sellers',
+          subtitle: 'Customer favorites, hand-picked for you',
+          imageSrc: bestSeller.imageSrc,
+          alt: bestSeller.alt,
+          href: `/collections/${COLLECTION_KEYS.BEST_SELLING}`,
+          cta: 'Best Selling',
+        },
+        ...PROMO_CTA_ITEMS,
+      ]
+    : PROMO_CTA_ITEMS;
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <JsonLd data={ORGANIZATION_JSON_LD} />
@@ -222,6 +238,8 @@ export default function Homepage({ loaderData }: Route.ComponentProps) {
           ),
         )}
       </div>
+
+      <PromoCTAGrid items={promoCTAItems} />
 
       <PhotoCategoryGrid title="Shop By Recipient" items={SHOP_BY_RECIPIENT} />
       <PhotoCategoryGrid title="Shop By Product" items={SHOP_BY_PRODUCT} />
