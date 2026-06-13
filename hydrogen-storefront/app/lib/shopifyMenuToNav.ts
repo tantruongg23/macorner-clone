@@ -87,14 +87,13 @@ export function shopifyMenuToNav(
           }),
         );
 
-        const groupUrl = toRelativePath(group.url);
-
         return {
           id: group.id,
           title: group.title,
-          // Use the group's own URL as the "See All" link only when the group
-          // actually has child items (otherwise it would be a dead link).
-          seeAllUrl: leaves.length > 0 ? groupUrl : undefined,
+          // Group's own URL. When it has no child items, MegaDropdownGroup
+          // turns the title itself into this link (2-level menu support).
+          // When it has children, this becomes the "See All" link.
+          seeAllUrl: toRelativePath(group.url),
           items: leaves,
         };
       });

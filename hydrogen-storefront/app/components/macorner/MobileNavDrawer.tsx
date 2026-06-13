@@ -225,25 +225,44 @@ export function MobileNavDrawer({navItems}: MobileNavDrawerProps) {
                   </Link>
                 </div>
                 <ul className="flex flex-col px-5 pb-6">
-                  {panel.item.groups!.map((group) => (
-                    <li key={group.id} className="border-b border-gray-50">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setPanel({level: 2, item: panel.item, group})
-                        }
-                        className="w-full flex items-center justify-between py-3.5 text-[14px] font-semibold text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
-                        aria-haspopup="true"
-                      >
-                        <span>{group.title}</span>
-                        <ChevronDownIcon
-                          width={14}
-                          height={14}
-                          className="-rotate-90 shrink-0"
-                        />
-                      </button>
-                    </li>
-                  ))}
+                  {panel.item.groups!.map((group) =>
+                    group.items.length > 0 ? (
+                      <li key={group.id} className="border-b border-gray-50">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setPanel({level: 2, item: panel.item, group})
+                          }
+                          className="w-full flex items-center justify-between py-3.5 text-[14px] font-semibold text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+                          aria-haspopup="true"
+                        >
+                          <span>{group.title}</span>
+                          <ChevronDownIcon
+                            width={14}
+                            height={14}
+                            className="-rotate-90 shrink-0"
+                          />
+                        </button>
+                      </li>
+                    ) : (
+                      // Leaf-less group (2-level menu): a direct link.
+                      <li key={group.id} className="border-b border-gray-50">
+                        <NavLink
+                          to={group.seeAllUrl ?? '#'}
+                          onClick={close}
+                          className={({isActive}) =>
+                            `block py-3.5 text-[14px] font-semibold transition-colors ${
+                              isActive
+                                ? 'text-[#FC6514]'
+                                : 'text-[var(--color-header-text)] hover:text-[#FC6514]'
+                            }`
+                          }
+                        >
+                          {group.title}
+                        </NavLink>
+                      </li>
+                    ),
+                  )}
                 </ul>
               </nav>
             )}

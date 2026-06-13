@@ -624,12 +624,12 @@ function DesktopNavItem({item}: {item: NavItem}) {
         >
           <div className={`max-w-[1280px] mx-auto px-6 py-10 grid gap-x-8 gap-y-0 text-left ${gridClass}`}>
             {use10Layout
-              ? /* 10 groups: 5 columns, top/bottom pairs */
+              ? /* 10 groups: 5 columns, consecutive pairs stacked top/bottom */
                 Array.from({length: 5}).map((_, colIdx) => (
                   <div key={`col-${colIdx}`} className="flex flex-col gap-8">
-                    <MegaDropdownGroup group={item.groups![colIdx]} />
+                    <MegaDropdownGroup group={item.groups![colIdx * 2]} />
                     <div className="border-t border-[var(--color-header-border)] pt-6">
-                      <MegaDropdownGroup group={item.groups![colIdx + 5]} />
+                      <MegaDropdownGroup group={item.groups![colIdx * 2 + 1]} />
                     </div>
                   </div>
                 ))
@@ -660,13 +660,25 @@ function DesktopNavItem({item}: {item: NavItem}) {
 }
 
 function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[number]}) {
+  const hasLeaves = group.items.length > 0;
+
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between gap-2">
-        <h3 className="text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)]">
-          {group.title}
-        </h3>
-        {group.seeAllUrl && (
+        {hasLeaves || !group.seeAllUrl ? (
+          <h3 className="text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)]">
+            {group.title}
+          </h3>
+        ) : (
+          // Leaf-less group (2-level menu): the title itself is the link.
+          <Link
+            to={group.seeAllUrl}
+            className="text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)] hover:text-[#FC6514] transition-colors"
+          >
+            {group.title}
+          </Link>
+        )}
+        {hasLeaves && group.seeAllUrl && (
           <Link
             to={group.seeAllUrl}
             className="text-[11px] font-medium text-[#FC6514] hover:underline whitespace-nowrap"
@@ -675,18 +687,20 @@ function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[numbe
           </Link>
         )}
       </div>
-      <ul className="flex flex-col gap-2 list-none m-0 p-0">
-        {group.items.map((leaf) => (
-          <li key={leaf.id} className="m-0 p-0">
-            <Link
-              to={leaf.url}
-              className="text-[13px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
-            >
-              {leaf.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {hasLeaves && (
+        <ul className="flex flex-col gap-2 list-none m-0 p-0">
+          {group.items.map((leaf) => (
+            <li key={leaf.id} className="m-0 p-0">
+              <Link
+                to={leaf.url}
+                className="text-[13px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
+              >
+                {leaf.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
