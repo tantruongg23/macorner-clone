@@ -3,9 +3,9 @@
 /*
  * Wrapped in @layer base so Tailwind's utilities layer (e.g. mb-8, mt-4)
  * can still override these resets. Unlayered styles always beat @layer
- * styles regardless of layer order, which previously caused every mb-*/mt-*
- * margin utility on headings/paragraphs to be silently overridden by the
- * `margin: 0` reset below.
+ * styles regardless of layer order, which previously caused every margin
+ * utility (mb-*, mt-*) on headings/paragraphs to be silently overridden by
+ * the `margin: 0` reset below.
  */
 @layer base {
   *,
