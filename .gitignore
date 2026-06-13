@@ -67,3 +67,4 @@ coverage/
 secrets/
 *.pem
 *.key
+ai-website-cloner-template
