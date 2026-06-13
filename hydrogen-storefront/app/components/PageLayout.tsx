@@ -5,7 +5,7 @@ import type {
   FooterQuery,
   HeaderQuery,
 } from 'storefrontapi.generated';
-import type {MenuItemNode} from '~/lib/navigation';
+import type {NavItem} from '~/lib/staticNav';
 import {Aside} from '~/components/Aside';
 import {MacornerFooter} from '~/components/macorner/Footer';
 import {MacornerHeader} from '~/components/macorner/Header';
@@ -22,7 +22,7 @@ interface PageLayoutProps {
   footer: Promise<FooterQuery | null>;
   header: HeaderQuery;
   isLoggedIn: Promise<boolean>;
-  navigationTree?: MenuItemNode[] | null;
+  navItems?: NavItem[];
   publicStoreDomain: string;
   children?: React.ReactNode;
 }
@@ -33,15 +33,15 @@ export function PageLayout({
   footer,
   header,
   isLoggedIn,
-  navigationTree,
+  navItems,
   publicStoreDomain,
 }: PageLayoutProps) {
   return (
     <Aside.Provider>
       <CartAside cart={cart} />
       <SearchAside />
-      <MobileNavDrawer navigationTree={navigationTree} />
-      <MacornerHeader navigationTree={navigationTree} cart={cart} />
+      <MobileNavDrawer navItems={navItems} />
+      <MacornerHeader cart={cart} navItems={navItems} />
       <main>{children}</main>
       <MacornerFooter />
     </Aside.Provider>

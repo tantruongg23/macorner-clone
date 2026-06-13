@@ -14,7 +14,8 @@ import {
 import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.svg';
 import { FOOTER_QUERY, HEADER_QUERY } from '~/lib/graphql/menu';
-import { NavigationService, type MenuItemNode } from '~/lib/navigation';
+import { NavigationService } from '~/lib/navigation';
+import { shopifyMenuToNav } from '~/lib/shopifyMenuToNav';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from './components/PageLayout';
@@ -107,20 +108,19 @@ export async function loader(args: Route.LoaderArgs) {
  */
 async function loadCriticalData({context}: Route.LoaderArgs) {
   const {storefront} = context;
-  const navigationService = new NavigationService(storefront);
 
-  const [header, navigationTree] = await Promise.all([
-    storefront.query(HEADER_QUERY, {
-      cache: storefront.CacheLong(),
-      variables: {
-        headerMenuHandle: 'main-menu', // Adjust to your header menu handle
-      },
-    }),
-    navigationService.getNavigationTree(),
-    // Add other queries here, so that they are loaded in parallel
-  ]);
+  const header = await storefront.query(HEADER_QUERY, {
+    cache: storefront.CacheLong(),
+    variables: {
+      headerMenuHandle: 'main-menu',
+    },
+  });
 
-  return {header, navigationTree};
+  // Convert Shopify's 3-level menu → NavItem[].
+  // Falls back to MACORNER_NAV when the "main-menu" in Shopify Admin is empty.
+  const navItems = shopifyMenuToNav(header?.menu);
+
+  return {header, navItems};
 }
 
 /**

@@ -57,27 +57,37 @@ export function CollectionTabsSection({
         {/* Tabs */}
         {tabs.length > 0 && (
           <div>
-            {/* Tab buttons */}
-            <div className="mb-8 md:mb-10 overflow-x-auto no-scrollbar">
-              <div className="flex gap-2 md:gap-4 border-b border-[rgba(18,18,18,0.1)] min-w-max md:min-w-full">
+            {/* list-menu list-menu--inline submenu */}
+            <nav aria-label="Product categories" className="mb-8 md:mb-10">
+              <ul className="list-menu list-menu--inline" role="tablist">
                 {tabs.map((tab, index) => (
-                  <button
+                  <li
                     key={index}
-                    onClick={() => setActiveTab(index)}
-                    className={`px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-medium whitespace-nowrap transition-colors border-b-2 ${
-                      activeTab === index
-                        ? 'border-[#F36621] text-[#F36621]'
-                        : 'border-transparent text-[rgba(18,18,18,0.55)] hover:text-[rgb(18,18,18)]'
-                    }`}
+                    className={`list-menu__item${activeTab === index ? ' list-menu__item--active' : ''}`}
+                    role="presentation"
                   >
-                    {tab.label}
-                  </button>
+                    <button
+                      role="tab"
+                      aria-selected={activeTab === index}
+                      aria-controls={`tab-panel-${index}`}
+                      id={`tab-${index}`}
+                      onClick={() => setActiveTab(index)}
+                      className="list-menu__link"
+                    >
+                      {tab.label}
+                    </button>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </nav>
 
-            {/* Tab content */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7">
+            {/* Tab panel */}
+            <div
+              role="tabpanel"
+              id={`tab-panel-${activeTab}`}
+              aria-labelledby={`tab-${activeTab}`}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-7"
+            >
               {activeProducts.map((product) => (
                 <ProductCard key={product.title} product={product} />
               ))}

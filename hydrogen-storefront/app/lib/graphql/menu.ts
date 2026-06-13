@@ -7,9 +7,18 @@ const MENU_FRAGMENT = `#graphql
     type
     url
   }
-  fragment ChildMenuItem on MenuItem {
+  # Level 3 — leaf items (e.g. "Summer", "Anniversary")
+  fragment LeafMenuItem on MenuItem {
     ...MenuItem
   }
+  # Level 2 — group columns (e.g. "By Occasion", "By Recipient")
+  fragment ChildMenuItem on MenuItem {
+    ...MenuItem
+    items {
+      ...LeafMenuItem
+    }
+  }
+  # Level 1 — top nav items (e.g. "Gifts", "Apparel")
   fragment ParentMenuItem on MenuItem {
     ...MenuItem
     items {

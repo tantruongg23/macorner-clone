@@ -1,12 +1,13 @@
 import {Suspense, useEffect, useRef, useState} from 'react';
 import {Await, Link} from 'react-router';
 import type {CartApiQueryFragment} from 'storefrontapi.generated';
-import type {MenuItemNode} from '~/lib/navigation';
 import {SearchFormPredictive} from '~/components/SearchFormPredictive';
 import {useAside} from '~/components/Aside';
 import {useWishlist} from '~/lib/useWishlist';
 import {useRecentSearches} from '~/lib/useRecentSearches';
 import {MacornerSearchOverlay} from './SearchOverlay';
+import {MACORNER_NAV, type NavItem} from '~/lib/staticNav';
+
 import {
   ArrowLeftIcon,
   CartIcon,
@@ -266,12 +267,13 @@ function flagEmoji(code: string): string {
 }
 
 interface Props {
-  navigationTree?: MenuItemNode[] | null;
   cart?: Promise<CartApiQueryFragment | null>;
+  /** Live nav from Shopify. Falls back to MACORNER_NAV when omitted/empty. */
+  navItems?: NavItem[];
 }
 
-export function MacornerHeader({navigationTree, cart}: Props) {
-  const navData = navigationTree ?? [];
+export function MacornerHeader({cart, navItems}: Props) {
+  const navData = navItems?.length ? navItems : MACORNER_NAV;
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
@@ -528,156 +530,9 @@ export function MacornerHeader({navigationTree, cart}: Props) {
           className="hidden min-[990px]:block text-center mt-[15px]"
         >
           <ul className="inline-flex flex-row list-none m-0 p-0">
-            {navData.map((item) => {
-              const hasDropdown = item.items && item.items.length > 0;
-              return (
-                <li key={item.id} className="m-0 p-0 group text-static">
-                  <Link
-                    to={item.url}
-                    className="
-                      inline-flex items-center gap-[12px]
-                      px-[12px] pt-[12px] pb-[20px]
-                      text-[14px] font-semibold leading-[18.2px] tracking-[0.6px]
-                      text-[var(--color-header-text)]
-                      hover:text-[#FC6514]
-                      border-b-2 border-transparent hover:border-[#FC6514]
-                      transition-colors
-                    "
-                  >
-                    {item.title}
-                    {hasDropdown && (
-                      <ChevronDownIcon width={12} height={12} />
-                    )}
-                  </Link>
-
-                  {hasDropdown && (
-                    <div
-                      className="
-                        absolute left-0 right-0 top-full w-full bg-white
-                        border-b border-[var(--color-header-border)]
-                        shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                        invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-                        transition-all duration-200 ease-out z-40
-                      "
-                    >
-                      <div
-                        className={`
-                          max-w-[1280px] mx-auto px-6 py-10
-                          grid gap-x-8 gap-y-12 text-left
-                          ${
-                            item.items!.length === 5 || item.items!.length === 10
-                              ? 'grid-cols-5'
-                              : item.items!.length === 3
-                              ? 'grid-cols-3'
-                              : 'grid-cols-1 max-w-[240px] ml-[44%]'
-                          }
-                        `}
-                      >
-                        {item.items!.length === 10 ? (
-                          Array.from({length: 5}).map((_, colIndex) => {
-                            const topItem = item.items![colIndex];
-                            const bottomItem = item.items![colIndex + 5];
-                            const hasTop =
-                              topItem &&
-                              (topItem.title ||
-                                (topItem.items && topItem.items.length > 0));
-                            const hasBottom =
-                              bottomItem &&
-                              (bottomItem.title ||
-                                (bottomItem.items &&
-                                  bottomItem.items.length > 0));
-
-                            return (
-                              <div
-                                key={`col-${colIndex}`}
-                                className="flex flex-col gap-8"
-                              >
-                                {hasTop && (
-                                  <div className="flex flex-col gap-4">
-                                    <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
-                                      {topItem.title}
-                                    </h3>
-                                    <ul className="flex flex-col gap-2.5 list-none m-0 p-0">
-                                      {topItem.items &&
-                                        topItem.items.map((subItem) => (
-                                          <li key={subItem.id} className="m-0 p-0">
-                                            <Link
-                                              to={subItem.url}
-                                              className="text-[14px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
-                                            >
-                                              {subItem.title}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                    </ul>
-                                  </div>
-                                )}
-                                {hasBottom && (
-                                  <div className="flex flex-col gap-4 border-t border-[var(--color-header-border)] pt-6">
-                                    {bottomItem.title && (
-                                      <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
-                                        {bottomItem.title}
-                                      </h3>
-                                    )}
-                                    <ul className="flex flex-col gap-2.5 list-none m-0 p-0">
-                                      {bottomItem.items &&
-                                        bottomItem.items.map((subItem) => (
-                                          <li key={subItem.id} className="m-0 p-0">
-                                            <Link
-                                              to={subItem.url}
-                                              className="text-[14px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
-                                            >
-                                              {subItem.title}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                    </ul>
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })
-                        ) : (
-                          item.items!.map((column) => {
-                            if (
-                              !column.title &&
-                              (!column.items || column.items.length === 0)
-                            ) {
-                              return (
-                                <div
-                                  key={column.id}
-                                  className="hidden min-[990px]:block"
-                                />
-                              );
-                            }
-                            return (
-                              <div key={column.id} className="flex flex-col gap-4">
-                                <h3 className="text-[12px] font-bold tracking-[1px] uppercase text-[rgb(18,18,18)] mb-2">
-                                  {column.title}
-                                </h3>
-                                <ul className="flex flex-col gap-2.5 list-none m-0 p-0">
-                                  {column.items &&
-                                    column.items.map((subItem) => (
-                                      <li key={subItem.id} className="m-0 p-0">
-                                        <Link
-                                          to={subItem.url}
-                                          className="text-[14px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
-                                        >
-                                          {subItem.title}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                </ul>
-                              </div>
-                            );
-                          })
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </li>
-              );
-            })}
+            {navData.map((item) => (
+              <DesktopNavItem key={item.id} item={item} />
+            ))}
           </ul>
         </nav>
       </div>
@@ -709,6 +564,134 @@ export function MacornerHeader({navigationTree, cart}: Props) {
     </header>
   );
 }
+
+/* ─── Desktop Nav Item with Mega Dropdown ─────────────────────────────── */
+
+function DesktopNavItem({item}: {item: NavItem}) {
+  const hasDropdown = item.groups && item.groups.length > 0;
+  const groupCount = item.groups?.length ?? 0;
+
+  /* Grid column logic matching macorner.co:
+     5 or 10 groups → 5-column grid (10 = two rows stacked per column)
+     9 groups        → 3-column grid (three stacked per column)
+     other counts    → auto equal columns */
+  const gridClass =
+    groupCount === 5 || groupCount === 10
+      ? 'grid-cols-5'
+      : groupCount === 9
+      ? 'grid-cols-3'
+      : groupCount === 4
+      ? 'grid-cols-4'
+      : groupCount === 3
+      ? 'grid-cols-3'
+      : groupCount === 2
+      ? 'grid-cols-2'
+      : 'grid-cols-1 max-w-[240px] mx-auto';
+
+  /* For 10 groups: pair them as top/bottom in 5 columns */
+  const use10Layout = groupCount === 10;
+  /* For 9 groups: stack 3 per column in 3 columns */
+  const use9Layout = groupCount === 9;
+
+  return (
+    <li className="m-0 p-0 group text-static">
+      <Link
+        to={item.url}
+        className="
+          inline-flex items-center gap-[12px]
+          px-[12px] pt-[12px] pb-[20px]
+          text-[14px] font-semibold leading-[18.2px] tracking-[0.6px]
+          text-[var(--color-header-text)]
+          hover:text-[#FC6514]
+          border-b-2 border-transparent hover:border-[#FC6514]
+          transition-colors
+        "
+      >
+        {item.title}
+        {hasDropdown && <ChevronDownIcon width={12} height={12} />}
+      </Link>
+
+      {hasDropdown && (
+        <div
+          className="
+            absolute left-0 right-0 top-full w-full bg-white
+            border-b border-[var(--color-header-border)]
+            shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+            invisible opacity-0 translate-y-1
+            group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+            transition-all duration-200 ease-out z-40
+          "
+        >
+          <div className={`max-w-[1280px] mx-auto px-6 py-10 grid gap-x-8 gap-y-0 text-left ${gridClass}`}>
+            {use10Layout
+              ? /* 10 groups: 5 columns, top/bottom pairs */
+                Array.from({length: 5}).map((_, colIdx) => (
+                  <div key={`col-${colIdx}`} className="flex flex-col gap-8">
+                    <MegaDropdownGroup group={item.groups![colIdx]} />
+                    <div className="border-t border-[var(--color-header-border)] pt-6">
+                      <MegaDropdownGroup group={item.groups![colIdx + 5]} />
+                    </div>
+                  </div>
+                ))
+              : use9Layout
+              ? /* 9 groups: 3 columns, 3 per column stacked */
+                Array.from({length: 3}).map((_, colIdx) => (
+                  <div key={`col-${colIdx}`} className="flex flex-col gap-8">
+                    <MegaDropdownGroup group={item.groups![colIdx * 3]} />
+                    <div className="border-t border-[var(--color-header-border)] pt-6">
+                      <MegaDropdownGroup group={item.groups![colIdx * 3 + 1]} />
+                    </div>
+                    <div className="border-t border-[var(--color-header-border)] pt-6">
+                      <MegaDropdownGroup group={item.groups![colIdx * 3 + 2]} />
+                    </div>
+                  </div>
+                ))
+              : /* Default: one group per column */
+                item.groups!.map((group) => (
+                  <div key={group.id} className="py-2">
+                    <MegaDropdownGroup group={group} />
+                  </div>
+                ))}
+          </div>
+        </div>
+      )}
+    </li>
+  );
+}
+
+function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[number]}) {
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)]">
+          {group.title}
+        </h3>
+        {group.seeAllUrl && (
+          <Link
+            to={group.seeAllUrl}
+            className="text-[11px] font-medium text-[#FC6514] hover:underline whitespace-nowrap"
+          >
+            See All
+          </Link>
+        )}
+      </div>
+      <ul className="flex flex-col gap-2 list-none m-0 p-0">
+        {group.items.map((leaf) => (
+          <li key={leaf.id} className="m-0 p-0">
+            <Link
+              to={leaf.url}
+              className="text-[13px] font-normal leading-normal text-[#555] hover:text-[#FC6514] transition-colors"
+            >
+              {leaf.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* ─── Region Selector Modal ────────────────────────────────────────────── */
 
 function RegionSelectorModal({
   pendingCode,
