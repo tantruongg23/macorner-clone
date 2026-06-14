@@ -65,7 +65,7 @@ export function CartSummary({cart, layout}: CartSummaryProps) {
 
         <Link
           to="/collections"
-          className="block text-center text-[13px] text-gray-400 hover:text-[#FC6514] transition-colors mt-3"
+          className="block text-center text-[13px] text-gray-400 hover:text-[#1e4e79] transition-colors mt-3"
         >
           ← Continue Shopping
         </Link>
@@ -146,7 +146,7 @@ function CartCheckoutActions({
         className="
           block w-full h-[50px]
           flex items-center justify-center
-          bg-[#0b2a4a] hover:bg-[#1a3a5c]
+          bg-[#f5a623] hover:bg-[#e0941a]
           text-white text-[14px] font-semibold tracking-[0.6px]
           rounded-[4px] transition-colors
         "
@@ -163,7 +163,7 @@ function CartCheckoutActions({
       className="
         block w-full h-[48px]
         flex items-center justify-center
-        bg-[#FC6514] hover:bg-[#e85a10]
+        bg-[#f5a623] hover:bg-[#e0941a]
         text-white text-[13px] font-semibold tracking-[0.5px]
         rounded-[4px] transition-colors
       "
@@ -218,7 +218,7 @@ function CartDiscounts({
               border border-gray-200 rounded-[4px]
               text-[13px] text-[rgb(18,18,18)]
               placeholder:text-gray-300
-              outline-none focus:border-[#FC6514]
+              outline-none focus:border-[#1e4e79]
               transition-colors
             "
           />
@@ -228,7 +228,7 @@ function CartDiscounts({
               h-[38px] px-4
               border border-gray-300 rounded-[4px]
               text-[12px] font-medium text-gray-600
-              hover:border-[#FC6514] hover:text-[#FC6514]
+              hover:border-[#1e4e79] hover:text-[#1e4e79]
               transition-colors whitespace-nowrap
             "
           >
@@ -327,7 +327,7 @@ function CartGiftCard({
               border border-gray-200 rounded-[4px]
               text-[13px] text-[rgb(18,18,18)]
               placeholder:text-gray-300
-              outline-none focus:border-[#FC6514]
+              outline-none focus:border-[#1e4e79]
               transition-colors
             "
           />
@@ -338,7 +338,7 @@ function CartGiftCard({
               h-[38px] px-4
               border border-gray-300 rounded-[4px]
               text-[12px] font-medium text-gray-600
-              hover:border-[#FC6514] hover:text-[#FC6514]
+              hover:border-[#1e4e79] hover:text-[#1e4e79]
               disabled:opacity-50
               transition-colors whitespace-nowrap
             "

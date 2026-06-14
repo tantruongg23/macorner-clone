@@ -37,7 +37,7 @@ export function FreeShippingBar({subtotalAmount}: FreeShippingBarProps) {
       </p>
       <div className="w-full h-[5px] bg-gray-200 rounded-full overflow-hidden">
         <div
-          className="h-full bg-[#f7921f] rounded-full transition-all duration-300"
+          className="h-full bg-[#2e6ca6] rounded-full transition-all duration-300"
           style={{width: `${progress}%`}}
           role="progressbar"
           aria-valuenow={Math.round(progress)}

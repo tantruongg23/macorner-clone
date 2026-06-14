@@ -2,7 +2,7 @@ import { HAPPY_CUSTOMERS_PHOTOS } from '~/lib/content';
 
 export function HappyCustomers() {
   return (
-    <section className="py-12 md:py-16 bg-[#fff8e6]">
+    <section className="py-12 md:py-16 bg-[#eef4fa]">
       <div className="container-macorner">
         <div className="mb-10 md:mb-12 text-center">
           <h2 className="heading-script italic text-[28px] md:text-[40px] leading-tight mb-2 md:mb-4">

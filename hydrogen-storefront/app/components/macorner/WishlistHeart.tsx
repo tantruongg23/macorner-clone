@@ -34,8 +34,8 @@ export function WishlistHeart({
         height="18"
         aria-hidden="true"
         style={{
-          fill: inWishlist ? '#f7921f' : 'transparent',
-          stroke: '#f7921f',
+          fill: inWishlist ? '#2e6ca6' : 'transparent',
+          stroke: '#2e6ca6',
           strokeWidth: 20,
           transition: 'fill 0.2s ease',
         }}

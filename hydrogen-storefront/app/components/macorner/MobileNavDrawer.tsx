@@ -109,7 +109,7 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
             <button
               type="button"
               onClick={goBack}
-              className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[1.2px] text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors cursor-pointer"
+              className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[1.2px] text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors cursor-pointer"
             >
               <ChevronDownIcon
                 width={14}
@@ -127,7 +127,7 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
             ref={closeButtonRef}
             onClick={close}
             aria-label="Close menu"
-            className="w-8 h-8 flex items-center justify-center text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors cursor-pointer"
+            className="w-8 h-8 flex items-center justify-center text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors cursor-pointer"
           >
             <XIcon width={20} height={20} />
           </button>
@@ -149,7 +149,7 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                       <button
                         type="button"
                         onClick={() => setPanel({level: 1, item})}
-                        className="w-full flex items-center justify-between py-3.5 text-[14px] font-semibold text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+                        className="w-full flex items-center justify-between py-3.5 text-[14px] font-semibold text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
                         aria-haspopup="true"
                       >
                         <span>{item.title}</span>
@@ -168,8 +168,8 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                         className={({isActive}) =>
                           `block py-3.5 text-[14px] font-semibold transition-colors ${
                             isActive
-                              ? 'text-[#FC6514]'
-                              : 'text-[var(--color-header-text)] hover:text-[#FC6514]'
+                              ? 'text-[#1e4e79]'
+                              : 'text-[var(--color-header-text)] hover:text-[#1e4e79]'
                           }`
                         }
                       >
@@ -187,14 +187,14 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
               <Link
                 to="/pages/wishlist"
                 onClick={close}
-                className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+                className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
               >
                 Wishlist
               </Link>
               <Link
                 to="/pages/tracking-order"
                 onClick={close}
-                className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+                className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
               >
                 Track Order
               </Link>
@@ -214,7 +214,7 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                   <Link
                     to={panel.item.url}
                     onClick={close}
-                    className="text-[13px] font-semibold text-[#FC6514] hover:underline"
+                    className="text-[13px] font-semibold text-[#1e4e79] hover:underline"
                   >
                     See All {panel.item.title}
                   </Link>
@@ -228,7 +228,7 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                           onClick={() =>
                             setPanel({level: 2, item: panel.item, group})
                           }
-                          className="w-full flex items-center justify-between py-3.5 text-[14px] font-semibold text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
+                          className="w-full flex items-center justify-between py-3.5 text-[14px] font-semibold text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
                           aria-haspopup="true"
                         >
                           <span>{group.title}</span>
@@ -248,8 +248,8 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                           className={({isActive}) =>
                             `block py-3.5 text-[14px] font-semibold transition-colors ${
                               isActive
-                                ? 'text-[#FC6514]'
-                                : 'text-[var(--color-header-text)] hover:text-[#FC6514]'
+                                ? 'text-[#1e4e79]'
+                                : 'text-[var(--color-header-text)] hover:text-[#1e4e79]'
                             }`
                           }
                         >
@@ -277,7 +277,7 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                     <Link
                       to={panel.group.seeAllUrl}
                       onClick={close}
-                      className="text-[13px] font-semibold text-[#FC6514] hover:underline"
+                      className="text-[13px] font-semibold text-[#1e4e79] hover:underline"
                     >
                       See All {panel.group.title}
                     </Link>
@@ -292,8 +292,8 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                         className={({isActive}) =>
                           `block py-3 text-[14px] transition-colors ${
                             isActive
-                              ? 'text-[#FC6514] font-medium'
-                              : 'text-[#555] hover:text-[#FC6514]'
+                              ? 'text-[#1e4e79] font-medium'
+                              : 'text-[#555] hover:text-[#1e4e79]'
                           }`
                         }
                       >
@@ -319,7 +319,7 @@ function MobileAccountLink({
   onClick?: () => void;
 }) {
   const className =
-    'text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors';
+    'text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors';
   const signIn = (
     <Link to="/account/login" onClick={onClick} className={className}>
       Sign In

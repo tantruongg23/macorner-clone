@@ -200,7 +200,7 @@ function CartEmpty({
           className="
             inline-flex items-center justify-center
             h-[48px] px-8
-            bg-[#FC6514] hover:bg-[#e85a10]
+            bg-[#1e4e79] hover:bg-[#122e49]
             text-white text-[14px] font-semibold tracking-[0.5px]
             rounded-[4px] transition-colors
           "
@@ -223,7 +223,7 @@ function CartEmpty({
         prefetch="viewport"
         className="
           inline-flex items-center
-          text-[14px] font-medium text-[#FC6514]
+          text-[14px] font-medium text-[#1e4e79]
           hover:underline
         "
       >

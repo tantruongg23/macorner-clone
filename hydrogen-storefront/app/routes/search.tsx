@@ -136,7 +136,7 @@ export default function SearchPage({loaderData}: Route.ComponentProps) {
         <h1 className="text-[24px] font-semibold text-[rgb(18,18,18)] tracking-[0.4px] m-0 mb-1">
           {term ? (
             <>
-              Search results for <span className="text-[#f7921f]">"{term}"</span>
+              Search results for <span className="text-[#2e6ca6]">"{term}"</span>
             </>
           ) : (
             'Search'
@@ -160,12 +160,12 @@ export default function SearchPage({loaderData}: Route.ComponentProps) {
           name="q"
           defaultValue={term}
           placeholder="Search products…"
-          className="flex-1 border border-[var(--color-header-border)] rounded-[10px] px-4 py-2.5 text-[14px] focus:outline-none focus:border-[#f7921f] transition-colors"
+          className="flex-1 border border-[var(--color-header-border)] rounded-[10px] px-4 py-2.5 text-[14px] focus:outline-none focus:border-[#2e6ca6] transition-colors"
           autoFocus={!term}
         />
         <button
           type="submit"
-          className="px-6 py-2.5 rounded-[10px] bg-[#f7921f] text-white text-[14px] font-semibold hover:bg-[#e0830e] transition-colors"
+          className="px-6 py-2.5 rounded-[10px] bg-[#2e6ca6] text-white text-[14px] font-semibold hover:bg-[#e0830e] transition-colors"
         >
           Search
         </button>
@@ -196,7 +196,7 @@ export default function SearchPage({loaderData}: Route.ComponentProps) {
             <div className="flex justify-center">
               <Link
                 to={`/search?q=${encodeURIComponent(term)}&sort=${sortValue}&cursor=${pageInfo.endCursor}`}
-                className="px-8 py-3 rounded-[10px] border border-[#f7921f] text-[#f7921f] text-[14px] font-semibold hover:bg-[#f7921f] hover:text-white transition-colors"
+                className="px-8 py-3 rounded-[10px] border border-[#2e6ca6] text-[#2e6ca6] text-[14px] font-semibold hover:bg-[#2e6ca6] hover:text-white transition-colors"
               >
                 Load more
               </Link>
@@ -235,7 +235,7 @@ function SortDropdown({
             `/search?q=${encodeURIComponent(term)}&sort=${e.target.value}`,
           )
         }
-        className="border border-[var(--color-header-border)] rounded-[8px] px-3 py-1.5 text-[13px] text-[rgb(18,18,18)] focus:outline-none focus:border-[#f7921f] bg-white transition-colors cursor-pointer"
+        className="border border-[var(--color-header-border)] rounded-[8px] px-3 py-1.5 text-[13px] text-[rgb(18,18,18)] focus:outline-none focus:border-[#2e6ca6] bg-white transition-colors cursor-pointer"
       >
         {SEARCH_SORT_OPTIONS.map((opt) => (
           <option key={opt.value} value={opt.value}>
@@ -278,7 +278,7 @@ function PopularCollections() {
           <Link
             key={l.handle}
             to={`/collections/${l.handle}`}
-            className="px-5 py-2 rounded-full border border-[var(--color-header-border)] text-[14px] text-[rgb(18,18,18)] hover:border-[#f7921f] hover:text-[#f7921f] transition-colors"
+            className="px-5 py-2 rounded-full border border-[var(--color-header-border)] text-[14px] text-[rgb(18,18,18)] hover:border-[#2e6ca6] hover:text-[#2e6ca6] transition-colors"
           >
             {l.label}
           </Link>

@@ -200,7 +200,7 @@ export default function CollectionPage({loaderData}: Route.ComponentProps) {
           #product-grid { grid-template-columns: repeat(3, 1fr); }
         }
         .product-card-wrapper .full-unstyled-link:hover { text-decoration: underline; }
-        .button-wishlist:hover svg { fill: #F16523; }
+        .button-wishlist:hover svg { fill: #1b466f; }
       `}</style>
 
       <div

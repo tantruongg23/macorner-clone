@@ -48,7 +48,7 @@ export function CartLineItem({
             <Link
               prefetch="intent"
               to={lineItemUrl}
-              className="hover:text-[#FC6514] transition-colors"
+              className="hover:text-[#1e4e79] transition-colors"
             >
               <p className="text-[14px] font-medium text-[rgb(18,18,18)] leading-snug line-clamp-2">
                 {product.title}
@@ -136,7 +136,7 @@ export function CartLineItem({
           prefetch="intent"
           to={lineItemUrl}
           onClick={close}
-          className="hover:text-[#FC6514] transition-colors"
+          className="hover:text-[#1e4e79] transition-colors"
         >
           <p className="text-[13px] font-medium text-[rgb(18,18,18)] leading-snug line-clamp-2">
             {product.title}

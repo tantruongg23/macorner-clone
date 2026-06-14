@@ -31,7 +31,7 @@ export default function Wishlist() {
             </p>
             <Link
               to="/collections/all"
-              className="inline-block px-7 py-3 rounded-[10px] bg-[#FC6514] text-white text-[15px] font-semibold tracking-[0.6px] hover:bg-[#e85a10] transition-colors"
+              className="inline-block px-7 py-3 rounded-[10px] bg-[#1e4e79] text-white text-[15px] font-semibold tracking-[0.6px] hover:bg-[#122e49] transition-colors"
             >
               Browse products
             </Link>
@@ -50,7 +50,7 @@ export default function Wishlist() {
                       />
                     ) : null}
                   </div>
-                  <p className="mt-3 text-[14px] text-[rgb(18,18,18)] group-hover:text-[#FC6514] transition-colors">
+                  <p className="mt-3 text-[14px] text-[rgb(18,18,18)] group-hover:text-[#1e4e79] transition-colors">
                     {item.title}
                   </p>
                   {item.price ? (
@@ -63,7 +63,7 @@ export default function Wishlist() {
                   type="button"
                   aria-label={`Remove ${item.title} from wishlist`}
                   onClick={() => remove(item.handle)}
-                  className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white shadow flex items-center justify-center text-[#FC6514] hover:bg-[#FC6514] hover:text-white transition-colors"
+                  className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white shadow flex items-center justify-center text-[#1e4e79] hover:bg-[#1e4e79] hover:text-white transition-colors"
                 >
                   ✕
                 </button>

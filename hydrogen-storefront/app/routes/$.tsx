@@ -26,7 +26,7 @@ export function ErrorBoundary() {
         textAlign: 'center',
       }}
     >
-      <p style={{fontSize: 80, fontWeight: 700, color: '#FC6514', margin: 0, lineHeight: 1}}>
+      <p style={{fontSize: 80, fontWeight: 700, color: '#1e4e79', margin: 0, lineHeight: 1}}>
         404
       </p>
       <h1 style={{fontSize: 26, fontWeight: 600, color: 'rgb(18,18,18)', margin: '16px 0 8px'}}>
@@ -39,7 +39,7 @@ export function ErrorBoundary() {
         to="/"
         style={{
           display: 'inline-block',
-          background: '#FC6514',
+          background: '#1e4e79',
           color: '#fff',
           fontSize: 15,
           fontWeight: 600,

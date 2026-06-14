@@ -5,21 +5,32 @@
   --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
 
-  /* Macorner brand colors */
-  --color-brand-orange: #f7921f;
-  --color-brand-orange-bold: #f36621;
-  --color-brand-orange-base: #fc6514;
-  --color-brand-orange-deep: #f16523;
-  --color-brand-cream: #fff2e7;
-  --color-brand-cream-light: #fff9f4;
-  --color-brand-cream-yellow: #fff8e6;
+  /* ── Brand palette: Heritage Navy + warm Gold accent ──────────────────
+     Primary navy = trust/premium, differentiates from the warm-toned gift
+     market. Gold = warm accent reserved for key CTAs + review stars.
+     NOTE: the --color-brand-orange* names are kept (now holding navy values)
+     so existing references keep working; "orange" is legacy naming only. */
+  --color-primary: #1e4e79;        /* navy — links, nav, borders, headings accent */
+  --color-primary-dark: #163c5e;   /* navy hover/active */
+  --color-primary-deep: #0f2d47;   /* deepest navy */
+  --color-primary-light: #2e6ca6;  /* lighter steel-blue accent */
+  --color-accent: #f5a623;         /* warm gold — key CTAs */
+  --color-accent-dark: #e0941a;    /* gold hover */
+
+  --color-brand-orange: #1e4e79;
+  --color-brand-orange-bold: #163c5e;
+  --color-brand-orange-base: #1e4e79;
+  --color-brand-orange-deep: #1b466f;
+  --color-brand-cream: #eaf1f8;        /* cool navy tint (was warm cream) */
+  --color-brand-cream-light: #f4f8fc;
+  --color-brand-cream-yellow: #eef4fa;
   --color-brand-navy: #0b2a4a;
   --color-brand-navy-light: #2e486d;
   --color-brand-body: rgba(18, 18, 18, 0.75);
   --color-brand-heading: rgb(18, 18, 18);
   --color-brand-muted: #767676;
   --color-brand-border: rgba(18, 18, 18, 0.1);
-  --color-brand-star: #f3912e;
+  --color-brand-star: #f5a623;
 
   /* Header-specific tokens (extracted from macorner.co computed styles 2026-05-23) */
   --color-header-text: #353535;
@@ -32,10 +43,10 @@
   --color-footer-bg: rgb(11, 42, 74);
   --color-footer-text: rgba(255, 255, 255, 0.75);
   --color-footer-text-strong: rgb(255, 255, 255);
-  --color-newsletter-bg: rgb(255, 248, 230);
+  --color-newsletter-bg: #eef4fa;
   --color-newsletter-heading: rgb(11, 42, 74);
-  --color-newsletter-input-border: rgb(243, 102, 33);
-  --color-newsletter-button: rgb(251, 103, 24);
+  --color-newsletter-input-border: #1e4e79;
+  --color-newsletter-button: #f5a623;
 
   --radius-card: 20px;
   --radius-pill: 9999px;
@@ -86,8 +97,8 @@
 
   /* Premium custom selection styles */
   ::selection {
-    background-color: rgba(247, 146, 31, 0.15); /* Translucent brand orange */
-    color: var(--color-brand-orange-bold);
+    background-color: rgba(30, 78, 121, 0.15); /* Translucent brand navy */
+    color: var(--color-primary);
   }
 
   /* Match macorner.co: every anchor has text-decoration: none site-wide with smooth hover transitions. */
@@ -128,7 +139,7 @@
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    background-color: var(--color-brand-orange);
+    background-color: var(--color-accent);
     color: #ffffff;
     font-weight: 600;
     font-size: 14px;
@@ -141,7 +152,7 @@
     text-decoration: none;
   }
   .btn-pill-orange:hover {
-    background-color: var(--color-brand-orange-bold);
+    background-color: var(--color-accent-dark);
   }
 
   .btn-pill-outline {

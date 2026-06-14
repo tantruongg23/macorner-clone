@@ -122,7 +122,7 @@ export function CollectionFilters({filters, isOpen, onClose}: Props) {
           transition: background 0.15s, border-color 0.15s;
         }
         .cf-value-link.is-active .cf-checkbox {
-          background: rgb(247,146,31); border-color: rgb(247,146,31);
+          background: rgb(30,78,121); border-color: rgb(30,78,121);
         }
         .cf-checkbox-tick {
           display: none; width: 10px; height: 10px;

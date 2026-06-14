@@ -101,7 +101,7 @@ export function MacornerFooter() {
                         text-[18px] font-normal leading-[27px] tracking-[0.6px] capitalize
                         text-white
                         border-b border-white
-                        hover:text-[#FC6514] hover:border-[#FC6514]
+                        hover:text-[#1e4e79] hover:border-[#1e4e79]
                         transition-colors
                       "
                     >
@@ -145,12 +145,12 @@ export function MacornerFooter() {
                 href="https://freshdesk.macorner.co/support/tickets/new"
                 className="
                   inline-block text-center
-                  bg-[#FC6514] text-white
+                  bg-[#1e4e79] text-white
                   text-[15px] font-semibold leading-[22.5px] tracking-[0.6px]
                   px-[25px] py-[10px]
                   rounded-[10px]
                   my-5
-                  hover:bg-[#e85a10] transition-colors
+                  hover:bg-[#122e49] transition-colors
                 "
               >
                 Open A Support Ticket
@@ -163,7 +163,7 @@ export function MacornerFooter() {
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label={platform}
-                      className="block p-[11px] text-white hover:text-[#FC6514] transition-colors"
+                      className="block p-[11px] text-white hover:text-[#1e4e79] transition-colors"
                     >
                       <Icon width={22} height={23} />
                     </a>
@@ -190,11 +190,11 @@ export function MacornerFooter() {
 
           {/* Bottom terms row */}
           <div className="mt-6 text-center text-white text-[14px] font-medium tracking-[0.6px]">
-            <Link to="/pages/terms-of-services" className="hover:text-[#FC6514] transition-colors">
+            <Link to="/pages/terms-of-services" className="hover:text-[#1e4e79] transition-colors">
               Terms Of Services
             </Link>
             <span className="mx-2" aria-hidden="true">•</span>
-            <Link to="/pages/privacy-policy" className="hover:text-[#FC6514] transition-colors">
+            <Link to="/pages/privacy-policy" className="hover:text-[#1e4e79] transition-colors">
               Privacy Policy
             </Link>
             <span className="mx-2" aria-hidden="true">•</span>
@@ -242,7 +242,7 @@ function NewsletterForm() {
             bg-white text-[15px] text-black
             border border-[var(--color-newsletter-input-border)]
             rounded-[8px]
-            outline-none focus:ring-2 focus:ring-[#FC6514]/30
+            outline-none focus:ring-2 focus:ring-[#1e4e79]/30
           "
         />
         <button
@@ -253,7 +253,7 @@ function NewsletterForm() {
             bg-[var(--color-newsletter-button)] text-white
             text-[18px] md:text-[20px] font-bold tracking-wide whitespace-nowrap
             rounded-[8px]
-            hover:bg-[#e85a10] transition-colors
+            hover:bg-[#122e49] transition-colors
             disabled:opacity-70
           "
         >
@@ -325,7 +325,7 @@ function FooterMenuColumn({
     text-[14px] font-normal leading-[25.2px] tracking-[0.6px] capitalize
     text-[rgba(255,255,255,0.75)]
     pb-[5px]
-    hover:text-[#FC6514] transition-colors
+    hover:text-[#1e4e79] transition-colors
   `;
 
   return (

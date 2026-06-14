@@ -125,7 +125,7 @@ export function MacornerSearchOverlay({
                   key={pill}
                   type="button"
                   onClick={() => handleChipClick(pill)}
-                  className="px-4 py-[7px] border border-[#c8cdd3] rounded text-[14px] text-[#121212] hover:border-[#FC6514] hover:text-[#FC6514] transition-colors"
+                  className="px-4 py-[7px] border border-[#c8cdd3] rounded text-[14px] text-[#121212] hover:border-[#1e4e79] hover:text-[#1e4e79] transition-colors"
                 >
                   {pill}
                 </button>
@@ -142,7 +142,7 @@ export function MacornerSearchOverlay({
                 <button
                   type="button"
                   onClick={onClearSearches}
-                  className="text-[12px] text-[#888] hover:text-[#FC6514] transition-colors"
+                  className="text-[12px] text-[#888] hover:text-[#1e4e79] transition-colors"
                 >
                   Clear all
                 </button>
@@ -153,14 +153,14 @@ export function MacornerSearchOverlay({
                     <button
                       type="button"
                       onClick={() => handleChipClick(entry)}
-                      className="text-[14px] text-[#333] hover:text-[#FC6514] transition-colors text-left"
+                      className="text-[14px] text-[#333] hover:text-[#1e4e79] transition-colors text-left"
                     >
                       {entry}
                     </button>
                     <button
                       type="button"
                       onClick={() => onRemoveSearch(entry)}
-                      className="text-[#888] hover:text-[#FC6514] transition-colors ml-3 text-[14px] leading-none"
+                      className="text-[#888] hover:text-[#1e4e79] transition-colors ml-3 text-[14px] leading-none"
                       aria-label={`Remove ${entry}`}
                     >
                       ×
@@ -196,7 +196,7 @@ export function MacornerSearchOverlay({
                             onSaveSearch(term);
                             clearInput();
                           }}
-                          className="flex items-center gap-2 text-[14px] text-[#333] hover:text-[#FC6514] transition-colors"
+                          className="flex items-center gap-2 text-[14px] text-[#333] hover:text-[#1e4e79] transition-colors"
                         >
                           <SearchIcon
                             width={14}
@@ -232,7 +232,7 @@ export function MacornerSearchOverlay({
                             onSaveSearch(term);
                             clearInput();
                           }}
-                          className="text-[14px] text-[#333] hover:text-[#FC6514] transition-colors"
+                          className="text-[14px] text-[#333] hover:text-[#1e4e79] transition-colors"
                         >
                           {c.title}
                         </Link>
@@ -303,7 +303,7 @@ export function MacornerSearchOverlay({
                         </p>
                         <div className="mt-1 flex items-center gap-2">
                           {variant?.price && (
-                            <span className="text-[13px] text-[#FC6514] font-medium">
+                            <span className="text-[13px] text-[#1e4e79] font-medium">
                               <Money data={{...variant.price, currencyCode: 'USD' as const}} />
                             </span>
                           )}
@@ -339,7 +339,7 @@ export function MacornerSearchOverlay({
                     key={q.text}
                     type="button"
                     onClick={() => handleChipClick(q.text)}
-                    className="px-4 py-[7px] border border-[#c8cdd3] rounded text-[14px] text-[#121212] hover:border-[#FC6514] hover:text-[#FC6514] transition-colors"
+                    className="px-4 py-[7px] border border-[#c8cdd3] rounded text-[14px] text-[#121212] hover:border-[#1e4e79] hover:text-[#1e4e79] transition-colors"
                   >
                     {q.text}
                   </button>

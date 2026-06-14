@@ -68,7 +68,7 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
             type="button"
             aria-label="Previous slide"
             onClick={() => emblaApi?.scrollPrev()}
-            className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#121212] hover:text-[#FC6514] transition-colors cursor-pointer z-10"
+            className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#121212] hover:text-[#1e4e79] transition-colors cursor-pointer z-10"
           >
             <ChevronLeftIcon width={20} height={20} />
           </button>
@@ -78,7 +78,7 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
             type="button"
             aria-label="Next slide"
             onClick={() => emblaApi?.scrollNext()}
-            className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#121212] hover:text-[#FC6514] transition-colors cursor-pointer z-10"
+            className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#121212] hover:text-[#1e4e79] transition-colors cursor-pointer z-10"
           >
             <ChevronRightIcon width={20} height={20} />
           </button>
@@ -93,8 +93,8 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
                 onClick={() => emblaApi?.scrollTo(i)}
                 className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${
                   i === selectedIndex
-                    ? 'bg-[#FC6514]'
-                    : 'border-2 border-[#FC6514] bg-transparent'
+                    ? 'bg-[#1e4e79]'
+                    : 'border-2 border-[#1e4e79] bg-transparent'
                 }`}
               />
             ))}
@@ -107,10 +107,10 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
 
 function SlideContent({data}: {data: HeroBannerData}) {
   return (
-    <div className="relative overflow-hidden rounded-[24px] bg-[#FFF2E7] grid grid-cols-1 md:grid-cols-[45%_55%] min-h-[280px] md:min-h-[420px]">
+    <div className="relative overflow-hidden rounded-[24px] bg-[#eaf1f8] grid grid-cols-1 md:grid-cols-[45%_55%] min-h-[280px] md:min-h-[420px]">
       {/* Left: text */}
       <div className="order-2 md:order-1 px-6 py-8 md:px-14 md:py-12 flex flex-col gap-4 md:gap-5 justify-center">
-        <h1 className="heading-script italic text-[36px] md:text-[64px] leading-[1] font-medium text-[#F36621]">
+        <h1 className="heading-script italic text-[36px] md:text-[64px] leading-[1] font-medium text-[#163c5e]">
           {data.title}
         </h1>
         <p className="text-[15px] md:text-base max-w-[320px] text-[rgba(18,18,18,0.7)] leading-snug">
@@ -122,7 +122,7 @@ function SlideContent({data}: {data: HeroBannerData}) {
           </a>
           <span
             aria-hidden
-            className="hidden md:inline-flex absolute -left-3 -bottom-3 w-7 h-7 rounded-full bg-[#F36621] text-white text-[11px] font-semibold items-center justify-center shadow-sm"
+            className="hidden md:inline-flex absolute -left-3 -bottom-3 w-7 h-7 rounded-full bg-[#163c5e] text-white text-[11px] font-semibold items-center justify-center shadow-sm"
           >
             +1
           </span>

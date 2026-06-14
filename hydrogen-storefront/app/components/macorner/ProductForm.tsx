@@ -183,7 +183,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
       {/* Stars — Judge.me replaces this badge with live rating + review count */}
       <div className="flex items-center gap-2 flex-wrap">
         <JudgeMeStarBadge productId={product.id} productHandle={product.handle} />
-        <a href="#reviews" className="text-sm text-[#f36621] hover:underline sr-only">
+        <a href="#reviews" className="text-sm text-[#163c5e] hover:underline sr-only">
           Reviews
         </a>
       </div>
@@ -191,9 +191,9 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
       {/* Price */}
       {price && (
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-2xl font-bold text-[#f36621]">
+          <span className="text-2xl font-bold text-[#163c5e]">
             {formatMoney(price)}{' '}
-            <span className="text-base font-normal text-[#f36621]">USD</span>
+            <span className="text-base font-normal text-[#163c5e]">USD</span>
           </span>
           {compareAtPrice &&
             parseFloat(compareAtPrice.amount) > parseFloat(price.amount) && (
@@ -202,7 +202,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
                   {formatMoney(compareAtPrice)} USD
                 </span>
                 {discountPercent && discountPercent > 0 && (
-                  <span className="bg-[#f36621] text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                  <span className="bg-[#163c5e] text-white text-xs font-bold px-2.5 py-1 rounded-full">
                     Save {discountPercent}%
                   </span>
                 )}
@@ -217,7 +217,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
           <span>🇺🇸</span>
           <span>
             Deliver to{' '}
-            <span className="text-[#f36621] font-medium">United States</span>
+            <span className="text-[#163c5e] font-medium">United States</span>
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -250,7 +250,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
                 {displayType === 'size' && (
                   <a
                     href="#"
-                    className="text-xs text-[rgba(18,18,18,0.55)] underline hover:text-[#f36621]"
+                    className="text-xs text-[rgba(18,18,18,0.55)] underline hover:text-[#163c5e]"
                   >
                     Size Chart
                   </a>
@@ -290,7 +290,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
                         title={value}
                         className={`w-8 h-8 rounded-full border-2 transition-all ${
                           isSelected
-                            ? 'border-[#f36621] scale-110 shadow-sm'
+                            ? 'border-[#163c5e] scale-110 shadow-sm'
                             : 'border-transparent hover:border-[rgba(18,18,18,0.3)]'
                         }`}
                         style={{backgroundColor: bgColor}}
@@ -316,7 +316,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
                       preventScrollReset
                       className={`px-3.5 py-1.5 rounded-full text-sm border transition-all ${
                         isSelected
-                          ? 'border-[#f36621] text-[#f36621] font-semibold'
+                          ? 'border-[#163c5e] text-[#163c5e] font-semibold'
                           : 'border-[rgba(18,18,18,0.2)] text-[rgb(18,18,18)] hover:border-[rgba(18,18,18,0.5)]'
                       }`}
                     >
@@ -463,7 +463,7 @@ export function ProductForm({product, selectedVariant}: ProductFormProps) {
             <p>Express shipping available at checkout for faster delivery.</p>
             <p>
               Returns and replacements accepted within 30 days for quality issues.{' '}
-              <a href="/policies/refund-policy" className="text-[#f36621] underline">Full policy →</a>
+              <a href="/policies/refund-policy" className="text-[#163c5e] underline">Full policy →</a>
             </p>
           </div>
         </details>

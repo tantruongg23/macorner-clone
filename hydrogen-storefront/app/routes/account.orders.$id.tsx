@@ -116,7 +116,7 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
               <button
                 type="submit"
                 disabled={reorderFetcher.state !== 'idle'}
-                className="px-5 py-2 rounded-[8px] bg-[#f7921f] text-white text-[13px] font-semibold tracking-[0.5px] hover:bg-[#e0830e] transition-colors disabled:opacity-60"
+                className="px-5 py-2 rounded-[8px] bg-[#2e6ca6] text-white text-[13px] font-semibold tracking-[0.5px] hover:bg-[#e0830e] transition-colors disabled:opacity-60"
               >
                 {reorderFetcher.state !== 'idle' ? 'Adding…' : 'Re-order'}
               </button>
@@ -138,7 +138,7 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
                 href={tracking.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#f7921f] hover:underline font-medium"
+                className="text-[#2e6ca6] hover:underline font-medium"
               >
                 {tracking.number ?? 'View tracking'}
               </a>
@@ -270,7 +270,7 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
       <div className="mt-8">
         <Link
           to="/account/orders"
-          className="text-[13px] font-medium text-[rgba(18,18,18,0.55)] hover:text-[#f7921f] transition-colors"
+          className="text-[13px] font-medium text-[rgba(18,18,18,0.55)] hover:text-[#2e6ca6] transition-colors"
         >
           ← Back to orders
         </Link>

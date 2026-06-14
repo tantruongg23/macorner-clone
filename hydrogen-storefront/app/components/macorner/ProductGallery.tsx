@@ -73,7 +73,7 @@ export function ProductGallery({
               onClick={() => setActiveIndex(index)}
               className={`w-[80px] h-[80px] flex-shrink-0 rounded-lg overflow-hidden border-2 transition-colors ${
                 index === activeIndex
-                  ? 'border-[#f36621]'
+                  ? 'border-[#163c5e]'
                   : 'border-[rgba(18,18,18,0.1)] hover:border-[rgba(18,18,18,0.3)]'
               }`}
             >

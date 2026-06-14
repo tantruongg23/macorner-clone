@@ -81,7 +81,7 @@ export default function CollectionsIndex({loaderData}: Route.ComponentProps) {
           margin: 12px 0 0; text-align:center; font-size: 15px; font-weight: 500;
           letter-spacing: 0.4px; color: rgb(18,18,18);
         }
-        .collection-tile:hover .collection-tile__title { color:#FC6514; }
+        .collection-tile:hover .collection-tile__title { color:#1e4e79; }
       `}</style>
 
       <div className="collections-index">
@@ -115,7 +115,7 @@ export default function CollectionsIndex({loaderData}: Route.ComponentProps) {
             <div style={{textAlign: 'center', marginTop: 48}}>
               <Link
                 to={`?cursor=${collections.pageInfo.endCursor}`}
-                className="inline-block px-7 py-3 rounded-[10px] bg-[#FC6514] text-white text-[15px] font-semibold tracking-[0.6px] hover:bg-[#e85a10] transition-colors"
+                className="inline-block px-7 py-3 rounded-[10px] bg-[#1e4e79] text-white text-[15px] font-semibold tracking-[0.6px] hover:bg-[#122e49] transition-colors"
               >
                 Load more
               </Link>

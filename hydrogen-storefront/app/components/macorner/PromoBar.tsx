@@ -10,7 +10,7 @@ export function PromoBar() {
   const track = [...PROMO_MESSAGES, ...PROMO_MESSAGES];
 
   return (
-    <section className="promo-marquee py-3 md:py-4 bg-gradient-to-r from-[#F36621] to-[#F7921F] overflow-hidden">
+    <section className="promo-marquee py-3 md:py-4 bg-gradient-to-r from-[#163c5e] to-[#2e6ca6] overflow-hidden">
       <div
         className="promo-marquee-track flex w-max"
         role="marquee"

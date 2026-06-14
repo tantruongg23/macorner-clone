@@ -25,7 +25,7 @@ export function SecondaryBanner({data}: {data: SecondaryBannerData}) {
 
           {/* Right: text */}
           <div className="order-2 px-6 py-6 md:px-10 md:py-10 flex flex-col gap-3 md:gap-4 justify-center">
-            <h2 className="heading-script italic text-[28px] md:text-[48px] leading-[1] font-medium text-[#F36621]">
+            <h2 className="heading-script italic text-[28px] md:text-[48px] leading-[1] font-medium text-[#163c5e]">
               {data.title}
             </h2>
             <p className="text-[14px] md:text-[15px] max-w-[280px] text-[rgba(18,18,18,0.7)] leading-snug">

@@ -18,7 +18,7 @@ export default function TrackingOrder() {
   }
 
   const inputClass =
-    'w-full h-[50px] px-4 bg-white text-[15px] text-black border border-[#d1d6dc] rounded-[8px] outline-none focus:border-[#FC6514] transition-colors';
+    'w-full h-[50px] px-4 bg-white text-[15px] text-black border border-[#d1d6dc] rounded-[8px] outline-none focus:border-[#1e4e79] transition-colors';
 
   return (
     <div style={{fontFamily: 'Poppins, sans-serif', background: '#fff'}}>
@@ -84,7 +84,7 @@ export default function TrackingOrder() {
           </div>
           <button
             type="submit"
-            className="h-[50px] mt-2 bg-[#FC6514] text-white text-[18px] font-bold tracking-wide rounded-[8px] hover:bg-[#e85a10] transition-colors"
+            className="h-[50px] mt-2 bg-[#1e4e79] text-white text-[18px] font-bold tracking-wide rounded-[8px] hover:bg-[#122e49] transition-colors"
           >
             TRACK ORDER
           </button>

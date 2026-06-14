@@ -101,7 +101,7 @@ export async function action({request, context}: Route.ActionArgs) {
 }
 
 const inputClass =
-  'w-full border border-[var(--color-header-border)] rounded-[8px] px-3 py-2 text-[14px] text-[rgb(18,18,18)] focus:outline-none focus:border-[#f7921f] transition-colors';
+  'w-full border border-[var(--color-header-border)] rounded-[8px] px-3 py-2 text-[14px] text-[rgb(18,18,18)] focus:outline-none focus:border-[#2e6ca6] transition-colors';
 const labelClass =
   'block text-[12px] uppercase tracking-[0.8px] text-[rgba(18,18,18,0.5)] mb-1';
 
@@ -225,7 +225,7 @@ function AddressForm({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-6 py-2.5 rounded-[8px] bg-[#f7921f] text-white text-[14px] font-semibold tracking-[0.5px] hover:bg-[#e0830e] transition-colors disabled:opacity-60"
+          className="px-6 py-2.5 rounded-[8px] bg-[#2e6ca6] text-white text-[14px] font-semibold tracking-[0.5px] hover:bg-[#e0830e] transition-colors disabled:opacity-60"
         >
           {isSubmitting
             ? 'Saving…'
@@ -236,7 +236,7 @@ function AddressForm({
         <button
           type="button"
           onClick={onCancel}
-          className="px-6 py-2.5 rounded-[8px] border border-[var(--color-header-border)] text-[14px] font-medium text-[rgba(18,18,18,0.7)] hover:border-[#f7921f] transition-colors"
+          className="px-6 py-2.5 rounded-[8px] border border-[var(--color-header-border)] text-[14px] font-medium text-[rgba(18,18,18,0.7)] hover:border-[#2e6ca6] transition-colors"
         >
           Cancel
         </button>
@@ -261,12 +261,12 @@ function AddressCard({
     <div
       className={`border rounded-[12px] p-5 relative ${
         isDefault
-          ? 'border-[#f7921f] bg-orange-50/40'
+          ? 'border-[#2e6ca6] bg-blue-50/40'
           : 'border-[var(--color-header-border)]'
       }`}
     >
       {isDefault && (
-        <span className="absolute top-4 right-4 text-[11px] font-semibold text-[#f7921f] uppercase tracking-[0.8px]">
+        <span className="absolute top-4 right-4 text-[11px] font-semibold text-[#2e6ca6] uppercase tracking-[0.8px]">
           Default
         </span>
       )}
@@ -301,7 +301,7 @@ function AddressCard({
       <div className="flex flex-wrap gap-3 mt-4">
         <button
           onClick={onEdit}
-          className="text-[13px] font-medium text-[#f7921f] hover:underline"
+          className="text-[13px] font-medium text-[#2e6ca6] hover:underline"
         >
           Edit
         </button>
@@ -313,7 +313,7 @@ function AddressCard({
             <button
               type="submit"
               disabled={defaultFetcher.state !== 'idle'}
-              className="text-[13px] font-medium text-[rgba(18,18,18,0.6)] hover:text-[#f7921f] transition-colors disabled:opacity-50"
+              className="text-[13px] font-medium text-[rgba(18,18,18,0.6)] hover:text-[#2e6ca6] transition-colors disabled:opacity-50"
             >
               Set as default
             </button>
@@ -353,7 +353,7 @@ export default function Addresses({loaderData}: Route.ComponentProps) {
         {!showAdd && !editingId && (
           <button
             onClick={() => setShowAdd(true)}
-            className="px-5 py-2 rounded-[8px] border border-[#f7921f] text-[#f7921f] text-[13px] font-semibold tracking-[0.5px] hover:bg-[#f7921f] hover:text-white transition-colors"
+            className="px-5 py-2 rounded-[8px] border border-[#2e6ca6] text-[#2e6ca6] text-[13px] font-semibold tracking-[0.5px] hover:bg-[#2e6ca6] hover:text-white transition-colors"
           >
             + Add new address
           </button>
@@ -382,7 +382,7 @@ export default function Addresses({loaderData}: Route.ComponentProps) {
             editingId === addr.id ? (
               <div
                 key={addr.id}
-                className="border border-[#f7921f] rounded-[12px] p-5"
+                className="border border-[#2e6ca6] rounded-[12px] p-5"
               >
                 <h3 className="text-[16px] font-semibold text-[rgb(18,18,18)] mb-4 m-0">
                   Edit address

@@ -30,7 +30,7 @@ export function CollectionTabsSection({
   const activeProducts = tabs[activeTab]?.products ?? [];
 
   return (
-    <section className="py-12 md:py-16 bg-[#fff9f4]">
+    <section className="py-12 md:py-16 bg-[#f4f8fc]">
       <div className="container-macorner">
         {/* Banner */}
         <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">

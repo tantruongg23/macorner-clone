@@ -33,7 +33,7 @@ export function CategoryIconRow({ collections }: { collections?: CategoryIconCol
                     />
                   )}
                 </div>
-                <span className="text-center text-[13px] md:text-base font-medium text-[rgb(18,18,18)] whitespace-nowrap group-hover:text-[#F36621] transition-colors">
+                <span className="text-center text-[13px] md:text-base font-medium text-[rgb(18,18,18)] whitespace-nowrap group-hover:text-[#163c5e] transition-colors">
                   {category.title}
                 </span>
               </a>

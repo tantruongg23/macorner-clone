@@ -101,7 +101,7 @@ function FieldInput({
   const labelEl = (
     <label className="text-sm font-medium text-[rgb(18,18,18)]">
       {field.label}
-      {field.required && <span className="text-[#f36621] ml-0.5">*</span>}
+      {field.required && <span className="text-[#163c5e] ml-0.5">*</span>}
     </label>
   );
 
@@ -121,7 +121,7 @@ function FieldInput({
             onBlur={onBlur}
             placeholder={field.placeholder ?? `Enter ${field.label}`}
             maxLength={field.maxLength}
-            className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] placeholder-[rgba(18,18,18,0.35)] focus:outline-none focus:border-[#f36621] transition-colors pr-12"
+            className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] placeholder-[rgba(18,18,18,0.35)] focus:outline-none focus:border-[#163c5e] transition-colors pr-12"
           />
           {field.maxLength && (
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[rgba(18,18,18,0.4)]">
@@ -145,7 +145,7 @@ function FieldInput({
           placeholder={field.placeholder ?? `Enter ${field.label}`}
           maxLength={field.maxLength}
           rows={3}
-          className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] placeholder-[rgba(18,18,18,0.35)] focus:outline-none focus:border-[#f36621] transition-colors resize-y"
+          className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] placeholder-[rgba(18,18,18,0.35)] focus:outline-none focus:border-[#163c5e] transition-colors resize-y"
         />
         {errorEl}
       </div>
@@ -160,7 +160,7 @@ function FieldInput({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onBlur={onBlur}
-          className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] focus:outline-none focus:border-[#f36621] transition-colors bg-white"
+          className="w-full px-3 py-2.5 rounded-lg border border-[rgba(18,18,18,0.2)] text-sm text-[rgb(18,18,18)] focus:outline-none focus:border-[#163c5e] transition-colors bg-white"
         >
           <option value="">Select {field.label}</option>
           {field.options?.map((opt) => (
@@ -225,7 +225,7 @@ function FieldInput({
             type="button"
             onClick={() => fileRef.current?.click()}
             disabled={uploadStatus === 'uploading'}
-            className="px-4 py-2 text-sm border border-[rgba(18,18,18,0.2)] rounded-lg text-[rgb(18,18,18)] hover:border-[#f36621] hover:text-[#f36621] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 text-sm border border-[rgba(18,18,18,0.2)] rounded-lg text-[rgb(18,18,18)] hover:border-[#163c5e] hover:text-[#163c5e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {uploadStatus === 'uploading' ? 'Uploading…' : 'Choose Photo'}
           </button>
@@ -266,7 +266,7 @@ function FieldInput({
           href="/pages/photo-upload-guidelines"
           target="_blank"
           rel="noreferrer"
-          className="text-xs text-[#f36621] underline"
+          className="text-xs text-[#163c5e] underline"
         >
           View photo upload guidelines
         </a>

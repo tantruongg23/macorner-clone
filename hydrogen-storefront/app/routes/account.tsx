@@ -35,8 +35,8 @@ export default function AccountLayout({loaderData}: Route.ComponentProps) {
     [
       'px-4 py-2 rounded-[8px] text-[15px] font-medium tracking-[0.6px] transition-colors',
       isActive
-        ? 'bg-[#FC6514] text-white'
-        : 'text-[rgb(18,18,18)] hover:text-[#FC6514]',
+        ? 'bg-[#1e4e79] text-white'
+        : 'text-[rgb(18,18,18)] hover:text-[#1e4e79]',
     ].join(' ');
 
   return (
@@ -51,7 +51,7 @@ export default function AccountLayout({loaderData}: Route.ComponentProps) {
         <Form method="POST" action="/account/logout">
           <button
             type="submit"
-            className="text-[14px] font-medium tracking-[0.6px] text-[rgba(18,18,18,0.6)] hover:text-[#FC6514] transition-colors"
+            className="text-[14px] font-medium tracking-[0.6px] text-[rgba(18,18,18,0.6)] hover:text-[#1e4e79] transition-colors"
           >
             Sign out
           </button>
