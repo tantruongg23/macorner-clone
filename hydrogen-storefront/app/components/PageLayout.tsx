@@ -21,7 +21,7 @@ interface PageLayoutProps {
   cart: Promise<CartApiQueryFragment | null>;
   footer: Promise<FooterQuery | null>;
   header: HeaderQuery;
-  isLoggedIn: Promise<boolean>;
+  customer: Promise<{firstName: string | null} | null>;
   navItems?: NavItem[];
   publicStoreDomain: string;
   children?: React.ReactNode;
@@ -32,7 +32,7 @@ export function PageLayout({
   children = null,
   footer,
   header,
-  isLoggedIn,
+  customer,
   navItems,
   publicStoreDomain,
 }: PageLayoutProps) {
@@ -40,8 +40,8 @@ export function PageLayout({
     <Aside.Provider>
       <CartAside cart={cart} />
       <SearchAside />
-      <MobileNavDrawer navItems={navItems} />
-      <MacornerHeader cart={cart} navItems={navItems} />
+      <MobileNavDrawer navItems={navItems} customer={customer} />
+      <MacornerHeader cart={cart} navItems={navItems} customer={customer} />
       <main>{children}</main>
       <MacornerFooter />
     </Aside.Provider>

@@ -22,10 +22,10 @@ type Pages = {
       "handle": string;
     };
   };
-  "/account/authorize": {
+  "/collections": {
     params: {};
   };
-  "/collections": {
+  "/account/register": {
     params: {};
   };
   "/api/upload-image": {
@@ -95,7 +95,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/pages/tracking-order" | "/collections/:handle" | "/account/authorize" | "/collections" | "/api/upload-image" | "/products/:handle" | "/account/logout" | "/account/login" | "/pages/wishlist" | "/pages/:handle" | "/newsletter" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/search" | "/cart" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+    page: "/" | "/pages/tracking-order" | "/collections/:handle" | "/collections" | "/account/register" | "/api/upload-image" | "/products/:handle" | "/account/logout" | "/account/login" | "/pages/wishlist" | "/pages/:handle" | "/newsletter" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/search" | "/cart" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
   };
   "routes/pages.tracking-order.tsx": {
     id: "routes/pages.tracking-order";
@@ -105,13 +105,13 @@ type RouteFiles = {
     id: "routes/collections.$handle";
     page: "/collections/:handle";
   };
-  "routes/account_.authorize.tsx": {
-    id: "routes/account_.authorize";
-    page: "/account/authorize";
-  };
   "routes/collections._index.tsx": {
     id: "routes/collections._index";
     page: "/collections";
+  };
+  "routes/account_.register.tsx": {
+    id: "routes/account_.register";
+    page: "/account/register";
   };
   "routes/api.upload-image.ts": {
     id: "routes/api.upload-image";
@@ -207,8 +207,8 @@ type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/pages.tracking-order": typeof import("./app/routes/pages.tracking-order.tsx");
   "routes/collections.$handle": typeof import("./app/routes/collections.$handle.tsx");
-  "routes/account_.authorize": typeof import("./app/routes/account_.authorize.tsx");
   "routes/collections._index": typeof import("./app/routes/collections._index.tsx");
+  "routes/account_.register": typeof import("./app/routes/account_.register.tsx");
   "routes/api.upload-image": typeof import("./app/routes/api.upload-image.ts");
   "routes/products.$handle": typeof import("./app/routes/products.$handle.tsx");
   "routes/account_.logout": typeof import("./app/routes/account_.logout.tsx");

@@ -1,0 +1,261 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Macorner" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Macorner" [ref=e9]
+      - search [ref=e12]:
+        - generic [ref=e13]:
+          - combobox "Search" [ref=e14]
+          - generic: Search
+          - button "Search" [ref=e15] [cursor=pointer]:
+            - img [ref=e16]
+        - status [ref=e17]
+      - generic [ref=e18]:
+        - link "Log in Sign In" [ref=e19] [cursor=pointer]:
+          - /url: /account/login
+          - generic [ref=e20]: Log in
+          - generic [ref=e21]: Sign In
+        - link "Wishlist" [ref=e24] [cursor=pointer]:
+          - /url: /pages/wishlist
+          - generic [ref=e25]: Wishlist
+        - link "Track Order" [ref=e27] [cursor=pointer]:
+          - /url: /pages/tracking-order
+        - generic [ref=e28] [cursor=pointer]:
+          - img "Flags country" [ref=e30]
+          - generic [ref=e31]: United States
+        - link "Cart" [ref=e32] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e33]
+          - generic [ref=e41]: "0"
+    - navigation [ref=e42]:
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "Graduation" [ref=e45] [cursor=pointer]:
+            - /url: https://macorner.co/collections/graduation?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e46]: Graduation
+        - listitem [ref=e47]:
+          - link "Father's Day" [ref=e48] [cursor=pointer]:
+            - /url: https://macorner.co/pages/gifts-for-dad?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e49]: Father's Day
+        - listitem [ref=e50]:
+          - group [ref=e52]:
+            - button "Gifts" [ref=e53] [cursor=pointer]:
+              - link "Gifts" [ref=e54]:
+                - /url: "#"
+        - listitem [ref=e55]:
+          - group [ref=e57]:
+            - button "Home & Living" [ref=e58] [cursor=pointer]:
+              - link "Home & Living" [ref=e59]:
+                - /url: https://macorner.co/collections/home-and-living?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e60]:
+          - group [ref=e62]:
+            - button "Drink & Barware" [ref=e63] [cursor=pointer]:
+              - link "Drink & Barware" [ref=e64]:
+                - /url: https://macorner.co/collections/drink-and-barware?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e65]:
+          - group [ref=e67]:
+            - button "Apparel" [ref=e68] [cursor=pointer]:
+              - link "Apparel" [ref=e69]:
+                - /url: https://macorner.co/collections/apparel?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e70]:
+          - group [ref=e72]:
+            - button "Accessories" [ref=e73] [cursor=pointer]:
+              - link "Accessories" [ref=e74]:
+                - /url: https://macorner.co/collections/accessories?utm_source=nav&utm_medium=mega_menu
+        - listitem [ref=e75]:
+          - group [ref=e77]:
+            - button "Interests" [ref=e78] [cursor=pointer]:
+              - link "Interests" [ref=e79]:
+                - /url: "#"
+        - listitem [ref=e80]:
+          - link "Happy Customers" [ref=e81] [cursor=pointer]:
+            - /url: https://macorner.co/pages/reviews?utm_source=nav&utm_medium=mega_menu
+            - generic [ref=e82]: Happy Customers
+  - main [ref=e83]:
+    - generic [ref=e85]:
+      - heading "Create account" [level=1] [ref=e86]
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - textbox "First name" [ref=e90]
+            - generic: First name
+          - generic [ref=e91]:
+            - textbox "Last name" [ref=e92]
+            - generic: Last name
+        - generic [ref=e93]:
+          - textbox "Email" [ref=e94]
+          - generic: Email
+        - generic [ref=e95]:
+          - textbox "Password" [ref=e96]
+          - generic: Password
+        - generic [ref=e97]: 5 to 16 characters
+        - button "Create account" [ref=e98] [cursor=pointer]
+        - generic [ref=e99]:
+          - link "Login" [ref=e100] [cursor=pointer]:
+            - /url: /account/login
+          - text: or
+          - link "Return to store" [ref=e101] [cursor=pointer]:
+            - /url: https://macorner.co
+  - generic [ref=e102]:
+    - contentinfo [ref=e103]:
+      - generic [ref=e106]:
+        - generic [ref=e109]:
+          - 'heading "Today Only: Secret privileges for you!" [level=1] [ref=e113]'
+          - generic [ref=e114]:
+            - textbox "Your email address" [ref=e117]
+            - button "REVEAL NOW" [ref=e119] [cursor=pointer]
+        - alert [ref=e120]
+      - generic [ref=e122]:
+        - list [ref=e124]:
+          - listitem [ref=e125]:
+            - link "Gift Finder" [ref=e126] [cursor=pointer]:
+              - /url: https://macorner.co/pages/gift-finder?utm_source=desktop&utm_medium=footer
+          - listitem [ref=e127]:
+            - link "Shop By Product" [ref=e128] [cursor=pointer]:
+              - /url: /collections/all
+              - text: Shop By Product
+              - img [ref=e129]
+          - listitem [ref=e131]:
+            - link "Shop by Occasion" [ref=e132] [cursor=pointer]:
+              - /url: /pages/shop-by-occasion
+              - text: Shop by Occasion
+              - img [ref=e133]
+          - listitem [ref=e135]:
+            - link "Shop By Recipient" [ref=e136] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Recipient
+              - img [ref=e137]
+          - listitem [ref=e139]:
+            - link "Shop By Hobby" [ref=e140] [cursor=pointer]:
+              - /url: /
+              - text: Shop By Hobby
+              - img [ref=e141]
+        - generic [ref=e143]:
+          - heading "Macorner" [level=2] [ref=e144]: Macorner
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - link "About us" [ref=e147] [cursor=pointer]:
+                - /url: /pages/about-us
+            - listitem [ref=e148]:
+              - link "Privacy Policy" [ref=e149] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e150]:
+              - link "Accessibility Statement" [ref=e151] [cursor=pointer]:
+                - /url: /pages/accessibility
+        - generic [ref=e152]:
+          - heading "Help and Support" [level=2] [ref=e153]: Help and Support
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - link "2026 Father's Day Delivery Cut-Off Dates" [ref=e156] [cursor=pointer]:
+                - /url: https://macorner.co/pages/2026-fathers-day-delivery-cut-off-dates
+            - listitem [ref=e157]:
+              - link "Return Policy" [ref=e158] [cursor=pointer]:
+                - /url: /pages/return-policy
+            - listitem [ref=e159]:
+              - link "Help Center" [ref=e160] [cursor=pointer]:
+                - /url: https://macorner.freshdesk.com/support/home
+            - listitem [ref=e161]:
+              - link "Size Chart" [ref=e162] [cursor=pointer]:
+                - /url: /pages/size-chart
+            - listitem [ref=e163]:
+              - link "Shipping And Delivery" [ref=e164] [cursor=pointer]:
+                - /url: /pages/shipping-delivery
+            - listitem [ref=e165]:
+              - link "Cancellation & Modification Policy" [ref=e166] [cursor=pointer]:
+                - /url: /pages/cancellation-modification-policy
+            - listitem [ref=e167]:
+              - link "Refund & Replacement Policy" [ref=e168] [cursor=pointer]:
+                - /url: /pages/replacement-refund
+            - listitem [ref=e169]:
+              - link "Disclaimer Regarding Fake Websites" [ref=e170] [cursor=pointer]:
+                - /url: https://macorner.co/pages/disclaimer-regarding-fake-websites
+        - generic [ref=e172]:
+          - heading "GET IN TOUCH" [level=2] [ref=e173]
+          - paragraph [ref=e175]: "Support Time: 9 AM to 5 PM, Mon-Sat"
+          - link "Open A Support Ticket" [ref=e176] [cursor=pointer]:
+            - /url: https://freshdesk.macorner.co/support/tickets/new
+          - list [ref=e177]:
+            - listitem [ref=e178]:
+              - link "Facebook" [ref=e179] [cursor=pointer]:
+                - /url: https://www.facebook.com/profile.php?id=100069063936706
+                - img [ref=e180]
+                - generic [ref=e182]: Facebook
+            - listitem [ref=e183]:
+              - link "Instagram" [ref=e184] [cursor=pointer]:
+                - /url: https://www.instagram.com/macorner_decor
+                - img [ref=e185]
+                - generic [ref=e189]: Instagram
+            - listitem [ref=e190]:
+              - link "Vimeo" [ref=e191] [cursor=pointer]:
+                - /url: https://www.amazon.com/stores/page/3F9A8588-C207-4C07-9774-E3D24490E8A3
+                - img [ref=e192]
+                - generic [ref=e195]: Vimeo
+            - listitem [ref=e196]:
+              - link "Twitter" [ref=e197] [cursor=pointer]:
+                - /url: https://twitter.com/Macorner_Decor
+                - img [ref=e198]
+                - generic [ref=e200]: Twitter
+            - listitem [ref=e201]:
+              - link "TikTok" [ref=e202] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@macorner_official
+                - img [ref=e203]
+                - generic [ref=e205]: TikTok
+            - listitem [ref=e206]:
+              - link "Pinterest" [ref=e207] [cursor=pointer]:
+                - /url: https://www.pinterest.com/macorner_official
+                - img [ref=e208]
+                - generic [ref=e210]: Pinterest
+    - generic [ref=e211]:
+      - generic [ref=e213]:
+        - generic [ref=e214]: Payment methods
+        - list [ref=e215]:
+          - listitem [ref=e216]:
+            - img [ref=e217]
+          - listitem [ref=e222]:
+            - img [ref=e223]
+          - listitem [ref=e232]:
+            - img [ref=e233]
+          - listitem [ref=e244]:
+            - img [ref=e245]
+          - listitem [ref=e252]:
+            - img [ref=e253]
+          - listitem [ref=e257]:
+            - img [ref=e258]
+          - listitem [ref=e267]:
+            - img [ref=e268]
+          - listitem [ref=e276]:
+            - img [ref=e277]
+          - listitem [ref=e292]:
+            - img [ref=e293]
+          - listitem [ref=e299]:
+            - img [ref=e300]
+          - listitem [ref=e306]:
+            - img [ref=e307]
+          - listitem [ref=e311]:
+            - img [ref=e312]
+          - listitem [ref=e317]:
+            - img [ref=e318]
+          - listitem [ref=e322]:
+            - link "DMCA.com Protection Status" [ref=e324] [cursor=pointer]:
+              - /url: https://www.dmca.com/Protection/Status.aspx?ID=05a441c4-efe1-422e-b8a8-b9326f259e04&refurl=https://macorner.co/account/register
+              - img "DMCA.com Protection Status" [ref=e325]
+      - list [ref=e328]:
+        - listitem [ref=e329]:
+          - link "Terms Of Services" [ref=e330] [cursor=pointer]:
+            - /url: /pages/terms-of-services
+        - listitem [ref=e331]:
+          - text: •
+          - link "Privacy Policy" [ref=e332] [cursor=pointer]:
+            - /url: /pages/privacy-policy
+          - text: •
+        - listitem [ref=e333]: MA Commerce Inc.
+  - img [ref=e335] [cursor=pointer]
+  - iframe [ref=e337]:
+    
+  - iframe [ref=e338]:
+    - generic [ref=f38e1] [cursor=pointer]:
+      - img "Help" [ref=f38e2]
+      - generic [ref=f38e4]: Help

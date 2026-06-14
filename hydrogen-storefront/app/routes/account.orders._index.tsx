@@ -1,6 +1,8 @@
-import {Link} from 'react-router';
+import {Link, redirect} from 'react-router';
 import {Money} from '@shopify/hydrogen';
 import type {Route} from './+types/account.orders._index';
+import {CUSTOMER_ORDERS_QUERY} from '~/lib/graphql/customer';
+import {getCustomerAccessToken} from '~/lib/customerAuth';
 
 export function meta() {
   return [
@@ -9,19 +11,22 @@ export function meta() {
     {name: 'robots', content: 'noindex'},
   ];
 }
-import {CUSTOMER_ORDERS_QUERY} from '~/graphql/customer-account/customer';
 
 export async function loader({context}: Route.LoaderArgs) {
-  const {data, errors} = await context.customerAccount.query(
-    CUSTOMER_ORDERS_QUERY,
-    {variables: {first: 20}},
-  );
+  const customerAccessToken = getCustomerAccessToken(context.session);
+  if (!customerAccessToken) {
+    throw redirect('/account/login?return_to=/account/orders');
+  }
 
-  if (errors?.length || !data?.customer) {
+  const result = await context.storefront.query(CUSTOMER_ORDERS_QUERY, {
+    variables: {customerAccessToken, first: 20},
+  });
+
+  if (result.errors?.length || !result.customer) {
     throw new Error('Orders not found');
   }
 
-  return {orders: data.customer.orders};
+  return {orders: result.customer.orders};
 }
 
 export default function Orders({loaderData}: Route.ComponentProps) {
@@ -64,7 +69,7 @@ export default function Orders({loaderData}: Route.ComponentProps) {
                   to={`/account/orders/${btoa(order.id)}`}
                   className="hover:text-[#FC6514] transition-colors"
                 >
-                  #{order.number}
+                  #{order.orderNumber}
                 </Link>
               </td>
               <td className="py-4 pr-4 text-[rgba(18,18,18,0.7)]">
@@ -74,10 +79,10 @@ export default function Orders({loaderData}: Route.ComponentProps) {
                 {order.financialStatus?.toLowerCase() ?? '—'}
               </td>
               <td className="py-4 pr-4 capitalize text-[rgba(18,18,18,0.7)]">
-                {order.fulfillments?.nodes?.[0]?.status?.toLowerCase() ?? '—'}
+                {order.fulfillmentStatus?.toLowerCase().replace(/_/g, ' ') ?? '—'}
               </td>
               <td className="py-4 pr-4 font-medium">
-                <Money data={order.totalPrice} />
+                <Money data={order.currentTotalPrice} />
               </td>
             </tr>
           ))}

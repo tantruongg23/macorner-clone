@@ -16,6 +16,7 @@ import favicon from '~/assets/favicon.svg';
 import { FOOTER_QUERY, HEADER_QUERY } from '~/lib/graphql/menu';
 import { NavigationService } from '~/lib/navigation';
 import { shopifyMenuToNav } from '~/lib/shopifyMenuToNav';
+import { getCustomerAccessToken, getCustomerFirstName } from '~/lib/customerAuth';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from './components/PageLayout';
@@ -129,7 +130,7 @@ async function loadCriticalData({context}: Route.LoaderArgs) {
  * Make sure to not throw any errors here, as it will cause the page to 500.
  */
 function loadDeferredData({context}: Route.LoaderArgs) {
-  const {storefront, customerAccount, cart} = context;
+  const {storefront, session, cart} = context;
 
   // defer the footer query (below the fold)
   const footer = storefront
@@ -144,9 +145,17 @@ function loadDeferredData({context}: Route.LoaderArgs) {
       console.error(error);
       return null;
     });
+
+  const customerAccessToken = getCustomerAccessToken(session);
+  const customer = Promise.resolve(
+    customerAccessToken
+      ? {firstName: getCustomerFirstName(session)}
+      : null,
+  );
+
   return {
     cart: cart.get(),
-    isLoggedIn: customerAccount.isLoggedIn(),
+    customer,
     footer,
   };
 }

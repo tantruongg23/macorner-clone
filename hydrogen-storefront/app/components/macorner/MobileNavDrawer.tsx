@@ -1,6 +1,6 @@
-import {Link, NavLink} from 'react-router';
+import {Await, Link, NavLink} from 'react-router';
 import {useAside} from '~/components/Aside';
-import {useEffect, useRef, useState} from 'react';
+import {Suspense, useEffect, useRef, useState} from 'react';
 import {MACORNER_NAV, type NavItem, type NavGroup} from '~/lib/staticNav';
 
 import {ChevronDownIcon, XIcon} from './icons';
@@ -16,9 +16,10 @@ type PanelLevel =
 interface MobileNavDrawerProps {
   /** Live nav from Shopify. Falls back to MACORNER_NAV when omitted/empty. */
   navItems?: NavItem[];
+  customer?: Promise<{firstName: string | null} | null>;
 }
 
-export function MobileNavDrawer({navItems}: MobileNavDrawerProps) {
+export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
   const navData = navItems?.length ? navItems : MACORNER_NAV;
   const {type, close} = useAside();
   const isOpen = type === 'mobile';
@@ -182,13 +183,7 @@ export function MobileNavDrawer({navItems}: MobileNavDrawerProps) {
 
             {/* Utility links */}
             <div className="border-t border-gray-100 px-5 py-4 flex flex-col gap-3">
-              <Link
-                to="/account/login"
-                onClick={close}
-                className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors"
-              >
-                Sign In
-              </Link>
+              <MobileAccountLink customer={customer} onClick={close} />
               <Link
                 to="/pages/wishlist"
                 onClick={close}
@@ -313,5 +308,37 @@ export function MobileNavDrawer({navItems}: MobileNavDrawerProps) {
         </div>
       </div>
     </>
+  );
+}
+
+function MobileAccountLink({
+  customer,
+  onClick,
+}: {
+  customer?: Promise<{firstName: string | null} | null>;
+  onClick?: () => void;
+}) {
+  const className =
+    'text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#FC6514] transition-colors';
+  const signIn = (
+    <Link to="/account/login" onClick={onClick} className={className}>
+      Sign In
+    </Link>
+  );
+
+  return (
+    <Suspense fallback={signIn}>
+      <Await resolve={customer ?? Promise.resolve(null)} errorElement={signIn}>
+        {(customer) =>
+          customer ? (
+            <Link to="/account" onClick={onClick} className={className}>
+              {customer.firstName ? `Hi, ${customer.firstName}` : 'Hi'}
+            </Link>
+          ) : (
+            signIn
+          )
+        }
+      </Await>
+    </Suspense>
   );
 }

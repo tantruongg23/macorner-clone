@@ -270,9 +270,10 @@ interface Props {
   cart?: Promise<CartApiQueryFragment | null>;
   /** Live nav from Shopify. Falls back to MACORNER_NAV when omitted/empty. */
   navItems?: NavItem[];
+  customer?: Promise<{firstName: string | null} | null>;
 }
 
-export function MacornerHeader({cart, navItems}: Props) {
+export function MacornerHeader({cart, navItems, customer}: Props) {
   const navData = navItems?.length ? navItems : MACORNER_NAV;
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
@@ -422,12 +423,7 @@ export function MacornerHeader({cart, navItems}: Props) {
             aria-label="User menu"
             className="hidden min-[990px]:flex items-center gap-[15px] text-[var(--color-header-text)]"
           >
-            <Link
-              to="/account/login"
-              className="text-[14px] font-medium leading-[22.5px] tracking-[0.6px] hover:text-[#FC6514] transition-colors"
-            >
-              Sign In
-            </Link>
+            <AccountLink customer={customer} />
             <Link
               to="/pages/wishlist"
               title="Wishlist"
@@ -580,6 +576,12 @@ function DesktopNavItem({item}: {item: NavItem}) {
       ? 'grid-cols-5'
       : groupCount === 9
       ? 'grid-cols-3'
+      : groupCount === 8
+      ? 'grid-cols-8'
+      : groupCount === 7
+      ? 'grid-cols-7'
+      : groupCount === 6
+      ? 'grid-cols-6'
       : groupCount === 4
       ? 'grid-cols-4'
       : groupCount === 3
@@ -661,32 +663,22 @@ function DesktopNavItem({item}: {item: NavItem}) {
 
 function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[number]}) {
   const hasLeaves = group.items.length > 0;
+  const titleClass =
+    'text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)]';
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between gap-2">
-        {hasLeaves || !group.seeAllUrl ? (
-          <h3 className="text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)]">
-            {group.title}
-          </h3>
-        ) : (
-          // Leaf-less group (2-level menu): the title itself is the link.
-          <Link
-            to={group.seeAllUrl}
-            className="text-[11px] font-bold tracking-[1.2px] uppercase text-[rgb(18,18,18)] hover:text-[#FC6514] transition-colors"
-          >
-            {group.title}
-          </Link>
-        )}
-        {hasLeaves && group.seeAllUrl && (
-          <Link
-            to={group.seeAllUrl}
-            className="text-[11px] font-medium text-[#FC6514] hover:underline whitespace-nowrap"
-          >
-            See All
-          </Link>
-        )}
-      </div>
+      {group.seeAllUrl ? (
+        // Title itself links to the group's collection (matches macorner.co — no separate "See All").
+        <Link
+          to={group.seeAllUrl}
+          className={`${titleClass} hover:text-[#FC6514] transition-colors`}
+        >
+          {group.title}
+        </Link>
+      ) : (
+        <h3 className={titleClass}>{group.title}</h3>
+      )}
       {hasLeaves && (
         <ul className="flex flex-col gap-2 list-none m-0 p-0">
           {group.items.map((leaf) => (
@@ -796,6 +788,36 @@ function RegionSelectorModal({
         </p>
       </div>
     </>
+  );
+}
+
+function AccountLink({
+  customer,
+}: {
+  customer?: Promise<{firstName: string | null} | null>;
+}) {
+  const className =
+    'text-[14px] font-medium leading-[22.5px] tracking-[0.6px] hover:text-[#FC6514] transition-colors';
+  const signIn = (
+    <Link to="/account/login" className={className}>
+      Sign In
+    </Link>
+  );
+
+  return (
+    <Suspense fallback={signIn}>
+      <Await resolve={customer ?? Promise.resolve(null)} errorElement={signIn}>
+        {(customer) =>
+          customer ? (
+            <Link to="/account" className={className}>
+              {customer.firstName ? `Hi, ${customer.firstName}` : 'Hi'}
+            </Link>
+          ) : (
+            signIn
+          )
+        }
+      </Await>
+    </Suspense>
   );
 }
 

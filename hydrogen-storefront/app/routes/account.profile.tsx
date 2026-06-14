@@ -1,5 +1,5 @@
 import {useOutletContext} from 'react-router';
-import type {CustomerDetailsQuery} from 'customer-accountapi.generated';
+import type {CustomerDetailsQuery} from 'storefrontapi.generated';
 
 type Customer = CustomerDetailsQuery['customer'];
 
@@ -20,8 +20,8 @@ export default function Profile() {
     <div className="max-w-[560px]">
       <Field label="First name" value={customer?.firstName} />
       <Field label="Last name" value={customer?.lastName} />
-      <Field label="Email" value={customer?.emailAddress?.emailAddress} />
-      <Field label="Phone" value={address?.phoneNumber} />
+      <Field label="Email" value={customer?.email} />
+      <Field label="Phone" value={customer?.phone ?? address?.phone} />
       <Field
         label="Default address"
         value={address?.formatted ? address.formatted.join(', ') : null}

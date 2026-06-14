@@ -1,6 +1,15 @@
 import {useState} from 'react';
-import {useFetcher} from 'react-router';
+import {redirect, useFetcher} from 'react-router';
 import type {Route} from './+types/account.addresses';
+import {
+  CUSTOMER_QUERY,
+  CUSTOMER_ADDRESS_CREATE_MUTATION,
+  CUSTOMER_ADDRESS_UPDATE_MUTATION,
+  CUSTOMER_ADDRESS_DELETE_MUTATION,
+  CUSTOMER_DEFAULT_ADDRESS_UPDATE_MUTATION,
+} from '~/lib/graphql/customer';
+import {getCustomerAccessToken} from '~/lib/customerAuth';
+import type {CustomerDetailsQuery} from 'storefrontapi.generated';
 
 export function meta() {
   return [
@@ -9,53 +18,62 @@ export function meta() {
     {name: 'robots', content: 'noindex'},
   ];
 }
-import {
-  CUSTOMER_DETAILS_QUERY,
-  CREATE_ADDRESS_MUTATION,
-  UPDATE_ADDRESS_MUTATION,
-  DELETE_ADDRESS_MUTATION,
-  SET_DEFAULT_ADDRESS_MUTATION,
-} from '~/graphql/customer-account/customer';
-import type {CustomerDetailsQuery} from 'customer-accountapi.generated';
 
 type Address = NonNullable<
-  CustomerDetailsQuery['customer']['addresses']['nodes'][0]
->;
+  CustomerDetailsQuery['customer']
+>['addresses']['nodes'][0];
 
 export async function loader({context}: Route.LoaderArgs) {
-  const {data, errors} = await context.customerAccount.query(
-    CUSTOMER_DETAILS_QUERY,
-  );
-  if (errors?.length || !data?.customer) {
+  const customerAccessToken = getCustomerAccessToken(context.session);
+  if (!customerAccessToken) {
+    throw redirect('/account/login?return_to=/account/addresses');
+  }
+
+  const result = await context.storefront.query(CUSTOMER_QUERY, {
+    variables: {customerAccessToken},
+  });
+  if (result.errors?.length || !result.customer) {
     throw new Error('Customer not found');
   }
   return {
-    addresses: data.customer.addresses.nodes,
-    defaultAddressId: data.customer.defaultAddress?.id ?? null,
+    addresses: result.customer.addresses.nodes,
+    defaultAddressId: result.customer.defaultAddress?.id ?? null,
   };
 }
 
 export async function action({request, context}: Route.ActionArgs) {
+  const customerAccessToken = getCustomerAccessToken(context.session);
+  if (!customerAccessToken) {
+    throw redirect('/account/login?return_to=/account/addresses');
+  }
+
   const formData = await request.formData();
   const intent = formData.get('intent') as string;
 
   if (intent === 'delete') {
-    const addressId = formData.get('addressId') as string;
-    const {errors} = await context.customerAccount.mutate(
-      DELETE_ADDRESS_MUTATION,
-      {variables: {addressId}},
+    const id = formData.get('addressId') as string;
+    const result = await context.storefront.mutate(
+      CUSTOMER_ADDRESS_DELETE_MUTATION,
+      {variables: {customerAccessToken, id}},
     );
-    if (errors?.length) return {error: errors[0].message};
+    const userErrors = result.customerAddressDelete?.customerUserErrors ?? [];
+    if (result.errors?.length || userErrors.length) {
+      return {error: result.errors?.[0]?.message ?? userErrors[0]?.message};
+    }
     return {success: true};
   }
 
   if (intent === 'setDefault') {
     const addressId = formData.get('addressId') as string;
-    const {errors} = await context.customerAccount.mutate(
-      SET_DEFAULT_ADDRESS_MUTATION,
-      {variables: {addressId}},
+    const result = await context.storefront.mutate(
+      CUSTOMER_DEFAULT_ADDRESS_UPDATE_MUTATION,
+      {variables: {customerAccessToken, addressId}},
     );
-    if (errors?.length) return {error: errors[0].message};
+    const userErrors =
+      result.customerDefaultAddressUpdate?.customerUserErrors ?? [];
+    if (result.errors?.length || userErrors.length) {
+      return {error: result.errors?.[0]?.message ?? userErrors[0]?.message};
+    }
     return {success: true};
   }
 
@@ -66,33 +84,33 @@ export async function action({request, context}: Route.ActionArgs) {
     address1: formData.get('address1') as string,
     address2: (formData.get('address2') as string) || undefined,
     city: formData.get('city') as string,
-    zoneCode: formData.get('zoneCode') as string,
-    territoryCode: formData.get('territoryCode') as string,
+    province: formData.get('province') as string,
+    country: formData.get('country') as string,
     zip: formData.get('zip') as string,
-    phoneNumber: (formData.get('phoneNumber') as string) || undefined,
+    phone: (formData.get('phone') as string) || undefined,
   };
 
   if (intent === 'create') {
-    const {data, errors} = await context.customerAccount.mutate(
-      CREATE_ADDRESS_MUTATION,
-      {variables: {address}},
+    const result = await context.storefront.mutate(
+      CUSTOMER_ADDRESS_CREATE_MUTATION,
+      {variables: {customerAccessToken, address}},
     );
-    const userErrors = (data as any)?.customerAddressCreate?.userErrors ?? [];
-    if (errors?.length || userErrors.length) {
-      return {error: errors?.[0]?.message ?? userErrors[0]?.message};
+    const userErrors = result.customerAddressCreate?.customerUserErrors ?? [];
+    if (result.errors?.length || userErrors.length) {
+      return {error: result.errors?.[0]?.message ?? userErrors[0]?.message};
     }
     return {success: true};
   }
 
   if (intent === 'update') {
-    const addressId = formData.get('addressId') as string;
-    const {data, errors} = await context.customerAccount.mutate(
-      UPDATE_ADDRESS_MUTATION,
-      {variables: {addressId, address}},
+    const id = formData.get('addressId') as string;
+    const result = await context.storefront.mutate(
+      CUSTOMER_ADDRESS_UPDATE_MUTATION,
+      {variables: {customerAccessToken, id, address}},
     );
-    const userErrors = (data as any)?.customerAddressUpdate?.userErrors ?? [];
-    if (errors?.length || userErrors.length) {
-      return {error: errors?.[0]?.message ?? userErrors[0]?.message};
+    const userErrors = result.customerAddressUpdate?.customerUserErrors ?? [];
+    if (result.errors?.length || userErrors.length) {
+      return {error: result.errors?.[0]?.message ?? userErrors[0]?.message};
     }
     return {success: true};
   }
@@ -181,10 +199,10 @@ function AddressForm({
           <label className={labelClass}>State / Province *</label>
           <input
             className={inputClass}
-            name="zoneCode"
-            defaultValue={address?.zoneCode ?? ''}
+            name="province"
+            defaultValue={address?.province ?? ''}
             required
-            placeholder="e.g. CA"
+            placeholder="e.g. California"
           />
         </div>
         <div>
@@ -197,21 +215,21 @@ function AddressForm({
           />
         </div>
         <div>
-          <label className={labelClass}>Country code *</label>
+          <label className={labelClass}>Country *</label>
           <input
             className={inputClass}
-            name="territoryCode"
-            defaultValue={address?.territoryCode ?? 'US'}
+            name="country"
+            defaultValue={address?.country ?? 'United States'}
             required
-            placeholder="US"
+            placeholder="United States"
           />
         </div>
         <div className="sm:col-span-2">
           <label className={labelClass}>Phone</label>
           <input
             className={inputClass}
-            name="phoneNumber"
-            defaultValue={address?.phoneNumber ?? ''}
+            name="phone"
+            defaultValue={address?.phone ?? ''}
             type="tel"
           />
         </div>
@@ -287,13 +305,13 @@ function AddressCard({
           </>
         )}
         <br />
-        {address.city}, {address.zoneCode} {address.zip}
+        {address.city}, {address.province} {address.zip}
         <br />
-        {address.territoryCode}
-        {address.phoneNumber && (
+        {address.country}
+        {address.phone && (
           <>
             <br />
-            {address.phoneNumber}
+            {address.phone}
           </>
         )}
       </p>

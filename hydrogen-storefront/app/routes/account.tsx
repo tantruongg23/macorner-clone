@@ -1,5 +1,7 @@
-import {Form, NavLink, Outlet} from 'react-router';
+import {Form, NavLink, Outlet, redirect} from 'react-router';
 import type {Route} from './+types/account';
+import {CUSTOMER_QUERY} from '~/lib/graphql/customer';
+import {getCustomerAccessToken} from '~/lib/customerAuth';
 
 export function meta() {
   return [
@@ -8,19 +10,24 @@ export function meta() {
     {name: 'robots', content: 'noindex'},
   ];
 }
-import {CUSTOMER_DETAILS_QUERY} from '~/graphql/customer-account/customer';
 
-export async function loader({context}: Route.LoaderArgs) {
-  // customerAccount.query auto-redirects to login when unauthenticated.
-  const {data, errors} = await context.customerAccount.query(
-    CUSTOMER_DETAILS_QUERY,
-  );
+export async function loader({request, context}: Route.LoaderArgs) {
+  const customerAccessToken = getCustomerAccessToken(context.session);
 
-  if (errors?.length || !data?.customer) {
-    throw new Error('Customer not found');
+  if (!customerAccessToken) {
+    const returnTo = new URL(request.url).pathname;
+    throw redirect(`/account/login?return_to=${returnTo}`);
   }
 
-  return {customer: data.customer};
+  const result = await context.storefront.query(CUSTOMER_QUERY, {
+    variables: {customerAccessToken},
+  });
+
+  if (result.errors?.length || !result.customer) {
+    throw redirect('/account/login');
+  }
+
+  return {customer: result.customer};
 }
 
 export default function AccountLayout({loaderData}: Route.ComponentProps) {
