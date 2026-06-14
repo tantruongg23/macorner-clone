@@ -2,30 +2,31 @@ import {redirect, useFetcher} from 'react-router';
 import {Link} from 'react-router';
 import {Money} from '@shopify/hydrogen';
 import type {Route} from './+types/account.orders.$id';
-import {CUSTOMER_ORDER_QUERY} from '~/lib/graphql/customer';
 
 export function meta({data}: Route.MetaArgs) {
-  const orderName = data?.order?.name ?? 'Order';
+  const orderName = (data as any)?.order?.name ?? 'Order';
   return [
     {title: `${orderName} — Macorner`},
     {name: 'description', content: `View details for ${orderName}.`},
     {name: 'robots', content: 'noindex'},
   ];
 }
+import {CUSTOMER_ORDER_DETAIL_QUERY} from '~/graphql/customer-account/customer';
 
 export async function loader({params, context}: Route.LoaderArgs) {
   const orderId = atob(params.id ?? '');
   if (!orderId) throw new Response('Not found', {status: 404});
 
-  const result = await context.storefront.query(CUSTOMER_ORDER_QUERY, {
-    variables: {id: orderId},
-  });
+  const {data, errors} = await context.customerAccount.query(
+    CUSTOMER_ORDER_DETAIL_QUERY,
+    {variables: {orderId}},
+  );
 
-  if (result.errors?.length || !result.order) {
+  if (errors?.length || !(data as any)?.order) {
     throw new Response('Order not found', {status: 404});
   }
 
-  return {order: result.order};
+  return {order: (data as any).order};
 }
 
 export async function action({request, context}: Route.ActionArgs) {
@@ -53,7 +54,7 @@ function StatusBadge({status}: {status: string}) {
   const color =
     status === 'PAID' || status === 'SUCCESS' || status === 'FULFILLED'
       ? 'bg-emerald-100 text-emerald-700'
-      : status === 'PENDING' || status === 'IN_PROGRESS' || status === 'PARTIAL'
+      : status === 'PENDING' || status === 'IN_PROGRESS'
       ? 'bg-yellow-100 text-yellow-700'
       : 'bg-gray-100 text-[rgba(18,18,18,0.6)]';
 
@@ -67,15 +68,16 @@ function StatusBadge({status}: {status: string}) {
 }
 
 export default function OrderDetail({loaderData}: Route.ComponentProps) {
-  const {order} = loaderData;
+  const {order} = loaderData as {order: any};
   const reorderFetcher = useFetcher<typeof action>();
 
-  const lineItems = order.lineItems?.nodes ?? [];
-  const tracking = order.successfulFulfillments?.[0]?.trackingInfo?.[0];
+  const lineItems: any[] = order.lineItems?.nodes ?? [];
+  const fulfillment = order.fulfillments?.nodes?.[0];
+  const tracking = fulfillment?.trackingInformation?.[0];
 
   const reorderLines = lineItems
     .filter((l) => l.variant?.id)
-    .map((l) => ({merchandiseId: l.variant!.id, quantity: l.quantity}));
+    .map((l) => ({merchandiseId: l.variant.id, quantity: l.quantity}));
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', {
@@ -100,8 +102,8 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
           {order.financialStatus && (
             <StatusBadge status={order.financialStatus} />
           )}
-          {order.fulfillmentStatus && (
-            <StatusBadge status={order.fulfillmentStatus} />
+          {fulfillment?.status && (
+            <StatusBadge status={fulfillment.status} />
           )}
           {reorderLines.length > 0 && (
             <reorderFetcher.Form method="post">
@@ -128,6 +130,9 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
         <div className="mb-6 p-4 rounded-[10px] bg-blue-50 border border-blue-100">
           <p className="text-[13px] text-[rgb(18,18,18)] m-0">
             <span className="font-medium">Tracking:</span>{' '}
+            {tracking.company && (
+              <span className="mr-2">{tracking.company}</span>
+            )}
             {tracking.url ? (
               <a
                 href={tracking.url}
@@ -155,17 +160,17 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
             </tr>
           </thead>
           <tbody>
-            {lineItems.map((line, index) => (
+            {lineItems.map((line: any) => (
               <tr
-                key={index}
+                key={line.id}
                 className="border-t border-[var(--color-header-border)]"
               >
                 <td className="px-4 py-4">
                   <div className="flex items-start gap-3">
-                    {line.variant?.image?.url && (
+                    {line.image?.url && (
                       <img
-                        src={line.variant.image.url}
-                        alt={line.variant.image.altText ?? line.title}
+                        src={line.image.url}
+                        alt={line.image.altText ?? line.title}
                         width={56}
                         height={56}
                         className="rounded-[8px] object-cover flex-shrink-0 bg-[rgb(243,243,243)]"
@@ -185,9 +190,9 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
                           {line.title}
                         </span>
                       )}
-                      {line.variant?.title && line.variant.title !== 'Default Title' && (
+                      {line.variantTitle && line.variantTitle !== 'Default Title' && (
                         <p className="text-[12px] text-[rgba(18,18,18,0.5)] m-0 mt-0.5">
-                          {line.variant.title}
+                          {line.variantTitle}
                         </p>
                       )}
                     </div>
@@ -197,7 +202,20 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
                   {line.quantity}
                 </td>
                 <td className="px-4 py-4 text-right text-[rgba(18,18,18,0.8)]">
-                  <Money data={line.discountedTotalPrice} />
+                  {line.discountedTotalPrice ? (
+                    <Money data={line.discountedTotalPrice} />
+                  ) : line.price ? (
+                    <Money
+                      data={{
+                        amount: String(
+                          parseFloat(line.price.amount) * line.quantity,
+                        ),
+                        currencyCode: line.price.currencyCode,
+                      }}
+                    />
+                  ) : (
+                    '—'
+                  )}
                 </td>
               </tr>
             ))}
@@ -224,10 +242,10 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
                 </>
               )}
               <br />
-              {order.shippingAddress.city}, {order.shippingAddress.province}{' '}
+              {order.shippingAddress.city}, {order.shippingAddress.zoneCode}{' '}
               {order.shippingAddress.zip}
               <br />
-              {order.shippingAddress.country}
+              {order.shippingAddress.territoryCode}
             </p>
           </div>
         )}
@@ -238,10 +256,10 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
             Summary
           </h3>
           <div className="space-y-1.5">
-            {order.subtotalPrice && (
+            {order.subtotal && (
               <div className="flex sm:justify-end gap-8 text-[14px] text-[rgba(18,18,18,0.7)]">
                 <span className="w-20 sm:w-auto">Subtotal</span>
-                <Money data={order.subtotalPrice} />
+                <Money data={order.subtotal} />
               </div>
             )}
             {order.totalTax && (
@@ -252,7 +270,7 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
             )}
             <div className="flex sm:justify-end gap-8 text-[15px] font-semibold text-[rgb(18,18,18)] pt-1.5 border-t border-[var(--color-header-border)]">
               <span className="w-20 sm:w-auto">Total</span>
-              <Money data={order.currentTotalPrice} />
+              <Money data={order.totalPrice} />
             </div>
           </div>
         </div>
