@@ -107,6 +107,8 @@ export const CUSTOMER_ORDER_DETAIL_QUERY = `#graphql
           title
           quantity
           variantTitle
+          variantId
+          productId
           image {
             url
             altText
@@ -117,15 +119,9 @@ export const CUSTOMER_ORDER_DETAIL_QUERY = `#graphql
             amount
             currencyCode
           }
-          discountedTotalPrice {
+          totalPriceWithDiscounts {
             amount
             currencyCode
-          }
-          variant {
-            id
-            product {
-              handle
-            }
           }
         }
       }
@@ -200,14 +196,13 @@ export const DELETE_ADDRESS_MUTATION = `#graphql
   }
 ` as const;
 
+// The Customer Account API has no dedicated "set default address" mutation.
+// Setting a default is done via customerAddressUpdate with defaultAddress: true.
 export const SET_DEFAULT_ADDRESS_MUTATION = `#graphql
   mutation SetDefaultAddress($addressId: ID!) {
-    customerDefaultAddressUpdate(addressId: $addressId) {
-      customer {
+    customerAddressUpdate(addressId: $addressId, defaultAddress: true) {
+      customerAddress {
         id
-        defaultAddress {
-          id
-        }
       }
       userErrors {
         field

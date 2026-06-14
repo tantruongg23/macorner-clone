@@ -16,7 +16,7 @@ import favicon from '~/assets/favicon.svg';
 import { FOOTER_QUERY, HEADER_QUERY } from '~/lib/graphql/menu';
 import { NavigationService } from '~/lib/navigation';
 import { shopifyMenuToNav } from '~/lib/shopifyMenuToNav';
-import { getCustomerAccessToken, getCustomerFirstName } from '~/lib/customerAuth';
+import { CUSTOMER_DETAILS_QUERY } from '~/graphql/customer-account/customer';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from './components/PageLayout';
@@ -130,7 +130,7 @@ async function loadCriticalData({context}: Route.LoaderArgs) {
  * Make sure to not throw any errors here, as it will cause the page to 500.
  */
 function loadDeferredData({context}: Route.LoaderArgs) {
-  const {storefront, session, cart} = context;
+  const {storefront, customerAccount, cart} = context;
 
   // defer the footer query (below the fold)
   const footer = storefront
@@ -146,12 +146,17 @@ function loadDeferredData({context}: Route.LoaderArgs) {
       return null;
     });
 
-  const customerAccessToken = getCustomerAccessToken(session);
-  const customer = Promise.resolve(
-    customerAccessToken
-      ? {firstName: getCustomerFirstName(session)}
-      : null,
-  );
+  // Resolve the signed-in customer (first name) via the Customer Account API.
+  // Deferred + guarded so a logged-out visitor (or API hiccup) never blocks render.
+  const customer = (async () => {
+    try {
+      if (!(await customerAccount.isLoggedIn())) return null;
+      const {data} = await customerAccount.query(CUSTOMER_DETAILS_QUERY);
+      return {firstName: data?.customer?.firstName ?? null};
+    } catch {
+      return null;
+    }
+  })();
 
   return {
     cart: cart.get(),

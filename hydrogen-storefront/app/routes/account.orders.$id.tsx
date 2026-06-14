@@ -76,8 +76,8 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
   const tracking = fulfillment?.trackingInformation?.[0];
 
   const reorderLines = lineItems
-    .filter((l) => l.variant?.id)
-    .map((l) => ({merchandiseId: l.variant.id, quantity: l.quantity}));
+    .filter((l) => l.variantId)
+    .map((l) => ({merchandiseId: l.variantId, quantity: l.quantity}));
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', {
@@ -178,18 +178,9 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
                       />
                     )}
                     <div>
-                      {line.variant?.product?.handle ? (
-                        <Link
-                          to={`/products/${line.variant.product.handle}`}
-                          className="text-[rgb(18,18,18)] font-medium hover:text-[#f7921f] transition-colors"
-                        >
-                          {line.title}
-                        </Link>
-                      ) : (
-                        <span className="text-[rgb(18,18,18)] font-medium">
-                          {line.title}
-                        </span>
-                      )}
+                      <span className="text-[rgb(18,18,18)] font-medium">
+                        {line.title}
+                      </span>
                       {line.variantTitle && line.variantTitle !== 'Default Title' && (
                         <p className="text-[12px] text-[rgba(18,18,18,0.5)] m-0 mt-0.5">
                           {line.variantTitle}
@@ -202,8 +193,8 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
                   {line.quantity}
                 </td>
                 <td className="px-4 py-4 text-right text-[rgba(18,18,18,0.8)]">
-                  {line.discountedTotalPrice ? (
-                    <Money data={line.discountedTotalPrice} />
+                  {line.totalPriceWithDiscounts ? (
+                    <Money data={line.totalPriceWithDiscounts} />
                   ) : line.price ? (
                     <Money
                       data={{

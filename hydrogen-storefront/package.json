@@ -8,6 +8,7 @@
     "start": "shopify hydrogen dev --codegen",
     "build": "shopify hydrogen build --codegen",
     "dev": "shopify hydrogen dev --codegen",
+    "dev:auth": "shopify hydrogen dev --codegen --customer-account-push",
     "preview": "shopify hydrogen preview --build",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "react-router typegen && tsc --noEmit",
