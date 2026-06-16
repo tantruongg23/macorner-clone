@@ -47,7 +47,7 @@ export function BagIcon(props: Props) {
   );
 }
 
-// Cart icon — extracted verbatim from macorner.co (#cart-icon-bubble svg), viewBox 0 0 26 20.
+// Cart icon — extracted verbatim from harpera.co (#cart-icon-bubble svg), viewBox 0 0 26 20.
 // Layered fills approximate the original two-tone (#121212 @ 80% + #4d4d4d).
 export function CartIcon(props: Props) {
   return (
@@ -123,7 +123,7 @@ export function StarIcon(props: Props) {
   );
 }
 
-// Social icons — extracted verbatim from macorner.co footer (viewBox 0 0 22 23, white fill).
+// Social icons — extracted verbatim from harpera.co footer (viewBox 0 0 22 23, white fill).
 export function FacebookIcon(props: Props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none" aria-hidden="true" {...props}>

@@ -4,7 +4,7 @@ import {WishlistHeart} from './WishlistHeart';
 import {JudgeMeStarBadge} from './ProductReviews';
 
 function fmtMoney(amount: string) {
-  // Always display as USD dollars since macorner.co is a USD store
+  // Always display as USD dollars since harpera.co is a USD store
   const n = parseFloat(amount);
   return `$${Number.isNaN(n) ? '0.00' : n.toFixed(2)}`;
 }

@@ -6,7 +6,7 @@ import type {Route} from './+types/account.orders.$id';
 export function meta({data}: Route.MetaArgs) {
   const orderName = (data as any)?.order?.name ?? 'Order';
   return [
-    {title: `${orderName} — Macorner`},
+    {title: `${orderName} — Harpera`},
     {name: 'description', content: `View details for ${orderName}.`},
     {name: 'robots', content: 'noindex'},
   ];

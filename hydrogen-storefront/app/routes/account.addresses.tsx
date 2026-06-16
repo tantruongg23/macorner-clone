@@ -4,7 +4,7 @@ import type {Route} from './+types/account.addresses';
 
 export function meta() {
   return [
-    {title: 'My Addresses — Macorner'},
+    {title: 'My Addresses — Harpera'},
     {name: 'description', content: 'Manage your saved shipping addresses.'},
     {name: 'robots', content: 'noindex'},
   ];

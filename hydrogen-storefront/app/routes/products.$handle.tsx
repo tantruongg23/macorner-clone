@@ -2,13 +2,13 @@ import {redirect} from 'react-router';
 import {Analytics} from '@shopify/hydrogen';
 import type {Route} from './+types/products.$handle';
 import {PRODUCT_QUERY, PRODUCT_RECOMMENDATIONS_QUERY} from '~/lib/graphql/product';
-import {ProductGallery} from '~/components/macorner/ProductGallery';
-import {ProductForm} from '~/components/macorner/ProductForm';
-import {ProductReviews} from '~/components/macorner/ProductReviews';
-import {ProductCard} from '~/components/macorner/ProductCard';
-import {Breadcrumb} from '~/components/macorner/Breadcrumb';
-import {SimilarCategories} from '~/components/macorner/SimilarCategories';
-import {JsonLd} from '~/components/macorner/JsonLd';
+import {ProductGallery} from '~/components/harpera/ProductGallery';
+import {ProductForm} from '~/components/harpera/ProductForm';
+import {ProductReviews} from '~/components/harpera/ProductReviews';
+import {ProductCard} from '~/components/harpera/ProductCard';
+import {Breadcrumb} from '~/components/harpera/Breadcrumb';
+import {SimilarCategories} from '~/components/harpera/SimilarCategories';
+import {JsonLd} from '~/components/harpera/JsonLd';
 
 export async function loader({params, request, context}: Route.LoaderArgs) {
   const {handle} = params;
@@ -82,12 +82,12 @@ export async function loader({params, request, context}: Route.LoaderArgs) {
 export function meta({data, location}: Route.MetaArgs) {
   if (!data?.product) return [{title: 'Product Not Found'}];
   const {product} = data;
-  const title = product.seo?.title ?? `${product.title} — Macorner`;
+  const title = product.seo?.title ?? `${product.title} — Harpera`;
   const description =
     product.seo?.description ??
     (product.description ? product.description.slice(0, 155) : '');
   const ogImage = product.images?.nodes?.[0]?.url;
-  const canonical = `https://macorner.co${location.pathname}`;
+  const canonical = `https://harpera.co${location.pathname}`;
 
   return [
     {title},
@@ -135,11 +135,11 @@ export default function ProductPage({loaderData}: Route.ComponentProps) {
     name: product.title,
     description: product.description ?? '',
     image: product.images?.nodes?.map((img: {url: string}) => img.url) ?? [],
-    brand: {'@type': 'Brand', name: product.vendor ?? 'Macorner'},
+    brand: {'@type': 'Brand', name: product.vendor ?? 'Harpera'},
     offers: selectedVariant
       ? {
           '@type': 'Offer',
-          // Always USD since macorner.co displays prices as USD dollars
+          // Always USD since harpera.co displays prices as USD dollars
           priceCurrency: 'USD',
           price: selectedVariant.price.amount,
           availability: selectedVariant.availableForSale
@@ -156,7 +156,7 @@ export default function ProductPage({loaderData}: Route.ComponentProps) {
       '@type': 'ListItem',
       position: i + 1,
       name: item.label,
-      ...(item.href ? {item: `https://macorner.co${item.href}`} : {}),
+      ...(item.href ? {item: `https://harpera.co${item.href}`} : {}),
     })),
   };
 
@@ -170,7 +170,7 @@ export default function ProductPage({loaderData}: Route.ComponentProps) {
     <div className="bg-white">
       <JsonLd data={productJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
-      <div className="container-macorner py-8 md:py-12">
+      <div className="container-harpera py-8 md:py-12">
         <Breadcrumb items={breadcrumbItems} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14">
           {/* Gallery */}

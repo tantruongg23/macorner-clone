@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router';
 
 export function meta() {
-  return [{title: 'Track Your Order | Macorner'}];
+  return [{title: 'Track Your Order | Harpera'}];
 }
 
 export default function TrackingOrder() {
@@ -12,7 +12,7 @@ export default function TrackingOrder() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Order tracking on Macorner is gated behind the customer account.
+    // Order tracking on Harpera is gated behind the customer account.
     // Send shoppers to their order history where live status is available.
     navigate('/account/orders');
   }

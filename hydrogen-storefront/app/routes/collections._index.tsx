@@ -50,7 +50,7 @@ export async function loader({request, context}: Route.LoaderArgs) {
 }
 
 export function meta() {
-  return [{title: 'Collections | Macorner'}];
+  return [{title: 'Collections | Harpera'}];
 }
 
 export default function CollectionsIndex({loaderData}: Route.ComponentProps) {

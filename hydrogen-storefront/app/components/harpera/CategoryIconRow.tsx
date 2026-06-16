@@ -15,7 +15,7 @@ export function CategoryIconRow({ collections }: { collections?: CategoryIconCol
 
   return (
     <section className="py-8 md:py-10 border-b border-[rgba(18,18,18,0.06)]">
-      <div className="container-macorner">
+      <div className="container-harpera">
         <div className="overflow-x-auto no-scrollbar">
           <div className="flex gap-5 md:gap-8 justify-center min-w-max md:min-w-full">
             {items.map((category) => (

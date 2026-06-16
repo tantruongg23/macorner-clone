@@ -5,7 +5,7 @@ import type {CartApiQueryFragment} from 'storefrontapi.generated';
 import {useAside} from '~/components/Aside';
 import {CartLineItem, type CartLine} from '~/components/CartLineItem';
 import {CartSummary} from './CartSummary';
-import {FreeShippingBar} from '~/components/macorner/FreeShippingBar';
+import {FreeShippingBar} from '~/components/harpera/FreeShippingBar';
 
 export type CartLayout = 'page' | 'aside';
 

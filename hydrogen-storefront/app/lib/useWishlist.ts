@@ -1,6 +1,6 @@
 import {useState, useEffect, useCallback} from 'react';
 
-const STORAGE_KEY = 'macorner:wishlist';
+const STORAGE_KEY = 'harpera:wishlist';
 
 export interface WishlistItem {
   handle: string;

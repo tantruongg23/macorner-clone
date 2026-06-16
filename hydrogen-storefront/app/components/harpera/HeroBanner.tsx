@@ -38,7 +38,7 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
   if (slides.length === 1) {
     return (
       <section className="py-3 md:py-6">
-        <div className="container-macorner">
+        <div className="container-harpera">
           <SlideContent data={slides[0]} />
         </div>
       </section>
@@ -51,7 +51,7 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="container-macorner">
+      <div className="container-harpera">
         <div className="relative">
           <div ref={emblaRef} className="overflow-hidden rounded-[24px]">
             <div className="flex">

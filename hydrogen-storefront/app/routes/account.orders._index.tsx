@@ -4,8 +4,8 @@ import type {Route} from './+types/account.orders._index';
 
 export function meta() {
   return [
-    {title: 'My Orders — Macorner'},
-    {name: 'description', content: 'View your Macorner order history.'},
+    {title: 'My Orders — Harpera'},
+    {name: 'description', content: 'View your Harpera order history.'},
     {name: 'robots', content: 'noindex'},
   ];
 }

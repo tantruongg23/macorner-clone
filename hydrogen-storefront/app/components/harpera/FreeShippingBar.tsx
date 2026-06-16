@@ -1,4 +1,4 @@
-// Free-shipping threshold in USD cents (75 USD). Verified from live macorner.co
+// Free-shipping threshold in USD cents (75 USD). Verified from live harpera.co
 // cart drawer; the bar is present on the live site showing "X more to free shipping".
 // If the threshold changes, update FREE_SHIP_THRESHOLD_CENTS below.
 const FREE_SHIP_THRESHOLD_CENTS = 7500;

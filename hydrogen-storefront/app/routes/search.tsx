@@ -4,8 +4,8 @@ import type {Route} from './+types/search';
 export function meta({location}: Route.MetaArgs) {
   const q = new URLSearchParams(location.search).get('q') ?? '';
   return [
-    {title: q ? `Search: "${q}" — Macorner` : 'Search — Macorner'},
-    {name: 'description', content: 'Search for personalized gifts at Macorner.'},
+    {title: q ? `Search: "${q}" — Harpera` : 'Search — Harpera'},
+    {name: 'description', content: 'Search for personalized gifts at Harpera.'},
     {name: 'robots', content: 'noindex'},
   ];
 }
@@ -13,7 +13,7 @@ import {
   getEmptyPredictiveSearchResult,
   type PredictiveSearchReturn,
 } from '~/lib/search';
-import {CollectionProductCard} from '~/components/macorner/CollectionProductCard';
+import {CollectionProductCard} from '~/components/harpera/CollectionProductCard';
 import type {ProductNode} from '~/types/collection';
 
 // ─── Sort options available on the Storefront search API ──────────────────────

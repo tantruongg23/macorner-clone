@@ -32,7 +32,7 @@
   --color-brand-border: rgba(18, 18, 18, 0.1);
   --color-brand-star: #f5a623;
 
-  /* Header-specific tokens (extracted from macorner.co computed styles 2026-05-23) */
+  /* Header-specific tokens (extracted from harpera.co computed styles 2026-05-23) */
   --color-header-text: #353535;
   --color-header-border: #d3d3d3;
   --color-header-search-border: rgba(18, 18, 18, 0.75);
@@ -101,7 +101,7 @@
     color: var(--color-primary);
   }
 
-  /* Match macorner.co: every anchor has text-decoration: none site-wide with smooth hover transitions. */
+  /* Match harpera.co: every anchor has text-decoration: none site-wide with smooth hover transitions. */
   a {
     color: inherit;
     text-decoration: none;
@@ -116,7 +116,7 @@
 }
 
 @layer utilities {
-  .container-macorner {
+  .container-harpera {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
@@ -187,7 +187,7 @@
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-  /* list-menu — macorner.co semantic tab/submenu pattern */
+  /* list-menu — harpera.co semantic tab/submenu pattern */
   .list-menu {
     list-style: none;
     margin: 0;

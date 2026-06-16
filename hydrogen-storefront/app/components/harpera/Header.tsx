@@ -5,8 +5,8 @@ import {SearchFormPredictive} from '~/components/SearchFormPredictive';
 import {useAside} from '~/components/Aside';
 import {useWishlist} from '~/lib/useWishlist';
 import {useRecentSearches} from '~/lib/useRecentSearches';
-import {MacornerSearchOverlay} from './SearchOverlay';
-import {MACORNER_NAV, type NavItem} from '~/lib/staticNav';
+import {HarperaSearchOverlay} from './SearchOverlay';
+import {HARPERA_NAV, type NavItem} from '~/lib/staticNav';
 
 import {
   ArrowLeftIcon,
@@ -268,13 +268,13 @@ function flagEmoji(code: string): string {
 
 interface Props {
   cart?: Promise<CartApiQueryFragment | null>;
-  /** Live nav from Shopify. Falls back to MACORNER_NAV when omitted/empty. */
+  /** Live nav from Shopify. Falls back to HARPERA_NAV when omitted/empty. */
   navItems?: NavItem[];
   customer?: Promise<{firstName: string | null} | null>;
 }
 
-export function MacornerHeader({cart, navItems, customer}: Props) {
-  const navData = navItems?.length ? navItems : MACORNER_NAV;
+export function HarperaHeader({cart, navItems, customer}: Props) {
+  const navData = navItems?.length ? navItems : HARPERA_NAV;
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
@@ -284,7 +284,7 @@ export function MacornerHeader({cart, navItems, customer}: Props) {
   const [pendingCode, setPendingCode] = useState('US');
 
   useEffect(() => {
-    const saved = localStorage.getItem('macorner_region');
+    const saved = localStorage.getItem('harpera_region');
     if (saved && COUNTRIES.some((c) => c.code === saved)) {
       setSelectedCode(saved);
       setPendingCode(saved);
@@ -339,15 +339,15 @@ export function MacornerHeader({cart, navItems, customer}: Props) {
           {/* Logo */}
           <Link
             to="/"
-            aria-label="Macorner"
+            aria-label="Harpera"
             className="shrink-0 inline-flex items-center"
           >
             <img
-              src="/icons/logo-macorner.svg"
-              alt="Macorner"
+              src="/icons/logo-harpera.svg"
+              alt="Harpera"
               width={200}
-              height={24}
-              className="w-[151px] min-[990px]:w-[200px] h-auto block"
+              height={94}
+              className="w-[120px] min-[990px]:w-[160px] h-auto block"
             />
           </Link>
 
@@ -402,7 +402,7 @@ export function MacornerHeader({cart, navItems, customer}: Props) {
                         <SearchIcon width={18} height={18} />
                       </button>
                     </div>
-                    <MacornerSearchOverlay
+                    <HarperaSearchOverlay
                       goToSearch={handleGoToSearch}
                       inputRef={inputRef}
                       containerRef={searchContainerRef}
@@ -551,7 +551,7 @@ export function MacornerHeader({cart, navItems, customer}: Props) {
           onPendingChange={setPendingCode}
           onSave={() => {
             setSelectedCode(pendingCode);
-            localStorage.setItem('macorner_region', pendingCode);
+            localStorage.setItem('harpera_region', pendingCode);
             setLangOpen(false);
           }}
           onClose={() => setLangOpen(false)}
@@ -567,7 +567,7 @@ function DesktopNavItem({item}: {item: NavItem}) {
   const hasDropdown = item.groups && item.groups.length > 0;
   const groupCount = item.groups?.length ?? 0;
 
-  /* Grid column logic matching macorner.co:
+  /* Grid column logic matching harpera.co:
      5 or 10 groups → 5-column grid (10 = two rows stacked per column)
      9 groups        → 3-column grid (three stacked per column)
      other counts    → auto equal columns */
@@ -669,7 +669,7 @@ function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[numbe
   return (
     <div className="flex flex-col gap-3">
       {group.seeAllUrl ? (
-        // Title itself links to the group's collection (matches macorner.co — no separate "See All").
+        // Title itself links to the group's collection (matches harpera.co — no separate "See All").
         <Link
           to={group.seeAllUrl}
           className={`${titleClass} hover:text-[#1e4e79] transition-colors`}
@@ -954,7 +954,7 @@ function MobileSearchOverlay({
                     <SearchIcon width={16} height={16} />
                   </button>
                 </div>
-                <MacornerSearchOverlay
+                <HarperaSearchOverlay
                   goToSearch={handleGoToSearch}
                   inputRef={inputRef}
                   containerRef={panelRef}

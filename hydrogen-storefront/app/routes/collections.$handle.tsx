@@ -2,11 +2,11 @@ import {useState} from 'react';
 import type {Route} from './+types/collections.$handle';
 import {SORT_OPTIONS} from '~/types/collection';
 import type {Filter, SortByValue, ProductNode} from '~/types/collection';
-import {CollectionBanner} from '~/components/macorner/CollectionBanner';
-import {CollectionFilters} from '~/components/macorner/CollectionFilters';
-import {CollectionToolbar} from '~/components/macorner/CollectionToolbar';
-import {CollectionProductCard} from '~/components/macorner/CollectionProductCard';
-import {CollectionPagination} from '~/components/macorner/CollectionPagination';
+import {CollectionBanner} from '~/components/harpera/CollectionBanner';
+import {CollectionFilters} from '~/components/harpera/CollectionFilters';
+import {CollectionToolbar} from '~/components/harpera/CollectionToolbar';
+import {CollectionProductCard} from '~/components/harpera/CollectionProductCard';
+import {CollectionPagination} from '~/components/harpera/CollectionPagination';
 
 const PRODUCTS_PER_PAGE = 16;
 
@@ -132,11 +132,11 @@ export async function loader({params, request, context}: Route.LoaderArgs) {
 }
 
 export function meta({data}: Route.MetaArgs) {
-  if (!data?.collection) return [{title: 'Collection | Macorner'}];
-  const title = `${data.collection.title} — Macorner`;
+  if (!data?.collection) return [{title: 'Collection | Harpera'}];
+  const title = `${data.collection.title} — Harpera`;
   const description = data.collection.description
     ? data.collection.description.slice(0, 155)
-    : `Shop our ${data.collection.title} collection at Macorner.`;
+    : `Shop our ${data.collection.title} collection at Harpera.`;
   return [
     {title},
     {name: 'description', content: description},

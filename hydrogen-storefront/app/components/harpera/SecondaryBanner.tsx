@@ -10,7 +10,7 @@ export function SecondaryBanner({data}: {data: SecondaryBannerData}) {
 
   return (
     <section className="py-3 md:py-4">
-      <div className="container-macorner">
+      <div className="container-harpera">
         <div className="relative overflow-hidden rounded-[24px] bg-[#E8F4F8] grid grid-cols-1 md:grid-cols-[55%_45%] min-h-[200px] md:min-h-[320px]">
           {/* Left: image */}
           {data.image && (

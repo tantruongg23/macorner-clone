@@ -118,7 +118,7 @@ async function loadCriticalData({context}: Route.LoaderArgs) {
   });
 
   // Convert Shopify's 3-level menu → NavItem[].
-  // Falls back to MACORNER_NAV when the "main-menu" in Shopify Admin is empty.
+  // Falls back to HARPERA_NAV when the "main-menu" in Shopify Admin is empty.
   const navItems = shopifyMenuToNav(header?.menu);
 
   return {header, navItems};

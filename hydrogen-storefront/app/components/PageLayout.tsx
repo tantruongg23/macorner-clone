@@ -7,9 +7,9 @@ import type {
 } from 'storefrontapi.generated';
 import type {NavItem} from '~/lib/staticNav';
 import {Aside} from '~/components/Aside';
-import {MacornerFooter} from '~/components/macorner/Footer';
-import {MacornerHeader} from '~/components/macorner/Header';
-import {MobileNavDrawer} from '~/components/macorner/MobileNavDrawer';
+import {HarperaFooter} from '~/components/harpera/Footer';
+import {HarperaHeader} from '~/components/harpera/Header';
+import {MobileNavDrawer} from '~/components/harpera/MobileNavDrawer';
 import {CartMain} from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
@@ -41,9 +41,9 @@ export function PageLayout({
       <CartAside cart={cart} />
       <SearchAside />
       <MobileNavDrawer navItems={navItems} customer={customer} />
-      <MacornerHeader cart={cart} navItems={navItems} customer={customer} />
+      <HarperaHeader cart={cart} navItems={navItems} customer={customer} />
       <main>{children}</main>
-      <MacornerFooter />
+      <HarperaFooter />
     </Aside.Provider>
   );
 }

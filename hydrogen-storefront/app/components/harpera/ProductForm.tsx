@@ -119,7 +119,7 @@ const COLOR_MAP: Record<string, string> = {
 };
 
 function formatMoney(money: Money) {
-  // Always display as USD dollars since macorner.co is a USD store
+  // Always display as USD dollars since harpera.co is a USD store
   const amount = parseFloat(money.amount);
   return `$${amount.toFixed(2)}`;
 }

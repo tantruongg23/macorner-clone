@@ -1,7 +1,7 @@
 import {WishlistHeart} from './WishlistHeart';
 import {JudgeMeStarBadge} from './ProductReviews';
 
-export interface MacornerProductCard {
+export interface HarperaProductCard {
   title: string;
   price: string;
   imageSrc: string;
@@ -11,7 +11,7 @@ export interface MacornerProductCard {
   id?: string;
 }
 
-export function ProductCard({product}: {product: MacornerProductCard}) {
+export function ProductCard({product}: {product: HarperaProductCard}) {
   // Derive handle from href if not explicitly provided (/products/{handle})
   const handle = product.handle ?? product.href.split('/').pop() ?? '';
 

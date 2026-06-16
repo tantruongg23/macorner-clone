@@ -2,7 +2,7 @@ import {Link} from 'react-router';
 import {useWishlist} from '~/lib/useWishlist';
 
 export function meta() {
-  return [{title: 'Your Wishlist | Macorner'}];
+  return [{title: 'Your Wishlist | Harpera'}];
 }
 
 export default function Wishlist() {

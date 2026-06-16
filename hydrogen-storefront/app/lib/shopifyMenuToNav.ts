@@ -1,13 +1,13 @@
 /**
  * Converts a Shopify 3-level navigation menu (fetched via the extended MENU_FRAGMENT)
- * into the NavItem[] format consumed by MacornerHeader and MobileNavDrawer.
+ * into the NavItem[] format consumed by HarperaHeader and MobileNavDrawer.
  *
  * Structure expected from Shopify:
  *   menu.items[]            → Level 1  (Graduation, Gifts, Home & Living …)
  *     .items[]              → Level 2  (By Occasion, By Recipient …)
  *       .items[]            → Level 3  (Summer, Anniversary, Wedding …)
  *
- * Falls back to MACORNER_NAV when the Shopify menu is empty, null, or not yet
+ * Falls back to HARPERA_NAV when the Shopify menu is empty, null, or not yet
  * configured — so the site always has a working navigation.
  *
  * After changing MENU_FRAGMENT run:
@@ -16,7 +16,7 @@
  */
 
 import type {NavGroup, NavItem, NavLeaf} from './staticNav';
-import {MACORNER_NAV} from './staticNav';
+import {HARPERA_NAV} from './staticNav';
 
 /* ─── Local types that mirror the 3-level Shopify MenuItem shape ────────── */
 
@@ -64,11 +64,11 @@ function toRelativePath(url: string | null | undefined): string {
 /**
  * @param menu  The `menu` field from HeaderQuery (pass `header.menu`).
  *              Typed as `unknown` so it compiles before running codegen.
- * @param fallback  NavItem[] to use when Shopify returns nothing (default: MACORNER_NAV).
+ * @param fallback  NavItem[] to use when Shopify returns nothing (default: HARPERA_NAV).
  */
 export function shopifyMenuToNav(
   menu: unknown,
-  fallback: NavItem[] = MACORNER_NAV,
+  fallback: NavItem[] = HARPERA_NAV,
 ): NavItem[] {
   const m = menu as ShopifyMenu;
 

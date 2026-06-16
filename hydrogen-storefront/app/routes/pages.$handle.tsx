@@ -16,8 +16,8 @@ export async function loader({params, context}: Route.LoaderArgs) {
 }
 
 export function meta({data}: Route.MetaArgs) {
-  if (!data?.page) return [{title: 'Page | Macorner'}];
-  const title = data.page.seo?.title ?? `${data.page.title} | Macorner`;
+  if (!data?.page) return [{title: 'Page | Harpera'}];
+  const title = data.page.seo?.title ?? `${data.page.title} | Harpera`;
   const description = data.page.seo?.description ?? '';
   return [
     {title},
@@ -36,12 +36,12 @@ export default function Page({loaderData}: Route.ComponentProps) {
   return (
     <>
       <style>{`
-        .macorner-page {
+        .harpera-page {
           font-family: Poppins, sans-serif;
           color: rgba(18, 18, 18, 0.75);
           background-color: #fff;
         }
-        .macorner-page__title {
+        .harpera-page__title {
           font-size: 28px;
           line-height: 1.3;
           letter-spacing: 0.6px;
@@ -51,22 +51,22 @@ export default function Page({loaderData}: Route.ComponentProps) {
           margin: 0 0 24px;
         }
         @media screen and (min-width: 750px) {
-          .macorner-page__title { font-size: 40px; }
+          .harpera-page__title { font-size: 40px; }
         }
-        .macorner-rte { font-size: 16px; line-height: 1.7; letter-spacing: 0.4px; }
-        .macorner-rte h2 { font-size: 24px; line-height: 1.3; font-weight: 600; color: rgb(18,18,18); margin: 32px 0 16px; }
-        .macorner-rte h3 { font-size: 20px; line-height: 1.3; font-weight: 600; color: rgb(18,18,18); margin: 24px 0 12px; }
-        .macorner-rte p { margin: 0 0 16px; }
-        .macorner-rte a { color: #1e4e79; text-decoration: underline; }
-        .macorner-rte ul, .macorner-rte ol { margin: 0 0 16px; padding-left: 24px; }
-        .macorner-rte li { margin-bottom: 8px; }
-        .macorner-rte img { max-width: 100%; height: auto; border-radius: 8px; margin: 16px 0; }
-        .macorner-rte table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-        .macorner-rte th, .macorner-rte td { border: 1px solid #e5e7eb; padding: 10px 12px; text-align: left; }
-        .macorner-rte strong { color: rgb(18,18,18); }
+        .harpera-rte { font-size: 16px; line-height: 1.7; letter-spacing: 0.4px; }
+        .harpera-rte h2 { font-size: 24px; line-height: 1.3; font-weight: 600; color: rgb(18,18,18); margin: 32px 0 16px; }
+        .harpera-rte h3 { font-size: 20px; line-height: 1.3; font-weight: 600; color: rgb(18,18,18); margin: 24px 0 12px; }
+        .harpera-rte p { margin: 0 0 16px; }
+        .harpera-rte a { color: #1e4e79; text-decoration: underline; }
+        .harpera-rte ul, .harpera-rte ol { margin: 0 0 16px; padding-left: 24px; }
+        .harpera-rte li { margin-bottom: 8px; }
+        .harpera-rte img { max-width: 100%; height: auto; border-radius: 8px; margin: 16px 0; }
+        .harpera-rte table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .harpera-rte th, .harpera-rte td { border: 1px solid #e5e7eb; padding: 10px 12px; text-align: left; }
+        .harpera-rte strong { color: rgb(18,18,18); }
       `}</style>
 
-      <div className="macorner-page">
+      <div className="harpera-page">
         <div
           style={{
             maxWidth: '900px',
@@ -74,10 +74,10 @@ export default function Page({loaderData}: Route.ComponentProps) {
             padding: '40px 18px 64px',
           }}
         >
-          <h1 className="macorner-page__title">{page.title}</h1>
+          <h1 className="harpera-page__title">{page.title}</h1>
           {page.body ? (
             <div
-              className="macorner-rte"
+              className="harpera-rte"
               dangerouslySetInnerHTML={{__html: page.body}}
             />
           ) : null}

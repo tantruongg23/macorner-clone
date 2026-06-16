@@ -31,7 +31,7 @@ export function CollectionTabsSection({
 
   return (
     <section className="py-12 md:py-16 bg-[#f4f8fc]">
-      <div className="container-macorner">
+      <div className="container-harpera">
         {/* Banner */}
         <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div className={`relative min-h-[250px] md:min-h-[350px] ${bannerImageSide === 'right' ? 'md:order-2' : 'md:order-1'}`}>

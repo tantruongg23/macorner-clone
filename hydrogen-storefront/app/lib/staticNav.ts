@@ -1,5 +1,5 @@
 /**
- * Static navigation tree mirroring macorner.co's exact menu structure.
+ * Static navigation tree mirroring harpera.co's exact menu structure.
  * Used as the primary nav source; the Shopify collection-based nav is a fallback
  * if this is explicitly replaced with `null`.
  */
@@ -26,7 +26,7 @@ export interface NavItem {
   groups?: NavGroup[];
 }
 
-export const MACORNER_NAV: NavItem[] = [
+export const HARPERA_NAV: NavItem[] = [
   {
     id: 'graduation',
     title: 'Graduation',

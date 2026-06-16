@@ -8,7 +8,7 @@ export async function loader({request}: Route.LoaderArgs) {
 }
 
 export function meta() {
-  return [{title: 'Page not found | Macorner'}];
+  return [{title: 'Page not found | Harpera'}];
 }
 
 export default function CatchAllPage() {

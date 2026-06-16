@@ -1,7 +1,7 @@
 import {Await, Link, NavLink} from 'react-router';
 import {useAside} from '~/components/Aside';
 import {Suspense, useEffect, useRef, useState} from 'react';
-import {MACORNER_NAV, type NavItem, type NavGroup} from '~/lib/staticNav';
+import {HARPERA_NAV, type NavItem, type NavGroup} from '~/lib/staticNav';
 
 import {ChevronDownIcon, XIcon} from './icons';
 
@@ -14,13 +14,13 @@ type PanelLevel =
   | {level: 2; item: NavItem; group: NavGroup};
 
 interface MobileNavDrawerProps {
-  /** Live nav from Shopify. Falls back to MACORNER_NAV when omitted/empty. */
+  /** Live nav from Shopify. Falls back to HARPERA_NAV when omitted/empty. */
   navItems?: NavItem[];
   customer?: Promise<{firstName: string | null} | null>;
 }
 
 export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
-  const navData = navItems?.length ? navItems : MACORNER_NAV;
+  const navData = navItems?.length ? navItems : HARPERA_NAV;
   const {type, close} = useAside();
   const isOpen = type === 'mobile';
   const drawerRef = useRef<HTMLDivElement>(null);

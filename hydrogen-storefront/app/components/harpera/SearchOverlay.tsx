@@ -29,7 +29,7 @@ type Props = {
   onClearSearches: () => void;
 };
 
-export function MacornerSearchOverlay({
+export function HarperaSearchOverlay({
   goToSearch,
   inputRef,
   containerRef,

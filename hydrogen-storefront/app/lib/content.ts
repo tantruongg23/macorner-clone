@@ -1,4 +1,4 @@
-// Centralized content data for Macorner
+// Centralized content data for Harpera
 export interface ProductCard {
   title: string;
   price: string;

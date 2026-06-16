@@ -3,8 +3,8 @@ import type {Route} from './+types/account';
 
 export function meta() {
   return [
-    {title: 'My Account — Macorner'},
-    {name: 'description', content: 'Manage your Macorner account, orders, and addresses.'},
+    {title: 'My Account — Harpera'},
+    {name: 'description', content: 'Manage your Harpera account, orders, and addresses.'},
     {name: 'robots', content: 'noindex'},
   ];
 }

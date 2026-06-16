@@ -1,12 +1,12 @@
-import { ProductCard, type MacornerProductCard } from './ProductCard';
+import { ProductCard, type HarperaProductCard } from './ProductCard';
 import { COLLECTION_KEYS } from '~/lib/constants';
 
-export function TrendingNow({ products }: { products: MacornerProductCard[] }) {
+export function TrendingNow({ products }: { products: HarperaProductCard[] }) {
   if (!products.length) return null;
 
   return (
     <section className="py-10 md:py-14">
-      <div className="container-macorner">
+      <div className="container-harpera">
         <h2 className="heading-script italic text-center text-[28px] md:text-[40px] leading-tight mb-8 md:mb-10">
           Trending Now
         </h2>

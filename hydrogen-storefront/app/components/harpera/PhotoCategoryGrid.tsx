@@ -8,7 +8,7 @@ export interface PhotoCategoryGridProps {
 export function PhotoCategoryGrid({ title, items }: PhotoCategoryGridProps) {
   return (
     <section className="py-12 md:py-16">
-      <div className="container-macorner">
+      <div className="container-harpera">
         <h2 className="heading-script italic text-center text-[28px] md:text-[40px] leading-tight mb-8 md:mb-12">
           {title}
         </h2>

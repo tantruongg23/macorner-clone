@@ -20,7 +20,7 @@ const SHOP_NAV = [
   {label: 'Shop By Hobby', href: '/collections/sport', hasChevron: true},
 ];
 
-const COLUMN_MACORNER: FooterLink[] = [
+const COLUMN_HARPERA: FooterLink[] = [
   {label: 'About Us', href: '/pages/about-us'},
   {label: 'Privacy Policy', href: '/pages/privacy-policy'},
   {label: 'Accessibility Statement', href: '/pages/accessibility'},
@@ -28,7 +28,7 @@ const COLUMN_MACORNER: FooterLink[] = [
 
 const COLUMN_HELP: FooterLink[] = [
   {label: 'Return Policy', href: '/pages/return-policy'},
-  {label: 'Help Center', href: 'https://macorner.freshdesk.com/support/home', external: true},
+  {label: 'Help Center', href: 'https://harpera.freshdesk.com/support/home', external: true},
   {label: 'Size Chart', href: '/pages/size-chart'},
   {label: 'Shipping And Delivery', href: '/pages/shipping-delivery'},
   {label: 'Cancellation & Modification Policy', href: '/pages/cancellation-modification-policy'},
@@ -36,13 +36,13 @@ const COLUMN_HELP: FooterLink[] = [
   {label: 'Disclaimer Regarding Fake Websites', href: '/pages/disclaimer-regarding-fake-websites'},
 ];
 
-// Order from live macorner.co footer: Twitter (X) → Facebook → Pinterest → Instagram → TikTok
+// Order from live harpera.co footer: Twitter (X) → Facebook → Pinterest → Instagram → TikTok
 const SOCIAL_LINKS = [
-  {platform: 'X (Twitter)', icon: TwitterIcon, href: 'https://twitter.com/Macorner_Decor'},
+  {platform: 'X (Twitter)', icon: TwitterIcon, href: 'https://twitter.com/Harpera_Decor'},
   {platform: 'Facebook', icon: FacebookIcon, href: 'https://www.facebook.com/profile.php?id=100069063936706'},
-  {platform: 'Pinterest', icon: PinterestIcon, href: 'https://www.pinterest.com/macorner_official'},
-  {platform: 'Instagram', icon: InstagramIcon, href: 'https://www.instagram.com/macorner_decor'},
-  {platform: 'TikTok', icon: TiktokIcon, href: 'https://www.tiktok.com/@macorner_official'},
+  {platform: 'Pinterest', icon: PinterestIcon, href: 'https://www.pinterest.com/harpera_official'},
+  {platform: 'Instagram', icon: InstagramIcon, href: 'https://www.instagram.com/harpera_decor'},
+  {platform: 'TikTok', icon: TiktokIcon, href: 'https://www.tiktok.com/@harpera_official'},
 ];
 
 const PAYMENT_ICONS: {label: string; slug: string}[] = [
@@ -60,7 +60,7 @@ const PAYMENT_ICONS: {label: string; slug: string}[] = [
   {label: 'Visa', slug: 'visa'},
 ];
 
-export function MacornerFooter() {
+export function HarperaFooter() {
   return (
     <>
       {/* Newsletter strip — cream background */}
@@ -119,10 +119,10 @@ export function MacornerFooter() {
               </ul>
             </FooterAccordionColumn>
 
-            {/* Col 2: Macorner */}
+            {/* Col 2: Harpera */}
             <FooterMenuColumn
-              heading="Macorner"
-              links={COLUMN_MACORNER}
+              heading="Harpera"
+              links={COLUMN_HARPERA}
               width="md:w-[177px]"
             />
 
@@ -142,7 +142,7 @@ export function MacornerFooter() {
                 Support Time: 9 AM to 5 PM, Mon-Sat
               </p>
               <a
-                href="https://freshdesk.macorner.co/support/tickets/new"
+                href="https://freshdesk.harpera.co/support/tickets/new"
                 className="
                   inline-block text-center
                   bg-[#1e4e79] text-white

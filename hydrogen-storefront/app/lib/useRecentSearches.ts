@@ -1,6 +1,6 @@
 import {useState, useCallback} from 'react';
 
-const STORAGE_KEY = 'macorner:recent-searches';
+const STORAGE_KEY = 'harpera:recent-searches';
 const MAX_ITEMS = 5;
 
 export function useRecentSearches() {

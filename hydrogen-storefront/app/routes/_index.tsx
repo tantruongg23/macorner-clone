@@ -1,19 +1,19 @@
 import type { Route } from './+types/_index';
-import { JsonLd } from '~/components/macorner/JsonLd';
-import { CategoryIconRow } from '~/components/macorner/CategoryIconRow';
-import { HeroBanner } from '~/components/macorner/HeroBanner';
-import { SecondaryBanner } from '~/components/macorner/SecondaryBanner';
-import { TrendingNow } from '~/components/macorner/TrendingNow';
-import { CollectionTabsSection, type CollectionTabsSectionProps } from '~/components/macorner/CollectionTabsSection';
-import { PhotoCategoryGrid } from '~/components/macorner/PhotoCategoryGrid';
-import { PromoCTAGrid } from '~/components/macorner/PromoCTAGrid';
-import { HappyCustomers } from '~/components/macorner/HappyCustomers';
-import { PromoBar } from '~/components/macorner/PromoBar';
-import { BackToTopButton } from '~/components/macorner/BackToTopButton';
+import { JsonLd } from '~/components/harpera/JsonLd';
+import { CategoryIconRow } from '~/components/harpera/CategoryIconRow';
+import { HeroBanner } from '~/components/harpera/HeroBanner';
+import { SecondaryBanner } from '~/components/harpera/SecondaryBanner';
+import { TrendingNow } from '~/components/harpera/TrendingNow';
+import { CollectionTabsSection, type CollectionTabsSectionProps } from '~/components/harpera/CollectionTabsSection';
+import { PhotoCategoryGrid } from '~/components/harpera/PhotoCategoryGrid';
+import { PromoCTAGrid } from '~/components/harpera/PromoCTAGrid';
+import { HappyCustomers } from '~/components/harpera/HappyCustomers';
+import { PromoBar } from '~/components/harpera/PromoBar';
+import { BackToTopButton } from '~/components/harpera/BackToTopButton';
 import { SHOP_BY_RECIPIENT, SHOP_BY_PRODUCT, PROMO_CTA_ITEMS } from '~/lib/content';
 import { CATEGORY_ICONS_QUERY } from '~/lib/graphql/categoryIcons';
 import {HERO_BANNER_QUERY, HERO_CAROUSEL_QUERY} from '~/lib/graphql/heroBanner';
-import type {HeroBannerData} from '~/components/macorner/HeroBanner';
+import type {HeroBannerData} from '~/components/harpera/HeroBanner';
 import { COLLECTION_PRODUCTS_BY_KEY_QUERY } from '~/lib/graphql/collection';
 import { HOME_CONTENT_QUERY } from '~/lib/graphql/homeContent';
 import { COLLECTION_KEYS } from '~/lib/constants';
@@ -50,13 +50,13 @@ type HomeContentNode = {
 
 
 function formatPrice(amount: string): string {
-  // Always display as USD dollars since macorner.co is a USD store
+  // Always display as USD dollars since harpera.co is a USD store
   const parsed = parseFloat(amount);
   return `$${Number.isNaN(parsed) ? '0.00' : parsed.toFixed(2)}`;
 }
 
 export function meta() {
-  const title = 'Macorner — Personalized Gifts & Custom Products';
+  const title = 'Harpera — Personalized Gifts & Custom Products';
   const description =
     'Shop personalized gifts, custom photo products, and unique presents for every occasion. Free shipping on orders over $75.';
   return [
@@ -65,7 +65,7 @@ export function meta() {
     {property: 'og:title', content: title},
     {property: 'og:description', content: description},
     {property: 'og:type', content: 'website'},
-    {property: 'og:url', content: 'https://macorner.co'},
+    {property: 'og:url', content: 'https://harpera.co'},
   ];
 }
 
@@ -202,9 +202,9 @@ export async function loader({ context }: Route.LoaderArgs) {
 const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Macorner',
-  url: 'https://macorner.co',
-  logo: 'https://macorner.co/cdn/shop/files/macorner-logo.png',
+  name: 'Harpera',
+  url: 'https://harpera.co',
+  logo: 'https://harpera.co/cdn/shop/files/harpera-logo.png',
 };
 
 export default function Homepage({ loaderData }: Route.ComponentProps) {
