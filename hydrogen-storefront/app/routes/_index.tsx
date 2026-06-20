@@ -262,9 +262,12 @@ export async function loader({ context }: Route.LoaderArgs) {
     (node: HomeContentNode, index: number) => {
       const title = node.title?.value ?? '';
       const tabs = (node.collections?.references?.nodes ?? [])
-        .filter((col) => col.products != null)
+        // Only surface collections that actually have products — empty tabs
+        // are a dead end for shoppers (matches macorner.co behavior).
+        .filter((col) => (col.products?.nodes?.length ?? 0) > 0)
         .map((col) => ({
           label: col.title,
+          href: `/collections/${col.handle}`,
           products: col.products.nodes.map((p) => ({
             title: p.title,
             href: `/products/${p.handle}`,

@@ -36,7 +36,9 @@ export function CollectionTabsSection({
     if (activeTab >= tabs.length) setActiveTab(0);
   }, [tabs.length, activeTab]);
 
-  const activeProducts = tabs[activeTab]?.products ?? [];
+  const active = tabs[activeTab];
+  const activeProducts = active?.products ?? [];
+  const activeHref = active?.href;
 
   return (
     <section className="py-12 md:py-16 bg-[#f4f8fc]">
@@ -66,27 +68,33 @@ export function CollectionTabsSection({
         {/* Tabs */}
         {tabs.length > 0 && (
           <div>
-            {/* list-menu list-menu--inline submenu */}
+            {/* Collection pills — horizontally scrollable on small screens */}
             <nav aria-label="Product categories" className="mb-8 md:mb-10">
-              <ul className="list-menu list-menu--inline" role="tablist">
-                {tabs.map((tab, index) => (
-                  <li
-                    key={index}
-                    className={`list-menu__item${activeTab === index ? ' list-menu__item--active' : ''}`}
-                    role="presentation"
-                  >
-                    <button
-                      role="tab"
-                      aria-selected={activeTab === index}
-                      aria-controls={`tab-panel-${index}`}
-                      id={`tab-${index}`}
-                      onClick={() => setActiveTab(index)}
-                      className="list-menu__link"
-                    >
-                      {tab.label}
-                    </button>
-                  </li>
-                ))}
+              <ul
+                className="flex flex-nowrap items-center gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:flex-wrap md:justify-center"
+                role="tablist"
+              >
+                {tabs.map((tab, index) => {
+                  const isActive = activeTab === index;
+                  return (
+                    <li key={index} className="flex-shrink-0" role="presentation">
+                      <button
+                        role="tab"
+                        aria-selected={isActive}
+                        aria-controls={`tab-panel-${index}`}
+                        id={`tab-${index}`}
+                        onClick={() => setActiveTab(index)}
+                        className={`whitespace-nowrap rounded-full border-[0.8px] px-[15px] py-2.5 text-[15px] md:text-base leading-none transition-colors ${
+                          isActive
+                            ? 'border-[var(--color-accent)] bg-white text-[var(--color-accent)]'
+                            : 'border-transparent bg-[rgba(115,115,115,0.1)] text-[var(--color-brand-navy)] hover:bg-[rgba(115,115,115,0.18)]'
+                        }`}
+                      >
+                        {tab.label}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
 
@@ -101,6 +109,18 @@ export function CollectionTabsSection({
                 <ProductCard key={product.title} product={product} />
               ))}
             </div>
+
+            {/* Show More — links to the active collection's page */}
+            {activeHref && (
+              <div className="mt-8 md:mt-10 text-center">
+                <ActionLink
+                  href={activeHref}
+                  className="inline-flex h-[47px] items-center justify-center rounded-full bg-[rgba(115,115,115,0.1)] px-[30px] text-base text-[var(--color-brand-navy)] transition-colors hover:bg-[rgba(115,115,115,0.18)]"
+                >
+                  Show More
+                </ActionLink>
+              </div>
+            )}
           </div>
         )}
       </div>

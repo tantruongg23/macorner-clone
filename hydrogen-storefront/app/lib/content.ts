@@ -9,6 +9,8 @@ export interface ProductCard {
 
 export interface TabSection {
   label: string;
+  /** Link to the underlying collection page, used by the "Show More" button. */
+  href?: string;
   products: ProductCard[];
 }
 
