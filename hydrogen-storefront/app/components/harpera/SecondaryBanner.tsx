@@ -1,7 +1,17 @@
+import {Link} from 'react-router';
+import type {ReactNode} from 'react';
+
+function ActionLink({href, className, children}: {href: string; className?: string; children: ReactNode}) {
+  const isInternal = href.startsWith('/');
+  if (isInternal) return <Link to={href} className={className}>{children}</Link>;
+  return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+}
+
 type SecondaryBannerData = {
   title: string;
   description: string;
   actionLink: string;
+  actionLabel?: string;
   image: {url: string; altText?: string | null | undefined} | null;
 } | null;
 
@@ -31,9 +41,9 @@ export function SecondaryBanner({data}: {data: SecondaryBannerData}) {
             <p className="text-[14px] md:text-[15px] max-w-[280px] text-[rgba(18,18,18,0.7)] leading-snug">
               {data.description}
             </p>
-            <a href={data.actionLink} className="btn-pill-orange self-start">
-              Shop Now
-            </a>
+            <ActionLink href={data.actionLink} className="btn-pill-orange self-start">
+              {data.actionLabel ?? 'Shop Now'}
+            </ActionLink>
           </div>
         </div>
       </div>

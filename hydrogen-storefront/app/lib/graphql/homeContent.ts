@@ -8,7 +8,37 @@ export const HOME_CONTENT_QUERY = `#graphql
         id
         title: field(key: "title") { value }
         description: field(key: "description") { value }
-        actionLink: field(key: "action_link") { value }
+        actionLabel: field(key: "action_label") { value }
+        actionUrl: field(key: "action_url") { value }
+        actionResource: field(key: "action_resource") {
+          value
+          reference {
+            __typename
+            ... on Product {
+              handle
+            }
+            ... on Collection {
+              handle
+            }
+            ... on Metaobject {
+              type
+              fields {
+                key
+                value
+                type
+                reference {
+                  __typename
+                  ... on Product {
+                    handle
+                  }
+                  ... on Collection {
+                    handle
+                  }
+                }
+              }
+            }
+          }
+        }
         image: field(key: "image") {
           reference {
             ... on MediaImage {

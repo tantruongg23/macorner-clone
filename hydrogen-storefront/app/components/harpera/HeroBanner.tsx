@@ -1,4 +1,5 @@
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useState, type ReactNode} from 'react';
+import {Link} from 'react-router';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import {ChevronLeftIcon, ChevronRightIcon} from './icons';
@@ -7,6 +8,7 @@ export type HeroBannerData = {
   title: string;
   description: string;
   actionLink: string;
+  actionLabel?: string;
   image: {url: string; altText?: string | null | undefined} | null;
 };
 
@@ -105,6 +107,12 @@ export function HeroBanner({slides}: {slides: HeroBannerData[]}) {
   );
 }
 
+function ActionLink({href, className, children}: {href: string; className?: string; children: ReactNode}) {
+  const isInternal = href.startsWith('/');
+  if (isInternal) return <Link to={href} className={className}>{children}</Link>;
+  return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+}
+
 function SlideContent({data}: {data: HeroBannerData}) {
   return (
     <div className="relative overflow-hidden rounded-[24px] bg-[#eaf1f8] grid grid-cols-1 md:grid-cols-[45%_55%] min-h-[280px] md:min-h-[420px]">
@@ -117,15 +125,9 @@ function SlideContent({data}: {data: HeroBannerData}) {
           {data.description}
         </p>
         <div className="relative inline-flex items-center gap-3">
-          <a href={data.actionLink} className="btn-pill-orange">
-            Shop Now
-          </a>
-          <span
-            aria-hidden
-            className="hidden md:inline-flex absolute -left-3 -bottom-3 w-7 h-7 rounded-full bg-[#163c5e] text-white text-[11px] font-semibold items-center justify-center shadow-sm"
-          >
-            +1
-          </span>
+          <ActionLink href={data.actionLink} className="btn-pill-orange">
+            {data.actionLabel ?? 'Shop Now'}
+          </ActionLink>
         </div>
       </div>
 

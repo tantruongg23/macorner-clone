@@ -1,7 +1,8 @@
 import type { Route } from './+types/_index';
 import { JsonLd } from '~/components/harpera/JsonLd';
 import { CategoryIconRow } from '~/components/harpera/CategoryIconRow';
-import { HeroBanner } from '~/components/harpera/HeroBanner';
+// HeroBanner hidden for now — re-enable with the render below when carousel slides exist.
+// import { HeroBanner } from '~/components/harpera/HeroBanner';
 import { SecondaryBanner } from '~/components/harpera/SecondaryBanner';
 import { TrendingNow } from '~/components/harpera/TrendingNow';
 import { CollectionTabsSection, type CollectionTabsSectionProps } from '~/components/harpera/CollectionTabsSection';
@@ -29,11 +30,34 @@ type StorefrontProduct = {
 };
 
 
+// A field inside a referenced `link` metaobject. Holds either a product/collection
+// reference, or an external URL stored as a `link`-type field (JSON `{text, url}`).
+type LinkMetaobjectField = {
+  key: string;
+  value?: string | null | undefined;
+  type?: string | null | undefined;
+  reference?: { __typename?: string; handle?: string } | null | undefined;
+};
+
+// The resolved `action_resource` reference: a direct Product/Collection, or a
+// nested `link` metaobject whose own fields point to the real destination.
+type ActionResourceReference = {
+  __typename?: string;
+  handle?: string;
+  type?: string | null | undefined;
+  fields?: LinkMetaobjectField[] | null | undefined;
+};
+
 type HomeContentNode = {
   id: string;
   title?: { value?: string | null | undefined } | null | undefined;
   description?: { value?: string | null | undefined } | null | undefined;
-  actionLink?: { value?: string | null | undefined } | null | undefined;
+  actionLabel?: { value?: string | null | undefined } | null | undefined;
+  actionUrl?: { value?: string | null | undefined } | null | undefined;
+  actionResource?: {
+    value?: string | null | undefined;
+    reference?: ActionResourceReference | null | undefined;
+  } | null | undefined;
   image?: {
     reference?: { image?: { url: string; altText?: string | null | undefined } | null | undefined } | null | undefined;
   } | null | undefined;
@@ -48,6 +72,49 @@ type HomeContentNode = {
   } | null | undefined;
 };
 
+
+// Extract a usable URL from a `link`-type metaobject field value. Shopify stores
+// these as JSON like `{"text":"...","url":"https://..."}`. Falls back to treating
+// the raw value as a URL when it's already an absolute or root-relative path.
+function urlFromExternalLinkValue(value?: string | null): string | null {
+  if (!value) return null;
+  try {
+    const parsed = JSON.parse(value) as {url?: unknown};
+    if (typeof parsed?.url === 'string' && parsed.url) return parsed.url;
+  } catch {
+    // not JSON — fall through to treat the value itself as a URL
+  }
+  if (/^https?:\/\//.test(value) || value.startsWith('/')) return value;
+  return null;
+}
+
+// Resolve an `action_resource` metafield reference to a navigable link.
+// Handles a direct Product/Collection reference, or a nested `link` metaobject
+// whose own fields hold the real Product, Collection, or external URL.
+function resolveActionResourceLink(
+  ref: ActionResourceReference | null | undefined,
+): string | null {
+  if (!ref) return null;
+
+  if (ref.__typename === 'Product' && ref.handle) return `/products/${ref.handle}`;
+  if (ref.__typename === 'Collection' && ref.handle) return `/collections/${ref.handle}`;
+
+  if (ref.fields) {
+    for (const field of ref.fields) {
+      const fieldRef = field.reference;
+      if (fieldRef?.__typename === 'Product' && fieldRef.handle) {
+        return `/products/${fieldRef.handle}`;
+      }
+      if (fieldRef?.__typename === 'Collection' && fieldRef.handle) {
+        return `/collections/${fieldRef.handle}`;
+      }
+      const external = urlFromExternalLinkValue(field.value);
+      if (external) return external;
+    }
+  }
+
+  return null;
+}
 
 function formatPrice(amount: string): string {
   // Always display as USD dollars since harpera.co is a USD store
@@ -111,20 +178,43 @@ export async function loader({ context }: Route.LoaderArgs) {
 
   const bestSellingNode = bestSellingCollection;
 
-  function extractSlide(node: {fields: {key: string; value: string | null; reference?: {image?: {url: string; altText?: string | null} | null} | null}[]}): HeroBannerData {
-    const fields: Record<string, string> = {};
+  type SlideField = {
+    key: string;
+    value?: string | null;
+    type?: string | null;
+    reference?: {
+      __typename?: string;
+      handle?: string;
+      type?: string | null;
+      fields?: LinkMetaobjectField[] | null;
+      image?: {url: string; altText?: string | null} | null;
+    } | null;
+  };
+
+  function resolveActionLink(fields: SlideField[]): string {
+    const resourceField = fields.find((f) => f.key === 'action_resource');
+    const fromResource = resolveActionResourceLink(resourceField?.reference);
+    if (fromResource) return fromResource;
+
+    const urlField = fields.find((f) => f.key === 'action_url');
+    return urlField?.value ?? '#';
+  }
+
+  function extractSlide(node: {fields: SlideField[]}): HeroBannerData {
+    const plainFields: Record<string, string> = {};
     let image: {url: string; altText?: string | null} | null = null;
     for (const field of node.fields) {
       if (field.key === 'image' && field.reference?.image) {
         image = field.reference.image;
       } else if (field.value) {
-        fields[field.key] = field.value;
+        plainFields[field.key] = field.value;
       }
     }
     return {
-      title: fields.title ?? '',
-      description: fields.description ?? '',
-      actionLink: fields.action_link ?? '#',
+      title: plainFields.title ?? '',
+      description: plainFields.description ?? '',
+      actionLink: resolveActionLink(node.fields),
+      actionLabel: plainFields.action_label,
       image,
     };
   }
@@ -143,8 +233,8 @@ export async function loader({ context }: Route.LoaderArgs) {
     const secondaryFields: Record<string, string> = {};
     let secondaryImage: {url: string; altText?: string | null | undefined} | null = null;
     for (const field of secondaryNode.fields) {
-      if (field.key === 'image' && field.reference?.image) {
-        secondaryImage = field.reference.image;
+      if (field.key === 'image' && field.reference?.__typename === 'MediaImage') {
+        secondaryImage = field.reference.image ?? null;
       } else if (field.value) {
         secondaryFields[field.key] = field.value;
       }
@@ -152,7 +242,8 @@ export async function loader({ context }: Route.LoaderArgs) {
     secondaryBanner = {
       title: secondaryFields.title ?? '',
       description: secondaryFields.description ?? '',
-      actionLink: secondaryFields.action_link ?? '#',
+      actionLink: resolveActionLink(secondaryNode.fields),
+      actionLabel: secondaryFields.action_label,
       image: secondaryImage,
     };
   }
@@ -183,6 +274,11 @@ export async function loader({ context }: Route.LoaderArgs) {
           })),
         }));
 
+      const actionLink =
+        resolveActionResourceLink(node.actionResource?.reference) ??
+        node.actionUrl?.value ??
+        '#';
+
       return {
         id: node.id,
         bannerTitle: title,
@@ -190,7 +286,8 @@ export async function loader({ context }: Route.LoaderArgs) {
         bannerImageSrc: node.image?.reference?.image?.url ?? '',
         bannerImageAlt: node.image?.reference?.image?.altText ?? title,
         bannerImageSide: (index % 2 === 0 ? 'right' : 'left') as 'left' | 'right',
-        actionLink: node.actionLink?.value ?? '#',
+        actionLink,
+        actionLabel: node.actionLabel?.value ?? undefined,
         tabs,
       };
     }
@@ -227,11 +324,13 @@ export default function Homepage({ loaderData }: Route.ComponentProps) {
     <div className="flex flex-col min-h-screen bg-white">
       <JsonLd data={ORGANIZATION_JSON_LD} />
       <CategoryIconRow collections={loaderData.categoryIcons} />
-      <HeroBanner slides={loaderData.heroSlides} />
+      {/* HeroBanner hidden until we have carousel slides to display.
+          Re-enable when hero_banner metaobjects are populated. */}
+      {/* <HeroBanner slides={loaderData.heroSlides} /> */}
       <SecondaryBanner data={loaderData.secondaryBanner} />
       <TrendingNow products={loaderData.trendingProducts} />
 
-      <div className="flex flex-col gap-8 md:gap-16">
+      <div className="flex flex-col ">
         {(loaderData.homeContentSections as HomeContentSectionItem[]).map(
           ({id, ...section}) => (
             <CollectionTabsSection key={id} {...section} />

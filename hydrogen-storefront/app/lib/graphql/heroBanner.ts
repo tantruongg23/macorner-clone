@@ -5,7 +5,32 @@ export const HERO_BANNER_QUERY = `#graphql
         fields {
           key
           value
+          type
           reference {
+            __typename
+            ... on Product {
+              handle
+            }
+            ... on Collection {
+              handle
+            }
+            ... on Metaobject {
+              type
+              fields {
+                key
+                value
+                type
+                reference {
+                  __typename
+                  ... on Product {
+                    handle
+                  }
+                  ... on Collection {
+                    handle
+                  }
+                }
+              }
+            }
             ... on MediaImage {
               image {
                 url
@@ -28,7 +53,32 @@ export const HERO_CAROUSEL_QUERY = `#graphql
         fields {
           key
           value
+          type
           reference {
+            __typename
+            ... on Product {
+              handle
+            }
+            ... on Collection {
+              handle
+            }
+            ... on Metaobject {
+              type
+              fields {
+                key
+                value
+                type
+                reference {
+                  __typename
+                  ... on Product {
+                    handle
+                  }
+                  ... on Collection {
+                    handle
+                  }
+                }
+              }
+            }
             ... on MediaImage {
               image {
                 url

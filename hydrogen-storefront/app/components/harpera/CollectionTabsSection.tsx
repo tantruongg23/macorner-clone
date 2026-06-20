@@ -1,6 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
+import { Link } from 'react-router';
 import { ProductCard } from './ProductCard';
 import type { TabSection, ProductCard as ProductCardType } from '~/lib/content';
+
+function ActionLink({href, className, children}: {href: string; className?: string; children: ReactNode}) {
+  const isInternal = href.startsWith('/');
+  if (isInternal) return <Link to={href} className={className}>{children}</Link>;
+  return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+}
 
 export interface CollectionTabsSectionProps {
   bannerTitle: string;
@@ -9,6 +16,7 @@ export interface CollectionTabsSectionProps {
   bannerImageAlt: string;
   bannerImageSide: 'left' | 'right';
   actionLink?: string;
+  actionLabel?: string;
   tabs: TabSection[];
 }
 
@@ -19,6 +27,7 @@ export function CollectionTabsSection({
   bannerImageAlt,
   bannerImageSide,
   actionLink = '#',
+  actionLabel,
   tabs,
 }: CollectionTabsSectionProps) {
   const [activeTab, setActiveTab] = useState(0);
@@ -48,9 +57,9 @@ export function CollectionTabsSection({
             <p className="text-[15px] md:text-base text-[rgba(18,18,18,0.7)]">
               {bannerSubtitle}
             </p>
-            <a href={actionLink} className="btn-pill-orange w-fit">
-              EXPLORE
-            </a>
+            <ActionLink href={actionLink} className="btn-pill-orange w-fit">
+              {actionLabel ?? 'EXPLORE'}
+            </ActionLink>
           </div>
         </div>
 

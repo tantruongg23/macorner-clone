@@ -321,12 +321,64 @@ export type GetHeroBannerContentQuery = {
   metaobjects: {
     nodes: Array<{
       fields: Array<
-        Pick<StorefrontAPI.MetaobjectField, 'key' | 'value'> & {
-          reference?: StorefrontAPI.Maybe<{
-            image?: StorefrontAPI.Maybe<
-              Pick<StorefrontAPI.Image, 'url' | 'altText' | 'width' | 'height'>
-            >;
-          }>;
+        Pick<StorefrontAPI.MetaobjectField, 'key' | 'value' | 'type'> & {
+          reference?: StorefrontAPI.Maybe<
+            | {
+                __typename:
+                  | 'Article'
+                  | 'GenericFile'
+                  | 'Model3d'
+                  | 'Page'
+                  | 'ProductVariant'
+                  | 'Video';
+              }
+            | ({__typename: 'Collection'} & Pick<
+                StorefrontAPI.Collection,
+                'handle'
+              >)
+            | ({__typename: 'MediaImage'} & {
+                image?: StorefrontAPI.Maybe<
+                  Pick<
+                    StorefrontAPI.Image,
+                    'url' | 'altText' | 'width' | 'height'
+                  >
+                >;
+              })
+            | ({__typename: 'Metaobject'} & Pick<
+                StorefrontAPI.Metaobject,
+                'type'
+              > & {
+                  fields: Array<
+                    Pick<
+                      StorefrontAPI.MetaobjectField,
+                      'key' | 'value' | 'type'
+                    > & {
+                      reference?: StorefrontAPI.Maybe<
+                        | {
+                            __typename:
+                              | 'Article'
+                              | 'GenericFile'
+                              | 'MediaImage'
+                              | 'Metaobject'
+                              | 'Model3d'
+                              | 'Page'
+                              | 'ProductVariant'
+                              | 'Video';
+                          }
+                        | ({__typename: 'Collection'} & Pick<
+                            StorefrontAPI.Collection,
+                            'handle'
+                          >)
+                        | ({__typename: 'Product'} & Pick<
+                            StorefrontAPI.Product,
+                            'handle'
+                          >)
+                      >;
+                    }
+                  >;
+                })
+            | ({__typename: 'Product'} & Pick<StorefrontAPI.Product, 'handle'>)
+          >;
         }
       >;
     }>;
@@ -341,12 +393,64 @@ export type GetHeroCarouselSlidesQuery = {
   metaobjects: {
     nodes: Array<{
       fields: Array<
-        Pick<StorefrontAPI.MetaobjectField, 'key' | 'value'> & {
-          reference?: StorefrontAPI.Maybe<{
-            image?: StorefrontAPI.Maybe<
-              Pick<StorefrontAPI.Image, 'url' | 'altText' | 'width' | 'height'>
-            >;
-          }>;
+        Pick<StorefrontAPI.MetaobjectField, 'key' | 'value' | 'type'> & {
+          reference?: StorefrontAPI.Maybe<
+            | {
+                __typename:
+                  | 'Article'
+                  | 'GenericFile'
+                  | 'Model3d'
+                  | 'Page'
+                  | 'ProductVariant'
+                  | 'Video';
+              }
+            | ({__typename: 'Collection'} & Pick<
+                StorefrontAPI.Collection,
+                'handle'
+              >)
+            | ({__typename: 'MediaImage'} & {
+                image?: StorefrontAPI.Maybe<
+                  Pick<
+                    StorefrontAPI.Image,
+                    'url' | 'altText' | 'width' | 'height'
+                  >
+                >;
+              })
+            | ({__typename: 'Metaobject'} & Pick<
+                StorefrontAPI.Metaobject,
+                'type'
+              > & {
+                  fields: Array<
+                    Pick<
+                      StorefrontAPI.MetaobjectField,
+                      'key' | 'value' | 'type'
+                    > & {
+                      reference?: StorefrontAPI.Maybe<
+                        | {
+                            __typename:
+                              | 'Article'
+                              | 'GenericFile'
+                              | 'MediaImage'
+                              | 'Metaobject'
+                              | 'Model3d'
+                              | 'Page'
+                              | 'ProductVariant'
+                              | 'Video';
+                          }
+                        | ({__typename: 'Collection'} & Pick<
+                            StorefrontAPI.Collection,
+                            'handle'
+                          >)
+                        | ({__typename: 'Product'} & Pick<
+                            StorefrontAPI.Product,
+                            'handle'
+                          >)
+                      >;
+                    }
+                  >;
+                })
+            | ({__typename: 'Product'} & Pick<StorefrontAPI.Product, 'handle'>)
+          >;
         }
       >;
     }>;
@@ -368,8 +472,68 @@ export type GetHomeContentQuery = {
         description?: StorefrontAPI.Maybe<
           Pick<StorefrontAPI.MetaobjectField, 'value'>
         >;
-        actionLink?: StorefrontAPI.Maybe<
+        actionLabel?: StorefrontAPI.Maybe<
           Pick<StorefrontAPI.MetaobjectField, 'value'>
+        >;
+        actionUrl?: StorefrontAPI.Maybe<
+          Pick<StorefrontAPI.MetaobjectField, 'value'>
+        >;
+        actionResource?: StorefrontAPI.Maybe<
+          Pick<StorefrontAPI.MetaobjectField, 'value'> & {
+            reference?: StorefrontAPI.Maybe<
+              | {
+                  __typename:
+                    | 'Article'
+                    | 'GenericFile'
+                    | 'MediaImage'
+                    | 'Model3d'
+                    | 'Page'
+                    | 'ProductVariant'
+                    | 'Video';
+                }
+              | ({__typename: 'Collection'} & Pick<
+                  StorefrontAPI.Collection,
+                  'handle'
+                >)
+              | ({__typename: 'Metaobject'} & Pick<
+                  StorefrontAPI.Metaobject,
+                  'type'
+                > & {
+                    fields: Array<
+                      Pick<
+                        StorefrontAPI.MetaobjectField,
+                        'key' | 'value' | 'type'
+                      > & {
+                        reference?: StorefrontAPI.Maybe<
+                          | {
+                              __typename:
+                                | 'Article'
+                                | 'GenericFile'
+                                | 'MediaImage'
+                                | 'Metaobject'
+                                | 'Model3d'
+                                | 'Page'
+                                | 'ProductVariant'
+                                | 'Video';
+                            }
+                          | ({__typename: 'Collection'} & Pick<
+                              StorefrontAPI.Collection,
+                              'handle'
+                            >)
+                          | ({__typename: 'Product'} & Pick<
+                              StorefrontAPI.Product,
+                              'handle'
+                            >)
+                        >;
+                      }
+                    >;
+                  })
+              | ({__typename: 'Product'} & Pick<
+                  StorefrontAPI.Product,
+                  'handle'
+                >)
+            >;
+          }
         >;
         image?: StorefrontAPI.Maybe<{
           reference?: StorefrontAPI.Maybe<{
@@ -1012,15 +1176,15 @@ interface GeneratedQueryTypes {
     return: GetCollectionProductsQuery;
     variables: GetCollectionProductsQueryVariables;
   };
-  '#graphql\n  query GetHeroBannerContent {\n    metaobjects(type: "main_content", first: 2) {\n      nodes {\n        fields {\n          key\n          value\n          reference {\n            ... on MediaImage {\n              image {\n                url\n                altText\n                width\n                height\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
+  '#graphql\n  query GetHeroBannerContent {\n    metaobjects(type: "main_content", first: 2) {\n      nodes {\n        fields {\n          key\n          value\n          type\n          reference {\n            __typename\n            ... on Product {\n              handle\n            }\n            ... on Collection {\n              handle\n            }\n            ... on Metaobject {\n              type\n              fields {\n                key\n                value\n                type\n                reference {\n                  __typename\n                  ... on Product {\n                    handle\n                  }\n                  ... on Collection {\n                    handle\n                  }\n                }\n              }\n            }\n            ... on MediaImage {\n              image {\n                url\n                altText\n                width\n                height\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
     return: GetHeroBannerContentQuery;
     variables: GetHeroBannerContentQueryVariables;
   };
-  '#graphql\n  query GetHeroCarouselSlides {\n    metaobjects(type: "hero_banner", first: 5) {\n      nodes {\n        fields {\n          key\n          value\n          reference {\n            ... on MediaImage {\n              image {\n                url\n                altText\n                width\n                height\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
+  '#graphql\n  query GetHeroCarouselSlides {\n    metaobjects(type: "hero_banner", first: 5) {\n      nodes {\n        fields {\n          key\n          value\n          type\n          reference {\n            __typename\n            ... on Product {\n              handle\n            }\n            ... on Collection {\n              handle\n            }\n            ... on Metaobject {\n              type\n              fields {\n                key\n                value\n                type\n                reference {\n                  __typename\n                  ... on Product {\n                    handle\n                  }\n                  ... on Collection {\n                    handle\n                  }\n                }\n              }\n            }\n            ... on MediaImage {\n              image {\n                url\n                altText\n                width\n                height\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
     return: GetHeroCarouselSlidesQuery;
     variables: GetHeroCarouselSlidesQueryVariables;
   };
-  '#graphql\n  query GetHomeContent(\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    metaobjects(type: "home_content", first: 10) {\n      nodes {\n        id\n        title: field(key: "title") { value }\n        description: field(key: "description") { value }\n        actionLink: field(key: "action_link") { value }\n        image: field(key: "image") {\n          reference {\n            ... on MediaImage {\n              image {\n                url\n                altText\n              }\n            }\n          }\n        }\n        collections: field(key: "collections") {\n          references(first: 10) {\n            nodes {\n              ... on Collection {\n                title\n                handle\n                products(first: 4) {\n                  nodes {\n                    id\n                    title\n                    handle\n                    featuredImage {\n                      url\n                      altText\n                    }\n                    priceRange {\n                      minVariantPrice {\n                        amount\n                        currencyCode\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
+  '#graphql\n  query GetHomeContent(\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    metaobjects(type: "home_content", first: 10) {\n      nodes {\n        id\n        title: field(key: "title") { value }\n        description: field(key: "description") { value }\n        actionLabel: field(key: "action_label") { value }\n        actionUrl: field(key: "action_url") { value }\n        actionResource: field(key: "action_resource") {\n          value\n          reference {\n            __typename\n            ... on Product {\n              handle\n            }\n            ... on Collection {\n              handle\n            }\n            ... on Metaobject {\n              type\n              fields {\n                key\n                value\n                type\n                reference {\n                  __typename\n                  ... on Product {\n                    handle\n                  }\n                  ... on Collection {\n                    handle\n                  }\n                }\n              }\n            }\n          }\n        }\n        image: field(key: "image") {\n          reference {\n            ... on MediaImage {\n              image {\n                url\n                altText\n              }\n            }\n          }\n        }\n        collections: field(key: "collections") {\n          references(first: 10) {\n            nodes {\n              ... on Collection {\n                title\n                handle\n                products(first: 4) {\n                  nodes {\n                    id\n                    title\n                    handle\n                    featuredImage {\n                      url\n                      altText\n                    }\n                    priceRange {\n                      minVariantPrice {\n                        amount\n                        currencyCode\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
     return: GetHomeContentQuery;
     variables: GetHomeContentQueryVariables;
   };
