@@ -2,7 +2,6 @@ import {useState} from 'react';
 import type {Route} from './+types/collections.$handle';
 import {SORT_OPTIONS} from '~/types/collection';
 import type {Filter, SortByValue, ProductNode} from '~/types/collection';
-import {CollectionBanner} from '~/components/harpera/CollectionBanner';
 import {CollectionFilters} from '~/components/harpera/CollectionFilters';
 import {CollectionToolbar} from '~/components/harpera/CollectionToolbar';
 import {CollectionProductCard} from '~/components/harpera/CollectionProductCard';
@@ -175,9 +174,9 @@ export default function CollectionPage({loaderData}: Route.ComponentProps) {
   return (
     <>
       <style>{`
-        .collection-section { padding-top: 27px; padding-bottom: 27px; }
+        .collection-section { padding-bottom: 27px; }
         @media screen and (min-width: 750px) {
-          .collection-section { padding-top: 36px; padding-bottom: 36px; }
+          .collection-section { padding-bottom: 36px; }
         }
         .collection-content-layout {
           display: flex;
@@ -214,12 +213,6 @@ export default function CollectionPage({loaderData}: Route.ComponentProps) {
           letterSpacing: '0.6px',
         }}
       >
-        {/* D.2: Collection description/banner above toolbar */}
-        <CollectionBanner
-          description={collection.description || null}
-          image={(collection as any).image ?? null}
-        />
-
         <div className="collection-section">
           {/* D.1/D.4: Toolbar with real count, sort, filter chips, mobile filter button */}
           <CollectionToolbar

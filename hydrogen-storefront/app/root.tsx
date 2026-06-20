@@ -12,7 +12,7 @@ import {
   useRouteLoaderData,
 } from 'react-router';
 import type {Route} from './+types/root';
-import favicon from '~/assets/favicon.svg';
+import favicon from '~/assets/favicon.jpg';
 import { FOOTER_QUERY, HEADER_QUERY } from '~/lib/graphql/menu';
 import { NavigationService } from '~/lib/navigation';
 import { shopifyMenuToNav } from '~/lib/shopifyMenuToNav';
@@ -65,12 +65,8 @@ export function links() {
       rel: 'preconnect',
       href: 'https://shop.app',
     },
-    // SVG favicon for modern browsers (Chrome, Firefox, Edge)
-    {rel: 'icon', type: 'image/svg+xml', href: favicon},
-    // ICO fallback for Safari and older browsers
-    {rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico'},
-    // Apple touch icon for iOS devices
-    {rel: 'apple-touch-icon', href: '/favicon.ico'},
+    {rel: 'icon', type: 'image/jpeg', href: favicon},
+    {rel: 'apple-touch-icon', href: '/favicon.jpg'},
   ];
 }
 

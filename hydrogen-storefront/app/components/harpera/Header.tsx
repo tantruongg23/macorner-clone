@@ -343,11 +343,11 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
             className="shrink-0 inline-flex items-center"
           >
             <img
-              src="/icons/logo-harpera.svg"
+              src="/icons/logo-harpera.jpg"
               alt="Harpera"
-              width={200}
-              height={94}
-              className="w-[120px] min-[990px]:w-[160px] h-auto block"
+              width={160}
+              height={160}
+              className="w-[80px] min-[990px]:w-[110px] h-auto block"
             />
           </Link>
 
