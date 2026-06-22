@@ -100,7 +100,7 @@ function SearchResultsPredictiveArticles({
 
           return (
             <li className="predictive-search-result-item" key={article.id}>
-              <Link onClick={closeSearch} to={articleUrl} prefetch="intent">
+              <Link onClick={closeSearch} to={articleUrl}>
                 {article.image?.url && (
                   <Image
                     alt={article.image.altText ?? ''}
@@ -141,7 +141,7 @@ function SearchResultsPredictiveCollections({
 
           return (
             <li className="predictive-search-result-item" key={collection.id}>
-              <Link onClick={closeSearch} to={collectionUrl} prefetch="intent">
+              <Link onClick={closeSearch} to={collectionUrl}>
                 {collection.image?.url && (
                   <Image
                     alt={collection.image.altText ?? ''}
@@ -182,7 +182,7 @@ function SearchResultsPredictivePages({
 
           return (
             <li className="predictive-search-result-item" key={page.id}>
-              <Link onClick={closeSearch} to={pageUrl} prefetch="intent">
+              <Link onClick={closeSearch} to={pageUrl}>
                 <div>
                   <span>{page.title}</span>
                 </div>
@@ -217,7 +217,7 @@ function SearchResultsPredictiveProducts({
           const image = product?.selectedOrFirstAvailableVariant?.image;
           return (
             <li className="predictive-search-result-item" key={product.id}>
-              <Link to={productUrl} prefetch="intent" onClick={closeSearch}>
+              <Link to={productUrl} onClick={closeSearch}>
                 {image && (
                   <Image
                     alt={image.altText ?? ''}

@@ -270,7 +270,6 @@ export default function OrderDetail({loaderData}: Route.ComponentProps) {
       <div className="mt-8">
         <Link
           to="/account/orders"
-          prefetch="intent"
           className="text-[13px] font-medium text-[rgba(18,18,18,0.55)] hover:text-[#2e6ca6] transition-colors"
         >
           ← Back to orders

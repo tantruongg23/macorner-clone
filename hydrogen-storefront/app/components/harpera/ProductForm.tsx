@@ -20,14 +20,14 @@ interface Variant {
   id: string;
   availableForSale: boolean;
   price: Money;
-  compareAtPrice?: Money | null;
+  compareAtPrice: Money | null;
   selectedOptions: VariantOption[];
   image?: {
-    id?: string | null;
+    id: string;
     url: string;
-    altText?: string | null;
-    width?: number | null;
-    height?: number | null;
+    altText: string | null;
+    width: number | null;
+    height: number | null;
   } | null;
 }
 
@@ -47,7 +47,7 @@ interface Product {
   productType: string;
   tags: string[];
   options: ProductOption[];
-  selectedVariant?: Variant | null;
+  selectedVariant: Variant | null;
   variants: {nodes: Variant[]};
   personalizationField?: {value: string | null} | null;
 }

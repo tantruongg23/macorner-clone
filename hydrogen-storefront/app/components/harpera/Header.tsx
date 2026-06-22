@@ -339,7 +339,6 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
           {/* Logo */}
           <Link
             to="/"
-            prefetch="intent"
             aria-label="Harpera"
             className="shrink-0 inline-flex items-center"
           >
@@ -427,7 +426,6 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
             <AccountLink customer={customer} />
             <Link
               to="/pages/wishlist"
-              prefetch="intent"
               title="Wishlist"
               className="relative text-[15px] font-medium leading-[22.5px] tracking-[0.6px] hover:text-[#1e4e79] transition-colors"
             >
@@ -436,7 +434,6 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
             </Link>
             <Link
               to="/pages/tracking-order"
-              prefetch="intent"
               className="text-[15px] font-medium leading-[21px] tracking-[0.6px] hover:text-[#1e4e79] transition-colors"
             >
               Track Order
@@ -486,7 +483,6 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
             {/* Cart (desktop) */}
             <Link
               to="/cart"
-              prefetch="intent"
               title="Cart"
               aria-label="View cart"
               className="relative flex flex-col items-center w-[29px] h-[25.3px] text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
@@ -507,7 +503,6 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
             </button>
             <Link
               to="/pages/wishlist"
-              prefetch="intent"
               title="Wishlist"
               aria-label="Wishlist"
               className="w-[23px] h-[19px] inline-flex items-center justify-center"
@@ -516,7 +511,6 @@ export function HarperaHeader({cart, navItems, customer}: Props) {
             </Link>
             <Link
               to="/cart"
-              prefetch="intent"
               aria-label="View cart"
               className="relative flex items-center text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
             >
@@ -605,7 +599,6 @@ function DesktopNavItem({item}: {item: NavItem}) {
     <li className="m-0 p-0 group text-static">
       <Link
         to={item.url}
-        prefetch="intent"
         className="
           inline-flex items-center gap-[12px]
           px-[12px] pt-[12px] pb-[20px]
@@ -679,7 +672,6 @@ function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[numbe
         // Title itself links to the group's collection (matches harpera.co — no separate "See All").
         <Link
           to={group.seeAllUrl}
-          prefetch="intent"
           className={`${titleClass} hover:text-[#1e4e79] transition-colors`}
         >
           {group.title}
@@ -693,7 +685,6 @@ function MegaDropdownGroup({group}: {group: NonNullable<NavItem['groups']>[numbe
             <li key={leaf.id} className="m-0 p-0">
               <Link
                 to={leaf.url}
-                prefetch="intent"
                 className="text-[13px] font-normal leading-normal text-[#555] hover:text-[#1e4e79] transition-colors"
               >
                 {leaf.title}
@@ -789,7 +780,6 @@ function RegionSelectorModal({
           Learn more about our{' '}
           <Link
             to="/pages/shipping-delivery"
-            prefetch="intent"
             onClick={onClose}
             className="underline hover:text-[#1e4e79] transition-colors"
           >
@@ -809,7 +799,7 @@ function AccountLink({
   const className =
     'text-[14px] font-medium leading-[22.5px] tracking-[0.6px] hover:text-[#1e4e79] transition-colors';
   const signIn = (
-    <Link to="/account/login" prefetch="intent" className={className}>
+    <Link to="/account/login" className={className}>
       Sign In
     </Link>
   );
@@ -819,7 +809,7 @@ function AccountLink({
       <Await resolve={customer ?? Promise.resolve(null)} errorElement={signIn}>
         {(customer) =>
           customer ? (
-            <Link to="/account" prefetch="intent" className={className}>
+            <Link to="/account" className={className}>
               {customer.firstName ? `Hi, ${customer.firstName}` : 'Hi'}
             </Link>
           ) : (

@@ -164,7 +164,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                     <li key={item.id} className="border-b border-gray-50">
                       <NavLink
                         to={item.url}
-                        prefetch="intent"
                         onClick={close}
                         className={({isActive}) =>
                           `block py-3.5 text-[14px] font-semibold transition-colors ${
@@ -187,7 +186,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
               <MobileAccountLink customer={customer} onClick={close} />
               <Link
                 to="/pages/wishlist"
-                prefetch="intent"
                 onClick={close}
                 className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
               >
@@ -195,7 +193,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
               </Link>
               <Link
                 to="/pages/tracking-order"
-                prefetch="intent"
                 onClick={close}
                 className="text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors"
               >
@@ -216,7 +213,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                 <div className="px-5 pt-4 pb-2">
                   <Link
                     to={panel.item.url}
-                    prefetch="intent"
                     onClick={close}
                     className="text-[13px] font-semibold text-[#1e4e79] hover:underline"
                   >
@@ -248,7 +244,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                       <li key={group.id} className="border-b border-gray-50">
                         <NavLink
                           to={group.seeAllUrl ?? '#'}
-                          prefetch="intent"
                           onClick={close}
                           className={({isActive}) =>
                             `block py-3.5 text-[14px] font-semibold transition-colors ${
@@ -281,7 +276,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                   <div className="px-5 pt-4 pb-2">
                     <Link
                       to={panel.group.seeAllUrl}
-                      prefetch="intent"
                       onClick={close}
                       className="text-[13px] font-semibold text-[#1e4e79] hover:underline"
                     >
@@ -294,7 +288,6 @@ export function MobileNavDrawer({navItems, customer}: MobileNavDrawerProps) {
                     <li key={leaf.id} className="border-b border-gray-50">
                       <NavLink
                         to={leaf.url}
-                        prefetch="intent"
                         onClick={close}
                         className={({isActive}) =>
                           `block py-3 text-[14px] transition-colors ${
@@ -328,7 +321,7 @@ function MobileAccountLink({
   const className =
     'text-[14px] font-medium text-[var(--color-header-text)] hover:text-[#1e4e79] transition-colors';
   const signIn = (
-    <Link to="/account/login" prefetch="intent" onClick={onClick} className={className}>
+    <Link to="/account/login" onClick={onClick} className={className}>
       Sign In
     </Link>
   );
@@ -338,7 +331,7 @@ function MobileAccountLink({
       <Await resolve={customer ?? Promise.resolve(null)} errorElement={signIn}>
         {(customer) =>
           customer ? (
-            <Link to="/account" prefetch="intent" onClick={onClick} className={className}>
+            <Link to="/account" onClick={onClick} className={className}>
               {customer.firstName ? `Hi, ${customer.firstName}` : 'Hi'}
             </Link>
           ) : (

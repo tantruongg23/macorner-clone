@@ -95,7 +95,6 @@ export function HarperaFooter() {
                   <li key={nav.label}>
                     <Link
                       to={nav.href}
-                      prefetch="intent"
                       className="
                         flex items-center justify-between gap-3
                         py-[5px]
@@ -191,11 +190,11 @@ export function HarperaFooter() {
 
           {/* Bottom terms row */}
           <div className="mt-6 text-center text-white text-[14px] font-medium tracking-[0.6px]">
-            <Link to="/pages/terms-of-services" prefetch="intent" className="hover:text-[#1e4e79] transition-colors">
+            <Link to="/pages/terms-of-services" className="hover:text-[#1e4e79] transition-colors">
               Terms Of Services
             </Link>
             <span className="mx-2" aria-hidden="true">•</span>
-            <Link to="/pages/privacy-policy" prefetch="intent" className="hover:text-[#1e4e79] transition-colors">
+            <Link to="/pages/privacy-policy" className="hover:text-[#1e4e79] transition-colors">
               Privacy Policy
             </Link>
             <span className="mx-2" aria-hidden="true">•</span>
@@ -365,7 +364,7 @@ function FooterMenuColumn({
                 {link.label}
               </a>
             ) : (
-              <Link to={link.href} prefetch="intent" className={linkClass}>
+              <Link to={link.href} className={linkClass}>
                 {link.label}
               </Link>
             )}

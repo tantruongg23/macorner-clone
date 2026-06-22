@@ -66,6 +66,41 @@ export function CollectionToolbar({
 
   return (
     <>
+      <style>{`
+        .toolbar-filter-btn {
+          display: inline-flex; align-items: center; gap: 6px;
+          background: none; border: 1px solid rgba(18,18,18,0.2); border-radius: 4px;
+          padding: 5px 12px; font-size: 13px; font-family: Poppins, sans-serif;
+          color: rgb(18,18,18); cursor: pointer; letter-spacing: 0.4px;
+          white-space: nowrap;
+        }
+        .toolbar-filter-btn:hover { border-color: rgba(18,18,18,0.5); }
+        @media (min-width: 990px) { .toolbar-filter-btn { display: none; } }
+
+        .toolbar-chips {
+          display: flex; flex-wrap: wrap; gap: 8px;
+          padding: 10px 0 2px;
+          max-width: 1440px; margin: 0 auto; padding-left: 13px; padding-right: 13px;
+        }
+        .toolbar-chip {
+          display: inline-flex; align-items: center; gap: 6px;
+          background: rgba(247,146,31,0.1); border: 1px solid rgba(247,146,31,0.4);
+          border-radius: 20px; padding: 3px 10px;
+          font-size: 12px; color: rgb(18,18,18); letter-spacing: 0.3px;
+          text-decoration: none;
+        }
+        .toolbar-chip:hover { background: rgba(247,146,31,0.2); }
+        .toolbar-chip-x { font-size: 14px; line-height: 1; color: rgba(18,18,18,0.5); }
+        .toolbar-chip:hover .toolbar-chip-x { color: rgb(18,18,18); }
+        .toolbar-clear-all {
+          font-size: 12px; color: rgba(18,18,18,0.55); letter-spacing: 0.3px;
+          text-decoration: underline; text-decoration-color: rgba(18,18,18,0.3);
+          cursor: pointer; align-self: center;
+          background: none; border: none; font-family: Poppins, sans-serif; padding: 0;
+        }
+        .toolbar-clear-all:hover { color: rgb(18,18,18); }
+      `}</style>
+
       <aside
         aria-labelledby="verticalTitle"
         className="facets-wrapper page-width"

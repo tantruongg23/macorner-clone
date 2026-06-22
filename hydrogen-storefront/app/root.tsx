@@ -10,7 +10,6 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
-  useNavigation,
 } from 'react-router';
 import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.jpg';
@@ -65,19 +64,6 @@ export function links() {
     {
       rel: 'preconnect',
       href: 'https://shop.app',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      crossOrigin: 'anonymous' as const,
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
     },
     {rel: 'icon', type: 'image/jpeg', href: favicon},
     {rel: 'apple-touch-icon', href: '/favicon.jpg'},
@@ -175,19 +161,6 @@ function loadDeferredData({context}: Route.LoaderArgs) {
   };
 }
 
-function NavigationProgress() {
-  const navigation = useNavigation();
-  const isNavigating = navigation.state !== 'idle';
-
-  if (!isNavigating) return null;
-
-  return (
-    <div className="nav-progress" aria-hidden="true">
-      <div className="nav-progress__bar" />
-    </div>
-  );
-}
-
 export function Layout({children}: {children?: React.ReactNode}) {
   const nonce = useNonce();
 
@@ -202,7 +175,6 @@ export function Layout({children}: {children?: React.ReactNode}) {
         <Links />
       </head>
       <body>
-        <NavigationProgress />
         {children}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />

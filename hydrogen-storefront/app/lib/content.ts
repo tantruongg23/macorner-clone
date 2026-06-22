@@ -310,36 +310,30 @@ export const AMERICAS_250TH_TABS: TabSection[] = [
   },
 ];
 
-// Links mirror macorner.co's curated "Shop By Recipient" tiles. Targets are
-// Shopify collection handles (and two CMS pages) that must exist in the store
-// for the links to resolve — see the list handed to the store owner.
 export const SHOP_BY_RECIPIENT: PhotoCategory[] = [
-  { label: "For Bestie", imageSrc: "/images/recipient-bestie.webp", href: "/collections/friends", alt: "For Bestie" },
-  { label: "For Partner", imageSrc: "/images/recipient-partner.webp", href: "/collections/anniversary", alt: "For Partner" },
-  { label: "For Sibling", imageSrc: "/images/recipient-sibling.webp", href: "/collections/brother-sister", alt: "For Sibling" },
-  { label: "For Pet Lover", imageSrc: "/images/recipient-pet-lover.webp", href: "/collections/pet-lovers", alt: "For Pet Lover" },
-  { label: "For Family", imageSrc: "/images/recipient-family.webp", href: "/collections/family", alt: "For Family" },
-  { label: "For Mom", imageSrc: "/images/recipient-mom.webp", href: "/pages/gifts-for-mom", alt: "For Mom" },
-  { label: "For Dad", imageSrc: "/images/recipient-dad.webp", href: "/pages/gifts-for-dad", alt: "For Dad" },
-  { label: "For Kid & Baby", imageSrc: "/images/recipient-kid-baby.webp", href: "/collections/kids", alt: "For Kid & Baby" },
+  { label: "For Bestie", imageSrc: "/images/recipient-bestie.webp", href: "#", alt: "For Bestie" },
+  { label: "For Partner", imageSrc: "/images/recipient-partner.webp", href: "#", alt: "For Partner" },
+  { label: "For Sibling", imageSrc: "/images/recipient-sibling.webp", href: "#", alt: "For Sibling" },
+  { label: "For Pet Lover", imageSrc: "/images/recipient-pet-lover.webp", href: "#", alt: "For Pet Lover" },
+  { label: "For Family", imageSrc: "/images/recipient-family.webp", href: "#", alt: "For Family" },
+  { label: "For Mom", imageSrc: "/images/recipient-mom.webp", href: "#", alt: "For Mom" },
+  { label: "For Dad", imageSrc: "/images/recipient-dad.webp", href: "#", alt: "For Dad" },
+  { label: "For Kid & Baby", imageSrc: "/images/recipient-kid-baby.webp", href: "#", alt: "For Kid & Baby" },
 ];
 
-// Links mirror macorner.co's "Shop By Product" tiles (utm params dropped — they
-// only mattered for macorner's own analytics). Targets are collection handles
-// that must exist in the store for the links to resolve.
 export const SHOP_BY_PRODUCT: PhotoCategory[] = [
-  { label: "Graduation Stole", imageSrc: "/images/Graduation_Stole.webp", href: "/collections/graduation-stole", alt: "Graduation Stole" },
-  { label: "Doormat", imageSrc: "/images/Doormat.webp", href: "/collections/doormat", alt: "Doormat" },
-  { label: "Tassel Charm", imageSrc: "/images/Graduation_Tassel.jpg", href: "/collections/graduation-tassel-charm", alt: "Tassel Charm" },
-  { label: "Pocket Hug", imageSrc: "/images/Pocket_Hug.webp", href: "/collections/pocket-hug", alt: "Pocket Hug" },
-  { label: "Beach Towel", imageSrc: "/images/Kid_Beach_Towel.webp", href: "/collections/beach-towels", alt: "Beach Towel" },
-  { label: "Jewelry Dish", imageSrc: "/images/Jewelry_Dish_71883d7b-e07d-45c9-9979-b0e8f781cc02.webp", href: "/collections/jewelry-dish", alt: "Jewelry Dish" },
-  { label: "Wooden Plaque", imageSrc: "/images/2-Layered_Wooden_Plaque_With_Base.webp", href: "/collections/2-layered-wooden-plaque", alt: "Wooden Plaque" },
-  { label: "Shirt", imageSrc: "/images/Shirt_3448bf30-7449-4a00-8235-e9a51c5d4610.webp", href: "/collections/shirt", alt: "Shirt" },
-  { label: "Car Accessories", imageSrc: "/images/Car_Visor_Clip.jpg", href: "/collections/car-decoration", alt: "Car Accessories" },
-  { label: "Belt", imageSrc: "/images/Belt.webp", href: "/collections/belts", alt: "Belt" },
-  { label: "Whiskey Glass", imageSrc: "/images/Whiskey_Glass_2a0e6b84-bce4-498d-8a30-91788ba3449f.webp", href: "/collections/whiskey-glasses", alt: "Whiskey Glass" },
-  { label: "Mug", imageSrc: "/images/Mug_e104b31d-b065-4f0d-9104-2517ffccb52f.webp", href: "/collections/mug", alt: "Mug" },
+  { label: "Graduation Stole", imageSrc: "/images/Graduation_Stole.webp", href: "#", alt: "Graduation Stole" },
+  { label: "Doormat", imageSrc: "/images/Doormat.webp", href: "#", alt: "Doormat" },
+  { label: "Tassel Charm", imageSrc: "/images/Graduation_Tassel.jpg", href: "#", alt: "Tassel Charm" },
+  { label: "Pocket Hug", imageSrc: "/images/Pocket_Hug.webp", href: "#", alt: "Pocket Hug" },
+  { label: "Beach Towel", imageSrc: "/images/Kid_Beach_Towel.webp", href: "#", alt: "Beach Towel" },
+  { label: "Jewelry Dish", imageSrc: "/images/Jewelry_Dish_71883d7b-e07d-45c9-9979-b0e8f781cc02.webp", href: "#", alt: "Jewelry Dish" },
+  { label: "Wooden Plaque", imageSrc: "/images/2-Layered_Wooden_Plaque_With_Base.webp", href: "#", alt: "Wooden Plaque" },
+  { label: "Shirt", imageSrc: "/images/Shirt_3448bf30-7449-4a00-8235-e9a51c5d4610.webp", href: "#", alt: "Shirt" },
+  { label: "Car Accessories", imageSrc: "/images/Car_Visor_Clip.jpg", href: "#", alt: "Car Accessories" },
+  { label: "Belt", imageSrc: "/images/Belt.webp", href: "#", alt: "Belt" },
+  { label: "Whiskey Glass", imageSrc: "/images/Whiskey_Glass_2a0e6b84-bce4-498d-8a30-91788ba3449f.webp", href: "#", alt: "Whiskey Glass" },
+  { label: "Mug", imageSrc: "/images/Mug_e104b31d-b065-4f0d-9104-2517ffccb52f.webp", href: "#", alt: "Mug" },
 ];
 
 export const PROMO_CTA_ITEMS: PromoCTAItem[] = [
