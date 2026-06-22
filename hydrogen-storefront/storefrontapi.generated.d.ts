@@ -914,74 +914,65 @@ export type ProductVariantFieldsFragment = Pick<
   >;
 };
 
-export type CollectionPageQueryVariables = StorefrontAPI.Exact<{
-  handle: StorefrontAPI.Scalars['String']['input'];
-  first?: StorefrontAPI.InputMaybe<StorefrontAPI.Scalars['Int']['input']>;
-  last?: StorefrontAPI.InputMaybe<StorefrontAPI.Scalars['Int']['input']>;
-  startCursor?: StorefrontAPI.InputMaybe<
-    StorefrontAPI.Scalars['String']['input']
-  >;
-  endCursor?: StorefrontAPI.InputMaybe<
-    StorefrontAPI.Scalars['String']['input']
-  >;
-  sortKey?: StorefrontAPI.InputMaybe<StorefrontAPI.ProductCollectionSortKeys>;
-  reverse?: StorefrontAPI.InputMaybe<StorefrontAPI.Scalars['Boolean']['input']>;
-  filters?: StorefrontAPI.InputMaybe<
-    Array<StorefrontAPI.ProductFilter> | StorefrontAPI.ProductFilter
-  >;
-  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
-  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
+export type ShopBySectionsQueryVariables = StorefrontAPI.Exact<{
+  [key: string]: never;
 }>;
 
-export type CollectionPageQuery = {
-  collection?: StorefrontAPI.Maybe<
-    Pick<StorefrontAPI.Collection, 'id' | 'title' | 'description'> & {
-      image?: StorefrontAPI.Maybe<Pick<StorefrontAPI.Image, 'url' | 'altText'>>;
-      products: {
+export type ShopBySectionsQuery = {
+  shopByRecipient?: StorefrontAPI.Maybe<{
+    title?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    subtitle?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    background_color?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    image_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    card_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    columns?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    collections?: StorefrontAPI.Maybe<{
+      references?: StorefrontAPI.Maybe<{
         nodes: Array<
-          Pick<
-            StorefrontAPI.Product,
-            'id' | 'title' | 'handle' | 'availableForSale' | 'tags'
-          > & {
-            priceRange: {
-              minVariantPrice: Pick<
-                StorefrontAPI.MoneyV2,
-                'amount' | 'currencyCode'
-              >;
-            };
-            compareAtPriceRange: {
-              minVariantPrice: Pick<
-                StorefrontAPI.MoneyV2,
-                'amount' | 'currencyCode'
-              >;
-            };
-            featuredImage?: StorefrontAPI.Maybe<
-              Pick<StorefrontAPI.Image, 'url' | 'altText' | 'width' | 'height'>
-            >;
-            variants: {
-              nodes: Array<
-                Pick<StorefrontAPI.ProductVariant, 'id' | 'availableForSale'>
-              >;
-            };
-          }
-        >;
-        filters: Array<
-          Pick<StorefrontAPI.Filter, 'id' | 'label' | 'type'> & {
-            values: Array<
-              Pick<
-                StorefrontAPI.FilterValue,
-                'id' | 'label' | 'count' | 'input'
-              >
+          Pick<StorefrontAPI.Collection, 'title' | 'handle'> & {
+            image?: StorefrontAPI.Maybe<
+              Pick<StorefrontAPI.Image, 'url' | 'altText'>
             >;
           }
         >;
-        pageInfo: Pick<
-          StorefrontAPI.PageInfo,
-          'hasPreviousPage' | 'hasNextPage' | 'startCursor' | 'endCursor'
+      }>;
+    }>;
+  }>;
+  shopByProduct?: StorefrontAPI.Maybe<{
+    title?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    subtitle?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    background_color?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    image_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    card_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    columns?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    collections?: StorefrontAPI.Maybe<{
+      references?: StorefrontAPI.Maybe<{
+        nodes: Array<
+          Pick<StorefrontAPI.Collection, 'title' | 'handle'> & {
+            image?: StorefrontAPI.Maybe<
+              Pick<StorefrontAPI.Image, 'url' | 'altText'>
+            >;
+          }
         >;
-      };
-    }
-  >;
+      }>;
+    }>;
+  }>;
 };
 
 export type CollectionsIndexQueryVariables = StorefrontAPI.Exact<{
@@ -1212,9 +1203,9 @@ interface GeneratedQueryTypes {
     return: GetProductQuery;
     variables: GetProductQueryVariables;
   };
-  '#graphql\n  query CollectionPage(\n    $handle: String!\n    $first: Int\n    $last: Int\n    $startCursor: String\n    $endCursor: String\n    $sortKey: ProductCollectionSortKeys\n    $reverse: Boolean\n    $filters: [ProductFilter!]\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    collection(handle: $handle) {\n      id\n      title\n      description\n      image {\n        url\n        altText\n      }\n      products(\n        first: $first\n        last: $last\n        before: $startCursor\n        after: $endCursor\n        sortKey: $sortKey\n        reverse: $reverse\n        filters: $filters\n      ) {\n        nodes {\n          id\n          title\n          handle\n          availableForSale\n          priceRange {\n            minVariantPrice { amount currencyCode }\n          }\n          compareAtPriceRange {\n            minVariantPrice { amount currencyCode }\n          }\n          featuredImage {\n            url\n            altText\n            width\n            height\n          }\n          variants(first: 1) {\n            nodes { id availableForSale }\n          }\n          tags\n        }\n        filters {\n          id\n          label\n          type\n          values {\n            id\n            label\n            count\n            input\n          }\n        }\n        pageInfo {\n          hasPreviousPage\n          hasNextPage\n          startCursor\n          endCursor\n        }\n      }\n    }\n  }\n': {
-    return: CollectionPageQuery;
-    variables: CollectionPageQueryVariables;
+  '#graphql\n  query ShopBySections {\n    shopByRecipient: metaobject(handle: {handle: "shop-by-recipient", type: "shop_by_section"}) {\n      title: field(key: "title") { value }\n      subtitle: field(key: "subtitle") { value }\n      background_color: field(key: "background_color") { value }\n      image_style: field(key: "image_style") { value }\n      card_style: field(key: "card_style") { value }\n      columns: field(key: "columns") { value }\n      collections: field(key: "collections") {\n        references(first: 20) {\n          nodes {\n            ... on Collection {\n              title\n              handle\n              image { url altText }\n            }\n          }\n        }\n      }\n    }\n    shopByProduct: metaobject(handle: {handle: "shop-by-product", type: "shop_by_section"}) {\n      title: field(key: "title") { value }\n      subtitle: field(key: "subtitle") { value }\n      background_color: field(key: "background_color") { value }\n      image_style: field(key: "image_style") { value }\n      card_style: field(key: "card_style") { value }\n      columns: field(key: "columns") { value }\n      collections: field(key: "collections") {\n        references(first: 20) {\n          nodes {\n            ... on Collection {\n              title\n              handle\n              image { url altText }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
+    return: ShopBySectionsQuery;
+    variables: ShopBySectionsQueryVariables;
   };
   '#graphql\n  query CollectionsIndex($first: Int!, $after: String) {\n    collections(first: $first, after: $after, sortKey: TITLE) {\n      nodes {\n        id\n        title\n        handle\n        image {\n          url\n          altText\n          width\n          height\n        }\n      }\n      pageInfo {\n        hasNextPage\n        endCursor\n      }\n    }\n  }\n': {
     return: CollectionsIndexQuery;

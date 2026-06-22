@@ -36,6 +36,7 @@ export default function Orders({loaderData}: Route.ComponentProps) {
         </p>
         <Link
           to="/collections/all"
+          prefetch="intent"
           className="inline-block px-7 py-3 rounded-[10px] bg-[#1e4e79] text-white text-[15px] font-semibold tracking-[0.6px] hover:bg-[#122e49] transition-colors"
         >
           Start shopping
@@ -62,6 +63,7 @@ export default function Orders({loaderData}: Route.ComponentProps) {
               <td className="py-4 pr-4 font-semibold text-[rgb(18,18,18)]">
                 <Link
                   to={`/account/orders/${btoa(order.id)}`}
+                  prefetch="intent"
                   className="hover:text-[#1e4e79] transition-colors"
                 >
                   #{order.number}

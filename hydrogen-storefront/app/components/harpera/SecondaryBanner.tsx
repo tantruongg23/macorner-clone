@@ -3,7 +3,7 @@ import type {ReactNode} from 'react';
 
 function ActionLink({href, className, children}: {href: string; className?: string; children: ReactNode}) {
   const isInternal = href.startsWith('/');
-  if (isInternal) return <Link to={href} className={className}>{children}</Link>;
+  if (isInternal) return <Link to={href} prefetch="intent" className={className}>{children}</Link>;
   return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
 }
 

@@ -13,7 +13,7 @@ export function Breadcrumb({items}: {items: BreadcrumbItem[]}) {
           <li key={i} className="flex items-center gap-1">
             {i > 0 && <span aria-hidden="true" className="text-gray-300">/</span>}
             {item.href ? (
-              <Link to={item.href} className="hover:text-[#2e6ca6] transition-colors">
+              <Link to={item.href} prefetch="intent" className="hover:text-[#2e6ca6] transition-colors">
                 {item.label}
               </Link>
             ) : (

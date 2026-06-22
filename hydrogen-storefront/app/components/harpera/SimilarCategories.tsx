@@ -19,6 +19,7 @@ export function SimilarCategories({categories}: {categories: Category[]}) {
           <Link
             key={cat.handle}
             to={`/collections/${cat.handle}`}
+            prefetch="intent"
             className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 hover:border-[#2e6ca6] hover:text-[#2e6ca6] text-sm font-medium transition-colors"
           >
             {cat.image?.url && (

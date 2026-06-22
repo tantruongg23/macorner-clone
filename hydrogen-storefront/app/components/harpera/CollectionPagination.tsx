@@ -76,7 +76,7 @@ export function CollectionPagination({pageInfo, sortBy}: Props) {
         >
           <li style={{maxWidth: '34px', marginRight: '10px'}}>
             {hasPrev ? (
-              <Link to={buildUrl('prev')} style={dotBase} aria-label="Previous page">
+              <Link to={buildUrl('prev')} prefetch="intent" style={dotBase} aria-label="Previous page">
                 <ChevronLeft />
               </Link>
             ) : (
@@ -92,7 +92,7 @@ export function CollectionPagination({pageInfo, sortBy}: Props) {
 
           <li style={{maxWidth: '34px'}}>
             {hasNext ? (
-              <Link to={buildUrl('next')} style={dotBase} aria-label="Next page">
+              <Link to={buildUrl('next')} prefetch="intent" style={dotBase} aria-label="Next page">
                 <ChevronRight />
               </Link>
             ) : (

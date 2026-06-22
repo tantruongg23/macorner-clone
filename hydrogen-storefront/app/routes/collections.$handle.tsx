@@ -172,37 +172,7 @@ export default function CollectionPage({loaderData}: Route.ComponentProps) {
   const totalCount = deriveTotal();
 
   return (
-    <>
-      <style>{`
-        .collection-section { padding-bottom: 27px; }
-        @media screen and (min-width: 750px) {
-          .collection-section { padding-bottom: 36px; }
-        }
-        .collection-content-layout {
-          display: flex;
-          gap: 24px;
-          align-items: flex-start;
-        }
-        .collection-products-column { flex: 1; min-width: 0; }
-        #product-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px 16px;
-          list-style: none;
-          padding: 0;
-          margin: 24px 0 0;
-        }
-        @media screen and (min-width: 750px) {
-          #product-grid { grid-template-columns: repeat(3, 1fr); gap: 24px 20px; }
-        }
-        @media screen and (min-width: 990px) {
-          #product-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        .product-card-wrapper .full-unstyled-link:hover { text-decoration: underline; }
-        .button-wishlist:hover svg { fill: #1b466f; }
-      `}</style>
-
-      <div
+    <div
         className="color-background-1 gradient"
         style={{
           backgroundColor: 'rgb(255,255,255)',
@@ -275,6 +245,5 @@ export default function CollectionPage({loaderData}: Route.ComponentProps) {
           </div>
         </div>
       </div>
-    </>
   );
 }

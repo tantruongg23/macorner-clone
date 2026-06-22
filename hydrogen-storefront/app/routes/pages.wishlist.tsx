@@ -31,6 +31,7 @@ export default function Wishlist() {
             </p>
             <Link
               to="/collections/all"
+              prefetch="intent"
               className="inline-block px-7 py-3 rounded-[10px] bg-[#1e4e79] text-white text-[15px] font-semibold tracking-[0.6px] hover:bg-[#122e49] transition-colors"
             >
               Browse products
@@ -40,7 +41,7 @@ export default function Wishlist() {
           <ul className="grid grid-cols-2 min-[750px]:grid-cols-3 min-[990px]:grid-cols-4 gap-x-4 gap-y-6 list-none p-0 m-0">
             {items.map((item) => (
               <li key={item.handle} className="relative">
-                <Link to={`/products/${item.handle}`} className="block group">
+                <Link to={`/products/${item.handle}`} prefetch="intent" className="block group">
                   <div className="aspect-square rounded-[10px] overflow-hidden bg-[#f4f4f4]">
                     {item.image ? (
                       <img
