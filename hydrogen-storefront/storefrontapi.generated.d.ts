@@ -914,6 +914,67 @@ export type ProductVariantFieldsFragment = Pick<
   >;
 };
 
+export type ShopBySectionsQueryVariables = StorefrontAPI.Exact<{
+  [key: string]: never;
+}>;
+
+export type ShopBySectionsQuery = {
+  shopByRecipient?: StorefrontAPI.Maybe<{
+    title?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    subtitle?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    background_color?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    image_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    card_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    columns?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    collections?: StorefrontAPI.Maybe<{
+      references?: StorefrontAPI.Maybe<{
+        nodes: Array<
+          Pick<StorefrontAPI.Collection, 'title' | 'handle'> & {
+            image?: StorefrontAPI.Maybe<
+              Pick<StorefrontAPI.Image, 'url' | 'altText'>
+            >;
+          }
+        >;
+      }>;
+    }>;
+  }>;
+  shopByProduct?: StorefrontAPI.Maybe<{
+    title?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    subtitle?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    background_color?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    image_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    card_style?: StorefrontAPI.Maybe<
+      Pick<StorefrontAPI.MetaobjectField, 'value'>
+    >;
+    columns?: StorefrontAPI.Maybe<Pick<StorefrontAPI.MetaobjectField, 'value'>>;
+    collections?: StorefrontAPI.Maybe<{
+      references?: StorefrontAPI.Maybe<{
+        nodes: Array<
+          Pick<StorefrontAPI.Collection, 'title' | 'handle'> & {
+            image?: StorefrontAPI.Maybe<
+              Pick<StorefrontAPI.Image, 'url' | 'altText'>
+            >;
+          }
+        >;
+      }>;
+    }>;
+  }>;
+};
+
 export type CollectionPageQueryVariables = StorefrontAPI.Exact<{
   handle: StorefrontAPI.Scalars['String']['input'];
   first?: StorefrontAPI.InputMaybe<StorefrontAPI.Scalars['Int']['input']>;
@@ -1211,6 +1272,10 @@ interface GeneratedQueryTypes {
   '#graphql\n  query GetProduct(\n    $handle: String!\n    $selectedOptions: [SelectedOptionInput!]!\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    product(handle: $handle) {\n      id\n      title\n      handle\n      description\n      descriptionHtml\n      vendor\n      productType\n      tags\n      seo {\n        title\n        description\n      }\n      personalizationField: metafield(namespace: "custom", key: "personalization") {\n        value\n      }\n      collections(first: 6) {\n        nodes {\n          title\n          handle\n          image {\n            url\n            altText\n          }\n        }\n      }\n      images(first: 20) {\n        nodes {\n          id\n          url\n          altText\n          width\n          height\n        }\n      }\n      options {\n        id\n        name\n        optionValues {\n          name\n        }\n      }\n      selectedVariant: variantBySelectedOptions(\n        selectedOptions: $selectedOptions\n        ignoreUnknownOptions: true\n        caseInsensitiveMatch: true\n      ) {\n        ...ProductVariantFields\n      }\n      variants(first: 250) {\n        nodes {\n          ...ProductVariantFields\n        }\n      }\n      priceRange {\n        minVariantPrice {\n          amount\n          currencyCode\n        }\n      }\n      compareAtPriceRange {\n        minVariantPrice {\n          amount\n          currencyCode\n        }\n      }\n    }\n  }\n  fragment ProductVariantFields on ProductVariant {\n    id\n    availableForSale\n    price {\n      amount\n      currencyCode\n    }\n    compareAtPrice {\n      amount\n      currencyCode\n    }\n    selectedOptions {\n      name\n      value\n    }\n    image {\n      id\n      url\n      altText\n      width\n      height\n    }\n  }\n': {
     return: GetProductQuery;
     variables: GetProductQueryVariables;
+  };
+  '#graphql\n  query ShopBySections {\n    shopByRecipient: metaobject(handle: {handle: "shop-by-recipient", type: "shop_by_section"}) {\n      title: field(key: "title") { value }\n      subtitle: field(key: "subtitle") { value }\n      background_color: field(key: "background_color") { value }\n      image_style: field(key: "image_style") { value }\n      card_style: field(key: "card_style") { value }\n      columns: field(key: "columns") { value }\n      collections: field(key: "collections") {\n        references(first: 20) {\n          nodes {\n            ... on Collection {\n              title\n              handle\n              image { url altText }\n            }\n          }\n        }\n      }\n    }\n    shopByProduct: metaobject(handle: {handle: "shop-by-product", type: "shop_by_section"}) {\n      title: field(key: "title") { value }\n      subtitle: field(key: "subtitle") { value }\n      background_color: field(key: "background_color") { value }\n      image_style: field(key: "image_style") { value }\n      card_style: field(key: "card_style") { value }\n      columns: field(key: "columns") { value }\n      collections: field(key: "collections") {\n        references(first: 20) {\n          nodes {\n            ... on Collection {\n              title\n              handle\n              image { url altText }\n            }\n          }\n        }\n      }\n    }\n  }\n': {
+    return: ShopBySectionsQuery;
+    variables: ShopBySectionsQueryVariables;
   };
   '#graphql\n  query CollectionPage(\n    $handle: String!\n    $first: Int\n    $last: Int\n    $startCursor: String\n    $endCursor: String\n    $sortKey: ProductCollectionSortKeys\n    $reverse: Boolean\n    $filters: [ProductFilter!]\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    collection(handle: $handle) {\n      id\n      title\n      description\n      image {\n        url\n        altText\n      }\n      products(\n        first: $first\n        last: $last\n        before: $startCursor\n        after: $endCursor\n        sortKey: $sortKey\n        reverse: $reverse\n        filters: $filters\n      ) {\n        nodes {\n          id\n          title\n          handle\n          availableForSale\n          priceRange {\n            minVariantPrice { amount currencyCode }\n          }\n          compareAtPriceRange {\n            minVariantPrice { amount currencyCode }\n          }\n          featuredImage {\n            url\n            altText\n            width\n            height\n          }\n          variants(first: 1) {\n            nodes { id availableForSale }\n          }\n          tags\n        }\n        filters {\n          id\n          label\n          type\n          values {\n            id\n            label\n            count\n            input\n          }\n        }\n        pageInfo {\n          hasPreviousPage\n          hasNextPage\n          startCursor\n          endCursor\n        }\n      }\n    }\n  }\n': {
     return: CollectionPageQuery;

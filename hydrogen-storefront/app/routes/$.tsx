@@ -37,6 +37,7 @@ export function ErrorBoundary() {
       </p>
       <Link
         to="/"
+        prefetch="intent"
         style={{
           display: 'inline-block',
           background: '#1e4e79',

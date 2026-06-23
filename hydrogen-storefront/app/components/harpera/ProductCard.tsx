@@ -1,3 +1,4 @@
+import {Link} from 'react-router';
 import {WishlistHeart} from './WishlistHeart';
 import {JudgeMeStarBadge} from './ProductReviews';
 
@@ -16,8 +17,9 @@ export function ProductCard({product}: {product: HarperaProductCard}) {
   const handle = product.handle ?? product.href.split('/').pop() ?? '';
 
   return (
-    <a
-      href={product.href}
+    <Link
+      to={product.href}
+      prefetch="intent"
       className="group flex flex-col gap-2.5 text-left transition-transform hover:-translate-y-0.5"
     >
       <div className="relative aspect-square overflow-hidden rounded-[20px] bg-[#f5f5f5]">
@@ -47,6 +49,6 @@ export function ProductCard({product}: {product: HarperaProductCard}) {
         )}
         <p className="text-sm font-medium text-[rgb(18,18,18)]">{product.price}</p>
       </div>
-    </a>
+    </Link>
   );
 }

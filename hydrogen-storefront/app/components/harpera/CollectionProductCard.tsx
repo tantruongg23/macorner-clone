@@ -42,6 +42,7 @@ export function CollectionProductCard({product}: {product: ProductNode}) {
           >
             <Link
               to={`/products/${product.handle}`}
+              prefetch="intent"
               className="media media--hover-effect"
               tabIndex={-1}
               aria-hidden
@@ -122,6 +123,7 @@ export function CollectionProductCard({product}: {product: ProductNode}) {
             >
               <Link
                 to={`/products/${product.handle}`}
+                prefetch="intent"
                 id={`CardLink-${product.id}`}
                 className="full-unstyled-link"
                 style={{color: 'inherit', textDecoration: 'none'}}

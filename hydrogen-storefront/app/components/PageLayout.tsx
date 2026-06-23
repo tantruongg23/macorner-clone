@@ -128,6 +128,7 @@ function SearchAside() {
                   <Link
                     onClick={closeSearch}
                     to={`${SEARCH_ENDPOINT}?q=${term.current}`}
+                    prefetch="intent"
                   >
                     <p>
                       View all results for <q>{term.current}</q>

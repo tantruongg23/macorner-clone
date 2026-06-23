@@ -17,7 +17,7 @@ import {CollectionProductCard} from '~/components/harpera/CollectionProductCard'
 import type {ProductNode} from '~/types/collection';
 
 // ─── Sort options available on the Storefront search API ──────────────────────
-type SearchSortKey = 'RELEVANCE' | 'PRICE' | 'PUBLISHED_AT';
+type SearchSortKey = 'RELEVANCE' | 'PRICE';
 
 const SEARCH_SORT_OPTIONS: Array<{
   label: string;
@@ -28,8 +28,8 @@ const SEARCH_SORT_OPTIONS: Array<{
   {label: 'Most relevant', sortKey: 'RELEVANCE', reverse: false, value: 'relevance'},
   {label: 'Price: Low to High', sortKey: 'PRICE', reverse: false, value: 'price-asc'},
   {label: 'Price: High to Low', sortKey: 'PRICE', reverse: true, value: 'price-desc'},
-  {label: 'Date: New to Old', sortKey: 'PUBLISHED_AT', reverse: true, value: 'newest'},
-  {label: 'Date: Old to New', sortKey: 'PUBLISHED_AT', reverse: false, value: 'oldest'},
+  {label: 'Date: New to Old', sortKey: 'RELEVANCE', reverse: true, value: 'newest'},
+  {label: 'Date: Old to New', sortKey: 'RELEVANCE', reverse: false, value: 'oldest'},
 ];
 
 // ─── Loader ───────────────────────────────────────────────────────────────────
@@ -196,6 +196,7 @@ export default function SearchPage({loaderData}: Route.ComponentProps) {
             <div className="flex justify-center">
               <Link
                 to={`/search?q=${encodeURIComponent(term)}&sort=${sortValue}&cursor=${pageInfo.endCursor}`}
+                prefetch="intent"
                 className="px-8 py-3 rounded-[10px] border border-[#2e6ca6] text-[#2e6ca6] text-[14px] font-semibold hover:bg-[#2e6ca6] hover:text-white transition-colors"
               >
                 Load more
@@ -278,6 +279,7 @@ function PopularCollections() {
           <Link
             key={l.handle}
             to={`/collections/${l.handle}`}
+            prefetch="intent"
             className="px-5 py-2 rounded-full border border-[var(--color-header-border)] text-[14px] text-[rgb(18,18,18)] hover:border-[#2e6ca6] hover:text-[#2e6ca6] transition-colors"
           >
             {l.label}

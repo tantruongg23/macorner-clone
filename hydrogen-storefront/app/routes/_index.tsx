@@ -7,11 +7,11 @@ import { SecondaryBanner } from '~/components/harpera/SecondaryBanner';
 import { TrendingNow } from '~/components/harpera/TrendingNow';
 import { CollectionTabsSection, type CollectionTabsSectionProps } from '~/components/harpera/CollectionTabsSection';
 import { PhotoCategoryGrid } from '~/components/harpera/PhotoCategoryGrid';
-import { PromoCTAGrid } from '~/components/harpera/PromoCTAGrid';
 import { HappyCustomers } from '~/components/harpera/HappyCustomers';
 import { PromoBar } from '~/components/harpera/PromoBar';
 import { BackToTopButton } from '~/components/harpera/BackToTopButton';
-import { SHOP_BY_RECIPIENT, SHOP_BY_PRODUCT, PROMO_CTA_ITEMS } from '~/lib/content';
+import { PROMO_CTA_ITEMS } from '~/lib/content';
+import { SHOP_BY_SECTIONS_QUERY } from '~/lib/graphql/shopBySections';
 import { CATEGORY_ICONS_QUERY } from '~/lib/graphql/categoryIcons';
 import {HERO_BANNER_QUERY, HERO_CAROUSEL_QUERY} from '~/lib/graphql/heroBanner';
 import type {HeroBannerData} from '~/components/harpera/HeroBanner';
@@ -145,6 +145,7 @@ export async function loader({ context }: Route.LoaderArgs) {
     { collection: bestSellingCollection },
     { metaobjects: homeContentMetaobjects },
     { metaobjects: heroCarouselMetaobjects },
+    shopBySectionsResult,
   ] = await Promise.all([
     storefront.query(CATEGORY_ICONS_QUERY, { cache: storefront.CacheLong() }),
     storefront.query(HERO_BANNER_QUERY, { cache: storefront.CacheLong() }),
@@ -169,6 +170,9 @@ export async function loader({ context }: Route.LoaderArgs) {
     storefront
       .query(HERO_CAROUSEL_QUERY, { cache: storefront.CacheLong() })
       .catch(() => ({ metaobjects: null })),
+    storefront
+      .query(SHOP_BY_SECTIONS_QUERY, { cache: storefront.CacheLong() })
+      .catch(() => ({ shopByRecipient: null, shopByProduct: null })),
   ]);
 
   const categoryIcons = collections.nodes.filter(
@@ -296,7 +300,58 @@ export async function loader({ context }: Route.LoaderArgs) {
     }
   );
 
-  return {categoryIcons, heroSlides, secondaryBanner, trendingProducts, homeContentSections};
+  type ShopByCollectionNode = {
+    title: string;
+    handle: string;
+    image?: {url: string; altText?: string | null} | null;
+  };
+
+  type ShopBySectionRaw = {
+    title?: {value?: string | null} | null;
+    subtitle?: {value?: string | null} | null;
+    background_color?: {value?: string | null} | null;
+    image_style?: {value?: string | null} | null;
+    card_style?: {value?: string | null} | null;
+    columns?: {value?: string | null} | null;
+    collections?: {references?: {nodes: ShopByCollectionNode[]} | null} | null;
+  } | null;
+
+  function extractShopBySection(raw: ShopBySectionRaw, defaultTitle: string) {
+    const items = (raw?.collections?.references?.nodes ?? []).map((col) => ({
+      label: col.title,
+      href: `/collections/${col.handle}`,
+      imageSrc: col.image?.url ?? '',
+      alt: col.image?.altText ?? col.title,
+    }));
+    return {
+      title: raw?.title?.value ?? defaultTitle,
+      subtitle: raw?.subtitle?.value ?? null,
+      backgroundColor: raw?.background_color?.value ?? null,
+      imageStyle: (raw?.image_style?.value ?? 'circle') as 'circle' | 'square',
+      cardStyle: raw?.card_style?.value ?? null,
+      columns: raw?.columns?.value ? parseInt(raw.columns.value, 10) : null,
+      items,
+    };
+  }
+
+  const shopByRecipient = extractShopBySection(
+    shopBySectionsResult?.shopByRecipient ?? null,
+    'Shop By Recipient',
+  );
+  const shopByProduct = extractShopBySection(
+    shopBySectionsResult?.shopByProduct ?? null,
+    'Shop By Product',
+  );
+
+  return {
+    categoryIcons,
+    heroSlides,
+    secondaryBanner,
+    trendingProducts,
+    homeContentSections,
+    shopByRecipient,
+    shopByProduct,
+  };
 }
 
 const ORGANIZATION_JSON_LD = {
@@ -341,10 +396,24 @@ export default function Homepage({ loaderData }: Route.ComponentProps) {
         )}
       </div>
 
-      <PromoCTAGrid items={promoCTAItems} />
-
-      <PhotoCategoryGrid title="Shop By Recipient" items={SHOP_BY_RECIPIENT} />
-      <PhotoCategoryGrid title="Shop By Product" items={SHOP_BY_PRODUCT} />
+      <PhotoCategoryGrid
+        title={loaderData.shopByRecipient.title}
+        subtitle={loaderData.shopByRecipient.subtitle ?? undefined}
+        items={loaderData.shopByRecipient.items}
+        imageStyle={loaderData.shopByRecipient.imageStyle}
+        cardStyle={loaderData.shopByRecipient.cardStyle ?? undefined}
+        backgroundColor={loaderData.shopByRecipient.backgroundColor ?? undefined}
+        columns={loaderData.shopByRecipient.columns ?? undefined}
+      />
+      <PhotoCategoryGrid
+        title={loaderData.shopByProduct.title}
+        subtitle={loaderData.shopByProduct.subtitle ?? undefined}
+        items={loaderData.shopByProduct.items}
+        imageStyle={loaderData.shopByProduct.imageStyle}
+        cardStyle={loaderData.shopByProduct.cardStyle ?? undefined}
+        backgroundColor={loaderData.shopByProduct.backgroundColor ?? undefined}
+        columns={loaderData.shopByProduct.columns ?? undefined}
+      />
 
       <HappyCustomers />
       <PromoBar />

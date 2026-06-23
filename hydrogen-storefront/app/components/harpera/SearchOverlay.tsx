@@ -192,6 +192,7 @@ export function HarperaSearchOverlay({
                       <li key={q.text}>
                         <Link
                           to={queryUrl}
+                          prefetch="intent"
                           onClick={() => {
                             onSaveSearch(term);
                             clearInput();
@@ -228,6 +229,7 @@ export function HarperaSearchOverlay({
                       <li key={c.id}>
                         <Link
                           to={collectionUrl}
+                          prefetch="intent"
                           onClick={() => {
                             onSaveSearch(term);
                             clearInput();
@@ -246,6 +248,7 @@ export function HarperaSearchOverlay({
             <div className="mt-auto">
               <Link
                 to={searchUrl}
+                prefetch="intent"
                 onClick={() => clearInput()}
                 className="block w-full py-3 bg-black text-white text-[12px] font-bold uppercase tracking-[1px] text-center hover:bg-[#222] transition-colors"
               >
@@ -280,6 +283,7 @@ export function HarperaSearchOverlay({
                   <li key={product.id}>
                     <Link
                       to={productUrl}
+                      prefetch="intent"
                       onClick={() => {
                         onSaveSearch(term);
                         clearInput();
@@ -349,10 +353,11 @@ export function HarperaSearchOverlay({
           )}
 
           <div>
-            <Link
-              to={searchUrl}
-              onClick={() => clearInput()}
-              className="inline-flex items-center gap-3 px-6 py-3 bg-[#1a1a2e] text-white text-[12px] font-bold uppercase tracking-[1px] hover:bg-[#2a2a4e] transition-colors"
+              <Link
+                to={searchUrl}
+                prefetch="intent"
+                onClick={() => clearInput()}
+                className="inline-flex items-center gap-3 px-6 py-3 bg-[#1a1a2e] text-white text-[12px] font-bold uppercase tracking-[1px] hover:bg-[#2a2a4e] transition-colors"
             >
               See All Products
               <span aria-hidden="true">→</span>

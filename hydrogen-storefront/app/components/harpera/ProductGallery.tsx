@@ -3,11 +3,11 @@ import {WishlistHeart} from './WishlistHeart';
 import type {WishlistItem} from '~/lib/useWishlist';
 
 interface ImageNode {
-  id: string;
+  id?: string | null;
   url: string;
-  altText: string | null;
-  width: number | null;
-  height: number | null;
+  altText?: string | null;
+  width?: number | null;
+  height?: number | null;
 }
 
 interface ProductGalleryProps {
